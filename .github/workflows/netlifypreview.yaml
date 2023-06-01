@@ -1,0 +1,50 @@
+name: NetlifyPreview
+
+on:
+  pull_request_target:
+    types: [labeled, synchronize]
+
+jobs:
+  add-preview:
+    runs-on: ubuntu-20.04
+    # This workflow accesses secrets and checks out a PR, so only run if labelled
+    # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: Configure NASA Earthdata Login
+      continue-on-error: true
+      env:
+        EARTHDATA_USER: ${{ secrets.EARTHDATA_USER}}
+        EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
+      run: |
+        echo "machine urs.earthdata.nasa.gov login $EARTHDATA_USER password $EARTHDATA_PASS" > ~/.netrc
+        chmod 0600 ~/.netrc
+
+    - uses: ./.github/actions/buildresources
+      with:
+        jb-cache: false
+        publish-to-gh: false
+        jb-save: false
+
+    - name: Deploy Website Preview
+      uses: nwtgck/actions-netlify@v2.0
+      with:
+        publish-dir: './book/_build/html'
+        production-deploy: false
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+        enable-commit-comment: false
+        enable-pull-request-comment: true
+        overwrites-pull-request-comment: true
+        alias: deploy-preview-${{ github.event.number }}
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 1
+
