@@ -1,5 +1,5 @@
 repo_directory: html
-name: UW Hackweek
+name: ICESat-2 Hackweek
 about: Hackweeks are participant-driven events that strive to create welcoming spaces
   for participants to learn new things, build community and gain hands-on experience
   with collaboration and team science
@@ -8,19 +8,19 @@ apply:
   title: Application coming soon
 hackweek_mission: https://uwhackweek.github.io/hackweeks-as-a-service/mission.html
 banner:
-  title: UW Hackweek
-  description: An awesome learning event.
-  start_date: XX Month
-  end_date: XX Month
-  year: 2022
+  title: ICESat-2 Hackweek
+  description: An in person, collaborative learning event.
+  start_date: 7 August
+  end_date: 11 August
+  year: 2023
   location: Seattle, WA
   links:
   - url: intro.html
     title: Event Jupyter Book
-    new_window: false
-  image: https://geohackweek.github.io/assets/images/banner.jpg
-applicant_info: UW Hackweek 2022 will take place in October 2022 (virtual or in-person
-  TBD). Applications have not yet opened, but should be anticipated in September 2022.
+    new_window: true
+  image: https://github.com/ICESAT-2HackWeek/icesat-2hackweek.github.io/raw/2022.03.01/assets/images/banner.jpg
+applicant_info: UW Hackweek 2023 will take place in August 2023 (in-person).
+  Applications have not yet opened, but will be soon.
 team:
   !include book/team.yaml
 schedule:
@@ -31,11 +31,14 @@ sponsors:
   - name: eScience Institute
     website: ''
     logo_url: https://escience.washington.edu/wp-content/uploads/2015/10/Logo_eScience-stacked.png
+  - name: NASA ICESat-2 Mission
+    website: 'https://icesat-2.gsfc.nasa.gov/mission'
+    logo_url: https://github.com/ICESAT-2HackWeek/icesat-2hackweek.github.io/raw/2022.03.01/assets/images/ICESat2.png
 footer:
   social:
   - icon: github
     icon_pack: fab
-    link: https://github.com/uwhackweek/
+    link: https://github.com/ICESAT-2HackWeek
 _copy_without_render:
 - assets
 _extensions:
