@@ -34,6 +34,9 @@ sponsors:
   - name: NASA ICESat-2 Mission
     website: 'https://icesat-2.gsfc.nasa.gov/mission'
     logo_url: https://github.com/ICESAT-2HackWeek/icesat-2hackweek.github.io/raw/2022.03.01/assets/images/ICESat2.png
+  - name: Cryo Cloud
+    website: https://book.cryointhecloud.com/intro.html
+    logo_url: https://book.cryointhecloud.com/_static/logo.png
 footer:
   social:
   - icon: github
