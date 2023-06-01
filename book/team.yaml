@@ -101,21 +101,6 @@ people:
       - Lead of Technology
       - Tutorial Lead
   # =============
-  - title: Jane Koh
-    avatar: https://avatars.githubusercontent.com/u/51932541?v=4
-    role: Program Manager
-    organizations:
-      - name: eScience Institute
-    bio: about Jane here
-    expertise:
-      - hackweek organization
-    social:
-      - icon: github
-        icon_pack: fab
-        link: https://github.com/janekoh1
-    user_groups:
-      - Program Manager
-  # =============
   - title: Don Setiawan
     avatar: https://avatars.githubusercontent.com/u/17802172?v=4
     role: Research Software Engineer
