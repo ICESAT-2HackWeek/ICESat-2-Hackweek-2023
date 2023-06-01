@@ -14,7 +14,7 @@ parse:
     dates: "August 7-11 2023"
     github_org_url: https://github.com/ICESAT-2HackWeek
     book_repo: "ICESat-2-Hackweek-2023"
-    contact_email: "uwhackweek@uw.edu"
+    contact_email: "icesat2-hackweek@uw.edu"
     website_url: "https://icesat-2-2023.hackweek.io"
     jupyterhub_url: "https://INSERT_JUPYTERHUB_URL"
     slack_workspace_url: "https://INSERT_SLACK_URL"
