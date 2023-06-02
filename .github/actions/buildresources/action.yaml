@@ -48,7 +48,7 @@ runs:
         publish_dir: book/_build/html
         publish_branch: gh-pages
         enable_jekyll: false
-        cname: REPLACE_ME.hackweek.io
+        cname: icesat-2-2023.hackweek.io
 
     - name: Save Build
       if: ${{ always() && inputs.jb-save == 'true'}} 
