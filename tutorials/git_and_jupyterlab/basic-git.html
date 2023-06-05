@@ -1,0 +1,1026 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic Git/GitHub Skills Using jupyterlab-git &#8212; ICESat-2 Hackweek 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GitHub, Git, JupyterHub" href="jupyter.html" />
+    <link rel="prev" title="Git and JupyterLab" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ICESat-2 Hackweek 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to ICESat-2 Hackweek!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../logistics.html">
+   Event Logistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://uwhackweek.github.io/jupyterbook-template/index.html?jump_to=schedule">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://uwhackweek.github.io/jupyterbook-template/index.html?jump_to=team">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mission.html">
+   Hackweek Mission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../CoC.html">
+   Event Code of Conduct
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../preliminary/supplemental_index.html">
+     Supplemental Material
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../preliminary/supplemental/python.html">
+       Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../preliminary/supplemental/conda.html">
+       Conda
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example/tutorial-notebook.html">
+     Example tutorial notebook
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Git, GitHub, and JupyterLab
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Basic Git/GitHub Skills Using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         jupyterlab-git
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/list_of_projects.html">
+   List of Projects
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roadmap.html">
+     Project Roadmap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_science.html">
+   Open Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_source_software.html">
+   Open-source Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/questions.html">
+   How to Get Help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/social.html">
+   Things to do in Seattle
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/issues/new?title=Issue%20on%20page%20%2Ftutorials/git_and_jupyterlab/basic-git.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/edit/main/book/tutorials/git_and_jupyterlab/basic-git.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/tutorials/git_and_jupyterlab/basic-git.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-git-and-github">
+   What is Git and GitHub?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-basic-git-jargon">
+   Some basic Git jargon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-trunk-based-workflow">
+     Simple Trunk-based Workflow:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git">
+   Setting up Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyterlab-git">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jupyterlab-git
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-key-skills">
+   The Key Skills
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-see-it-done">
+   Let’s see it done!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1-create-a-blank-repo-on-github">
+     Skill 1: Create a blank repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-2-clone-your-repo-to-the-jupyterhub">
+     Skill 2: Clone your repo to the JupyterHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-3-make-some-changes-and-commit-your-changes">
+     Skill 3: Make some changes and commit your changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-4-push-changes-to-github-pull-changes-from-github">
+     Skill 4: Push changes to GitHub / Pull changes from GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-activity-1">
+     Pair-activity 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-activity-2">
+     Pair-activity 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1b-fork-a-repo-on-github">
+     Skill 1b: Fork a repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1c-copy-a-repo-on-github">
+     Skill 1c: Copy a repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Pair-activity 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Git/GitHub Skills Using jupyterlab-git</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-git-and-github">
+   What is Git and GitHub?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-basic-git-jargon">
+   Some basic Git jargon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-trunk-based-workflow">
+     Simple Trunk-based Workflow:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git">
+   Setting up Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyterlab-git">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jupyterlab-git
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-key-skills">
+   The Key Skills
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-see-it-done">
+   Let’s see it done!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1-create-a-blank-repo-on-github">
+     Skill 1: Create a blank repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-2-clone-your-repo-to-the-jupyterhub">
+     Skill 2: Clone your repo to the JupyterHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-3-make-some-changes-and-commit-your-changes">
+     Skill 3: Make some changes and commit your changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-4-push-changes-to-github-pull-changes-from-github">
+     Skill 4: Push changes to GitHub / Pull changes from GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-activity-1">
+     Pair-activity 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-activity-2">
+     Pair-activity 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1b-fork-a-repo-on-github">
+     Skill 1b: Fork a repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skill-1c-copy-a-repo-on-github">
+     Skill 1c: Copy a repo on GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Pair-activity 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-git-github-skills-using-jupyterlab-git">
+<h1>Basic Git/GitHub Skills Using <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code><a class="headerlink" href="#basic-git-github-skills-using-jupyterlab-git" title="Permalink to this headline">#</a></h1>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Set up Git in the JupyterHub using <a class="reference internal" href="../../preliminary/git.html"><span class="doc std std-doc">First time <code class="docutils literal notranslate"><span class="pre">git</span></code> setup</span></a></p></li>
+<li><p>Learn how to use the <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code> GUI in JupyterLab</p></li>
+<li><p>Practice 4 basic Git/GitHub skills: cloning, committing, push/pull</p></li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Before we go over this tutorial we expect that you have already gone through this preparation material:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../preliminary/jupyterhub.html"><span class="doc std std-doc">JupyterHub login setup</span></a></p></li>
+</ul>
+</div>
+<section id="what-is-git-and-github">
+<h2>What is Git and GitHub?<a class="headerlink" href="#what-is-git-and-github" title="Permalink to this headline">#</a></h2>
+<p><strong>Git</strong> A program to track your file changes and create a history of those changes. Creates a ‘container’ for a set of files called a repository.</p>
+<p><strong>GitHub</strong> A website to host these repositories and allow you to sync local copies (on your computer) to the website. <em>Lots</em> of functionality built on top of this.</p>
+<p><img alt="" src="../../_images/git-repo-structure.png" />{width=200px}</p>
+</section>
+<section id="some-basic-git-jargon">
+<h2>Some basic Git jargon<a class="headerlink" href="#some-basic-git-jargon" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Repo</strong> Repository. It is your code and the record of your changes. This record and also the status of your repo is a hidden folder called <code class="docutils literal notranslate"><span class="pre">.git</span></code> . You have a local repo and a remote repo. The remote repo is on GitHub (for in our case) is called <code class="docutils literal notranslate"><span class="pre">origin</span></code>. The local repo is on the JupyterHub.</p></li>
+<li><p><strong>Stage</strong> Tell Git which changes you want to commit (write to the repo history).</p></li>
+<li><p><strong>Commit</strong> Write a note about what change the staged files and “commit” that note to the repository record. You are also tagging this state of the repo and you could go back to this state if you wanted.</p></li>
+<li><p><strong>Push</strong> Push local changes (commits) up to the remote repository on GitHub (<code class="docutils literal notranslate"><span class="pre">origin</span></code>).</p></li>
+<li><p><strong>Pull</strong> Pull changes on GitHub into the local repository on the JupyterHub.</p></li>
+<li><p><strong>Git GUIs</strong> A graphical interface for Git (which is command line). Today I will use <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code> which we have installed on JupyterHub.</p></li>
+<li><p><strong>Shell</strong> A terminal window where we can issue <code class="docutils literal notranslate"><span class="pre">git</span></code> commands.</p></li>
+</ul>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>Today I will cover the four basic Git/GitHub skills. We will not work with branches today and I won’t cover much about merge conflicts. The goal for today is to first get you comfortable with the basic skills and terminology—and also get you set up on the JupyterHub. We will use what is called a  “trunk-based workflow”.</p>
+<section id="simple-trunk-based-workflow">
+<h3>Simple Trunk-based Workflow:<a class="headerlink" href="#simple-trunk-based-workflow" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Make local (on your computer) changes to code.</p></li>
+<li><p>Record what those changes were about and commit to the code change record (history).</p></li>
+<li><p>Push those changes to your remote repository (aka origin)</p></li>
+</ul>
+<p>We’ll do this</p>
+<p><img alt="" src="../../_images/git-linear-flow-2.png" /></p>
+</section>
+</section>
+<section id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">#</a></h2>
+<p>Before we can work with Git in JupyterLab, we need to do some set up.</p>
+<p><a class="reference internal" href="../../preliminary/git.html"><span class="doc std std-doc">First time <code class="docutils literal notranslate"><span class="pre">git</span></code> setup</span></a></p>
+<ol class="simple">
+<li><p>Tell Git who you are and to store your credentials (GitHub login info)</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/3CLuOCJMfK0">Show me</a></p>
+<ol class="simple">
+<li><p>Get a Personal Access Token from GitHub</p></li>
+</ol>
+<p>Copy the token! You will need it in the next step.</p>
+<p><a class="reference external" href="https://youtu.be/tkioJhF_gO8">Show me</a></p>
+<ol class="simple">
+<li><p>Trigger Git to ask for your password (that personal access token)</p></li>
+</ol>
+<p>You will do this by cloning a private repo. Open a shell and issue this command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/snowex-hackweek/github_setup_check.git
+</pre></div>
+</div>
+<p>It will ask for your GitHub username and password. At the password part, paste in the Personal Access Token.</p>
+</section>
+<section id="jupyterlab-git">
+<h2><code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code><a class="headerlink" href="#jupyterlab-git" title="Permalink to this headline">#</a></h2>
+<p>When the instructions say to use or open or click on <code class="docutils literal notranslate"><span class="pre">jupyterlag-git</span></code>, click the icon in the left navbar marked by the red arrow.</p>
+<p><img alt="" src="../../_images/jupyterlab-git.jpg" /></p>
+</section>
+<section id="the-key-skills">
+<h2>The Key Skills<a class="headerlink" href="#the-key-skills" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Skill 1: Create a blank repo on GitHub</p></li>
+<li><p>Skill 2: Clone your <strong>GitHub</strong> repo onto the JupyterHub</p></li>
+<li><p>Skill 0: Open your repository in the JupyterLab.</p></li>
+<li><p>Skill 3: Make some changes and commit those local changes</p></li>
+<li><p>Skill 4: Push the changes to GitHub</p></li>
+<li><p>Skill 1b: Fork someone else’s GitHub repository</p></li>
+</ul>
+</section>
+<section id="let-s-see-it-done">
+<h2>Let’s see it done!<a class="headerlink" href="#let-s-see-it-done" title="Permalink to this headline">#</a></h2>
+<section id="skill-1-create-a-blank-repo-on-github">
+<h3>Skill 1: Create a blank repo on GitHub<a class="headerlink" href="#skill-1-create-a-blank-repo-on-github" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Click the + in the upper left from YOUR GitHub page.</p></li>
+<li><p>Give your repo the name <code class="docutils literal notranslate"><span class="pre">Test</span></code> and make sure it is public.</p></li>
+<li><p>Click new and check checkbox to add the Readme file and <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+<li><p>Copy the URL of your new repo. It’s in the browser where you normally see a URL.</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/1uV_7iGVu3o">Show me</a></p>
+</section>
+<section id="skill-2-clone-your-repo-to-the-jupyterhub">
+<h3>Skill 2: Clone your repo to the JupyterHub<a class="headerlink" href="#skill-2-clone-your-repo-to-the-jupyterhub" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Copy the URL of your repo. <code class="docutils literal notranslate"><span class="pre">https://www.github.com/yourname/Test</span></code></p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code> icon in the left navbar.</p></li>
+<li><p>You’ll see 3 boxes<sup>*</sub>, click on Clone Repository.</p></li>
+<li><p>Paste the URL from  in the box that pops up and paste in the URL from Step #1.</p></li>
+<li><p>Your repo now appears in the list of folders.</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/7HDheHE05jc">Show me</a> – <a class="reference external" href="https://youtu.be/GpYycSpwYQk">Show me with the shell</a> – <a class="reference external" href="https://youtu.be/aMPGKMRjl8A">Show me with Visual Studio Code</a></p>
+<ul class="simple">
+<li><p>I don’t see those boxes. You are in a repository. Click on the little folder icon at top to get out of the current folder. See video (at the end).</p></li>
+</ul>
+</section>
+<section id="skill-3-make-some-changes-and-commit-your-changes">
+<h3>Skill 3: Make some changes and commit your changes<a class="headerlink" href="#skill-3-make-some-changes-and-commit-your-changes" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Make some changes to the <a class="reference external" href="http://README.md">README.md</a> file in the Test repo.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code> icon, and stage the change(s) by rolling over the modified file and clicking the +.</p></li>
+<li><p>Open GitHub Desktop, click the little checkboxes next to the changes.</p></li>
+<li><p>Add a commit comment, click commit.</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/2stgvvKer-k">Show me</a> – <a class="reference external" href="https://youtu.be/jXxWvjPYgDI">Show me from the shell</a> – <a class="reference external" href="https://youtu.be/jMWvLk9iuFw">Show me with Visual Studio Code</a></p>
+</section>
+<section id="skill-4-push-changes-to-github-pull-changes-from-github">
+<h3>Skill 4: Push changes to GitHub / Pull changes from GitHub<a class="headerlink" href="#skill-4-push-changes-to-github-pull-changes-from-github" title="Permalink to this headline">#</a></h3>
+<p>To push changes you committed in Skill #3</p>
+<ol class="simple">
+<li><p>From jupyterlab-git, click on the little cloud with up arrow at the top (it’s kind of small).</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/-D_Kk3ia36c">Show me</a> – <a class="reference external" href="https://youtu.be/XFdvHn_Q-1o">Show me in the shell</a></p>
+<p>To pull changes on GitHub that are not on your local computer:</p>
+<ol class="simple">
+<li><p>Make some changes directly on GitHub</p></li>
+<li><p>From jupyterlab-git, click on the little cloud with down arrow at the top (it’s kind of small).</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/XjsuaDHAAZg">Show me</a></p>
+<ul class="simple">
+<li><p>Note in the shell, the command is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p></li>
+</ul>
+</section>
+<section id="pair-activity-1">
+<h3>Pair-activity 1<a class="headerlink" href="#pair-activity-1" title="Permalink to this headline">#</a></h3>
+<p>In JupyterLab,</p>
+<ol class="simple">
+<li><p>Make a copy of <a class="reference external" href="http://README.md">README.md</a></p></li>
+<li><p>Rename it to <youname>.md</p></li>
+<li><p>Add some text.</p></li>
+<li><p>Stage and commit the added file.</p></li>
+<li><p>Push to GitHub.</p></li>
+</ol>
+<p>Do this from <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code>. You can also try from the shell if you watched the shell videos too.</p>
+<p>Try before watching. <a class="reference external" href="https://youtu.be/ejmkkjWJ_Es">Show me</a> – <a class="reference external" href="https://youtu.be/tvmX41b5pTU">Show me in the shell</a></p>
+</section>
+<section id="pair-activity-2">
+<h3>Pair-activity 2<a class="headerlink" href="#pair-activity-2" title="Permalink to this headline">#</a></h3>
+<p>All of this activity is in JupyterLab.</p>
+<ol class="simple">
+<li><p>Clone this repo: <a class="reference external" href="https://github.com/snowex-hackweek/git-basics">https://github.com/snowex-hackweek/git-basics</a></p></li>
+<li><p>Navigate to the repo, copy <code class="docutils literal notranslate"><span class="pre">Copyme.md</span></code> and rename to <code class="docutils literal notranslate"><span class="pre">&lt;yourname&gt;.md</span></code></p></li>
+<li><p>Stage and then commit that new file.</p></li>
+<li><p>Push to GitHub.</p></li>
+<li><p>Make some more changes and push to GitHub.</p></li>
+<li><p>Pull in your partner’s (and everyone elses) changes</p></li>
+</ol>
+<p><a class="reference external" href="https://youtu.be/w0ub1hBZh70">Show me</a></p>
+</section>
+<section id="skill-1b-fork-a-repo-on-github">
+<h3>Skill 1b: Fork a repo on GitHub<a class="headerlink" href="#skill-1b-fork-a-repo-on-github" title="Permalink to this headline">#</a></h3>
+<p>You can copy other people’s repos but maintain a connection to the original (upstream) repo. In the hackweek, you will use this to get the tutorials and update them each morning.</p>
+<ol class="simple">
+<li><p>In a browser, go to the GitHub repository you want to fork.</p></li>
+<li><p>Click the little fork icon in the upper right corner.</p></li>
+<li><p>Use Skill #1 to clone the forked repo to your computer.</p></li>
+</ol>
+<p>Fetch changes from the original (upstream) using <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code></p>
+<ol class="simple">
+<li><p>From GitHub, click “Fetch upstream”</p></li>
+<li><p>From JupyterLab, click on the <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code> icon and click the cloud with down arrow, to pull in the changes to JupyterLab.</p></li>
+</ol>
+<p>Fetch changes from the original (upstream) using the shell</p>
+<p>See instructions <a class="reference internal" href="jupyter.html"><span class="doc std std-doc">here</span></a></p>
+</section>
+<section id="skill-1c-copy-a-repo-on-github">
+<h3>Skill 1c: Copy a repo on GitHub<a class="headerlink" href="#skill-1c-copy-a-repo-on-github" title="Permalink to this headline">#</a></h3>
+<p>You can copy your own or other people’s repos^[This is different from forking. There is no connection to the original repository.].</p>
+<ol class="simple">
+<li><p>In a browser, go to the GitHub repository you want to copy.</p></li>
+<li><p>Copy its url.</p></li>
+<li><p>Navigate to your GitHub page: click your icon in the upper right and then ‘your repositories’</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">+</span></code> in top right and click <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">repository</span></code>. Paste in the url and give your repo a name.</p></li>
+<li><p>Use Skill #1 to clone your new repo to your computer</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>Pair-activity 2<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Fork <a class="reference external" href="https://github.com/snowex-hackweek/website2022">https://github.com/snowex-hackweek/website2022</a> (GitHub)</p></li>
+<li><p>Clone to JupyterHub (Skill #2)</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/git_and_jupyterlab"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Git and JupyterLab</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="jupyter.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GitHub, Git, JupyterHub</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By eScience Institute, University of Washington<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
