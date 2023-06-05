@@ -66,7 +66,3 @@ When adding a new `.ipynb` file under `book/tutorials` be sure to:
   1. Add an entry to the table of contents `book/_toc.yml`
 
   1. "Clear all Outputs" before saving. This keeps the book source code small, but outputs are still built for the HTML webpage by Jupyter Book.
-
-
-## Releasing new template versions
-Before using this template for events, make a git tag and GitHub Release. We follow a [calendar versioning scheme](https://calver.org), so tags are a date like `2021.05.05`. Don't forget to update the [Changelog](./CHANGELOG.md)!

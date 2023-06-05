@@ -45,7 +45,7 @@ git config --global credential.helper store
 
 The third line is a configuration option that needs to be done with a first time
 setup. It specifies the strategy on how git will apply changes you pull from
-a remote git repository. 
+a remote git repository.
 More on strategies is [described here.](http://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
 The last line of the config will store your GitHub credentials and will save
@@ -89,7 +89,7 @@ terminal on the JupyterHub. where you will be prompted for your GitHub username
 and the token.
 
 ```shell
-git clone {{github_org_url}}.github_setup_check.git
+git clone https://github.com/ICESAT-2HackWeek/github_setup_check.git
 ```
 
 Since this is the first time you are interacting from the JupyterHub with GitHub,
