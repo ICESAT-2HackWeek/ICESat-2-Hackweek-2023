@@ -1,12 +1,8 @@
 repo_directory: html
 name: ICESat-2 Hackweek
-about: Hackweeks are participant-driven events that strive to create welcoming spaces
-  for participants to learn new things, build community and gain hands-on experience
-  with collaboration and team science
 apply:
   url: 'https://washington.co1.qualtrics.com/jfe/form/SV_88rJdpG04plMNfM'
   title: APPLY HERE!
-hackweek_mission: https://escience.washington.edu/using-data-science/hackweeks
 banner:
   title: ICESat-2 Hackweek
   description: An in person, collaborative learning event.
@@ -19,6 +15,21 @@ banner:
     title: Event Jupyter Book
     new_window: true
   image: https://github.com/ICESAT-2HackWeek/icesat-2hackweek.github.io/raw/2022.03.01/assets/images/banner.jpg
+about:
+  description: Hackweeks are participant-driven events that strive to create welcoming spaces
+    for participants to learn new things, build community and gain hands-on experience
+    with collaboration and team science
+  learn_more: https://escience.washington.edu/using-data-science/hackweeks
+  links:
+    - url: https://icesat-2-2022.hackweek.io/
+      title: 2022 Hackweek
+      new_window: true
+    - url: https://github.com/ICESAT-2HackWeek/2020_ICESat-2_Hackweek_Tutorials
+      title: 2020 Hackweek
+      new_window: true
+    - url: https://github.com/ICESAT-2HackWeek/ICESat2_hackweek_tutorials
+      title: 2019 Hackweek
+      new_window: true
 applicant_info: Applications are now open! Click on the button in the upper left of this page to fill out the application form, due 11:59 PM Eastern Time, June 19, 2023.
 team:
   !include book/team.yaml

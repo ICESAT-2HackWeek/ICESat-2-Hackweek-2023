@@ -144,21 +144,37 @@
         <h3 class="section-heading text-center mb-3">
             About {{ cookiecutter.name }}
         </h3>
-        <div class="section-intro single-col-max mx-auto mb-4">
-            {{ cookiecutter.about }}
+        <div class="section-intro single-col-max mx-auto mb-3">
+            {{ cookiecutter.about.description }}
         </div>
-        <div class="about-cta text-center mb-5">
-            <a class="btn btn-secondary btn-lg  mb-5"
-               href="{{ cookiecutter.hackweek_mission }}"
+        <div class="about-cta text-center mb-4">
+            <a class="btn btn-secondary btn-lg"
+               href="{{ cookiecutter.about.learn_more }}"
                target="_blank">
-                Learn about "hackweeks"
+                Learn about "Hackweeks"
                 <i class="fas fa-external-link-alt"></i>
             </a>
         </div>
 
-        <div id="countdown-intro" class="event-countdown text-center mb-3">
-            <h4 class="countdown-intro mb-2 text-center mb-3">
-                Event Starts In:
+        {%- if 'links' in cookiecutter.about %}
+            <div class="hero-cta text-center mb-4">
+                <h4 class="mb-3 text-center">
+                    Past Events:
+                </h4>
+                {%- for link in cookiecutter.about.links %}
+                    <a class="btn btn-primary btn-lg mb-3 mx-2"
+                       href="{{ link.url }}"
+                        {{ 'target="_blank"' if link.new_window == 'True' else '' }}
+                    >
+                        {{ link.title }}
+                    </a>
+                {%- endfor %}
+            </div>
+        {%- endif %}
+
+        <div id="countdown-intro" class="event-countdown text-center mb-4">
+            <h4 class="countdown-intro mb-2 text-center">
+                {{ cookiecutter.banner.year }} Event Starts In:
             </h4>
             <div id="countdown-box"
                  class="countdown-box"
