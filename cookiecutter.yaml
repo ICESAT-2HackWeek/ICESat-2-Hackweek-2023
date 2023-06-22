@@ -1,5 +1,8 @@
 repo_directory: html
 name: ICESat-2 Hackweek
+apply:
+  url: 'https://washington.co1.qualtrics.com/jfe/form/SV_88rJdpG04plMNfM'
+  title: APPLY HERE!
 banner:
   description: An in person, collaborative learning event.
   start_date: 7 August
