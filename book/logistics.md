@@ -19,7 +19,7 @@
 ## Dorms
 
 * Dorms are all single/double rooms and each contain a private bathroom.
-* Participants who opt to will be staying at Oak Hall, in north campus.
+* Participants who opt to will be staying at [Oak Hall](https://hfs.uw.edu/live-on-campus/Undergraduate-Housing/Oak-Hall), in north campus.
   Please Check in after 2pm at the front desk on Sunday, August 6th.
 * Check out is by 11am on Saturday, August 12th. There will be a room where you
   can store your luggage if your flight leaves later that day. Please let us
