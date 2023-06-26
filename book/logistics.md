@@ -8,7 +8,7 @@
 
 ## Location
 
-* Tutorials and courses will occur in the _REPLACE_.
+* Tutorials and courses will occur in the [University of Washington South Campus Center](https://hsasf.hsa.washington.edu/instructional-support/crs/matrix/scc/) Room 221.
 * Doors open at 8:00 am each morning (Monday-Friday). We will start the morning
   sessions at 8:30 am sharp.
 * Due to space limitations, only registered participants will be allowed
