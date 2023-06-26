@@ -25,7 +25,7 @@
   can store your luggage if your flight leaves later that day. Please let us
   know immediately by emailing icesat2-hackweek@uw.edu if you plan on arriving/departing
   at an earlier/later date.
-* The front desk can direct you to the _REPLACE_ where the meetings
+* The front desk can direct you to the South Campus Center where the meetings
   and courses will be taking place.
 * Dorm guests are able to use their key cards to access any gyms on campus. For
   off-campus activities, guests have easy access to The Ave, which hosts a number
