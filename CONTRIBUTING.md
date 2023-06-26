@@ -16,11 +16,11 @@ To build our website, we need specific Python packages which are managed with th
 
 1. Fork this hackweek's website repo on GitHub.
 
-1. Clone your fork locally:
+1. Clone your fork locally and step inside the folder:
 
     ```sh
-    git clone {{website_url}}.git
-    cd jupyterbook-template
+    git clone git@github.com:ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git
+    cd ICESat-2-Hackweek-2023
     ```
 
 1. Create a branch to add your changes:
