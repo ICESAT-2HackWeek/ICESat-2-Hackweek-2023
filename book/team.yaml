@@ -196,4 +196,26 @@ people:
         link: https://github.com/RomiP
     user_groups:
       - Tutorial Lead
-# =============
+  # =============
+  - title: Wilson Sauthoff
+    avatar: https://avatars.githubusercontent.com/u/63430469?v=4
+    role: PhD Candidate
+    organizations:
+      - name: Colorado School of Mines
+    bio: > 
+      Wilson is a hydrology PhD candidate at the Colorado School of Mines. Wilson researches Antarctic subglacial hydrology using ICESat-2 land-ice data and provides support to the CryoCloud cloud-computing hub (cryointhecloud.com/).
+      Wilson is a proponent of open, reproducible science and excited to help other researchers incorporate ICESat-2 data into their work using CryoCloud.
+    expertise:
+      - subglacial hydrology
+      - Python
+      - ICESat-2 ATL11, ATL14/15 data products
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/wsauthoff
+      - icon: twitter
+        icon_pack: fab
+        link: https://twitter.com/wilsonsauthoff
+    user_groups:
+      - Tutorial Developer
+  # =============
