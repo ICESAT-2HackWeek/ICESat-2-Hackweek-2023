@@ -174,6 +174,29 @@ people:
     user_groups:
       - Technology Specialist
   # =============
+  - title: Romina Piunno
+    avatar: https://avatars.githubusercontent.com/u/17185856?v=4
+    role: Graduate Student
+    organizations:
+      - name: University of Toronto
+    bio: >
+      Romina is a PhD candidate in atmospheric physics at the University of Toronto with a
+      background in computer science and mathematics. Her research focuses on deep
+      convection in the Labrador Sea and its role in atmospheric carbon sequestration.
+      In addition to her research, Romina is actively involved in a software development
+      project that aims to simplify geophysical data access.
+    expertise:
+      - Python
+      - Matlab
+      - Atmospheric Physics
+      - Air-Sea Interactions
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/RomiP
+    user_groups:
+      - Tutorial Lead
+  # =============
   - title: Wilson Sauthoff
     avatar: https://avatars.githubusercontent.com/u/63430469?v=4
     role: PhD Candidate
