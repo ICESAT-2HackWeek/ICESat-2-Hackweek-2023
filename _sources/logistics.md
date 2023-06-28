@@ -34,15 +34,8 @@
 
 ## Meals
 
-* Breakfast and lunch will be provided each day through the meal cards that will
-  be given to you when you check in to the dorms.
-* Your meal card is programmed with the prearranged All-You-Care-to-Eat meals,
-  which can be used at Local Point dining hall. Please note that this is the
-  only dining location on campus that the card will work for.
-* Breakfast is available in the Local Point dining facility from 7:30am – 10am
-  and lunch is available from 11am – 2:30pm.
-* If you are staying at a hotel or commuting, you will receive a meal card when
-  you check in at the welcome table on the first day at the Maple Hall Great Room.
+* Catered lunches, coffee and snacks will be provided each day at a covered outdoor terrace adjacent to the location of the hackweek.
+* All participants are responsible for their own breakfasts and dinners.
 
 ## Travel
 
@@ -58,5 +51,5 @@
   The cost is $3.00 and can be paid in cash or with a credit/debit card. Take
   the northbound train toward Northgate to the University of Washington station
   (Note: do not get off at the University Street Station!).
-* Taxi’s and uber/lyft are also available from the airport. Note that for
+* Taxis and uber/lyft are also available from the airport. Note that for
   Uber/lyft you will meet the car in the 3rd floor parking lot for pick up.
