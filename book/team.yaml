@@ -244,3 +244,20 @@ people:
     user_groups:
       - Tutorial Lead
   # =============
+  - title: Mark Welden-Smith
+    avatar: https://avatars.githubusercontent.com/u/137837140
+    role: Program Manager
+    organizations:
+      - name: eScience Institute
+    bio: >
+      Mark is the Program Manager for Community Engagement at the eScience Institute. His career has been spent with higher education and nonprofit organizations, most recently at the University of California, Santa Cruz as the Associate Director of Marketing, Events, and Technology for the Office of Undergraduate Admissions. Mark graduated from Southern Cross University (1999) with a BA in Communications and Media Production. 
+    expertise:
+      - Project management
+      - Community building
+      - Event planning
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/markweldensmith
+    user_groups:
+      - Program Manager
