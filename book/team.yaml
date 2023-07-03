@@ -219,3 +219,28 @@ people:
     user_groups:
       - Tutorial Developer
   # =============
+  - title: Tyler Sutterley
+    avatar: https://avatars.githubusercontent.com/u/5384907?v=4
+    role: Senior Research Scientist
+    organizations:
+      - name: UW Applied Physics Laboratory
+      - name: eScience Institute
+    bio: >
+      Tyler is a research scientist within the Polar Science Center at the University of Washington Applied Physics Laboratory.
+      He is also a developer and scientist for the NASA SlideRule cloud-based data processing service.
+      Tyler uses airborne and satellite altimetry data to help analyze ice sheet and ice shelf change.
+      He usually writes code in Python and generally spends too much time on Slack.
+    expertise:
+      - ICESat-2 data products
+      - SlideRule development
+      - Open-source development
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/tsutterley
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/ICESat2-SlideRule
+    user_groups:
+      - Tutorial Lead
+  # =============
