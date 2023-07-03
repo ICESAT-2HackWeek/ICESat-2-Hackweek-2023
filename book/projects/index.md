@@ -26,4 +26,4 @@ We encourage you to be creative in how you design your project work! Here are so
 
 ## Projects from Past Events
 
-Visit our [gallery of past hackweeks](https://uwhackweek.github.io/hackweeks-as-a-service/gallery/index.html) to browse our catalog of amazing projects from previous events!
+Visit our [gallery of past hackweeks](https://guidebook.hackweek.io/hackweeks-as-a-service/gallery/index.html) to browse our catalog of amazing projects from previous events!

@@ -31,7 +31,7 @@
   Provider of Internet hosting for software development and distributed version
   control using the "git" command line tool.
 
-[Hackweek](https://uwhackweek.github.io/hackweeks-as-a-service)
+[Hackweek](https://guidebook.hackweek.io/hackweeks-as-a-service)
   Participant-driven events that strive to create welcoming spaces to learn new
   things, build community and gain hands-on experience with collaboration and
   team science.

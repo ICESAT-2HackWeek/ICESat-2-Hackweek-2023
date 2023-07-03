@@ -59,7 +59,7 @@ To build our website, we need specific Python packages which are managed with th
 
 ## Contributing tutorials
 
-If you're adding a new Jupyter Notebook Tutorial, please first take a look at [our guide on creating tutorials](https://uwhackweek.github.io/hackweeks-as-a-service/resources/tutorial-resources.html).
+If you're adding a new Jupyter Notebook Tutorial, please first take a look at [our guide on creating tutorials](https://guidebook.hackweek.io/hackweeks-as-a-service/resources/tutorial-resources.html).
 
 When adding a new `.ipynb` file under `book/tutorials` be sure to:
 
