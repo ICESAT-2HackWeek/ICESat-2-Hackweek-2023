@@ -4,7 +4,7 @@ description:
 
 # INSTRUCTIONS:
 # - One entry per key must be included per person (title, avatar, role, organizations, bio, expertise, social, user_groups)
-# - user_groups correspond to hackweek roles defined here: https://guidebook.hackweek.io/hackweeks-as-a-service/services/index.html
+# - user_groups correspond to hackweek roles defined here: https://guidebook.hackweek.io/services/index.html
 # - For 'avatar' an easy option is to use the URL for your GitHub user image: https://api.github.com/users/YOUR_GITHUB_USERNAME
 people:
   - title: Jessica Scheick
