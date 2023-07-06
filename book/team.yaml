@@ -261,3 +261,23 @@ people:
         link: https://github.com/markweldensmith
     user_groups:
       - Program Manager
+  # =============
+  - title: Tasha Snow
+  avatar: https://avatars.githubusercontent.com/u/12904976?v=4
+  role: Postdoctoral Researcher
+  organizations:
+  - name: Colorado School of Mines 
+  bio: Tasha is a postdoc at the Colorado School of Mines working to develop new ways of detecting ocean heat transport and glacier-ocean interactions with remote sensing (especially thermal infrared). In her research, she also works on cloud-based, open-sourced workflows for advancing data integration and machine learning techniques.
+  expertise:
+  - remote sensing
+  - ice-ocean interaction
+  - machine learning
+  - open science
+  - cloud-computing
+  social:
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/tsnow03
+  user_groups:
+  - CryoCloud Lead
+  - Tutorial Lead
