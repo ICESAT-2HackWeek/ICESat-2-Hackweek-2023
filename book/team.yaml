@@ -261,3 +261,30 @@ people:
         link: https://github.com/markweldensmith
     user_groups:
       - Program Manager
+  # =============
+  - title: Michalea King
+    avatar: https://avatars.githubusercontent.com/u/50714232?v=4
+    role: Research Scientist
+    organizations:
+      - name: University of Washington
+      - name: APL Polar Science Center
+    bio: >
+      Michalea is a glaciologist that uses remotely sensed data products to measure and understand changing ice sheet dynamics.
+      Michalea is on the ICESat-2 Science team and part of the Greenland Ice sheet Mapping Project (GrIMP),
+      She is also interested in educational initiatives that promote public polar literacy and enjoys learning new data visualization strategies.
+    expertise:
+      - glaciology
+      - remote sensing
+      - geospatial data analysis
+    social:
+      - icon: twitter
+        icon_pack: fab
+        link: https://twitter.com/michalea_king
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/fastice/GrIMPTools
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/michaleaking
+    user_groups:
+      - Tutorial Lead
