@@ -85,6 +85,12 @@ We'll have you download some data from NSIDC for your tutorials and projects.
 Visit our [Earthdata](earthdata) page to learn how to access and Earthdata
 login account if you don't already have one!
 
+### Python Specifics
+
+We frequently get asked "how much Python do I need to know to get the most out of this hackweek?"
+Our tutorial leads have compiled a list of [specific Python tasks/functions](python_specifics) it will be helpful
+to have seen before you arrive.
+
 ## Supplemental Material
 
 ### Python

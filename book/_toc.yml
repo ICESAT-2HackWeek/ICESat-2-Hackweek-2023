@@ -21,6 +21,7 @@ parts:
         - file: preliminary/jupyterhub
         - file: preliminary/git
         - file: preliminary/earthdata
+        - file: preliminary/python_specifics
         - file: preliminary/swc
         - file: preliminary/supplemental_index
           sections:
