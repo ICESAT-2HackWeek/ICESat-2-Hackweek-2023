@@ -309,3 +309,27 @@ people:
         link: https://github.com/michaleaking
     user_groups:
       - Tutorial Lead
+  # =======
+  - title: Karina Zikan
+    avatar: https://avatars.githubusercontent.com/u/91853455?v=4
+    role: PhD Student
+    organizations:
+      - name: Boise State University
+    bio: > 
+      Karina is a PhD Student in the Cryosphere Geophysics and Remote Sensing (CryoGARS) research group at Boise State University.
+      Karina studies remote sensing of seasonal snow in alpine environments, focusing on ICESat-2 and other LiDAR snow depth 
+      retrival methods. 
+    expertise:
+      - seasonal snow
+      - remote sensing
+      - geospatial data analysis
+      - ICESat-2 ATL06, ATL08 products
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/KarinaZikan
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/CryoGARS-Glaciology
+    user_groups:
+      - Tutorial Developer
