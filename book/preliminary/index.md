@@ -1,27 +1,22 @@
 # Preliminary Work
 
-We welcome all types of learners to our event, from professional software
-developers to people just getting started. Based on previous experience,
-participants gain more from our hackweeks when they arrive having a preliminary
-understand of some of the foundational tools of data science workflows. These
-skills include knowing how to:
+Our hackweeks focus on applied, hands-on learning, with participants engaging in extended periods of small-group work. Our tutorials are designed to offer a broad snapshot of data science tools to support your applied investigations. We are different from a more traditional summer school in that we do not provide a comprehensive, in-depth training in fundamental tools. Rather, our goal is to inform you about the types of tools we think are best suited to working with your datasets, leaving details of implementation to be supported through peer-learning and office hours.
 
-* Navigate a [Jupyter Notebook](https://jupyter.org/) environment
-* Conduct file management, text editing and other basic tasks from a command
-  line interface
-* Add and commit changes in Git, and push and pull content from GitHub
-* Create simple scientific workflows in Python
+## Typical Workflows and Tools
+
+Here are a few specific scenarios of how hackweek participants typically engage with data science tools during an event:
+
+* Connecting to a [Jupyter Notebook](https://jupyter.org/) environment and using the command line to pull lesson content for a morning of tutorial training.
+* Modifying a text file, committing it to Git and pushing changes to GitHub, for others on your team to view and edit.
+* Opening CSV tabular data in Pandas and using filtering functions to remove outliers.
+* Accessing a cloud-hosted remote sensing image using Rasterio and plotting it on an interactive map.
+* Exploring multi-dimensional climate grids using xarray.
+
+These are examples of the types of activities we do at a hackweek in a collaborative setting. We invite you to reflect on your comfort level with tasks such as these so that you can arrive at the hackweek with a clarity on where to dedicate your energy. If wish to focus more energy on learning and implementing new tools, we will support you with helpers and office hours, and you may have a bit less time for applied group work. If you are already proficient in a lot of tools you may find you can dedicate more energy to applied project work, which we support through facilitated group activities.
 
 ## {{hackweek}} Software Carpentry Session
 
-We strongly encourage participants to review this two-day recorded fundamentals
-of Python and open-source workflows crash course
-([Software Carpentry Schedule](swc)) in advance of the hackweek. You may
-choose whichever topics you'd like to brush up on or learn. Office hours in the
-weeks leading up the hackweek will provide an opportunity for asking questions
-and troubleshooting any issues you've encountered.
-
-You can view our [Software Carpentry Schedule](swc) for more information.
+We strongly suggest that participants who are just beginning to learn Python and collaborative data science tools to complete our recorded ([Software Carpentry Trailing](swc)) in advance of the hackweek. You may choose whichever topics you'd like to brush up on or learn. 
 
 ## Required setup
 
