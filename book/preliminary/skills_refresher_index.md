@@ -1,13 +1,6 @@
 # Skills Refresher
 
-Our hackweeks focus on applied, hands-on learning, with participants engaging in
-extended periods of small-group work. Our tutorials are designed to offer a
-broad snapshot of data science tools to support your applied investigations. We
-are different from a more traditional summer school in that we do not provide a
-comprehensive, in-depth training in fundamental tools. Rather, our goal is to
-inform you about the types of tools we think are best suited to working with
-your datasets, leaving details of implementation to be supported through
-peer-learning and office hours.
+Our hackweeks focus on applied, hands-on learning, with participants engaging in extended periods of small-group work. Our tutorials are designed to offer a broad snapshot of data science tools to support your applied investigations. Due to the relatively short duration of our events, we are not able to provide comprehensive, in-depth training in fundamental tools. Rather, our goal is to inform you about the types of tools we think are best suited to working with your datasets, leaving details of implementation to be supported through peer-learning and office hours.
 
 ## Typical Workflows and Tools
 
@@ -37,5 +30,9 @@ we support through facilitated group activities.
 
 We strongly suggest that participants who are just beginning to learn Python and
 collaborative data science tools to complete our
-recorded ([Software Carpentry Trailing](./skills-refresher/swc)) in advance of the hackweek. You
+recorded ([Software Carpentry Training](./skills-refresher/swc)) in advance of the hackweek. You
 may choose whichever topics you'd like to brush up on or learn.
+
+## Project Pythia
+
+Another excellent resource for training and skills development is the [Project Pythia](https://projectpythia.org/) organization. Their lessons and galleries are developed specifically for the geoscience community. For a good skills refesher, we encourage you to work through their [Pythia Foundations](https://foundations.projectpythia.org/landing-page.html) notebooks.
