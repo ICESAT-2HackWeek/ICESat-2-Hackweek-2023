@@ -48,7 +48,7 @@ We'll do this
 
 Before we can work with Git in JupyterLab, we need to do some set up.
 
-[First time `git` setup](../../preliminary/git)
+[First time `git` setup](../../preliminary/checklist/git.md)
 
 1. Tell Git who you are and to store your credentials (GitHub login info)
 

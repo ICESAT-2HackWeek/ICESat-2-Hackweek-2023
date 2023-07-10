@@ -16,7 +16,7 @@ to go over these materials in advance:
 ## Getting ready
 
 Please take a minute before the workshop to go over
-the [GitHub instructions](github), create an account.
+the [GitHub instructions](../checklist/github.md), create an account.
 
 ```{attention}
 We will be using the JupyterHub ({{ jupyterhub_url }}) throughout this workshop.

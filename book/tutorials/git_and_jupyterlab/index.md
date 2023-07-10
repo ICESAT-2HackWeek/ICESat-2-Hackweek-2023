@@ -22,4 +22,4 @@ these preparation materials:
 Additional information around the `git` command, [GitHub](https://github.com),
 and our [JupyterHub](https://jupyter.org/hub) environment that provides the
 [JupyterLab](https://jupyter.org/) can be found under the
-[preliminary content](../../preliminary/index).
+[event checklist](../../preliminary/checklist_index).
