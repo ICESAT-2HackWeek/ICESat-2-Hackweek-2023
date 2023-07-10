@@ -4,7 +4,7 @@ description:
 
 # INSTRUCTIONS:
 # - One entry per key must be included per person (title, avatar, role, organizations, bio, expertise, social, user_groups)
-# - user_groups correspond to hackweek roles defined here: https://uwhackweek.github.io/hackweeks-as-a-service/services/index.html
+# - user_groups correspond to hackweek roles defined here: https://guidebook.hackweek.io/services/index.html
 # - For 'avatar' an easy option is to use the URL for your GitHub user image: https://api.github.com/users/YOUR_GITHUB_USERNAME
 people:
   - title: Jessica Scheick
@@ -202,7 +202,7 @@ people:
     role: PhD Candidate
     organizations:
       - name: Colorado School of Mines
-    bio: > 
+    bio: >
       Wilson is a hydrology PhD candidate at the Colorado School of Mines. Wilson researches Antarctic subglacial hydrology using ICESat-2 land-ice data and provides support to the CryoCloud cloud-computing hub (cryointhecloud.com/).
       Wilson is a proponent of open, reproducible science and excited to help other researchers incorporate ICESat-2 data into their work using CryoCloud.
     expertise:
@@ -250,7 +250,7 @@ people:
     organizations:
       - name: eScience Institute
     bio: >
-      Mark is the Program Manager for Community Engagement at the eScience Institute. His career has been spent with higher education and nonprofit organizations, most recently at the University of California, Santa Cruz as the Associate Director of Marketing, Events, and Technology for the Office of Undergraduate Admissions. Mark graduated from Southern Cross University (1999) with a BA in Communications and Media Production. 
+      Mark is the Program Manager for Community Engagement at the eScience Institute. His career has been spent with higher education and nonprofit organizations, most recently at the University of California, Santa Cruz as the Associate Director of Marketing, Events, and Technology for the Office of Undergraduate Admissions. Mark graduated from Southern Cross University (1999) with a BA in Communications and Media Production.
     expertise:
       - Project management
       - Community building
@@ -266,7 +266,7 @@ people:
     avatar: https://avatars.githubusercontent.com/u/12904976?v=4
     role: Postdoctoral Researcher
     organizations:
-      - name: Colorado School of Mines 
+      - name: Colorado School of Mines
     bio: Tasha is a postdoc at the Colorado School of Mines working to develop new ways of detecting ocean heat transport and glacier-ocean interactions with remote sensing (especially thermal infrared). In her research, she also works on cloud-based, open-sourced workflows for advancing data integration and machine learning techniques.
     expertise:
       - remote sensing
@@ -291,7 +291,7 @@ people:
     bio: >
       Michalea is a glaciologist that uses remotely sensed data products to measure and understand changing ice sheet dynamics.
       Michalea is on the ICESat-2 Science team and part of the Greenland Ice sheet Mapping Project (GrIMP),
-      She is also interested in educational initiatives that promote public polar literacy and enjoys learning new data 
+      She is also interested in educational initiatives that promote public polar literacy and enjoys learning new data
       visualization strategies.
     expertise:
       - glaciology

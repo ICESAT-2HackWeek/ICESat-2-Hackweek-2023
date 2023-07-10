@@ -16,7 +16,7 @@ parse:
     book_repo: "ICESat-2-Hackweek-2023"
     contact_email: "icesat2-hackweek@uw.edu"
     website_url: "https://icesat-2-2023.hackweek.io"
-    jupyterhub_url: "https://INSERT_JUPYTERHUB_URL"
+    jupyterhub_url: "https://hub.cryointhecloud.com/"
     slack_workspace_url: "https://INSERT_SLACK_URL"
     docker_image: "https://INSERT_DOCKER_IMAGE_URL"
     dataset: "IceSat-2"
