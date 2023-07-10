@@ -54,8 +54,8 @@
                      class="navbar-collapse collapse  justify-content-lg-end me-lg-3">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link scrollto" href="#about-section">
-                                About
+                            <a class="nav-link scrollto" href="#schedule">
+                                Schedule
                             </a>
                         </li>
                         <li class="nav-item">
@@ -64,8 +64,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scrollto" href="#schedule">
-                                Schedule
+                            <a class="nav-link scrollto" href="#about-section">
+                                About
                             </a>
                         </li>
                         <li class="nav-item">
@@ -120,47 +120,9 @@
 </div>
 <!--//hero-block-->
 
-<section id="about-section" class="about-section section theme-bg-light">
+<section id="event-section" class="section theme-bg-light p-3">
     <div class="container">
-        <h3 class="section-heading text-center mb-3">
-            About ICESat-2 Hackweek
-        </h3>
-        <div class="section-intro single-col-max mx-auto mb-3">
-            Hackweeks are participant-driven events that strive to create welcoming spaces for participants to learn new things, build community and gain hands-on experience with collaboration and team science
-        </div>
-        <div class="about-cta text-center mb-4">
-            <a class="btn btn-secondary btn-lg"
-               href="https://escience.washington.edu/using-data-science/hackweeks"
-               target="_blank">
-                Learn about "Hackweeks"
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-            <div class="hero-cta text-center mb-4">
-                <h4 class="mb-3 text-center">
-                    Past Events:
-                </h4>
-                    <a class="btn btn-primary btn-lg mb-3 mx-2"
-                       href="https://icesat-2-2022.hackweek.io/"
-                        target="_blank"
-                    >
-                        2022 Hackweek
-                    </a>
-                    <a class="btn btn-primary btn-lg mb-3 mx-2"
-                       href="https://github.com/ICESAT-2HackWeek/2020_ICESat-2_Hackweek_Tutorials"
-                        target="_blank"
-                    >
-                        2020 Hackweek
-                    </a>
-                    <a class="btn btn-primary btn-lg mb-3 mx-2"
-                       href="https://github.com/ICESAT-2HackWeek/ICESat2_hackweek_tutorials"
-                        target="_blank"
-                    >
-                        2019 Hackweek
-                    </a>
-            </div>
-
-        <div id="countdown-intro" class="event-countdown text-center mb-4">
+        <div id="countdown-intro" class="event-countdown text-center">
             <h4 class="countdown-intro mb-2 text-center">
                 2023 Event Starts In:
             </h4>
@@ -170,20 +132,12 @@
             </div>
         </div>
     </div>
-
-    <div class="media-block theme-bg-primary py-5">
-        <div class="container">
-            <h4 class="text-white text-center mb-3">
-                Information for Applicants
-            </h4>
-            <div
-                class="section-intro text-center single-col-max mx-auto text-white mb-5">
-                Applications are now open! Click on the button in the upper left of this page to fill out the application form, due 11:59 PM Eastern Time, June 19, 2023.
-            </div>
-        </div>
-    </div>
 </section>
 <!--//about-section-->
+
+<div class="container">
+    <hr>
+</div>
 <section id="schedule" class="schedule-section section">
     <div class="container">
         <h3 class="section-heading text-center mb-1">Schedule</h3>
@@ -207,10 +161,10 @@
                    role="tab"
                    aria-controls="schedule-tab-1-content"
                    aria-selected="true"
-                   data-schedule-day="Monday 8, Aug"
+                   data-schedule-day="Monday 07 August"
                 >
                     <span class="heading">Day 1</span>
-                    <span class="meta">(Monday 8, Aug)</span>
+                    <span class="meta">(Monday 07 August)</span>
                 </a>
             </li>
             
@@ -223,10 +177,10 @@
                    role="tab"
                    aria-controls="schedule-tab-2-content"
                    aria-selected="false"
-                   data-schedule-day="Monday 9, Aug"
+                   data-schedule-day="Tuesday 08 August"
                 >
                     <span class="heading">Day 2</span>
-                    <span class="meta">(Monday 9, Aug)</span>
+                    <span class="meta">(Tuesday 08 August)</span>
                 </a>
             </li>
             
@@ -239,10 +193,10 @@
                    role="tab"
                    aria-controls="schedule-tab-3-content"
                    aria-selected="false"
-                   data-schedule-day="Monday 10, Aug"
+                   data-schedule-day="Wednesday 09 August"
                 >
                     <span class="heading">Day 3</span>
-                    <span class="meta">(Monday 10, Aug)</span>
+                    <span class="meta">(Wednesday 09 August)</span>
                 </a>
             </li>
             
@@ -255,10 +209,10 @@
                    role="tab"
                    aria-controls="schedule-tab-4-content"
                    aria-selected="false"
-                   data-schedule-day="Monday 11, Aug"
+                   data-schedule-day="Thursday 10 August"
                 >
                     <span class="heading">Day 4</span>
-                    <span class="meta">(Monday 11, Aug)</span>
+                    <span class="meta">(Thursday 10 August)</span>
                 </a>
             </li>
             
@@ -271,10 +225,10 @@
                    role="tab"
                    aria-controls="schedule-tab-5-content"
                    aria-selected="false"
-                   data-schedule-day="Monday 12, Aug"
+                   data-schedule-day="Friday 11 August"
                 >
                     <span class="heading">Day 5</span>
-                    <span class="meta">(Monday 12, Aug)</span>
+                    <span class="meta">(Friday 11 August)</span>
                 </a>
             </li>
             
@@ -283,53 +237,719 @@
         <!-- Tab panes -->
         <div class="schedule-tab-content tab-content">
             
-            <div class="tab-pane no-timeline"
+            <div class="tab-pane active"
                  id="schedule-1-content"
                  role="tabpanel"
                  aria-labelledby="schedule-tab-1">
-                <h4 class="text-center py-5 text-muted">
-                    Day 1 Agenda Coming Soon...
-                </h4>
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            8:30 - 9:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Introductory Session
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Welcome and getting to know each other.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#anthony--arendt-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#anthony--arendt-modal">
+                                    Anthony Arendt
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            9:30 - 10:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            CryoCloud
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Getting connected to our shared computational resources.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#tasha--snow-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#tasha--snow-modal">
+                                    Tasha Snow
+                                </a>
+                            </div>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#wilson--sauthoff-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#wilson--sauthoff-modal">
+                                    Wilson Sauthoff
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:30 - 11:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            BREAK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            11:00 - 11:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Best Practices for Collaborative Development
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Learn techniques for collaborating in small teams.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#naomi--alterman-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#naomi--alterman-modal">
+                                    Naomi Alterman
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            11:30 - 12:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            ICESat-2 Mission Overview and Data
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Summary of ICESat-2 datasets, algorithms and science applications.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Ben Smith</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            12:00 - 13:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            LUNCH
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            13:00 - 17:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <!--//item-->
             </div>
             <!--//tab-1-content-->
             
-            <div class="tab-pane no-timeline"
+            <div class="tab-pane "
                  id="schedule-2-content"
                  role="tabpanel"
                  aria-labelledby="schedule-tab-2">
-                <h4 class="text-center py-5 text-muted">
-                    Day 2 Agenda Coming Soon...
-                </h4>
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            8:30 - 10:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Cloud data access and data formats
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Approaches for accessing and subsetting ICESat-2 data in a cloud environment.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Amy Steiker</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:00 - 10:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            BREAK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:30 - 11:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Open source development / Object Oriented Programming
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Best practices for collaborative coding and object oriented programming.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#romina--piunno-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#romina--piunno-modal">
+                                    Romina Piunno
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            11:30 - 12:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Group STAND-UP
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Demonstration of a daily stand-up as part of your project collaboration.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#anthony--arendt-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#anthony--arendt-modal">
+                                    Anthony Arendt
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            12:00 - 13:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            LUNCH
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            13:00 - 17:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <!--//item-->
             </div>
             <!--//tab-2-content-->
             
-            <div class="tab-pane no-timeline"
+            <div class="tab-pane "
                  id="schedule-3-content"
                  role="tabpanel"
                  aria-labelledby="schedule-tab-3">
-                <h4 class="text-center py-5 text-muted">
-                    Day 3 Agenda Coming Soon...
-                </h4>
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            8:30 - 9:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: snow depth
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to snow studies.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#karina--zikan-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#karina--zikan-modal">
+                                    Karina Zikan
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            9:30 - 10:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: bathymetry
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to bathymetric sciences.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Jonathan Markel</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:00 - 10:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            BREAK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:30 - 11:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: atmosphere
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to atmospheric sciences.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Zheng Liu</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            11:15 - 12:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Group STAND-UP & OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            12:00 - 13:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            LUNCH
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            13:45 - 16:55
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <!--//item-->
             </div>
             <!--//tab-3-content-->
             
-            <div class="tab-pane no-timeline"
+            <div class="tab-pane "
                  id="schedule-4-content"
                  role="tabpanel"
                  aria-labelledby="schedule-tab-4">
-                <h4 class="text-center py-5 text-muted">
-                    Day 4 Agenda Coming Soon...
-                </h4>
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            8:30 - 9:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: inland hydrology
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to inland hydrology.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Shamsudeen Yekeen</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            9:30 - 10:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: sea ice
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to sea ice.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#younghyun--koo-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#younghyun--koo-modal">
+                                    Younghyun Koo
+                                </a>
+                            </div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:00 - 10:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            BREAK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:30 - 11:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: Land Ice
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Applications of ICESat-2 data to studies of land ice.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name"></div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            10:30 - 11:15
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Applications: ICESat-2 integration with GrIMP data
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#michalea--king-modal"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#michalea--king-modal">
+                                    Michalea King
+                                </a>
+                            </div>
+                            <div class="name">Ian Joughin</div>
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            11:15 - 12:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Group STAND-UP & OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            12:00 - 13:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            LUNCH
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            13:00 - 17:00
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            OPEN PROJECT WORK
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            
+                        </div></div>
+                </div>
+                
+                <!--//item-->
             </div>
             <!--//tab-4-content-->
             
-            <div class="tab-pane no-timeline"
+            <div class="tab-pane "
                  id="schedule-5-content"
                  role="tabpanel"
                  aria-labelledby="schedule-tab-5">
-                <h4 class="text-center py-5 text-muted">
-                    Day 5 Agenda Coming Soon...
-                </h4>
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            8:30 - 9:30
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            Openscapes Mentor Breakfast
+                        </h3>
+
+                        
+
+                        <div class="desc">
+                            <p>Exploring mentor training opportunities in collaboration with NASA Openscapes Champions program.</p>
+                        </div>
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Tutorial Lead(s)</h6>
+                            <div class="name">Julia Stewart Lowndes</div>
+                        </div></div>
+                </div>
+                
+                <!--//item-->
             </div>
             <!--//tab-5-content-->
             
@@ -2116,7 +2736,53 @@
     <!--//container-->
 </section>
 <!--//team-->
-<section id="sponsors-section" class="sponsors-section section theme-bg-light">
+
+<div class="container">
+    <hr>
+</div>
+
+<section id="about-section" class="about-section section theme-bg-light pb-4">
+    <div class="container">
+        <h3 class="section-heading text-center">
+            About ICESat-2 Hackweek
+        </h3>
+        <div class="section-intro single-col-max mx-auto mb-3">
+            Hackweeks are participant-driven events that strive to create welcoming spaces for participants to learn new things, build community and gain hands-on experience with collaboration and team science
+        </div>
+        <div class="about-cta text-center mb-4">
+            <a class="btn btn-secondary btn-lg"
+               href="https://escience.washington.edu/using-data-science/hackweeks"
+               target="_blank">
+                Learn about "Hackweeks"
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+            <div class="hero-cta text-center mb-4">
+                <h4 class="mb-3 text-center">
+                    Past Events:
+                </h4>
+                    <a class="btn btn-primary btn-lg mb-3 mx-2"
+                       href="https://icesat-2-2022.hackweek.io/"
+                        target="_blank"
+                    >
+                        2022 Hackweek
+                    </a>
+                    <a class="btn btn-primary btn-lg mb-3 mx-2"
+                       href="https://github.com/ICESAT-2HackWeek/2020_ICESat-2_Hackweek_Tutorials"
+                        target="_blank"
+                    >
+                        2020 Hackweek
+                    </a>
+                    <a class="btn btn-primary btn-lg mb-3 mx-2"
+                       href="https://github.com/ICESAT-2HackWeek/ICESat2_hackweek_tutorials"
+                        target="_blank"
+                    >
+                        2019 Hackweek
+                    </a>
+            </div>
+    </div>
+</section>
+<section id="sponsors-section" class="sponsors-section section">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Our Sponsors</h3>
         <div class="section-intro text-center single-col-max mx-auto mb-5">
