@@ -12,6 +12,7 @@
 ```{admonition} Quick links for the event
 :class: seealso
 * JupyterHub: {{ jupyterhub_url }}
+  * [CryoHub Documentation](https://book.cryointhecloud.com/intro.html)
 * GitHub organization: {{ github_org_url}}
 * Projects Spreadsheet: {{ project_spreadsheet_url }}
 ```
