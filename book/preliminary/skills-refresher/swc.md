@@ -20,7 +20,7 @@ the [GitHub instructions](../checklist/github.md), create an account.
 
 ```{attention}
 We will be using the JupyterHub ({{ jupyterhub_url }}) throughout this workshop.
-We encourage you to test your [connection to JupyterHub](jupyterhub) before the training.
+We encourage you to test your [connection to JupyterHub](../checklist/jupyterhub) before the training.
 ```
 
 ## Schedule
