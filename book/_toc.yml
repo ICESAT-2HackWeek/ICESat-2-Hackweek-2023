@@ -29,11 +29,6 @@ parts:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
-        - file: tutorials/git_and_jupyterlab/index
-          title: Git, GitHub, and JupyterLab
-          sections:
-            - file: tutorials/git_and_jupyterlab/basic-git
-            - file: tutorials/git_and_jupyterlab/jupyter
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
