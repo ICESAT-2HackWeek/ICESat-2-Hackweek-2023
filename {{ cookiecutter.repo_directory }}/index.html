@@ -67,8 +67,8 @@
                      class="navbar-collapse collapse  justify-content-lg-end me-lg-3">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link scrollto" href="#about-section">
-                                About
+                            <a class="nav-link scrollto" href="#schedule">
+                                Schedule
                             </a>
                         </li>
                         <li class="nav-item">
@@ -77,8 +77,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scrollto" href="#schedule">
-                                Schedule
+                            <a class="nav-link scrollto" href="#about-section">
+                                About
                             </a>
                         </li>
                         <li class="nav-item">
@@ -139,40 +139,9 @@
 </div>
 <!--//hero-block-->
 
-<section id="about-section" class="about-section section theme-bg-light">
+<section id="event-section" class="section theme-bg-light p-3">
     <div class="container">
-        <h3 class="section-heading text-center mb-3">
-            About {{ cookiecutter.name }}
-        </h3>
-        <div class="section-intro single-col-max mx-auto mb-3">
-            {{ cookiecutter.about.description }}
-        </div>
-        <div class="about-cta text-center mb-4">
-            <a class="btn btn-secondary btn-lg"
-               href="{{ cookiecutter.about.learn_more }}"
-               target="_blank">
-                Learn about "Hackweeks"
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        {%- if 'links' in cookiecutter.about %}
-            <div class="hero-cta text-center mb-4">
-                <h4 class="mb-3 text-center">
-                    Past Events:
-                </h4>
-                {%- for link in cookiecutter.about.links %}
-                    <a class="btn btn-primary btn-lg mb-3 mx-2"
-                       href="{{ link.url }}"
-                        {{ 'target="_blank"' if link.new_window == 'True' else '' }}
-                    >
-                        {{ link.title }}
-                    </a>
-                {%- endfor %}
-            </div>
-        {%- endif %}
-
-        <div id="countdown-intro" class="event-countdown text-center mb-4">
+        <div id="countdown-intro" class="event-countdown text-center">
             <h4 class="countdown-intro mb-2 text-center">
                 {{ cookiecutter.banner.year }} Event Starts In:
             </h4>
@@ -183,6 +152,7 @@
         </div>
     </div>
 
+    {%- if 'applicant_info' in cookiecutter %}
     <div class="media-block theme-bg-primary py-5">
         <div class="container">
             <h4 class="text-white text-center mb-3">
@@ -194,8 +164,13 @@
             </div>
         </div>
     </div>
+    {%- endif %}
 </section>
 <!--//about-section-->
+
+<div class="container">
+    <hr>
+</div>
 
 {%- if cookiecutter.schedule %}
 <section id="schedule" class="schedule-section section">
@@ -496,8 +471,47 @@
 <!--//team-->
 {%- endif %}
 
+<div class="container">
+    <hr>
+</div>
+
+<section id="about-section" class="about-section section theme-bg-light pb-4">
+    <div class="container">
+        <h3 class="section-heading text-center">
+            About {{ cookiecutter.name }}
+        </h3>
+        <div class="section-intro single-col-max mx-auto mb-3">
+            {{ cookiecutter.about.description }}
+        </div>
+        <div class="about-cta text-center mb-4">
+            <a class="btn btn-secondary btn-lg"
+               href="{{ cookiecutter.about.learn_more }}"
+               target="_blank">
+                Learn about "Hackweeks"
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        {%- if 'links' in cookiecutter.about %}
+            <div class="hero-cta text-center mb-4">
+                <h4 class="mb-3 text-center">
+                    Past Events:
+                </h4>
+                {%- for link in cookiecutter.about.links %}
+                    <a class="btn btn-primary btn-lg mb-3 mx-2"
+                       href="{{ link.url }}"
+                        {{ 'target="_blank"' if link.new_window == 'True' else '' }}
+                    >
+                        {{ link.title }}
+                    </a>
+                {%- endfor %}
+            </div>
+        {%- endif %}
+    </div>
+</section>
+
 {%- if cookiecutter.sponsors %}
-<section id="sponsors-section" class="sponsors-section section theme-bg-light">
+<section id="sponsors-section" class="sponsors-section section">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Our Sponsors</h3>
         <div class="section-intro text-center single-col-max mx-auto mb-5">

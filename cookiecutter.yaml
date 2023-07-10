@@ -26,7 +26,6 @@ about:
     - url: https://github.com/ICESAT-2HackWeek/ICESat2_hackweek_tutorials
       title: 2019 Hackweek
       new_window: true
-applicant_info: Applications are now open! Click on the button in the upper left of this page to fill out the application form, due 11:59 PM Eastern Time, June 19, 2023.
 team:
   !include book/team.yaml
 schedule:
