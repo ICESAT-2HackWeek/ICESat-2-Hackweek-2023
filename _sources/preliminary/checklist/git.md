@@ -23,7 +23,7 @@ Go to {{ jupyterhub_url }}. See also our JupyterHub documentation: {ref}`accessi
 ### 2. Open a Terminal
 Choose the 'Terminal' from the 'Other' options in the 'Launcher' tab.
 
-![jupyterlab](../img/jupyter-terminal.png)
+![jupyterlab](../../img/jupyter-terminal.png)
 
 ### 3. Configure basic `git` information
 Set your username and email address. The email address should be the same
@@ -76,7 +76,7 @@ account password.
 Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. For this hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
 
 Screenshot from github.com setting up the token:
-![github-token](../img/github-token.png)
+![github-token](../../img/github-token.png)
 
 Once you have created your token, be sure to save it on your computer in case
 you need to re-authenticate again. The token will give you access to your

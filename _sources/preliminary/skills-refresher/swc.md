@@ -11,16 +11,16 @@ topics.
 
 Below you will find links to our training materials from the 2021 SnowEx
 Hackweek. If you are new to Git, Linux, Python, please set aside a day or two
-to go over these materials in advance:
+to go over these materials in advance.
 
 ## Getting ready
 
 Please take a minute before the workshop to go over
-the [GitHub instructions](github), create an account.
+the [GitHub instructions](../checklist/github.md), create an account.
 
 ```{attention}
 We will be using the JupyterHub ({{ jupyterhub_url }}) throughout this workshop.
-We encourage you to test your [connection to JupyterHub](jupyterhub) before the training.
+We encourage you to test your [connection to JupyterHub](../checklist/jupyterhub) before the training.
 ```
 
 ## Schedule
