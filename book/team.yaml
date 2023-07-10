@@ -333,3 +333,24 @@ people:
         link: https://github.com/CryoGARS-Glaciology
     user_groups:
       - Tutorial Developer
+  # =============
+  - title: Younghyun Koo
+    avatar: https://avatars.githubusercontent.com/u/48277028
+    role: Postdoctoral research associate
+    organizations:
+      - name: Lehigh University
+    bio: >
+      Younghyun is a postdoctoral researcher at Lehigh University.
+      His expertise is to monitor thermodynamic and dynamic sea ice properties using various remote sensing data, including satellite altimeter, optical images, passive microwave, and synthetic aperture radar (SAR) data.
+      He is also applying machine learning techniques for better detection of sea ice features in the polar oceans.
+    expertise:
+      - Sea ice
+      - Remote Sensing
+      - Machine learning, artificial neural network
+      - ICESat-2 sea ice products (ATL07/ATL10)
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/YoungHyunKoo
+    user_groups:
+      - Tutorial Lead
