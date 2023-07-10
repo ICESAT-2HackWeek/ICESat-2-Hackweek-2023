@@ -11,7 +11,7 @@ topics.
 
 Below you will find links to our training materials from the 2021 SnowEx
 Hackweek. If you are new to Git, Linux, Python, please set aside a day or two
-to go over these materials in advance:
+to go over these materials in advance.
 
 ## Getting ready
 
