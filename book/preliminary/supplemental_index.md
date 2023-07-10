@@ -1,4 +1,0 @@
-# Supplemental Material
-
-```{tableofcontents}
-```
