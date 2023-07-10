@@ -28,11 +28,6 @@ __Upon completion you__:
 </div>
 ```
 
-### GitHub Account
-
-Everyone attending {{ hackweek }} will require obtaining a GitHub account.
-Visit our [GitHub instruction page](checklist/github.md) to learn how!
-
 ### Slack Account
 
 All of our communication throughout the hackweek will be done using the
@@ -43,6 +38,17 @@ email to join the Slack workspace. Upon accepting the invite, please take a mome
 Having your name and picture with your Slack account helps us and your peers
 to identify you on Slack and builds a more personal community throughout
 the week.
+
+### EarthData Login
+
+We'll have you download some data from NSIDC for your tutorials and projects.
+Visit our [Earthdata](checklist/earthdata.md) page to learn how to access and Earthdata
+login account if you don't already have one!
+
+### GitHub Account
+
+Everyone attending {{ hackweek }} will require obtaining a GitHub account.
+Visit our [GitHub instruction page](checklist/github.md) to learn how!
 
 ### JupyterHub
 
@@ -55,8 +61,3 @@ All content of the hackweek will be shared via GitHub and interacting with the
 website will be done via the `git` command.
 Visit [Setting up the `git` command](checklist/git.md) to learn how to configure that!
 
-### EarthData Login
-
-We'll have you download some data from NSIDC for your tutorials and projects.
-Visit our [Earthdata](checklist/earthdata.md) page to learn how to access and Earthdata
-login account if you don't already have one!
