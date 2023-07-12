@@ -5,7 +5,7 @@
 Please make sure to find some time to go through the below material before
 the hackweek.
 
-__Upon completion you__:
+__Upon completion you will have__:
 <div>
   <input type="checkbox" name="a1">
   <label for="a1">Joined the Slack workspace</label>
@@ -52,8 +52,12 @@ Visit our [GitHub instruction page](checklist/github.md) to learn how!
 
 ### JupyterHub
 
-We will offer all tutorials within the Jupyter Hub computing environment.
-Visit our [Introduction to Jupyter Hub](checklist/jupyterhub.md) page to learn more!
+```{attention}
+If this is your first time connecting to the CryoCloud Jupyter Hub, please complete this short [application form](https://docs.google.com/forms/d/e/1FAIpQLScb2B5LRy7qU9qDfUp5a51n87sumOxivXbQhc02wFX_FxEbXg/viewform). 
+
+NOTE: the form asks for a NASA Award number. If you are not funded on a NASA award, this is not a problem and you can just type "N/A" or "hackweek".
+```
+This {{ hackweek }} computing environment is provided by the [CryoCloud project](https://book.cryointhecloud.com/intro.html). Visit our [Introduction to Jupyter Hub](checklist/jupyterhub.md) page to learn more about why we are using Jupyter Hub configurations for hackweeks.
 
 ### Git
 
