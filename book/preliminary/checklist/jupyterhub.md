@@ -16,11 +16,6 @@ Access to our shared cloud environment (JupyterHub) is under this URL: {{ jupyte
 
 ### First time login
 
-```{attention}
-Before going to {{ jupyterhub_url }} you need to setup your {{ hackweek }}
-organization membership correctly. See: {ref}`configure-github`
-```
-
 The first time you sign in, you will be asked to authorize the OAuth app as access
 to the JupyterHub is restricted to {{ hackweek }} GitHub Organization members.
 
