@@ -354,3 +354,22 @@ people:
         link: https://github.com/YoungHyunKoo
     user_groups:
       - Tutorial Lead
+ # =============
+- title: Zachary Fair
+  avatar: https://avatars.githubusercontent.com/u/48361714?v=4
+  role: Postdoctoral Fellow
+  organizations:
+  - name: NASA Goddard Space Flight Center
+  bio: >
+      Zachary (Zach) is an researcher under the NASA Posdoctoral Program (NPP).
+      Zach is currently using ICESat-2 data to perform snow depth retrievals in support of the SnowEx 2023 campaign. On the side, he is a contributor to the icepyx package.
+  expertise:
+  - Lidar remote sensing
+  - Seasonal snow
+  - icepyx
+  social:
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/zachghiaccio
+  user_groups:
+  - Tutorial Developer
