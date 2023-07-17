@@ -370,7 +370,7 @@ people:
       - ICESat-2 ATL13 (lake monitoring)
       - Oil Spill 
     social:
-    - icon: twitter
+      - icon: twitter
         icon_pack: fab
         link: https://twitter.com/Temishams
       - icon: github
