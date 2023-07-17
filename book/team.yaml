@@ -354,7 +354,7 @@ people:
         link: https://github.com/YoungHyunKoo
     user_groups:
       - Tutorial Lead
-# =============
+  # =============
   - title: Shamsudeen Yekeen
     avatar: 
     role: PhD Student
@@ -378,3 +378,46 @@ people:
         link: https://github.com/tplshams
     user_groups:
       - Tutorial Lead
+  # =============
+  - title: Zachary Fair
+    avatar: https://avatars.githubusercontent.com/u/48361714?v=4
+    role: Postdoctoral Fellow
+    organizations:
+    - name: NASA Goddard Space Flight Center
+    bio: >
+        Zachary (Zach) is an researcher under the NASA Posdoctoral Program (NPP).
+        Zach is currently using ICESat-2 data to perform snow depth retrievals in support of the SnowEx 2023 campaign. On the side, he is a contributor to the icepyx package.
+    expertise:
+    - Lidar remote sensing
+    - Seasonal snow
+    - icepyx
+    social:
+    - icon: github
+      icon_pack: fab
+      link: https://github.com/zachghiaccio
+    user_groups:
+    - Tutorial Developer
+  # =============
+  - title: Jullian Williams
+    avatar: https://avatars.githubusercontent.com/u/46701190?v=4
+    role: Doctoral research coordinator
+    organizations:
+      - name: The University of Texas at San Antonio
+    bio: > 
+        Jullian Williams is a recent PhD graduate from the University of Texas at San Antonio in Civil and Environmental Engineering. 
+        Jullian is a built environment project specialist, atmospheric scientist and teritary level teacher. She specializes in the use of geospatial software
+        and coding platforms to engineer geospatial science and solutions.
+    expertise:
+      - Sea ice
+      - Remote Sensing
+      - Machine learning
+      - Google Earth Engine
+      - Geospatial software
+      - Project surveying & management
+      - Sentinel-1, RADARSAT-1, Sentinel-2, AMSR-E, Landsat-8, ICESat-2 (ATL-10)
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/jcbw
+    user_groups:
+      - Project Coordinator
