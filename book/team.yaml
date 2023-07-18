@@ -431,3 +431,24 @@ people:
       - Tutorial Developer
       - Hackweek Helper
     # =============
+  - title: Andy Barrett
+    avatar: https://avatars.githubusercontent.com/u/2358591?v=4
+    role: Senior Research Associate
+    organizations:
+      - name: National Snow and Ice Data Center, University of Colorado at Boulder
+    bio: > 
+        Andy is a Senior Research Asscoiate at the National Snow and Ice Data Center in sunny Boulder, Colorado.  His current research 
+        focuses on Arctic Sea Ice and Arctic Hydroclimatology but in the past he has been involved in projects on glacier hydrology, 
+        snow melt modelling, and the role of glaciers and snow in the water budget of High Mountain Asia.  He co-leads the NSIDC Open 
+        Science working group and is the Open Science lead for the NSF Navigating the New Arctic Community Office.
+    expertise:
+      - Sea ice
+      - Open Science
+      - Python
+      - ICESat-2
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/andypbarrett
+    user_groups:
+      - Tutorial Developer
