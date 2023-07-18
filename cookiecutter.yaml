@@ -31,7 +31,7 @@ team:
 schedule:
   !include book/schedule.yaml
 sponsors:
-  description: ''
+  description: 'This event was made possible by NASA Cryo ICESat-2 Mission 80NSSC23PA905 and support from these organizations'
   organizations:
   - name: eScience Institute
     website: ''
