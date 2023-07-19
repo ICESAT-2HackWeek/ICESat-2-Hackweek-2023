@@ -8,48 +8,49 @@ tabs:
     time: 8:30 - 9:30
     leads:
     - Anthony Arendt
+  - title: BREAK
+    description: null
+    time: 9:30 - 10:00
   - title: CryoCloud
     description: Getting connected to our shared computational resources.
-    time: 9:30 - 10:30
+    time: 10:00 - 11:30
     leads:
     - Tasha Snow
     - Wilson Sauthoff
-  - title: BREAK
-    description: null
-    time: 10:30 - 11:00
   - title: Best Practices for Collaborative Development
     description: Learn techniques for collaborating in small teams.
-    time: 11:00 - 11:30
-    leads:
-    - Naomi Alterman
-  - title: ICESat-2 Mission Overview and Data
-    description: Summary of ICESat-2 datasets, algorithms and science applications.
     time: 11:30 - 12:00
     leads:
-    - Ben Smith
+    - Naomi Alterman
   - title: LUNCH
     description: null
     time: 12:00 - 13:00
+  - title: ICESat-2 Mission Overview and Data
+    description: Summary of ICESat-2 datasets, algorithms and science applications.
+    time: 13:00 - 13:30
+    leads:
+    - Tyler Sutterley
   - title: OPEN PROJECT WORK
     description: null
-    time: 13:00 - 17:00
+    time: 13:30 - 17:00
 - title: Day 2
   date: Tuesday 08 August
   contents:
+  - title: Open source development / Object Oriented Programming
+    description: Best practices for collaborative coding and object oriented programming.
+    time: 8:30 - 9:30
+    leads:
+    - Romina Piunno
+  - title: BREAK
+    description: null
+    time: 9:30 - 10:00
   - title: Cloud data access and data formats
     description: Approaches for accessing and subsetting ICESat-2 data in a cloud
       environment.
-    time: 8:30 - 10:00
+    time: 10:00 - 11:30
     leads:
-    - Amy Steiker
-  - title: BREAK
-    description: null
-    time: 10:00 - 10:30
-  - title: Open source development / Object Oriented Programming
-    description: Best practices for collaborative coding and object oriented programming.
-    time: 10:30 - 11:30
-    leads:
-    - Romina Piunno
+    - Andy Barrett
+    - Luis Lopez
   - title: Group STAND-UP
     description: Demonstration of a daily stand-up as part of your project collaboration.
     time: 11:30 - 12:00
@@ -69,19 +70,20 @@ tabs:
     time: 8:30 - 9:15
     leads:
     - Karina Zikan
+    - Zachary Fair
   - title: 'Applications: bathymetry'
     description: Applications of ICESat-2 data to bathymetric sciences.
-    time: 9:30 - 10:15
+    time: 9:15 - 10:00
     leads:
     - Jonathan Markel
   - title: BREAK
     description: null
     time: 10:00 - 10:30
-  - title: 'Applications: atmosphere'
-    description: Applications of ICESat-2 data to atmospheric sciences.
+  - title: 'Applications: TBD'
+    description: ''
     time: 10:30 - 11:15
     leads:
-    - Zheng Liu
+    - TBD
   - title: Group STAND-UP & OPEN PROJECT WORK
     description: null
     time: 11:15 - 12:00
@@ -90,7 +92,7 @@ tabs:
     time: 12:00 - 13:00
   - title: OPEN PROJECT WORK
     description: null
-    time: 13:45 - 16:55
+    time: 13:00 - 17:00
 - title: Day 4
   date: Thursday 10 August
   contents:
@@ -101,17 +103,12 @@ tabs:
     - Shamsudeen Yekeen
   - title: 'Applications: sea ice'
     description: Applications of ICESat-2 data to sea ice.
-    time: 9:30 - 10:15
+    time: 9:15 - 10:00
     leads:
     - Younghyun Koo
   - title: BREAK
     description: null
     time: 10:00 - 10:30
-  - title: 'Applications: Land Ice'
-    description: Applications of ICESat-2 data to studies of land ice.
-    time: 10:30 - 11:15
-    leads:
-    - ''
   - title: 'Applications: ICESat-2 integration with GrIMP data'
     description: null
     time: 10:30 - 11:15
