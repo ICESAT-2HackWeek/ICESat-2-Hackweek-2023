@@ -32,6 +32,9 @@ if [[ ! -s "${ENV_FILE}" ]]; then
     exit 1
 fi
 
+# https://github.com/conda/conda-lock/issues/196
+rm *lock.yml
+
 # Local environments
 ## Generate explicit lock files
 conda-lock lock --mamba -f ${ENV_FILE}
