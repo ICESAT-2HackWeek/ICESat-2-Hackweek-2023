@@ -29,6 +29,8 @@ parts:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
+      sections:
+        - file: tutorials/sliderule/parquet-s3
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
