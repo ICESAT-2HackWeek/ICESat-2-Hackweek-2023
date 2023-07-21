@@ -621,8 +621,8 @@ so you must store your credentials on the JupyterHub as explained in
 <p>In the below command, replace <code class="docutils literal notranslate"><span class="pre">EARTHDATA_LOGIN</span></code> with your personal username and
 <code class="docutils literal notranslate"><span class="pre">EARTHDATA_PASSWORD</span></code> with your password</p>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;machine urs.earthdata.nasa.gov login &quot;EARTHDATA_LOGIN&quot; password &quot;EARTHDATA_PASSWORD&quot;&#39;</span> &gt; ~/.netrc
-chmod <span class="m">0600</span> ~/.netrc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;machine urs.earthdata.nasa.gov login &quot;EARTHDATA_LOGIN&quot; password &quot;EARTHDATA_PASSWORD&quot;&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.netrc
+chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>~/.netrc
 </pre></div>
 </div>
 </section>
@@ -640,7 +640,7 @@ chmod <span class="m">0600</span> ~/.netrc
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./preliminary/checklist"
         },
         predefinedOutput: true

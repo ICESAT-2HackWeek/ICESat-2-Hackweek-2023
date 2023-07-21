@@ -591,16 +591,16 @@ It is import to note that some libraries only work with specific versions of Pyt
 <h2>Installing a specific Python version<a class="headerlink" href="#installing-a-specific-python-version" title="Permalink to this headline">#</a></h2>
 <p>We will be using Python 3 during the week.
 You can create environments with different versions of Python using the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name py39 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>py39<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 </pre></div>
 </div>
 <p>To use Python 3.9:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate py39
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>py39
 </pre></div>
 </div>
 <p>To check if you have the correct version activated</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
-python --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>python
+python<span class="w"> </span>--version
 </pre></div>
 </div>
 <p>If you are already familiar with Python 2.7, you can take a look at the syntax differences <a class="reference external" href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">here</a>, but the main point to remember is to put the print statements in parentheses:</p>
@@ -622,7 +622,7 @@ python --version
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./reference/supplemental"
         },
         predefinedOutput: true

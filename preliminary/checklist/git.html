@@ -703,10 +703,10 @@ in the below commands. For the email, it should be the address you used to creat
 your GitHub account instead of <code class="docutils literal notranslate"><span class="pre">attendee&#64;hackweek.com</span></code>. Both values need to be
 surrounded by quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Attendee Name&quot;</span>
-git config --global user.email <span class="s2">&quot;attendee@hackweek.com&quot;</span>
-git config --global pull.rebase <span class="nb">false</span>
-git config --global credential.helper store
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Attendee Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;attendee@hackweek.com&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>pull.rebase<span class="w"> </span><span class="nb">false</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
 </pre></div>
 </div>
 <p>The third line is a configuration option that needs to be done with a first time
@@ -717,13 +717,13 @@ More on strategies is <a class="reference external" href="http://git-scm.com/boo
 you from re-entering your username and password from the command line with each
 push, pull, or interactions with GitHub.</p>
 <p>To verify that you successfully executed the above commands, use the</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config -l
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>-l
 </pre></div>
 </div>
 <p>command.</p>
 <p>The output should look similar to this:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jovyan@jupyter:~$ git config -l
-user.name<span class="o">=</span> Attendee Name
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jovyan@jupyter:~$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>-l
+user.name<span class="o">=</span><span class="w"> </span>Attendee<span class="w"> </span>Name
 user.email<span class="o">=</span>attendee@hackweek.com
 credential.helper<span class="o">=</span>store
 </pre></div>
@@ -747,7 +747,7 @@ the ICESat-2 Hackweek hackweek organization via the command line.</p>
 the ICESat-2 Hackweek Hackweek organization. Paste the following command into your open
 terminal on the JupyterHub. where you will be prompted for your GitHub username
 and the token.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/ICESAT-2HackWeek/github_setup_check.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ICESAT-2HackWeek/github_setup_check.git
 </pre></div>
 </div>
 <p>Since this is the first time you are interacting from the JupyterHub with GitHub,
@@ -766,14 +766,14 @@ hit the enter key.</p>
 <p>The browser context menu that offers the copy and paste option via right-click
 of your mouse is accessible on the JupyterHub by using the ‘Shift’ key.</p>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Cloning into <span class="s1">&#39;github_setup_check&#39;</span>...
-Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>: &lt;GitHub Username&gt;
-Password <span class="k">for</span> <span class="s1">&#39;https://attendee@github.com&#39;</span>:
-remote: Enumerating objects: <span class="m">3</span>, <span class="k">done</span>.
-remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
-remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>, <span class="k">done</span>.
-remote: Total <span class="m">3</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, pack-reused <span class="m">0</span>
-Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Cloning<span class="w"> </span>into<span class="w"> </span><span class="s1">&#39;github_setup_check&#39;</span>...
+Username<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;https://github.com&#39;</span>:<span class="w"> </span>&lt;GitHub<span class="w"> </span>Username&gt;
+Password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;https://attendee@github.com&#39;</span>:
+remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">0</span>
+Unpacking<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
 </pre></div>
 </div>
 <p>Now that you have entered your credentials once, you should no longer be prompted
@@ -781,10 +781,10 @@ for your username and token again. To test the successful storage of your
 credentials, go inside the repository and issue a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> command. If
 successful, you should have an output similar to this:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go inside the directory</span>
-<span class="o">(</span>notebook<span class="o">)</span> jovyan@jupyter:~$ <span class="nb">cd</span> github_setup_check/
+<span class="o">(</span>notebook<span class="o">)</span><span class="w"> </span>jovyan@jupyter:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>github_setup_check/
 <span class="c1"># Issue the pull command</span>
-<span class="o">(</span>notebook<span class="o">)</span> jovyan@jupyter:~/github_setup_check$ git pull
-Already up to date.
+<span class="o">(</span>notebook<span class="o">)</span><span class="w"> </span>jovyan@jupyter:~/github_setup_check$<span class="w"> </span>git<span class="w"> </span>pull
+Already<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date.
 </pre></div>
 </div>
 <p>With the <code class="docutils literal notranslate"><span class="pre">git</span></code> command successfully set up, you can now remove the test
@@ -795,7 +795,7 @@ repository.</p>
 for this action and files and folders removed with this command are not
 recoverable.</p>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rm -rf github_setup_check
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>github_setup_check
 </pre></div>
 </div>
 <section id="optional-advanced-github-setup">
@@ -805,17 +805,17 @@ the <code class="docutils literal notranslate"><span class="pre">gh</span></code
 interact with their website from the command line</a>.</p>
 <p>To set this up, use the <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code> command and your access token.
 The answers to each question are shown in the output below.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>notebook<span class="o">)</span> jovyan@jupyter-jomey:~$ gh auth login
-? What account <span class="k">do</span> you want to log into? GitHub.com
-? What is your preferred protocol <span class="k">for</span> Git operations? HTTPS
-? Authenticate Git with your GitHub credentials? Yes
-? How would you like to authenticate GitHub CLI? Paste an authentication token
-Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
-The minimum required scopes are <span class="s1">&#39;repo&#39;</span>, <span class="s1">&#39;read:org&#39;</span>, <span class="s1">&#39;workflow&#39;</span>.
-? Paste your authentication token: ****************************************
-- gh config <span class="nb">set</span> -h github.com git_protocol https
-✓ Configured git protocol
-✓ Logged <span class="k">in</span> as <span class="o">{{</span>hackweek<span class="o">}}</span>Hackweek
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>notebook<span class="o">)</span><span class="w"> </span>jovyan@jupyter-jomey:~$<span class="w"> </span>gh<span class="w"> </span>auth<span class="w"> </span>login
+?<span class="w"> </span>What<span class="w"> </span>account<span class="w"> </span><span class="k">do</span><span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>into?<span class="w"> </span>GitHub.com
+?<span class="w"> </span>What<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>preferred<span class="w"> </span>protocol<span class="w"> </span><span class="k">for</span><span class="w"> </span>Git<span class="w"> </span>operations?<span class="w"> </span>HTTPS
+?<span class="w"> </span>Authenticate<span class="w"> </span>Git<span class="w"> </span>with<span class="w"> </span>your<span class="w"> </span>GitHub<span class="w"> </span>credentials?<span class="w"> </span>Yes
+?<span class="w"> </span>How<span class="w"> </span>would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>authenticate<span class="w"> </span>GitHub<span class="w"> </span>CLI?<span class="w"> </span>Paste<span class="w"> </span>an<span class="w"> </span>authentication<span class="w"> </span>token
+Tip:<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>Personal<span class="w"> </span>Access<span class="w"> </span>Token<span class="w"> </span>here<span class="w"> </span>https://github.com/settings/tokens
+The<span class="w"> </span>minimum<span class="w"> </span>required<span class="w"> </span>scopes<span class="w"> </span>are<span class="w"> </span><span class="s1">&#39;repo&#39;</span>,<span class="w"> </span><span class="s1">&#39;read:org&#39;</span>,<span class="w"> </span><span class="s1">&#39;workflow&#39;</span>.
+?<span class="w"> </span>Paste<span class="w"> </span>your<span class="w"> </span>authentication<span class="w"> </span>token:<span class="w"> </span>****************************************
+-<span class="w"> </span>gh<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-h<span class="w"> </span>github.com<span class="w"> </span>git_protocol<span class="w"> </span>https
+✓<span class="w"> </span>Configured<span class="w"> </span>git<span class="w"> </span>protocol
+✓<span class="w"> </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>as<span class="w"> </span><span class="o">{{</span>hackweek<span class="o">}}</span>Hackweek
 </pre></div>
 </div>
 </section>
@@ -843,7 +843,7 @@ More help for the install process can be found in the
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./preliminary/checklist"
         },
         predefinedOutput: true
