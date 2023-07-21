@@ -7,12 +7,13 @@ LOCK_ENV='CondaLock'
 
 check_success() {
   if [[ $1 -ne 0 ]]; then
-    printf "\033[1;31m ERROR \033[0m\n"
+    printf "\033[1;31m ERROR \033[0m "
+    printf "$2"
     exit 1
   else
-    printf "\033[1;32m SUCCESS \033[0m\n"
+    printf "\033[1;32m SUCCESS \033[0m "
+    printf "$2"
   fi
-  printf $2
 }
 
 # Generate CondaLock environment unless present
