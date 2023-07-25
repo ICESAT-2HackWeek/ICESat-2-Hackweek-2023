@@ -123,8 +123,6 @@ function startCountDown(counterDiv) {
   }
 }
 
-startCountDown(counterDiv);
-
 /* === Select schedule tab of current day */
 
 function today(){
@@ -141,4 +139,7 @@ function selectScheduleDay() {
   if(tab) { tab.click() }
 }
 
-selectScheduleDay()
+document.addEventListener("DOMContentLoaded", () => {
+  selectScheduleDay()
+  startCountDown(counterDiv);
+});
