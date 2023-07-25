@@ -148,6 +148,12 @@
             <div id="countdown-box"
                  class="countdown-box"
                  data-start-date="{{ cookiecutter.banner.start_date }}/{{ cookiecutter.banner.year}}">
+                {% for unit in ['days', 'hours', 'minutes', 'seconds'] %}
+                <span class="{{ unit }}">
+                    <span class="number"></span>
+                    <span class="unit">{{ unit.capitalize() }}</span>
+                </span>
+                {% endfor %}
             </div>
         </div>
     </div>
