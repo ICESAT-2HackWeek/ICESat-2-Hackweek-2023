@@ -22,13 +22,20 @@ parts:
       - file: preliminary/checklist/git
       - file: preliminary/checklist/earthdata
     - file: preliminary/skills_refresher_index
-      sections:
+      sections: 
         - file: preliminary/skills-refresher/swc
 - caption: Tutorials
   chapters:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
+        - file: tutorials/data-access-and-format/index
+          sections:
+            - file: tutorials/data-access-and-format/overview
+            - file: tutorials/data-access-and-format/earthdata-search
+            - file: tutorials/data-access-and-format/earthaccess
+            - file: tutorials/data-access-and-format/icepyx
+            - file: tutorials/data-access-and-format/sliderule
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
