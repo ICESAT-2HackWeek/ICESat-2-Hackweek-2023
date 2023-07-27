@@ -452,3 +452,27 @@ people:
         link: https://github.com/andypbarrett
     user_groups:
       - Tutorial Developer
+    # =============
+  - title: Shamsudeen Yekeen
+    avatar: https://avatars.githubusercontent.com/u/44532329?v=4
+    role: Ph.D. Student
+    organizations:
+      - name: University of Guelph
+    bio: >
+      Shamsudeen is a Ph.D. student at the University of Guelph. Shamsudeen is currently researching the dynamics in the permafrost lakes using altimetry satellites.
+      He also has expertise and research on the broad application of machine learning models, marine oil spill detection, and prediction. 
+    expertise:
+      - Remote Sensing of the Environment
+      - Permafrost hydrology
+      - Machine learning, artificial neural network
+      - ICESat-2 ATL13 (lake monitoring)
+      - Oil Spill 
+    social:
+      - icon: twitter
+        icon_pack: fab
+        link: https://twitter.com/Temishams
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/tplshams
+    user_groups:
+      - Tutorial Lead
