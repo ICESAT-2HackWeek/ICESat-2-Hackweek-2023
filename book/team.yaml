@@ -498,3 +498,20 @@ people:
         link: https://twitter.com/jonm3d
     user_groups:
       - Tutorial Developer
+    # =============
+  - title: Zheng Liu
+    avatar: https://github.com/liuzheng-arctic.png
+    role: Senior Research Scientist    
+    organizations:
+      - name: University of Washington, Applied Physics Laboratory
+    bio: >
+      Zheng Liu is a research scientist at UW Applied Physics Laboratory and is interested in using ICESat-2 data to study clouds and sea ice in the Arctic.
+    expertise:
+      - ICESat-2 ATL09 dataset (atmospheric profiles)
+      - ICESat-2 ATL07/10 Sea ice datasets
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/liuzheng-arctic
+    user_groups:
+      - Hackweek Helper
