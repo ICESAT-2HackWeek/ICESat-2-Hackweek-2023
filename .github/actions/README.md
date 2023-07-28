@@ -29,9 +29,6 @@ Creates public preview, via [netlify](https://jupyterbook.org/publish/netlify.ht
 #### [qaqc.yaml](../workflows/qaqc.yaml)
 Quality assessment and quality control. Standardizes formatting including spell check, hyperlink check, and clearing notebook outputs
 
-#### [test.yaml](../workflows/test.yaml)
-Build the websites (JupyterBook and front page). Run on Pull Requests against every commit and via a 'cron' schedule to maintain caching [since otherwise the cache expires if untouched in 7 days](https://docs.github.com/en/actions/advanced-guides/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy)
-
 ## Security
 
 It's desirable for hackweek websites to have contributions from anyone, so the website repository should allow for changes via pull requests from forks. By default workflows running off forked repositories do not have access to secrets, but [following security best practices](https://securitylab.github.com/research/github-actions-preventing-pwn-requests/) you can require adding a label to a pull request in order to run a workflow that requires secrets. For an example, see the [netlifypreview.yaml](./actions/workflows/netlifypreview.yaml) workflow.
