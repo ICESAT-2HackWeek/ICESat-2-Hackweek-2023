@@ -21,7 +21,7 @@ parse:
     docker_image: "https://quay.io/repository/cryointhecloud/cryo-hub-image"
     dataset: "IceSat-2"
     anon_reporting_url: "https://INSERT_FORM_LINK"
-    project_spreadsheet_url: "https://INSERT_GOOGLE_SHEET"
+    project_spreadsheet_url: "https://docs.google.com/spreadsheets/d/1VFwlCS7Knbpatr0DNso-9A8VnHet5UNLNXwTjOoC5wo/edit#gid=0"
   myst_enable_extensions:
     # Defaults
     - dollarmath
