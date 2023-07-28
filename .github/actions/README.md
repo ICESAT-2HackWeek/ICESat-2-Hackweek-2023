@@ -17,9 +17,6 @@ Steps to build the hackweek landing webpage and JupyterBook.
 
 The `workflows/` subfolder contains continuous integration workflows
 
-#### [binder-badge.yaml](../workflows/binder-badge.yaml)
-Create [binder](https://mybinder.readthedocs.io/en/latest/howto/gh-actions-badges.html) badges with links to test tutorial notebooks
-
 #### [deploy.yaml](../workflows/deploy.yaml)
 Render and publish the websites (JupyterBook and landing page) to GitHub Pages
 
