@@ -32,9 +32,6 @@ Creates public preview, via [netlify](https://jupyterbook.org/publish/netlify.ht
 #### [qaqc.yaml](../workflows/qaqc.yaml)
 Quality assessment and quality control. Standardizes formatting including spell check, hyperlink check, and clearing notebook outputs
 
-#### [repo2docker.yaml](../workflows/repo2docker.yaml)
-[Build a Docker image](https://github.com/jupyterhub/repo2docker-action) for JupyterHub/BinderHub
-
 #### [test.yaml](../workflows/test.yaml)
 Build the websites (JupyterBook and front page). Run on Pull Requests against every commit and via a 'cron' schedule to maintain caching [since otherwise the cache expires if untouched in 7 days](https://docs.github.com/en/actions/advanced-guides/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy)
 
