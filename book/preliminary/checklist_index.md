@@ -28,7 +28,7 @@ __Upon completion you will have__:
 </div>
 <div>
   <input type="checkbox" name="a6">
-  <label for="a2-1">Created a Google Earth Engine Login</label>
+  <label for="a6">Created a Google Earth Engine Login</label>
 </div>
 ```
 
