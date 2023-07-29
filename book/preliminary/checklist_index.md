@@ -67,5 +67,7 @@ Visit [Setting up the `git` command](checklist/git.md) to learn how to configure
 
 ### Google Earth Engine Sign-Up
 
-ADD QUICK DESCRIPTION HERE
+If you want to interactively follow along the tutorial for data exploration and visualization, you need to be registered for Google Earth Engine (GEE) to be able to run the code. 
+The sign-up process might take a few days, so it is best to do this well in advance of the hackweek. 
+Visit [Google Earth Engine Sign-Up](checklist/earthengine.md) to learn how to get access!
 
