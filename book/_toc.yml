@@ -30,6 +30,8 @@ parts:
       sections:
         - file: tutorials/example/tutorial-notebook
         - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/sea_ice/1_sea_ice_tutorials
+        - file: tutorials/sea_ice/2_ATL10_Visualization_Earth_Engine
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
