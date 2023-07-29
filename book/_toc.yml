@@ -21,6 +21,7 @@ parts:
       - file: preliminary/checklist/jupyterhub
       - file: preliminary/checklist/git
       - file: preliminary/checklist/earthdata
+      - file: preliminary/checklist/earthengine
     - file: preliminary/skills_refresher_index
       sections:
         - file: preliminary/skills-refresher/swc
