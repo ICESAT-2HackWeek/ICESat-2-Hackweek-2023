@@ -65,3 +65,7 @@ All content of the hackweek will be shared via GitHub and interacting with the
 website will be done via the `git` command.
 Visit [Setting up the `git` command](checklist/git.md) to learn how to configure that!
 
+### Google Earth Engine Sign-Up
+
+ADD QUICK DESCRIPTION HERE
+
