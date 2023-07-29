@@ -26,6 +26,10 @@ __Upon completion you will have__:
   <input type="checkbox" name="a5">
   <label for="a5">Setup the `git` command after logging into the JupyterHub</label>
 </div>
+<div>
+  <input type="checkbox" name="a6">
+  <label for="a2-1">Created a Google Earth Engine Login</label>
+</div>
 ```
 
 ### Slack Account
