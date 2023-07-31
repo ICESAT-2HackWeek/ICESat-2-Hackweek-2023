@@ -9,6 +9,7 @@ tabs:
     leads:
     - Anthony Arendt
     - Charley Haley
+    - Mark Welden-Smith
   - title: BREAK
     description: null
     time: 9:30 - 10:00
@@ -141,7 +142,12 @@ tabs:
     time: 9:00 - 9:30
   - title: Sharing Project Outcomes - Part I
     description: Sharing what you and your teams accomplished during our time together.
-    time: 10:00 - 12:00
+    time: 10:00 - 11:30
+    leads:
+    - Anthony Arendt
+  - title: SURVEY FEEDBACK
+    description: Complete our online survey so that we can improve our program.
+    time: 11:30 - 12:00
     leads:
     - Anthony Arendt
   - title: LUNCH
@@ -149,6 +155,12 @@ tabs:
     time: 12:00 - 13:00
   - title: Sharing Project Outcomes - Part II
     description: Sharing what you and your teams accomplished during our time together.
-    time: 13:00 - 15:00
+    time: 13:00 - 14:00
     leads:
     - Anthony Arendt
+  - title: CLOSING
+    description: Final wrap up.
+    time: 14:00 - 14:15
+    leads: 
+    - Anthony Arendt
+    
