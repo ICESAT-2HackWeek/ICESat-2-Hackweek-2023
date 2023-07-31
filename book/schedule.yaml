@@ -77,7 +77,7 @@ tabs:
     description: null
     time: 10:00 - 10:30
   - title: 'Applications: Visualization and Integration'
-    description: An overview of the capabilites provided by OpenAltimetry and Google
+    description: An overview of the capabilities provided by OpenAltimetry and Google
       Earth Engine for putting ICESat-2 photon-level data into context
     time: 10:30 - 11:15
     leads:
