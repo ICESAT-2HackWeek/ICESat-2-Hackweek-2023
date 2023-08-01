@@ -27,6 +27,7 @@ jobs:
         chmod 0600 ~/.netrc
 
     - uses: ./.github/actions/buildresources
+      continue-on-error: true
       with:
         jb-cache: false
         publish-to-gh: false
