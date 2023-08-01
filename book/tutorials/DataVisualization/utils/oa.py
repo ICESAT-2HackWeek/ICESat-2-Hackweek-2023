@@ -84,7 +84,8 @@ class dataCollector:
                     h.append(p[2])
         self.atl03 = pd.DataFrame(list(zip(lat,lon,h,confs)), columns = ['lat','lon','h','conf'])
         if verbose:
-            print(' Done.')
+            if len(self.atl03)>0: print(' %i data points.' % len(self.atl03))
+            else: print(' No data.')
             
             print('---> requesting ATL06 data...',end='')
         product = 'atl06'
@@ -92,7 +93,17 @@ class dataCollector:
         data = requests.get(request_url).json()
         self.atl06 = pd.DataFrame(data['series'][0]['lat_lon_elev'], columns = ['lat','lon','h'])
         if verbose:
-            print(' Done.')
+            if len(self.atl06)>0: print(' %i data points.' % len(self.atl06)) 
+            else: print(' No data.')
+            
+            print('---> requesting ATL07 data...',end='')
+        product = 'atl07'
+        request_url = self.url.replace('atlXX',product)
+        data = requests.get(request_url).json()
+        self.atl07 = pd.DataFrame(data['series'][0]['lat_lon_elev'], columns = ['lat','lon','h'])
+        if verbose:
+            if len(self.atl07)>0: print(' %i data points.' % len(self.atl07)) 
+            else: print(' No data.')
             
             print('---> requesting ATL08 data...',end='')
         product = 'atl08'
@@ -100,7 +111,35 @@ class dataCollector:
         data = requests.get(request_url).json()
         self.atl08 = pd.DataFrame(data['series'][0]['lat_lon_elev_canopy'], columns = ['lat','lon','h','canopy'])
         if verbose:
-            print(' Done.')
+            if len(self.atl08)>0: print(' %i data points.' % len(self.atl08)) 
+            else: print(' No data.')
+            
+            print('---> requesting ATL10 data...',end='')
+        product = 'atl10'
+        request_url = self.url.replace('atlXX',product)
+        data = requests.get(request_url).json()
+        self.atl10 = pd.DataFrame(data['series'][0]['lat_lon_elev'], columns = ['lat','lon','h'])
+        if verbose:
+            if len(self.atl10)>0: print(' %i data points.' % len(self.atl10)) 
+            else: print(' No data.')
+            
+            print('---> requesting ATL12 data...',end='')
+        product = 'atl12'
+        request_url = self.url.replace('atlXX',product)
+        data = requests.get(request_url).json()
+        self.atl12 = pd.DataFrame(data['series'][0]['lat_lon_elev'], columns = ['lat','lon','h'])
+        if verbose:
+            if len(self.atl12)>0: print(' %i data points.' % len(self.atl12)) 
+            else: print(' No data.')
+            
+            print('---> requesting ATL13 data...',end='')
+        product = 'atl13'
+        request_url = self.url.replace('atlXX',product)
+        data = requests.get(request_url).json()
+        self.atl13 = pd.DataFrame(data['series'][0]['lat_lon_elev'], columns = ['lat','lon','h'])
+        if verbose:
+            if len(self.atl13)>0: print(' %i data points.' % len(self.atl13)) 
+            else: print(' No data.')
     
     ################################################################################################ 
     def plotData(self,ax=None,title='some Data I found on OpenAltimetry'):
@@ -114,24 +153,40 @@ class dataCollector:
 
         # create the figure and axis
         if axes_not_specified:
-            fig, ax = plt.subplots(figsize=[10,6])
-        atl03 = ax.scatter(self.atl03.lat, self.atl03.h, s=2, color='black', alpha=0.2, label='ATL03')
-        atl06, = ax.plot(self.atl06.lat, self.atl06.h, label='ATL06')
-        atl08, = ax.plot(self.atl08.lat, self.atl08.h, label='ATL08', linestyle='--')
+            fig, ax = plt.subplots(figsize=[8,5])
+            
+        if len(self.atl03)>0:
+            atl03 = ax.scatter(self.atl03.lat, self.atl03.h, s=2, color='black', alpha=0.2, label='ATL03')
+        if len(self.atl06)>0:
+            atl06, = ax.plot(self.atl06.lat, self.atl06.h, c='C0', linestyle='-', label='ATL06')
+        if len(self.atl07)>0:   
+            atl07, = ax.plot(self.atl07.lat, self.atl07.h, c='C1', linestyle='--', label='ATL07')
+        if len(self.atl08)>0:   
+            atl08, = ax.plot(self.atl08.lat, self.atl08.h, c='C2', linestyle=':', label='ATL08')
+        if np.sum(~np.isnan(self.atl08.canopy))>0:
+            atl08canopy = ax.scatter(self.atl08.lat, self.atl08.h+self.atl08.canopy, s=2, c='C2', label='ATL08 canopy')
+        if len(self.atl10)>0:   
+            atl08, = ax.plot(self.atl10.lat, self.atl10.h, c='C3', linestyle='-', label='ATL10')
+        if len(self.atl12)>0:   
+            atl12, = ax.plot(self.atl12.lat, self.atl12.h, c='C4', linestyle='--', label='ATL12')
+        if len(self.atl13)>0:   
+            atl13, = ax.plot(self.atl13.lat, self.atl13.h, c='C5', linestyle=':', label='ATL13')
 
         heights = self.atl03.h[self.atl03.conf != 'Noise']
         y_min1 = np.min(heights)
         y_max1 = np.max(heights)
-        maxprods = np.nanmax((self.atl06.h.max(), self.atl08.h.max()))
-        minprods = np.nanmin((self.atl06.h.min(), self.atl08.h.min()))
+        maxprods = np.nanmax((self.atl06.h.max(), self.atl07.h.max(), self.atl08.h.max(), 
+                              self.atl10.h.max(), self.atl12.h.max(), self.atl13.h.max()))
+        minprods = np.nanmin((self.atl06.h.min(), self.atl07.h.min(), self.atl08.h.min(), 
+                              self.atl10.h.min(), self.atl12.h.min(), self.atl13.h.min()))
         hrange = maxprods - minprods
         y_min2 = minprods - hrange * 0.5
         y_max2 = maxprods + hrange * 0.5
         y_min = np.nanmin((y_min1, y_min2))
         y_max = np.nanmax((y_max1, y_max2))
 
-        x_min = self.atl08.lat.min()
-        x_max = self.atl08.lat.max()
+        x_min = self.atl03.lat.min()
+        x_max = self.atl03.lat.max()
 
         ax.set_xlim((x_min, x_max))
         ax.set_ylim((y_min, y_max))
@@ -142,15 +197,15 @@ class dataCollector:
         ax.set_ylabel('elevation in meters')
 
         # add a legend
-        ax.legend(loc='lower right')
+        ax.legend()
 
         # add some text to provide info on what is plotted
-        info = 'ICESat-2 track {track:d}-{beam:s} on {date:s}\n({lon:.4f}E, {lat:.4f}N)'.format(track=self.track, 
+        info = 'ICESat-2 track {track:d}-{beam:s} on {date:s} ({lon:.4f}E, {lat:.4f}N)'.format(track=self.track, 
                                                                                                 beam=self.beam, 
                                                                                                 date=self.date, 
                                                                                                 lon=np.mean(self.lonlims), 
                                                                                                 lat=np.mean(self.latlims))
-        infotext = ax.text(0.03, 0.03, info,
+        infotext = ax.text(0.01, 0.03, info,
                            horizontalalignment='left', 
                            verticalalignment='bottom', 
                            transform=ax.transAxes,
