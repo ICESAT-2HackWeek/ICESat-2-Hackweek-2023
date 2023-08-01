@@ -33,6 +33,7 @@ jobs:
         jb-save: false
 
     - name: Deploy Website Preview
+      if: always()
       uses: nwtgck/actions-netlify@v2.0
       with:
         publish-dir: './book/_build/html'
