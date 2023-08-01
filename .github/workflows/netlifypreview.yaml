@@ -27,13 +27,13 @@ jobs:
         chmod 0600 ~/.netrc
 
     - uses: ./.github/actions/buildresources
-      continue-on-error: true
       with:
         jb-cache: false
         publish-to-gh: false
         jb-save: false
 
     - name: Deploy Website Preview
+      if: always()
       uses: nwtgck/actions-netlify@v2.0
       with:
         publish-dir: './book/_build/html'
