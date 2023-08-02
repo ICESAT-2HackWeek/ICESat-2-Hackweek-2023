@@ -1,0 +1,1703 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Compare ATL10 freeboard profile with Sentinel-2 optical images &#8212; ICESat-2 Hackweek 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="List of Projects" href="../../projects/list_of_projects.html" />
+    <link rel="prev" title="ICESat-2 sea ice tutorial" href="1_sea_ice_tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ICESat-2 Hackweek 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to ICESat-2 Hackweek!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../logistics.html">
+   Event Logistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://icesat-2-2023.hackweek.io/index.html?jump_to=schedule">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://icesat-2-2023.hackweek.io/index.html?jump_to=team">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mission.html">
+   Hackweek Mission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../CoC.html">
+   Event Code of Conduct
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/checklist_index.html">
+   Checklist
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/earthengine.html">
+     Google Earth Engine Sign-Up
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/skills_refresher_index.html">
+   Skills Refresher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/skills-refresher/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example/tutorial-notebook.html">
+     Example tutorial notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sliderule/parquet-s3.html">
+     Sliderule Output to S3
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="1_sea_ice_tutorial.html">
+     ICESat-2 sea ice tutorial
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Compare ATL10 freeboard profile with Sentinel-2 optical images
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/list_of_projects.html">
+   List of Projects
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roadmap.html">
+     Project Roadmap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_science.html">
+   Open Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_source_software.html">
+   Open-source Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/questions.html">
+   How to Get Help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/social.html">
+   Things to do in Seattle
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/supplemental_index.html">
+   Supplemental Material
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../reference/supplemental/python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../reference/supplemental/conda.html">
+     Conda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/main?urlpath=lab/tree/book/tutorials/sea_ice/2_ATL10_Sentinel-2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/issues/new?title=Issue%20on%20page%20%2Ftutorials/sea_ice/2_ATL10_Sentinel-2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/edit/main/book/tutorials/sea_ice/2_ATL10_Sentinel-2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/tutorials/sea_ice/2_ATL10_Sentinel-2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   ⭐ Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-computing-environment">
+   ✅ Setting computing environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-earth-engine-authentication-and-initialization">
+   ✅ Google Earth Engine Authentication and Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-sentinel-2-images-via-google-earth-engine-using-atl10-track">
+   ✅ Query Sentinel-2 images via Google Earth Engine using ATL10 track
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-between-icesat-2-and-sentinel-2">
+   ✅ Comparison between ICESat-2 and Sentinel-2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floe-statistics-from-icesat-2-and-sentinel-2">
+   ✅ Floe statistics from ICESat-2 and Sentinel-2
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Compare ATL10 freeboard profile with Sentinel-2 optical images</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   ⭐ Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-computing-environment">
+   ✅ Setting computing environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-earth-engine-authentication-and-initialization">
+   ✅ Google Earth Engine Authentication and Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-sentinel-2-images-via-google-earth-engine-using-atl10-track">
+   ✅ Query Sentinel-2 images via Google Earth Engine using ATL10 track
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-between-icesat-2-and-sentinel-2">
+   ✅ Comparison between ICESat-2 and Sentinel-2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floe-statistics-from-icesat-2-and-sentinel-2">
+   ✅ Floe statistics from ICESat-2 and Sentinel-2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="compare-atl10-freeboard-profile-with-sentinel-2-optical-images">
+<h1>Compare ATL10 freeboard profile with Sentinel-2 optical images<a class="headerlink" href="#compare-atl10-freeboard-profile-with-sentinel-2-optical-images" title="Permalink to this headline">#</a></h1>
+<section id="objectives">
+<h2>⭐ Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Query optical images in Google Earth Engine and download images overlapped with ICESat-2 track</p></li>
+<li><p>Compare sea ice features from optical images and ICESat-2 ATL10 product</p></li>
+</ul>
+</section>
+<section id="setting-computing-environment">
+<h2>✅ Setting computing environment<a class="headerlink" href="#setting-computing-environment" title="Permalink to this headline">#</a></h2>
+<p>We’ll be using the following Python libraries in this notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">rasterio</span>
+
+<span class="kn">import</span> <span class="nn">ee</span>
+<span class="kn">import</span> <span class="nn">geemap</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="google-earth-engine-authentication-and-initialization">
+<h2>✅ Google Earth Engine Authentication and Initialization<a class="headerlink" href="#google-earth-engine-authentication-and-initialization" title="Permalink to this headline">#</a></h2>
+<p>Before you start Google Earth Engine (<code class="docutils literal notranslate"><span class="pre">ee</span></code> library), you need to authenticate your access with your own Google account. This authentication can be done by running <code class="docutils literal notranslate"><span class="pre">ee.Authenticate()</span></code>. Please go to the link and allow the access, and you will be able to get an verification code. Please copy and paste this verification code into the input field and hit enter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ee</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span> 
+    <span class="n">ee</span><span class="o">.</span><span class="n">Authenticate</span><span class="p">()</span>
+    <span class="n">ee</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="query-sentinel-2-images-via-google-earth-engine-using-atl10-track">
+<h2>✅ Query Sentinel-2 images via Google Earth Engine using ATL10 track<a class="headerlink" href="#query-sentinel-2-images-via-google-earth-engine-using-atl10-track" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read ATL10 track</span>
+<span class="n">tutorial_data</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/shared-public/ICESat-2-Hackweek/sea_ice&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_data</span><span class="si">}</span><span class="s2">/processed_ATL10-02_20191113181045_07310501_005_02.h5&quot;</span>
+
+<span class="c1"># Create dataframe from the ATL10 file</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">beam</span> <span class="o">=</span> <span class="s1">&#39;gt2r&#39;</span>
+    <span class="n">track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;seg_x&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;seg_dist_x&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;freeboard&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;beam_fb_height&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;height_segments&#39;</span><span class="p">][</span><span class="s1">&#39;height_segment_type&#39;</span><span class="p">][:]</span>
+                              <span class="p">})</span>
+
+<span class="c1"># Create Earth Engine feature collection with the ATL10 track</span>
+<span class="n">track_coord</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">track</span><span class="o">.</span><span class="n">lon</span><span class="p">[::</span><span class="mi">100</span><span class="p">]],</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">track</span><span class="o">.</span><span class="n">lat</span><span class="p">[::</span><span class="mi">100</span><span class="p">]]))</span> 
+<span class="n">feature_track</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">FeatureCollection</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">LineString</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">track_coord</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">geodesic</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> 
+
+<span class="c1"># Define region of interest (ROI) using the ICESat-2 track feature collection</span>
+<span class="n">roi</span> <span class="o">=</span> <span class="n">feature_track</span><span class="o">.</span><span class="n">geometry</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read acquisition time of the ATL10 track from filename</span>
+<span class="n">time_atl</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">filename</span><span class="p">[</span><span class="o">-</span><span class="mi">33</span><span class="p">:</span><span class="o">-</span><span class="mi">19</span><span class="p">],</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start date (should be the ICESat-2 acquisition date)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time_atl</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># End date (1 day after the ICESat-2 acquistion date)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-11-13 2019-11-14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query Sentinel-2 images using ATL10 file information</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">filterBounds</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>\
+<span class="o">.</span><span class="n">filterDate</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>\
+<span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVERAGE_ASSESSMENT&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>\
+<span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="s1">&#39;NODATA_PIXEL_PERCENTAGE&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="n">S2</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span> <span class="c1"># Number of available images</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Image ID for all images</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">S2</span><span class="o">.</span><span class="n">toList</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="p">)]</span> 
+<span class="n">ids</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;COPERNICUS/S2_SR/20191113T183459_20191113T183501_T02CNU&#39;,
+ &#39;COPERNICUS/S2_SR/20191113T183459_20191113T183501_T03CVP&#39;,
+ &#39;COPERNICUS/S2_SR/20191113T183459_20191113T183501_T03CVQ&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_diff</span> <span class="o">=</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">3</span> <span class="c1"># Target time difference between ATL10 and Sentinel-2 &lt; 3 hours</span>
+
+<span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="n">time_start</span> <span class="o">=</span> <span class="n">S2</span><span class="o">.</span><span class="n">toList</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;system:time_start&#39;</span><span class="p">]</span>
+    <span class="n">time_s2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="n">time_start</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>   
+    
+    <span class="n">img_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Time difference between IS2 and S2 &lt; defined time_diff</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">time_atl</span><span class="o">-</span><span class="n">time_s2</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;=</span> <span class="n">time_diff</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()[</span><span class="s1">&#39;bands&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;dimensions&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10000</span> <span class="ow">and</span> <span class="n">dim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># # Download image into the local folder</span>
+            <span class="c1"># geemap.download_ee_image(img, f&quot;S2_{img_name}.tif&quot;, scale=50)</span>
+            <span class="n">Map</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">},</span> <span class="n">img_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SKIP </span><span class="si">{</span><span class="n">img_name</span><span class="si">}</span><span class="s2">: Not a full image&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SKIP </span><span class="si">{</span><span class="n">img_name</span><span class="si">}</span><span class="s2">: Time difference &gt; </span><span class="si">{</span><span class="n">time_diff</span><span class="o">/</span><span class="mi">3600</span><span class="si">}</span><span class="s2"> hours with ICESat-2 track&quot;</span><span class="p">)</span>
+
+<span class="n">Map</span><span class="o">.</span><span class="n">centerObject</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">zoom</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">Map</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">feature_track</span><span class="p">,</span> <span class="p">{},</span> <span class="s2">&quot;IS2 track&quot;</span><span class="p">)</span>
+<span class="n">Map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "e184faca37e34222ba7595e2a2390698", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install geedim</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparison-between-icesat-2-and-sentinel-2">
+<h2>✅ Comparison between ICESat-2 and Sentinel-2<a class="headerlink" href="#comparison-between-icesat-2-and-sentinel-2" title="Permalink to this headline">#</a></h2>
+<p>Now we will compare the Sentinel-2 optical image we downloaded with the ICESat-2 ATL10 track.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># File name of the downloaded Sentinel-2 image</span>
+<span class="n">tutorial_data</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/shared-public/ICESat-2-Hackweek/sea_ice&quot;</span>
+<span class="n">img_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_data</span><span class="si">}</span><span class="s2">/S2_20191113T183459_20191113T183501_T03CVQ.tif&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read Sentinel-2 image using raterio</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_name</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">[</span><span class="n">array</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">height</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cols</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">height</span><span class="p">))</span>
+
+<span class="c1"># XY projected coordinate of the image</span>
+<span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">xy</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">transform</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span>
+
+<span class="n">img</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;Blues_r&quot;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd2a26ac820&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "f8a0563b334a43bea95051ee8c2f371c", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Let’s take a look at the ATL10 track data. We read the ATL10 h5 file as <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe. In order to assign the geographic coordinate information, we will convert this dataframe into <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> geodataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>seg_x</th>
+      <th>freeboard</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-73.975637</td>
+      <td>-165.844054</td>
+      <td>2.832693e+07</td>
+      <td>0.080256</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-73.975891</td>
+      <td>-165.844189</td>
+      <td>2.832696e+07</td>
+      <td>0.086212</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-73.976071</td>
+      <td>-165.844283</td>
+      <td>2.832698e+07</td>
+      <td>0.092388</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-73.976211</td>
+      <td>-165.844356</td>
+      <td>2.832700e+07</td>
+      <td>0.096061</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-73.976379</td>
+      <td>-165.844443</td>
+      <td>2.832702e+07</td>
+      <td>0.096196</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51063</th>
+      <td>-78.034301</td>
+      <td>-168.605746</td>
+      <td>2.878597e+07</td>
+      <td>0.152796</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51064</th>
+      <td>-78.034363</td>
+      <td>-168.605802</td>
+      <td>2.878597e+07</td>
+      <td>0.154176</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51065</th>
+      <td>-78.034440</td>
+      <td>-168.605870</td>
+      <td>2.878598e+07</td>
+      <td>0.151869</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51066</th>
+      <td>-78.034497</td>
+      <td>-168.605921</td>
+      <td>2.878599e+07</td>
+      <td>0.154419</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51067</th>
+      <td>-78.034561</td>
+      <td>-168.605979</td>
+      <td>2.878600e+07</td>
+      <td>0.129654</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>51068 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert pandas dataframe into geopandas geodataframe</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">track</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">geopandas</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">track</span><span class="o">.</span><span class="n">lat</span><span class="p">))</span>
+
+<span class="c1"># Assign crs information into geodatafraem</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="s2">&quot;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs&quot;</span>
+
+<span class="c1"># Convert crs of the geodataframe into the crs of the Sentinel-2 image</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>seg_x</th>
+      <th>freeboard</th>
+      <th>type</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-73.975637</td>
+      <td>-165.844054</td>
+      <td>2.832693e+07</td>
+      <td>0.080256</td>
+      <td>6</td>
+      <td>POINT (473993.423 1790495.816)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-73.975891</td>
+      <td>-165.844189</td>
+      <td>2.832696e+07</td>
+      <td>0.086212</td>
+      <td>6</td>
+      <td>POINT (473989.677 1790467.430)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-73.976071</td>
+      <td>-165.844283</td>
+      <td>2.832698e+07</td>
+      <td>0.092388</td>
+      <td>6</td>
+      <td>POINT (473987.050 1790447.305)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-73.976211</td>
+      <td>-165.844356</td>
+      <td>2.832700e+07</td>
+      <td>0.096061</td>
+      <td>1</td>
+      <td>POINT (473985.027 1790431.654)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-73.976379</td>
+      <td>-165.844443</td>
+      <td>2.832702e+07</td>
+      <td>0.096196</td>
+      <td>1</td>
+      <td>POINT (473982.612 1790412.817)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51063</th>
+      <td>-78.034301</td>
+      <td>-168.605746</td>
+      <td>2.878597e+07</td>
+      <td>0.152796</td>
+      <td>1</td>
+      <td>POINT (416597.305 1335234.132)</td>
+    </tr>
+    <tr>
+      <th>51064</th>
+      <td>-78.034363</td>
+      <td>-168.605802</td>
+      <td>2.878597e+07</td>
+      <td>0.154176</td>
+      <td>1</td>
+      <td>POINT (416596.446 1335227.123)</td>
+    </tr>
+    <tr>
+      <th>51065</th>
+      <td>-78.034440</td>
+      <td>-168.605870</td>
+      <td>2.878598e+07</td>
+      <td>0.151869</td>
+      <td>1</td>
+      <td>POINT (416595.394 1335218.517)</td>
+    </tr>
+    <tr>
+      <th>51066</th>
+      <td>-78.034497</td>
+      <td>-168.605921</td>
+      <td>2.878599e+07</td>
+      <td>0.154419</td>
+      <td>1</td>
+      <td>POINT (416594.610 1335212.104)</td>
+    </tr>
+    <tr>
+      <th>51067</th>
+      <td>-78.034561</td>
+      <td>-168.605979</td>
+      <td>2.878600e+07</td>
+      <td>0.129654</td>
+      <td>1</td>
+      <td>POINT (416593.719 1335204.801)</td>
+    </tr>
+  </tbody>
+</table>
+<p>51068 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save coordinate information as independent columns (x, y)</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Boundary of the image</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">ys</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">ys</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Clip geodataframe fitting to the image extent</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">x_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">x_max</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">y_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">y_max</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;pix_x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;pix_y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>seg_x</th>
+      <th>freeboard</th>
+      <th>type</th>
+      <th>geometry</th>
+      <th>x</th>
+      <th>y</th>
+      <th>pix_x</th>
+      <th>pix_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-76.561351</td>
+      <td>-167.431297</td>
+      <td>2.861903e+07</td>
+      <td>0.780125</td>
+      <td>1</td>
+      <td>POINT (436941.681 1500874.271)</td>
+      <td>436941.680883</td>
+      <td>1.500874e+06</td>
+      <td>740</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-76.561408</td>
+      <td>-167.431338</td>
+      <td>2.861903e+07</td>
+      <td>0.710218</td>
+      <td>1</td>
+      <td>POINT (436940.872 1500867.897)</td>
+      <td>436940.872143</td>
+      <td>1.500868e+06</td>
+      <td>740</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-76.561462</td>
+      <td>-167.431378</td>
+      <td>2.861904e+07</td>
+      <td>0.592511</td>
+      <td>1</td>
+      <td>POINT (436940.099 1500861.810)</td>
+      <td>436940.098985</td>
+      <td>1.500862e+06</td>
+      <td>740</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-76.561514</td>
+      <td>-167.431415</td>
+      <td>2.861904e+07</td>
+      <td>0.561554</td>
+      <td>1</td>
+      <td>POINT (436939.368 1500856.062)</td>
+      <td>436939.368193</td>
+      <td>1.500856e+06</td>
+      <td>740</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-76.561581</td>
+      <td>-167.431464</td>
+      <td>2.861905e+07</td>
+      <td>0.579661</td>
+      <td>1</td>
+      <td>POINT (436938.401 1500848.459)</td>
+      <td>436938.400538</td>
+      <td>1.500848e+06</td>
+      <td>740</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14608</th>
+      <td>-77.545559</td>
+      <td>-168.188758</td>
+      <td>2.873052e+07</td>
+      <td>0.300712</td>
+      <td>1</td>
+      <td>POINT (423266.985 1390259.877)</td>
+      <td>423266.984926</td>
+      <td>1.390260e+06</td>
+      <td>467</td>
+      <td>2212</td>
+    </tr>
+    <tr>
+      <th>14609</th>
+      <td>-77.545639</td>
+      <td>-168.188823</td>
+      <td>2.873053e+07</td>
+      <td>0.513088</td>
+      <td>1</td>
+      <td>POINT (423265.900 1390250.831)</td>
+      <td>423265.900493</td>
+      <td>1.390251e+06</td>
+      <td>467</td>
+      <td>2212</td>
+    </tr>
+    <tr>
+      <th>14610</th>
+      <td>-77.545691</td>
+      <td>-168.188866</td>
+      <td>2.873054e+07</td>
+      <td>0.486816</td>
+      <td>1</td>
+      <td>POINT (423265.192 1390244.950)</td>
+      <td>423265.191837</td>
+      <td>1.390245e+06</td>
+      <td>467</td>
+      <td>2213</td>
+    </tr>
+    <tr>
+      <th>14611</th>
+      <td>-77.545753</td>
+      <td>-168.188917</td>
+      <td>2.873054e+07</td>
+      <td>0.527656</td>
+      <td>1</td>
+      <td>POINT (423264.346 1390237.969)</td>
+      <td>423264.346224</td>
+      <td>1.390238e+06</td>
+      <td>467</td>
+      <td>2213</td>
+    </tr>
+    <tr>
+      <th>14612</th>
+      <td>-77.545815</td>
+      <td>-168.188968</td>
+      <td>2.873055e+07</td>
+      <td>0.694826</td>
+      <td>1</td>
+      <td>POINT (423263.499 1390231.014)</td>
+      <td>423263.499131</td>
+      <td>1.390231e+06</td>
+      <td>467</td>
+      <td>2213</td>
+    </tr>
+  </tbody>
+</table>
+<p>14613 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>Draw overlapped optical image and ATL10 surface types (leads or not).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;Blues_r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">],</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd28e53fc10&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "65abfc262ad847639b79f685ca323fae", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Draw optical image and ATL10 freeboard.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;Blues_r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;freeboard&#39;</span><span class="p">],</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd28e37df30&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "dcbe44f9910e4c22bf49b3e9f044a055", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</section>
+<section id="floe-statistics-from-icesat-2-and-sentinel-2">
+<h2>✅ Floe statistics from ICESat-2 and Sentinel-2<a class="headerlink" href="#floe-statistics-from-icesat-2-and-sentinel-2" title="Permalink to this headline">#</a></h2>
+<p>Based on the overlapped Sentinel-2 optical image, we will calculate floe statistics. Since the optical image can be a good reference of lead detection, we compare the lead frequency and floe size distribution from the ATL10 data and Sentinel-2 optical image.</p>
+<p>First, let’s do a simple lead detection with the Sentinel-2 brigtness value. The dark area should be lead, and the white area should be sea ice floes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of pixel value</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "9ae43019548249eaa1111d508b6276c2", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Based on this histogram, which value is appropriate to separate sea ice floes and leads?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Threshold value to separate sea ice floes and leads</span>
+<span class="n">th</span> <span class="o">=</span> <span class="mi">9000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binary lead classification (0: lead, 1: sea ice floe)</span>
+<span class="n">classified</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>
+<span class="n">classified</span><span class="p">[</span><span class="n">array</span> <span class="o">&gt;=</span> <span class="n">th</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Draw the lead classification image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">classified</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;freeboard&#39;</span><span class="p">],</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "add7092f51f14899b1f7f621c893ffa3", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resample the raster value to the ICESat-2 track geodataframe</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;b4&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;lead_S2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">classified</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will calculate the floe size statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to calculate sea ice floe length</span>
+<span class="k">def</span> <span class="nf">get_floe_length</span><span class="p">(</span><span class="n">freeboard</span><span class="p">,</span> <span class="n">lead_mask</span><span class="p">,</span> <span class="n">seg_dist</span><span class="p">):</span>
+    <span class="c1"># INPUT:</span>
+    <span class="c1"># freeboard: along-track freeboard measurement of ICESat-2 ATL10 track</span>
+    <span class="c1"># lead_mask: along-track lead detection result (0: lead; 1: non-lead)</span>
+    <span class="c1"># seg_dist: along-track distance of ICESat-2 ATL10 track (unit: meters)</span>
+    
+    <span class="n">floe_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># Floe length (unit: m)</span>
+    <span class="n">lead_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># Floe length (unit: m)</span>
+    <span class="n">floe_fb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># np.zeros(len(ice_leads_msk)) # Making big enough array</span>
+    
+    <span class="c1"># Floe starting index</span>
+    <span class="n">ice_cnt_st</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Floe ending index</span>
+    <span class="n">ice_cnt_en</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Lead starting index</span>
+    <span class="n">lead_cnt_st</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Lead ending index</span>
+    <span class="n">lead_cnt_en</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">freeboard</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># start floe &amp; stop lead</span>
+            <span class="c1"># Initialize floe</span>
+            <span class="n">ice_cnt_st</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">ice_cnt_en</span> <span class="o">=</span> <span class="n">i</span>
+            
+            <span class="c1"># Complete lead</span>
+            <span class="n">lead_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lead_length</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">seg_dist</span><span class="p">[</span><span class="n">lead_cnt_en</span><span class="p">]</span> <span class="o">-</span> <span class="n">seg_dist</span><span class="p">[</span><span class="n">lead_cnt_st</span><span class="p">]))</span>
+                                    
+        <span class="k">elif</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># grow floe</span>
+            <span class="n">ice_cnt_en</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+        <span class="k">elif</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># grow lead</span>
+            <span class="n">lead_cnt_en</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+        <span class="k">elif</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lead_mask</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># stop floe &amp; start lead</span>
+            <span class="c1"># Complete floe</span>
+            <span class="n">floe_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">floe_length</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">seg_dist</span><span class="p">[</span><span class="n">ice_cnt_en</span><span class="p">]</span> <span class="o">-</span> <span class="n">seg_dist</span><span class="p">[</span><span class="n">ice_cnt_st</span><span class="p">]))</span>
+            <span class="n">floe_fb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">floe_fb</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">freeboard</span><span class="p">[</span><span class="n">ice_cnt_st</span><span class="p">:</span><span class="n">ice_cnt_en</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            
+            <span class="c1"># Initialize lead</span>
+            <span class="n">lead_cnt_st</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">lead_cnt_en</span> <span class="o">=</span> <span class="n">i</span>
+        
+            
+    <span class="c1"># Removing spurious floes (&lt; 50m, &gt; 10 km, fb &lt; 0.1)</span>
+    <span class="n">remove_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">floe_length</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">floe_length</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">floe_fb</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>  
+    <span class="n">floe_fb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">floe_fb</span><span class="p">,</span> <span class="n">remove_idx</span><span class="p">)</span>
+    <span class="n">floe_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">floe_length</span><span class="p">,</span><span class="n">remove_idx</span><span class="p">)</span>
+    
+    <span class="n">remove_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lead_length</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">lead_length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">lead_length</span><span class="p">,</span><span class="n">remove_idx</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">floe_length</span><span class="p">,</span> <span class="n">floe_fb</span><span class="p">,</span> <span class="n">lead_length</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Freeboard lead mask (lead if freeboard &lt; 0.15 m)</span>
+<span class="n">lead_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">freeboard</span> <span class="o">&gt;=</span> <span class="mf">0.15</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Lead should be 0</span>
+
+<span class="c1"># Floe statistics from ATL10 (along-track)</span>
+<span class="n">floe_length1</span><span class="p">,</span> <span class="n">floe_fb1</span><span class="p">,</span> <span class="n">lead_length1</span> <span class="o">=</span> <span class="n">get_floe_length</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">freeboard</span><span class="p">,</span> <span class="n">lead_mask</span><span class="p">,</span> <span class="n">gdf</span><span class="o">.</span><span class="n">seg_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overlapped Sentinel-2 lead mask (lead if pixel value &lt; threshold)</span>
+<span class="n">lead_mask</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">lead_S2</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Lead should be 0</span>
+
+<span class="c1"># Floe statistics from Sentinel-2 (along-track)</span>
+<span class="n">floe_length2</span><span class="p">,</span> <span class="n">floe_fb2</span><span class="p">,</span> <span class="n">lead_length2</span> <span class="o">=</span> <span class="n">get_floe_length</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">freeboard</span><span class="p">,</span> <span class="n">lead_mask</span><span class="p">,</span> <span class="n">gdf</span><span class="o">.</span><span class="n">seg_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FLoe length distribution</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Histogram on log scale. </span>
+<span class="c1"># Use non-equal bin sizes, such that they look equal on log scale.</span>
+<span class="n">logbins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10000</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">floe_length1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">logbins</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;ATL10&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">floe_length2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">logbins</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;S2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Floe length (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Floe size distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "3b3cd9aed6e748efad64c578eeb11de0", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lead length distribution</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Histogram on log scale. </span>
+<span class="c1"># Use non-equal bin sizes, such that they look equal on log scale.</span>
+<span class="n">logbins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10000</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lead_length1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">logbins</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;ATL10&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lead_length2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">logbins</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;S2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Lead length (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Lead length distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "9e1f739003e74d03b865ef409431671a", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><strong>Credited by Younghyun Koo (<a class="reference external" href="mailto:kooala317&#37;&#52;&#48;gmail&#46;com">kooala317<span>&#64;</span>gmail<span>&#46;</span>com</a>)</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials/sea_ice"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1_sea_ice_tutorial.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ICESat-2 sea ice tutorial</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../projects/list_of_projects.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">List of Projects</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By eScience Institute, University of Washington<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
