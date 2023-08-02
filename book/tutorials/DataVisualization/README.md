@@ -1,6 +1,6 @@
 # Data Visualization Tutorial, ICESat-2 Hackweek 2023
 
-*insert teaser image*
+![teaser image](https://raw.githubusercontent.com/fliphilipp/images/main/nearshore-bathymetry.jpg)
 
 (by [@fliphilipp](https://github.com/fliphilipp))
 
@@ -12,4 +12,3 @@
 - Use Google Earth Engine to find the closest-in-time Sentinel-2 image that is cloud-free along ICESat-2's gound track
 - Make a plot from ICESat-2 data and contemporaneous imagery in Jupyter/matplotlib
 - Bonus material: Extract Sentinel-2 data onto the ICESat-2 ground track 
-

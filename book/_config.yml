@@ -39,6 +39,7 @@ execute:
   exclude_patterns:
     - "**/parquet-s3.ipynb"
     - "**/OpenAltimetry_Earth_Engine.ipynb"
+    - "**/use_examples.ipynb"
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
