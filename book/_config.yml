@@ -38,6 +38,9 @@ execute:
   execute_notebooks: 'force'
   exclude_patterns:
     - "**/parquet-s3.ipynb"
+    - "**/1_sea_ice_tutorial.ipynb"
+    - "**/2_ATL10_Sentinel-2.ipynb"
+    
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
