@@ -32,8 +32,8 @@ parts:
         - file: tutorials/example/tutorial-notebook
         - file: tutorials/sliderule/parquet-s3
         - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
-        sections:
-          - file: tutorials/DataVisualization/use_examples
+          sections:
+            - file: tutorials/DataVisualization/use_examples
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
