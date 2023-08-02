@@ -1,11 +1,5 @@
 # Event Logistics
 
-## Wireless
-
-* WiFi: University of Washington
-* UW NetID: TBD
-* Password: TBD
-
 ## Location
 
 * Tutorials and courses will occur in the [University of Washington South Campus Center](https://hsasf.hsa.washington.edu/instructional-support/crs/matrix/scc/) Room 221.
