@@ -1,3 +1,8 @@
+# Common binary data formats
+*.tif
+*.h5
+*.nc
+
 .DS_Store
 
 # Jupyter Book things
