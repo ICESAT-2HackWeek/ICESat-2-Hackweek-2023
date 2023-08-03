@@ -8,4 +8,4 @@ The tutorials are organized as follows:
 - [EarthData Search](tutorials/data-access-and-format/earthdata-search) is a GUI search interface for NASA data.  This is probably the simplest way to search for ICESat-2 and other NASA data.
 - [`earthaccess`](tutorials/data-access-and-format/earthaccess) is a Python package to search for NASA datasets and granules, and to download those granules, or, if you are in  AWS `us-west-2` cloud compute instance, open data files directly from cloud storage.
 - [`icepyx`]() is a data search and access tools specifically for ICESat-2
-- [Sliderule]() is a ...
+- [Sliderule]() is an on-demand science data processing service. Using a client (either Python, Node.js, or the web), users can make requests to the different SlideRule web-services to generate customized data products or subset existing datasets.
