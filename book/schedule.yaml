@@ -14,6 +14,7 @@ tabs:
     description: null
     time: 9:30 - 10:00
   - title: CryoCloud
+    link: "https://icesat-2-2023.hackweek.io/tutorials/cryocloud_demo/CryoCloud_demo.html"
     description: Getting connected to our shared computational resources.
     time: 10:00 - 11:30
     leads:
@@ -26,7 +27,7 @@ tabs:
     description: Summary of ICESat-2 datasets, algorithms and science applications.
     time: 11:30 - 12:00
     leads:
-    - Tyler Sutterley 
+    - Tyler Sutterley
     - Nathan Kurtz
     resources:
     - title: Recording
@@ -41,6 +42,7 @@ tabs:
   date: Tuesday 08 August
   contents:
   - title: Open source development / Object Oriented Programming
+    link: "https://icesat-2-2023.hackweek.io/tutorials/OOP/index.html"
     description: Best practices for collaborative coding and object oriented programming.
     time: 8:30 - 9:30
     leads:
@@ -52,6 +54,7 @@ tabs:
     description: null
     time: 9:30 - 10:00
   - title: Cloud data access and data formats
+    link: "https://icesat-2-2023.hackweek.io/tutorials/data-access-and-format/index.html"
     description: Approaches for accessing and subsetting ICESat-2 data in a cloud
       environment.
     time: 10:00 - 11:30
@@ -93,6 +96,7 @@ tabs:
     description: null
     time: 10:00 - 10:30
   - title: 'Applications: Visualization and Integration'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/DataVisualization/OpenAltimetry_Earth_Engine.html"
     description: An overview of the capabilities provided by OpenAltimetry and Google
       Earth Engine for putting ICESat-2 photon-level data into context
     time: 10:30 - 11:15
@@ -116,6 +120,7 @@ tabs:
     leads:
     - Shamsudeen Yekeen
   - title: 'Applications: sea ice'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/sea_ice/1_sea_ice_tutorial.html"
     description: Applications of ICESat-2 data to sea ice.
     time: 9:15 - 10:00
     leads:
@@ -176,6 +181,6 @@ tabs:
   - title: CLOSING
     description: Final wrap up.
     time: 14:00 - 14:15
-    leads: 
+    leads:
     - Anthony Arendt
-    
+
