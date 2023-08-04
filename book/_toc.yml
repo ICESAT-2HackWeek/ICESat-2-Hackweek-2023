@@ -23,13 +23,20 @@ parts:
       - file: preliminary/checklist/earthdata
       - file: preliminary/checklist/earthengine
     - file: preliminary/skills_refresher_index
-      sections:
+      sections: 
         - file: preliminary/skills-refresher/swc
 - caption: Tutorials
   chapters:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
+        - file: tutorials/data-access-and-format/index
+          sections:
+            - file: tutorials/data-access-and-format/overview
+            - file: tutorials/data-access-and-format/earthdata_search
+            - file: tutorials/data-access-and-format/earthaccess
+            - file: tutorials/data-access-and-format/icepyx
+            - file: tutorials/data-access-and-format/sliderule
         - file: tutorials/sliderule/parquet-s3
         - file: tutorials/sea_ice/1_sea_ice_tutorial
           sections:
