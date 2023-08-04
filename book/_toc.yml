@@ -33,7 +33,7 @@ parts:
         - file: tutorials/data-access-and-format/index
           sections:
             - file: tutorials/data-access-and-format/overview
-            - file: tutorials/data-access-and-format/earthdata-search
+            - file: tutorials/data-access-and-format/earthdata_search
             - file: tutorials/data-access-and-format/earthaccess
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
