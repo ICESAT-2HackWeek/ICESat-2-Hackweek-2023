@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>OpenAltimetry and Earth Engine Use Examples &#8212; ICESat-2 Hackweek 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ICESat-2 sea ice tutorial" href="../sea_ice/1_sea_ice_tutorial.html" />
+    <link rel="prev" title="Interactive Visualizion with Open Altimetry &amp; Google Earth Engine" href="OpenAltimetry_Earth_Engine.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ICESat-2 Hackweek 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to ICESat-2 Hackweek!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../logistics.html">
+   Event Logistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://icesat-2-2023.hackweek.io/index.html?jump_to=schedule">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://icesat-2-2023.hackweek.io/index.html?jump_to=team">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mission.html">
+   Hackweek Mission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../CoC.html">
+   Event Code of Conduct
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/checklist_index.html">
+   Checklist
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/checklist/earthengine.html">
+     Google Earth Engine Sign-Up
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/skills_refresher_index.html">
+   Skills Refresher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/skills-refresher/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example/tutorial-notebook.html">
+     Example tutorial notebook
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../data-access-and-format/index.html">
+     Data Access and Formats
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../data-access-and-format/overview.html">
+       Data Discovery and Access: Overview
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../data-access-and-format/earthdata_search.html">
+       Using NASA Earthdata Search to Discover Cloud-Hosted Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../data-access-and-format/earthaccess.html">
+       Using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         earthaccess
+        </span>
+       </code>
+       to Search for, Access and Open ICESat-2 Data in the Cloud
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../data-access-and-format/icepyx.html">
+       Using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         icepyx
+        </span>
+       </code>
+       to search, access and open ICESat-2 data in the cloud
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../data-access-and-format/sliderule.html">
+       Overview of
+       <strong>
+        SlideRule
+       </strong>
+       Functionality
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sliderule/parquet-s3.html">
+     Sliderule Output to S3
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="OpenAltimetry_Earth_Engine.html">
+     Interactive Visualizion with Open Altimetry &amp; Google Earth Engine
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       OpenAltimetry and Earth Engine Use Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sea_ice/1_sea_ice_tutorial.html">
+     ICESat-2 sea ice tutorial
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sea_ice/2_ATL10_Sentinel-2.html">
+       Compare ATL10 freeboard profile with Sentinel-2 optical images
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../OOP/index.html">
+     Object Oriented Programming
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../OOP/OOP_tutorial_complete.html">
+       Object Oriented Programming
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../OOP/alien.html">
+       Try it yourself!
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/list_of_projects.html">
+   List of Projects
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roadmap.html">
+     Project Roadmap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_science.html">
+   Open Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/open_source_software.html">
+   Open-source Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/questions.html">
+   How to Get Help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/social.html">
+   Things to do in Seattle
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/supplemental_index.html">
+   Supplemental Material
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../reference/supplemental/python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../reference/supplemental/conda.html">
+     Conda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/main?urlpath=lab/tree/book/tutorials/DataVisualization/use_examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/issues/new?title=Issue%20on%20page%20%2Ftutorials/DataVisualization/use_examples.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023/edit/main/book/tutorials/DataVisualization/use_examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/tutorials/DataVisualization/use_examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-data-from-tutorial-melt-lake-in-greenland">
+   Example data from tutorial: melt lake in Greenland
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearshore-bathymetry">
+   Nearshore Bathymetry
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-data">
+     Input data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#half-dome">
+   Half Dome
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sea-ice">
+   Sea Ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ice-shelf-rift">
+   Ice Shelf Rift
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Input data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ice-covered-lake-on-ice-shelf">
+   Ice-Covered Lake on Ice Shelf
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-the-date-only">
+     Change the date only
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>OpenAltimetry and Earth Engine Use Examples</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-data-from-tutorial-melt-lake-in-greenland">
+   Example data from tutorial: melt lake in Greenland
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearshore-bathymetry">
+   Nearshore Bathymetry
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-data">
+     Input data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#half-dome">
+   Half Dome
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sea-ice">
+   Sea Ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ice-shelf-rift">
+   Ice Shelf Rift
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Input data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ice-covered-lake-on-ice-shelf">
+   Ice-Covered Lake on Ice Shelf
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-the-date-only">
+     Change the date only
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="openaltimetry-and-earth-engine-use-examples">
+<h1>OpenAltimetry and Earth Engine Use Examples<a class="headerlink" href="#openaltimetry-and-earth-engine-use-examples" title="Permalink to this headline">#</a></h1>
+<p>For the functions shown in the Google Earth Engine tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils.oa</span> <span class="kn">import</span> <span class="n">dataCollector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If needed, uncomment below to authenticate Earth Engine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ee.Authenticate()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-data-from-tutorial-melt-lake-in-greenland">
+<h2>Example data from tutorial: melt lake in Greenland<a class="headerlink" href="#example-data-from-tutorial-melt-lake-in-greenland" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl03?date=2021-08-22&amp;minx=-23.989069717620517&amp;miny=77.53261687779506&amp;maxx=-23.950348700496775&amp;maxy=77.57222464044443&amp;trackId=909&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">url</span><span class="p">,</span><span class="n">beam</span><span class="o">=</span><span class="s1">&#39;gt1r&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;supraglacial melt lake in Greenland&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 6314 data points.
+---&gt; requesting ATL06 data... 198 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 26 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 4.4 km long.
+Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --&gt; there are 4 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20210820T144749_N0301_R082_T26XNM_20210820T173503
+    - time difference: 2 days before ICESat-2
+    - mean along-track cloud probability: 1.3
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_5_1.png" src="../../_images/use_examples_5_1.png" />
+</div>
+</div>
+</section>
+<section id="nearshore-bathymetry">
+<h2>Nearshore Bathymetry<a class="headerlink" href="#nearshore-bathymetry" title="Permalink to this headline">#</a></h2>
+<section id="input-data">
+<h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl12?date=2020-12-15&amp;minx=-77.858681&amp;miny=25.728091&amp;maxx=-77.831461&amp;maxy=25.832559&amp;trackId=1254&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="s1">&#39;gt1r&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Nearshore Bathymetry&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 34237 data points.
+---&gt; requesting ATL06 data... No data.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 114 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... 2 data points.
+---&gt; requesting ATL13 data... 317 data points.
+The ground track is 11.6 km long.
+Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --&gt; there are 4 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2A_MSIL2A_20201213T155521_N0214_R011_T17RRJ_20201213T195958
+    - time difference: 2 days before ICESat-2
+    - mean along-track cloud probability: 5.7
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_7_1.png" src="../../_images/use_examples_7_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="half-dome">
+<h2>Half Dome<a class="headerlink" href="#half-dome" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl06?date=2021-01-10&amp;minx=-119.587886&amp;miny=37.730067&amp;maxx=-119.488871&amp;maxy=37.775582&amp;trackId=265&amp;beamName=gt3r&amp;beamName=gt3l&amp;beamName=gt2r&amp;beamName=gt2l&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="s1">&#39;gt2l&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Half Dome&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 5801 data points.
+---&gt; requesting ATL06 data... 187 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 21 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 5.0 km long.
+Looking for Sentinel-2 images from 2020-12-31T12:00:00 to 2021-01-20T12:00:00 --&gt; there are 8 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20210111T184739_N0214_R070_T11SKB_20210111T210436
+    - time difference: 1 day after ICESat-2
+    - mean along-track cloud probability: 16.1
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_9_1.png" src="../../_images/use_examples_9_1.png" />
+</div>
+</div>
+</section>
+<section id="sea-ice">
+<h2>Sea Ice<a class="headerlink" href="#sea-ice" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl08?date=2022-08-15&amp;minx=-13.254052238113646&amp;miny=81.88762219346533&amp;maxx=-12.627060835100693&amp;maxy=81.9764994455186&amp;trackId=839&amp;beamName=gt2r&amp;beamName=gt2l&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="s1">&#39;gt1l&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sea Ice&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 47138 data points.
+---&gt; requesting ATL06 data... No data.
+---&gt; requesting ATL07 data... 1881 data points.
+---&gt; requesting ATL08 data... 77 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... 4 data points.
+---&gt; requesting ATL13 data... No data.
+The ground track is 10.2 km long.
+Looking for Sentinel-2 images from 2022-08-05T12:00:00 to 2022-08-25T12:00:00 --&gt; there are 40 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2A_MSIL2A_20220815T153821_N0400_R011_T28XES_20220815T223057
+    - time difference: Same day as ICESat-2
+    - mean along-track cloud probability: 0.5
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_11_1.png" src="../../_images/use_examples_11_1.png" />
+</div>
+</div>
+</section>
+<section id="ice-shelf-rift">
+<h2>Ice Shelf Rift<a class="headerlink" href="#ice-shelf-rift" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Input data<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl06?date=2020-01-26&amp;minx=99.85237589431291&amp;miny=-66.35086607273658&amp;maxx=100.0381369994367&amp;maxy=-66.19796463586664&amp;trackId=476&amp;beamName=gt3r&amp;beamName=gt3l&amp;beamName=gt2r&amp;beamName=gt2l&amp;outputFormat=json&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="s1">&#39;gt3r&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ice Shelf Rift&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 48749 data points.
+---&gt; requesting ATL06 data... 847 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 172 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 17.1 km long.
+Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --&gt; there is 1 cloud-free image.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20200131T021549_N0213_R117_T47DNG_20200131T052854
+    - time difference: 5 days after ICESat-2
+    - mean along-track cloud probability: 2.0
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_13_1.png" src="../../_images/use_examples_13_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="ice-covered-lake-on-ice-shelf">
+<h2>Ice-Covered Lake on Ice Shelf<a class="headerlink" href="#ice-covered-lake-on-ice-shelf" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="mi">721</span>
+<span class="n">gtx</span> <span class="o">=</span> <span class="s1">&#39;gt3r&#39;</span>
+<span class="n">latlims</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">71.35</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.26</span><span class="p">]</span>
+<span class="n">lonlims</span> <span class="o">=</span> <span class="p">[</span><span class="mf">71.41</span><span class="p">,</span> <span class="mf">71.59</span><span class="p">]</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s1">&#39;2019-05-15&#39;</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ice-Covered Lake on Ice Shelf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 29323 data points.
+---&gt; requesting ATL06 data... 509 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 102 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 10.1 km long.
+Looking for Sentinel-2 images from 2019-05-05T12:00:00 to 2019-05-25T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-25T12:00:00 to 2019-06-04T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-15T12:00:00 to 2019-06-14T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-05T12:00:00 to 2019-06-24T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-03-26T12:00:00 to 2019-07-04T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-03-16T12:00:00 to 2019-07-14T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --&gt; there are 2 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20190314T034629_N0211_R075_T42DWF_20190314T084528
+    - time difference: 62 days before ICESat-2
+    - mean along-track cloud probability: 0.1
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_15_1.png" src="../../_images/use_examples_15_1.png" />
+</div>
+</div>
+<section id="change-the-date-only">
+<h3>Change the date only<a class="headerlink" href="#change-the-date-only" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s1">&#39;2021-05-11&#39;</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Where did the lake go?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 44747 data points.
+---&gt; requesting ATL06 data... 509 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 102 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 10.1 km long.
+Looking for Sentinel-2 images from 2021-05-01T12:00:00 to 2021-05-21T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2021-04-21T12:00:00 to 2021-05-31T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2021-04-11T12:00:00 to 2021-06-10T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2021-04-01T12:00:00 to 2021-06-20T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2021-03-22T12:00:00 to 2021-06-30T12:00:00 --&gt; there are 2 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20210323T034629_N0214_R075_T42DWF_20210323T071809
+    - time difference: 49 days before ICESat-2
+    - mean along-track cloud probability: 1.3
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_17_1.png" src="../../_images/use_examples_17_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials/DataVisualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="OpenAltimetry_Earth_Engine.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interactive Visualizion with Open Altimetry &amp; Google Earth Engine</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../sea_ice/1_sea_ice_tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ICESat-2 sea ice tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By eScience Institute, University of Washington<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

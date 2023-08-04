@@ -294,11 +294,28 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../sea_ice/1_sea_ice_tutorial.html">
-     ICESat-2 sea ice tutorial
+    <a class="reference internal" href="../DataVisualization/OpenAltimetry_Earth_Engine.html">
+     Interactive Visualizion with Open Altimetry &amp; Google Earth Engine
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../DataVisualization/use_examples.html">
+       OpenAltimetry and Earth Engine Use Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sea_ice/1_sea_ice_tutorial.html">
+     ICESat-2 sea ice tutorial
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -314,8 +331,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="../OOP/index.html">
      Object Oriented Programming
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -350,8 +367,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../projects/index.html">
    Projects
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -414,8 +431,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../reference/supplemental_index.html">
    Supplemental Material
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1464,7 +1481,7 @@ Using .netrc file for EDL
 </div>
 </div>
 </div>
-<p>HDF5 files are hierachical structures similar to the directory structure on your computer.  Groups are analogous to directories, which can contain other Groups or Datasets.  The File Object (<code class="docutils literal notranslate"><span class="pre">fh</span></code>) is the root group.  Datasets are variables and are collected under a Group.  They contain multi-dimensional arrays of data values.  Groups and Datasets can have attributes that contain metadata, for example units of data values in a Dataset.</p>
+<p>HDF5 files are hierarchical structures similar to the directory structure on your computer.  Groups are analogous to directories, which can contain other Groups or Datasets.  The File Object (<code class="docutils literal notranslate"><span class="pre">fh</span></code>) is the root group.  Datasets are variables and are collected under a Group.  They contain multi-dimensional arrays of data values.  Groups and Datasets can have attributes that contain metadata, for example units of data values in a Dataset.</p>
 <p>To access a particular dataset, you have to know the path to that dataset.  All ICESat-2 data products have a data dictionary that includes the path to all variables, along with datatype, standard name, units and a description.</p>
 <p>In this example, I want to get Land Ice Height from the left beam of the first beam pair, along with geolocation, time, error and quality.  From inspecting the <a class="reference external" href="https://nsidc.org/sites/default/files/documents/technical-reference/icesat2_atl06_data_dict_v006.pdf">data dictionary for ATL06</a>, I can see that all of this data is included in the <code class="docutils literal notranslate"><span class="pre">gt1l/land_ice_segments</span></code> group.  The are also subgroups within this group that contain other data but, in this case, I don’t want that data.</p>
 <p><code class="docutils literal notranslate"><span class="pre">icepyx</span></code> has a handy variables lookup for ICESat-2 products.  I can use this method to return a full list of paths to variables in the ATL06 file and filter this list to get just the variables under <code class="docutils literal notranslate"><span class="pre">gt1l/land_ice_segments</span></code>.</p>
@@ -1498,7 +1515,7 @@ Using .netrc file for EDL
 <p class="admonition-title">Note</p>
 <p>What is often called “GIS data” can be thought of as a table of data, where each row of that table is associated with some geospatial object: either a point, line or polygon.  We can think of along-track ICESat-2 data as a set of georeferenced points, with each point having a set of attributes such as height, surface type, quality, etc.</p>
 </div>
-<p>There are several ways to create a <code class="docutils literal notranslate"><span class="pre">geopandas.Dataframe</span></code>.  In this example, I create a dictionary of variables, read from the HDF5 file using the syntax <code class="docutils literal notranslate"><span class="pre">fh[path_to_variable][:]</span></code> and use the variable name as the key for this dictionary.  I also create a list of Point geometries from latitude and longitude variables, which represent the center points of the land ice heigh segments.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> dictionary and <code class="docutils literal notranslate"><span class="pre">geometry</span></code> list are used to create the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> object.  I also define the Coordinate Reference System (<code class="docutils literal notranslate"><span class="pre">crs</span></code>) for the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> as WGS 84 using the EPSG code 4326.  The CRS makes the data georeferenced as it relates the longitude and latitude values of each point to a location on Earth.</p>
+<p>There are several ways to create a <code class="docutils literal notranslate"><span class="pre">geopandas.Dataframe</span></code>.  In this example, I create a dictionary of variables, read from the HDF5 file using the syntax <code class="docutils literal notranslate"><span class="pre">fh[path_to_variable][:]</span></code> and use the variable name as the key for this dictionary.  I also create a list of Point geometries from latitude and longitude variables, which represent the center points of the land ice height segments.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> dictionary and <code class="docutils literal notranslate"><span class="pre">geometry</span></code> list are used to create the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> object.  I also define the Coordinate Reference System (<code class="docutils literal notranslate"><span class="pre">crs</span></code>) for the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> as WGS 84 using the EPSG code 4326.  The CRS makes the data georeferenced as it relates the longitude and latitude values of each point to a location on Earth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">varname</span><span class="p">:</span> <span class="n">fh</span><span class="p">[</span><span class="n">varpath</span><span class="p">][:]</span> <span class="k">for</span> <span class="n">varname</span><span class="p">,</span> <span class="n">varpath</span> <span class="ow">in</span> <span class="n">variables_to_get</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">varname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]}</span>
