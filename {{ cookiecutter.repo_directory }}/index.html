@@ -254,7 +254,13 @@
 
                     <div class="content">
                         <h3 class="title mb-3">
-                            {{ content['title'] }}
+                            {% if 'link' in content %}
+                                <a class="tutorial" href="{{ content['link'] }}">
+                                    {{ content['title'] }}
+                                </a>
+                            {% else %}
+                                {{ content['title'] }}
+                            {% endif %}
                         </h3>
 
                         {% if 'location' in content %}
