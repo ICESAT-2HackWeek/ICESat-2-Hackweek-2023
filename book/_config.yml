@@ -38,9 +38,13 @@ execute:
   execute_notebooks: 'force'
   exclude_patterns:
     - "**/parquet-s3.ipynb"
+    - "**/OpenAltimetry_Earth_Engine.ipynb"
+    - "**/use_examples.ipynb"
     - "**/1_sea_ice_tutorial.ipynb"
     - "**/2_ATL10_Sentinel-2.ipynb"
-    
+    - "**/earthaccess.ipynb"
+    - "**/icepyx.ipynb"
+    - "**/sliderule.ipynb"
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300

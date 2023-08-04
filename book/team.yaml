@@ -533,3 +533,26 @@ people:
         link: https://github.com/jules32
     user_groups:
       - Hackweek Helper
+    # =============
+  - title: Wei Ji Leong
+    avatar: https://github.com/weiji14.png
+    role: Cloud Engineer
+    organizations:
+      - name: Development Seed
+    bio: >
+      Wei Ji is a Geospatial Data Scientist working on improving cloud-native geospatial tools.
+      Previously, he has used ICESat-2 ATL11 to map active subglacial lakes over an entire ice sheet to see how they drain and fill over time.
+      As an open source contributor, he helps to maintain the CryoCloud hub environment and various conda-forge packages, making reproducibility of processing workflows a top priority.
+    expertise:
+      - remote sensing
+      - machine learning
+      - subglacial hydrology
+      - open science
+      - Python
+      - ICESat-2 ATL11 data product
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/weiji14
+    user_groups:
+      - Hackweek Helper
