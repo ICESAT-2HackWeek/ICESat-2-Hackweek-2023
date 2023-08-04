@@ -38,9 +38,9 @@ parts:
             - file: tutorials/data-access-and-format/earthaccess
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
-        - file: tutorials/mission_overview/sliderule-feature-find
+        - file: tutorials/mission_overview/icesat-2-land-ice-products
           sections:
-            - file: tutorials/mission_overview/icesat-2-land-ice-products
+            - file: tutorials/mission_overview/sliderule-feature-find
         - file: tutorials/sliderule/parquet-s3
         - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
           sections:
