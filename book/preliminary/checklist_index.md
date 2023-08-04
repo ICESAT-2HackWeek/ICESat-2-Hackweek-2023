@@ -26,6 +26,10 @@ __Upon completion you will have__:
   <input type="checkbox" name="a5">
   <label for="a5">Setup the `git` command after logging into the JupyterHub</label>
 </div>
+<div>
+  <input type="checkbox" name="a6">
+  <label for="a6">Created a Google Earth Engine Login</label>
+</div>
 ```
 
 ### Slack Account
@@ -64,4 +68,10 @@ This {{ hackweek }} computing environment is provided by the [CryoCloud project]
 All content of the hackweek will be shared via GitHub and interacting with the
 website will be done via the `git` command.
 Visit [Setting up the `git` command](checklist/git.md) to learn how to configure that!
+
+### Google Earth Engine Sign-Up
+
+If you want to interactively follow along the tutorial for data exploration and visualization, you need to be registered for Google Earth Engine (GEE) to be able to run the code. 
+The sign-up process might take a few days, so it is best to do this well in advance of the hackweek. 
+Visit [Google Earth Engine Sign-Up](checklist/earthengine.md) to learn how to get access!
 
