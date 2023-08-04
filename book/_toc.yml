@@ -46,6 +46,7 @@ parts:
           sections:
             - file: tutorials/OOP/OOP_tutorial_complete
             - file: tutorials/OOP/alien
+        - file: tutorials/snow-depth/applications-tutorial-snow-depth
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
