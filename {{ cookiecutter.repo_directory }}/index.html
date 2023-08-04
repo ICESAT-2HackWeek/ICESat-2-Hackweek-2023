@@ -147,7 +147,13 @@
             </h4>
             <div id="countdown-box"
                  class="countdown-box"
-                 data-start-date="{{ cookiecutter.banner.start_date }}/{{ cookiecutter.banner.year}}">
+                 data-start-date="{{ cookiecutter.event_countdown }}">
+                {% for unit in ['days', 'hours', 'minutes', 'seconds'] %}
+                <span class="{{ unit }}">
+                    <span class="number"></span>
+                    <span class="unit">{{ unit.capitalize() }}</span>
+                </span>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -584,11 +590,11 @@
 </footer>
 
 <!-- Javascript -->
-<script src="assets/plugins/popper.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/smoothscroll.min.js"></script>
-<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script defer src="assets/plugins/popper.min.js"></script>
+<script defer src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script defer src="assets/plugins/smoothscroll.min.js"></script>
+<script defer src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+<script defer src="assets/js/main.js"></script>
 
 </body>
 

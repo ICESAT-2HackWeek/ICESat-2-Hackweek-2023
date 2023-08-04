@@ -21,6 +21,7 @@ parts:
       - file: preliminary/checklist/jupyterhub
       - file: preliminary/checklist/git
       - file: preliminary/checklist/earthdata
+      - file: preliminary/checklist/earthengine
     - file: preliminary/skills_refresher_index
       sections: 
         - file: preliminary/skills-refresher/swc
@@ -36,6 +37,10 @@ parts:
             - file: tutorials/data-access-and-format/earthaccess
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
+        - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/sea_ice/1_sea_ice_tutorial
+          sections:
+            - file: tutorials/sea_ice/2_ATL10_Sentinel-2
 - caption: Projects
   chapters:
     - file: projects/list_of_projects

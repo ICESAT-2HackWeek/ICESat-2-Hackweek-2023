@@ -17,11 +17,11 @@ parse:
     contact_email: "icesat2-hackweek@uw.edu"
     website_url: "https://icesat-2-2023.hackweek.io"
     jupyterhub_url: "https://hub.cryointhecloud.com/"
-    slack_workspace_url: "https://icesat2hackweek.slack.com/archives/CDQFBU571"
-    docker_image: "https://INSERT_DOCKER_IMAGE_URL"
+    slack_workspace_url: "https://icesat2hackweek.slack.com/archives/C05G53S0EES"
+    docker_image: "https://quay.io/repository/cryointhecloud/cryo-hub-image"
     dataset: "IceSat-2"
-    anon_reporting_url: "https://INSERT_FORM_LINK"
-    project_spreadsheet_url: "https://INSERT_GOOGLE_SHEET"
+    anon_reporting_url: "https://forms.office.com/Pages/ResponsePage.aspx?id=W9229i_wGkSZoBYqxQYL0mN7SkiN--ZBu_xCy0cQD6JUQ1hUSTlTODFZNEJMQlExTzBZODhJN1pSRS4u"
+    project_spreadsheet_url: "https://docs.google.com/spreadsheets/d/1VFwlCS7Knbpatr0DNso-9A8VnHet5UNLNXwTjOoC5wo/edit#gid=0"
   myst_enable_extensions:
     # Defaults
     - dollarmath
@@ -37,7 +37,13 @@ execute:
   # NOTE: 'cache' to use jupyter-cache, or 'force' to run all
   execute_notebooks: 'force'
   exclude_patterns:
-    - "**/geospatial-advanced.ipynb"
+    - "**/parquet-s3.ipynb"
+    - "**/1_sea_ice_tutorial.ipynb"
+    - "**/2_ATL10_Sentinel-2.ipynb"
+    - "**/earthaccess.ipynb"
+    - "**/icepyx.ipynb"
+    - "**/sliderule.ipynb"
+    
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300

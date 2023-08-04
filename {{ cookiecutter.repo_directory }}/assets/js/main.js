@@ -72,23 +72,18 @@ const spy = new Gumshoe('#navigation a', { offset: yOffset });
 // variables for time units
 const counterDiv = document.getElementById("countdown-box");
 const endDate = new Date(counterDiv.getAttribute('data-start-date'));
-let days, hours, minutes, seconds;
-
-function createCountdownSpans(className) {
-  const span = document.createElement("SPAN");
-  span.className = className;
-  return span
-}
-
-function updateCountdownHTML(span, value, unit) {
-  span.innerHTML = '<span class="number">' + value + '</span>' +
-    '<span class="unit">' + unit + '</span>';
-}
 
 function timeLeft() {
   // find the amount of "seconds" between now and target
   const currentDate = new Date().getTime();
   return (endDate - currentDate) / 1000;
+}
+
+function updateCounterNumberSpan(counterDiv, selector, number) {
+  const span = counterDiv.querySelectorAll(selector + ' span.number')[0];
+  if (span.innerHTML !== number.toString()) {
+    span.innerHTML = number;
+  }
 }
 
 function updateCounter(counterDiv) {
@@ -103,27 +98,20 @@ function updateCounter(counterDiv) {
   let seconds = parseInt(secondsLeft % 60);
 
   // format countdown string + set tag value.
-  updateCountdownHTML(counterDiv.getElementsByClassName('days')[0], days, 'Days');
-  updateCountdownHTML(counterDiv.getElementsByClassName('hours')[0], hours, 'Hours');
-  updateCountdownHTML(counterDiv.getElementsByClassName('minutes')[0], minutes, 'Mins');
-  updateCountdownHTML(counterDiv.getElementsByClassName('secs')[0], seconds, 'Secs');
+  updateCounterNumberSpan(counterDiv, 'span.days', days);
+  updateCounterNumberSpan(counterDiv, 'span.hours', hours);
+  updateCounterNumberSpan(counterDiv, 'span.minutes', minutes);
+  updateCounterNumberSpan(counterDiv, 'span.seconds', seconds);
 }
 
 function startCountDown(counterDiv) {
   if (timeLeft() > 0) {
-    counterDiv.appendChild(createCountdownSpans('days'))
-    counterDiv.appendChild(createCountdownSpans('hours'))
-    counterDiv.appendChild(createCountdownSpans('minutes'))
-    counterDiv.appendChild(createCountdownSpans('secs'))
-
     // update the counter every 1 second
     setInterval(updateCounter, 1000, counterDiv);
   } else {
     document.getElementById("countdown-intro").remove();
   }
 }
-
-startCountDown(counterDiv);
 
 /* === Select schedule tab of current day */
 
@@ -141,4 +129,7 @@ function selectScheduleDay() {
   if(tab) { tab.click() }
 }
 
-selectScheduleDay()
+document.addEventListener("DOMContentLoaded", () => {
+  selectScheduleDay()
+  startCountDown(counterDiv);
+});
