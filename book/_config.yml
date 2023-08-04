@@ -39,6 +39,7 @@ execute:
   exclude_patterns:
     - "**/parquet-s3.ipynb"
 <<<<<<< HEAD
+<<<<<<< HEAD
     - "**/OpenAltimetry_Earth_Engine.ipynb"
     - "**/use_examples.ipynb"
 =======
@@ -49,6 +50,12 @@ execute:
     - "**/sliderule.ipynb"
     
 >>>>>>> upstream/main
+=======
+    - "**/OpenAltimetry_Earth_Engine.ipynb"
+    - "**/use_examples.ipynb"
+    - "**/1_sea_ice_tutorial.ipynb"
+    - "**/2_ATL10_Sentinel-2.ipynb"
+>>>>>>> 80c312a48b61fa8ff7aed82885936e23342b043d
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
