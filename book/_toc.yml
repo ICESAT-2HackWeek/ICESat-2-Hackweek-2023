@@ -34,7 +34,7 @@ parts:
         - file: tutorials/sea_ice/1_sea_ice_tutorial
           sections:
             - file: tutorials/sea_ice/2_ATL10_Sentinel-2
-    - file: tutorials/OOP/index
+        - file: tutorials/OOP/index
           title: Object Oriented Programming
           sections:
             - file: tutorials/OOP/OOP_slides
