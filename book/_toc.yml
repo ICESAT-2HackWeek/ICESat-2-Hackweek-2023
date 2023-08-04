@@ -37,7 +37,6 @@ parts:
         - file: tutorials/OOP/index
           title: Object Oriented Programming
           sections:
-            - file: tutorials/OOP/OOP_slides
             - file: tutorials/OOP/OOP_tutorial_complete
             - file: tutorials/OOP/alien
 - caption: Projects
