@@ -23,13 +23,14 @@ parts:
       - file: preliminary/checklist/earthdata
       - file: preliminary/checklist/earthengine
     - file: preliminary/skills_refresher_index
-      sections: 
+      sections:
         - file: preliminary/skills-refresher/swc
 - caption: Tutorials
   chapters:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
+        - file: tutorials/cryocloud_demo/CryoCloud_demo
         - file: tutorials/data-access-and-format/index
           sections:
             - file: tutorials/data-access-and-format/overview
@@ -38,6 +39,9 @@ parts:
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
         - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
+          sections:
+            - file: tutorials/DataVisualization/use_examples
         - file: tutorials/sea_ice/1_sea_ice_tutorial
           sections:
             - file: tutorials/sea_ice/2_ATL10_Sentinel-2
