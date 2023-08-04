@@ -30,13 +30,29 @@ parts:
     - file: tutorials/index
       sections:
         - file: tutorials/example/tutorial-notebook
-        - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/cryocloud_demo/CryoCloud_demo
+        - file: tutorials/data-access-and-format/index
+          sections:
+            - file: tutorials/data-access-and-format/overview
+            - file: tutorials/data-access-and-format/earthdata_search
+            - file: tutorials/data-access-and-format/earthaccess
+            - file: tutorials/data-access-and-format/icepyx
+            - file: tutorials/data-access-and-format/sliderule
         - file: tutorials/mission_overview/sliderule-feature-find
           sections:
             - file: tutorials/mission_overview/icesat-2-land-ice-products
+        - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
+          sections:
+            - file: tutorials/DataVisualization/use_examples
         - file: tutorials/sea_ice/1_sea_ice_tutorial
           sections:
             - file: tutorials/sea_ice/2_ATL10_Sentinel-2
+        - file: tutorials/OOP/index
+          title: Object Oriented Programming
+          sections:
+            - file: tutorials/OOP/OOP_tutorial_complete
+            - file: tutorials/OOP/alien
 - caption: Projects
   chapters:
     - file: projects/list_of_projects
