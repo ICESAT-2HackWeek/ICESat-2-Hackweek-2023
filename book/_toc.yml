@@ -31,6 +31,7 @@ parts:
       sections:
         - file: tutorials/example/tutorial-notebook
         - file: tutorials/cryocloud_demo/CryoCloud_demo
+        - file: tutorials/GrIMP/GrIMPtutorial
         - file: tutorials/data-access-and-format/index
           sections:
             - file: tutorials/data-access-and-format/overview
