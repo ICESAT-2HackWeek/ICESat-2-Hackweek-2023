@@ -688,30 +688,55 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-and-configure-sliderule">
-   Import and Configure SlideRule
+  <a class="reference internal nav-link" href="#i-import-and-configure-sliderule">
+   I. Import and Configure SlideRule
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-functionality">
-   Core Functionality
+  <a class="reference internal nav-link" href="#ii-core-functionality">
+   II. Core Functionality
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directly-read-hdf5-and-netcdf-files">
-     Directly read HDF5 and NetCDF files
+    <a class="reference internal nav-link" href="#a-directly-read-hdf5-and-netcdf-files">
+     A. Directly read HDF5 and NetCDF files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subset-atl03-photon-cloud-data">
-     Subset ATL03 photon cloud data
+    <a class="reference internal nav-link" href="#b-subset-atl03-photon-cloud-data">
+     B. Subset ATL03 photon cloud data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-generate-custom-atl06-elevations">
+     C. Generate custom ATL06 elevations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-generate-customized-atl06-elevations-using-atl08-classifications">
+     D. Generate customized ATL06 elevations using ATL08 classifications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-generate-customized-atl08-vegetation-metrics">
+     E. Generate customized ATL08 vegetation metrics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-sample-rasters-at-points-of-interest">
+     F. Sample rasters at points of interest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g-subset-gedi-l1b-l2a-l4a">
+     G. Subset GEDI L1B, L2A, L4A
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advanced-functionality">
-   Advanced Functionality
+  <a class="reference internal nav-link" href="#iii-advanced-functionality">
+   III. Advanced Functionality
   </a>
  </li>
 </ul>
@@ -734,30 +759,55 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-and-configure-sliderule">
-   Import and Configure SlideRule
+  <a class="reference internal nav-link" href="#i-import-and-configure-sliderule">
+   I. Import and Configure SlideRule
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-functionality">
-   Core Functionality
+  <a class="reference internal nav-link" href="#ii-core-functionality">
+   II. Core Functionality
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#directly-read-hdf5-and-netcdf-files">
-     Directly read HDF5 and NetCDF files
+    <a class="reference internal nav-link" href="#a-directly-read-hdf5-and-netcdf-files">
+     A. Directly read HDF5 and NetCDF files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subset-atl03-photon-cloud-data">
-     Subset ATL03 photon cloud data
+    <a class="reference internal nav-link" href="#b-subset-atl03-photon-cloud-data">
+     B. Subset ATL03 photon cloud data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-generate-custom-atl06-elevations">
+     C. Generate custom ATL06 elevations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-generate-customized-atl06-elevations-using-atl08-classifications">
+     D. Generate customized ATL06 elevations using ATL08 classifications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-generate-customized-atl08-vegetation-metrics">
+     E. Generate customized ATL08 vegetation metrics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-sample-rasters-at-points-of-interest">
+     F. Sample rasters at points of interest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g-subset-gedi-l1b-l2a-l4a">
+     G. Subset GEDI L1B, L2A, L4A
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advanced-functionality">
-   Advanced Functionality
+  <a class="reference internal nav-link" href="#iii-advanced-functionality">
+   III. Advanced Functionality
   </a>
  </li>
 </ul>
@@ -773,6 +823,14 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="overview-of-sliderule-functionality">
 <h1>Overview of <strong>SlideRule</strong> Functionality<a class="headerlink" href="#overview-of-sliderule-functionality" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://slideruleearth.io/web/">SlideRule</a> is a web service that provides on-demand customized data products.  The primary way of accessing SlideRule is through its Python client.</p>
+<div class="admonition-quick-links admonition">
+<p class="admonition-title">Quick links</p>
+<ul class="simple">
+<li><p>SlideRule Documentation: <a class="reference external" href="https://slideruleearth.io/web/">https://slideruleearth.io/web/</a></p></li>
+<li><p>SlideRule GitHub Repository: <a class="reference external" href="https://github.com/ICESat2-SlideRule/sliderule">https://github.com/ICESat2-SlideRule/sliderule</a></p></li>
+<li><p>SlideRule Python Examples GitHub Repository: <a class="reference external" href="https://github.com/ICESat2-SlideRule/sliderule-python">https://github.com/ICESat2-SlideRule/sliderule-python</a></p></li>
+</ul>
+</div>
 <p>This notebook gives an overview of the different functionality SlideRule provides.</p>
 <div class="admonition-learning-objectives admonition">
 <p class="admonition-title">Learning Objectives</p>
@@ -782,8 +840,8 @@ title="Print to PDF"
 <li><p>Where to find documentation on SlideRule’s APIs</p></li>
 </ul>
 </div>
-<section id="import-and-configure-sliderule">
-<h2>Import and Configure SlideRule<a class="headerlink" href="#import-and-configure-sliderule" title="Permalink to this headline">#</a></h2>
+<section id="i-import-and-configure-sliderule">
+<h2>I. Import and Configure SlideRule<a class="headerlink" href="#i-import-and-configure-sliderule" title="Permalink to this headline">#</a></h2>
 <p>The SlideRule Python client currently consists of seven primary modules.</p>
 <ul class="simple">
 <li><p><strong>sliderule</strong> - the core module</p></li>
@@ -802,18 +860,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.10/site-packages/sliderule/sliderule.py:41: UserWarning: Shapely 2.0 is installed, but because PyGEOS is also installed, GeoPandas will still use PyGEOS by default for now. To force to use and test Shapely 2.0, you have to set the environment variable USE_PYGEOS=0. You can do this before starting the Python process, or in your code before importing geopandas:
-
-import os
-os.environ[&#39;USE_PYGEOS&#39;] = &#39;0&#39;
-import geopandas
-
-In a future release, GeoPandas will switch to using Shapely by default. If you are using PyGEOS directly (calling PyGEOS functions on geometries from GeoPandas), this will then stop working and you are encouraged to migrate from PyGEOS to Shapely 2.0 (https://shapely.readthedocs.io/en/latest/migration_pygeos.html).
-  import geopandas
-</pre></div>
-</div>
-</div>
 </div>
 <p>Once those modules are imported, the next thing you’ll likely want to do is configure the client with the settings you want to use.  That is done with a call to <code class="docutils literal notranslate"><span class="pre">sliderule.init()</span></code>.  For detailed documentation on what arguments are supported by the initialization function, check out the <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/sliderule.html#init">api reference page</a>.</p>
 <p>It is not necessary to call <code class="docutils literal notranslate"><span class="pre">sliderule.init()</span></code> in order to start using the client, since the default settings provide a working system.  Nevertheless, it is a good practice to include a call to this function early in your notebook as a placeholder for when different settings are desired.  For instance, if you want to change the verbosity of the client and enable logging to the console, you can do so as shown below.</p>
@@ -825,45 +871,45 @@ In a future release, GeoPandas will switch to using Shapely by default. If you a
 </div>
 </div>
 </section>
-<section id="core-functionality">
-<h2>Core Functionality<a class="headerlink" href="#core-functionality" title="Permalink to this headline">#</a></h2>
+<section id="ii-core-functionality">
+<h2>II. Core Functionality<a class="headerlink" href="#ii-core-functionality" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#h5p">Directly read HDF5 and NetCDF4 files</a></p></li>
-<li><p><a class="reference external" href="#atl03p">Subset ATL03 photon cloud data</a></p></li>
-<li><p>Generate customized ATL06 elevations</p></li>
-<li><p>Generate customized ATL06 elevations using ATL08 classifications</p></li>
-<li><p>Generate customized ATL08 vegetation metrics</p></li>
-<li><p>Sample rasters (HLS, ArcticDEM, REMA, 3DEP, GEDI L3/L4A) at points of interest</p></li>
-<li><p>Subset GEDI L1B, L2A, L4A</p></li>
+<li><p>A. <a class="reference external" href="#h5p">Directly read HDF5 and NetCDF4 files</a></p></li>
+<li><p>B. <a class="reference external" href="#atl03sp">Subset ATL03 photon cloud data</a></p></li>
+<li><p>C. <a class="reference external" href="#atl06p">Generate customized ATL06 elevations</a></p></li>
+<li><p>D. <a class="reference external" href="#atl08">Generate customized ATL06 elevations using ATL08 classifications</a></p></li>
+<li><p>E. <a class="reference external" href="#phoreal">Generate customized ATL08 vegetation metrics</a></p></li>
+<li><p>F. <a class="reference external" href="#raster">Sample rasters at points of interest</a></p></li>
+<li><p>G. <a class="reference external" href="#gedi">Subset GEDI L1B, L2A, L4A</a></p></li>
 </ul>
 <p><a id='h5p'></a></p>
-<section id="directly-read-hdf5-and-netcdf-files">
-<h3>Directly read HDF5 and NetCDF files<a class="headerlink" href="#directly-read-hdf5-and-netcdf-files" title="Permalink to this headline">#</a></h3>
+<section id="a-directly-read-hdf5-and-netcdf-files">
+<h3>A. Directly read HDF5 and NetCDF files<a class="headerlink" href="#a-directly-read-hdf5-and-netcdf-files" title="Permalink to this headline">#</a></h3>
 <p>The <strong>h5</strong> module provides APIs for directly reading HDF5 and NetCDF4 files hosted by NASA in the cloud. <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/h5.html#h5p"><code class="docutils literal notranslate"><span class="pre">h5.h5p</span></code></a> is the primary method used to directly read data in the cloud.  The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/h5.html#h5p">reference page</a> for <code class="docutils literal notranslate"><span class="pre">h5.h5p</span></code> provides a description of each of the arguments needed to make the call and the different options available.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Under-the-hood, the functions in the <strong>h5</strong> module make HTTP requests to SlideRule servers running in us-west-2, and those servers read the requested data from S3 and return the results in an HTTP response back to the client.</p>
 </div>
-<p>In the example below, the first 100 latitudes and longitudes are read from an ATL06 granule.  The results are returned in a dictionary of numpy arrays, where each key is the name of the dataset.  If instead of reading just the first 100 values, all the values need to be read, then “numrows” can be set to <code class="docutils literal notranslate"><span class="pre">h5.ALL_ROWS</span></code>.</p>
+<p>In the example below, the first 10 latitudes and longitudes are read from an ATL06 granule.  The results are returned in a dictionary of numpy arrays, where each key is the name of the dataset.  If instead of reading just the first 10 values, all the values need to be read, then “numrows” can be set to <code class="docutils literal notranslate"><span class="pre">h5.ALL_ROWS</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asset</span> <span class="o">=</span> <span class="s2">&quot;icesat2&quot;</span>
 <span class="n">resource</span><span class="o">=</span><span class="s2">&quot;ATL06_20181017222812_02950102_006_02.h5&quot;</span>
 <span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># latitudes</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3l/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3r/land_ice_segments/latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
     <span class="c1"># longitudes</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt1r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt2r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3l/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;/gt3r/land_ice_segments/longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;startrow&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;numrows&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
 <span class="p">]</span>
 
 <span class="n">atl06</span> <span class="o">=</span> <span class="n">h5</span><span class="o">.</span><span class="n">h5p</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">asset</span><span class="p">)</span>
@@ -877,15 +923,53 @@ In a future release, GeoPandas will switch to using Shapely by default. If you a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;/gt2l/land_ice_segments/longitude&#39;: array([-106.95560446, -106.9554911 , -106.95551045, -106.95552958,
+        -106.95554864, -106.95556768, -106.95558687, -106.95560602,
+        -106.95562507, -106.95564448]),
+ &#39;/gt1r/land_ice_segments/longitude&#39;: array([-106.98659174, -106.98661194, -106.98663208, -106.98665219,
+        -106.98667225, -106.98669217, -106.98671199, -106.98673165,
+        -106.98675117, -106.9867706 ]),
+ &#39;/gt2l/land_ice_segments/latitude&#39;: array([27.00235495, 27.00254677, 27.00272693, 27.00290711, 27.00308729,
+        27.00326748, 27.00344765, 27.00362783, 27.00380801, 27.00398817]),
+ &#39;/gt3l/land_ice_segments/longitude&#39;: array([-106.92358939, -106.92360831, -106.92362694, -106.92364578,
+        -106.92366553, -106.92368548, -106.92370511, -106.92372443,
+        -106.92374335, -106.92376208]),
+ &#39;/gt3r/land_ice_segments/latitude&#39;: array([27.00538841, 27.00557226, 27.00575378, 27.00593394, 27.00611417,
+        27.00629433, 27.00647438, 27.00665448, 27.00683461, 27.00701475]),
+ &#39;/gt2r/land_ice_segments/latitude&#39;: array([27.00243391, 27.002614  , 27.0027941 , 27.00297424, 27.0031544 ,
+        27.00333457, 27.00351475, 27.00369492, 27.00387508, 27.00405523]),
+ &#39;/gt1l/land_ice_segments/latitude&#39;: array([26.99974882, 26.99993919, 27.00011936, 27.0002995 , 27.00047959,
+        27.00065967, 27.00083975, 27.00101983, 27.00119991, 27.00138   ]),
+ &#39;/gt1l/land_ice_segments/longitude&#39;: array([-106.9874942 , -106.9873954 , -106.98741472, -106.98743432,
+        -106.98745451, -106.9874748 , -106.98749517, -106.98751555,
+        -106.98753585, -106.98755609]),
+ &#39;/gt1r/land_ice_segments/latitude&#39;: array([26.99982778, 27.00000787, 27.00018796, 27.00036806, 27.00054816,
+        27.00072828, 27.0009084 , 27.00108854, 27.00126869, 27.00144885]),
+ &#39;/gt3l/land_ice_segments/latitude&#39;: array([27.00532861, 27.00550881, 27.00568902, 27.00586922, 27.00604934,
+        27.00622944, 27.00640957, 27.00658973, 27.00676992, 27.00695013]),
+ &#39;/gt3r/land_ice_segments/longitude&#39;: array([-106.92284566, -106.92286519, -106.92288437, -106.92290365,
+        -106.9229221 , -106.92294135, -106.92296191, -106.92298185,
+        -106.92300157, -106.9230211 ]),
+ &#39;/gt2r/land_ice_segments/longitude&#39;: array([-106.95470198, -106.95472213, -106.95474212, -106.95476169,
+        -106.954781  , -106.95480023, -106.95481943, -106.95483867,
+        -106.95485801, -106.95487744])}
+</pre></div>
 </div>
-<p><a id='atl03p'></a></p>
+</div>
+</div>
+<p><a id='atl03sp'></a></p>
 </section>
-<section id="subset-atl03-photon-cloud-data">
-<h3>Subset ATL03 photon cloud data<a class="headerlink" href="#subset-atl03-photon-cloud-data" title="Permalink to this headline">#</a></h3>
+<section id="b-subset-atl03-photon-cloud-data">
+<h3>B. Subset ATL03 photon cloud data<a class="headerlink" href="#b-subset-atl03-photon-cloud-data" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl03sp"><code class="docutils literal notranslate"><span class="pre">icesat2.atl03sp</span></code></a> function makes an ATL03 subsetting request to SlideRule servers and returns a GeoDataFrame of photons.  Documentation for this function can be found in the <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl03sp">API reference</a>.</p>
 <p>In the example below, a set of resources is specified via the <code class="docutils literal notranslate"><span class="pre">poly</span></code>, <code class="docutils literal notranslate"><span class="pre">rgt</span></code>, and <code class="docutils literal notranslate"><span class="pre">cycle</span></code> parameters.  Because each granule contains so many photons, it is necessary when making this call to limit the area over which the subsetting request is made, along with the number of granules inside that area. By supplying a GeoJSON file (which is read and processed by the <code class="docutils literal notranslate"><span class="pre">sliderule.toregion</span></code> function into a format usable by SlideRule), the extent of data read in each granule is trimmed.  By supplying a reference ground track (<code class="docutils literal notranslate"><span class="pre">rgt</span></code>), and the cycle number, the number of granules is reduced - in this case to a single granule.</p>
 <p>The other parameters in the request are used to specify different aspects of the ATL03 subsetting request.  The <code class="docutils literal notranslate"><span class="pre">srt</span></code> parameters specifies the surface type, which in this case is land. The surface type is used in conjunction with the next parameter - <code class="docutils literal notranslate"><span class="pre">cnf</span></code> which is the confidence level.  A confindence level of high tells SlideRule to only include photons that are highly likely to be surface reflections off of land.  (As a different example, if the <code class="docutils literal notranslate"><span class="pre">srt</span></code> parameter specified land ice and the confidence level was low, then SlideRule would include all photons that had <em>at least</em> a low likelihood of being a reflection off of land ice). Lastly, the <code class="docutils literal notranslate"><span class="pre">len</span></code> and <code class="docutils literal notranslate"><span class="pre">res</span></code> parameters specify the length and resolution of the photon segments being returned.  In this case we are asking for 20m segments of photons every 20m.  The length and step size of the segment does not matter so much if it is only photons being returned, but when other processing parameters are supplied (like minimal along track spread of a segment), then it matters more.</p>
-<p>Lastly, the call to <code class="docutils literal notranslate"><span class="pre">icesat2.atl03sp</span></code> is made which sends the HTTP request to SlideRule’s servers and then waits and accumulates the response from the servers into a GeoDataFrame, which each row representing a single photon.</p>
+<p>Lastly, the call to <code class="docutils literal notranslate"><span class="pre">icesat2.atl03sp</span></code> is made which sends the HTTP request to SlideRule’s servers and then waits and accumulates the response from the servers into a GeoDataFrame, with each row representing a single photon.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For the request below there are only ~1K photons returned.  In the actual data, there are roughly ~300K high-confidence photons inside the Grand Mesa region in the selected granule.  The reason so few photons are returned is because the length of the segment is set to 20m and the default along-track-spread required for a valid segment is also 20m (because the default segment length is 40m).  As a result, most segments are filtered out by SlideRule as not being valid.  This happens all the time to me - I get back a lot less data than I expected because I inadvertently changed one parameter without changing another parameter related to it.  In this case, the way to get all of the photons would be to either change the along-track-spread to 40m (“ats”: 40), or tell SlideRule to return invalid segments (“pass_invalid”: True).  I left it this way below because I wanted to highlight this common issue, and also because the smaller datasets is faster to load into a GeoDataFrame.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
@@ -903,7 +987,7 @@ In a future release, GeoPandas will switch to using Shapely by default. If you a
 <span class="p">}</span>
 
 <span class="c1"># Make ATL03 Subsetting Request</span>
-<span class="n">atl03</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl03sp</span><span class="p">(</span><span class="n">parms</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
+<span class="n">atl03</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl03sp</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -914,11 +998,2084 @@ In a future release, GeoPandas will switch to using Shapely by default. If you a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rgt</th>
+      <th>solar_elevation</th>
+      <th>background_rate</th>
+      <th>track</th>
+      <th>segment_id</th>
+      <th>cycle</th>
+      <th>segment_dist</th>
+      <th>sc_orient</th>
+      <th>atl08_class</th>
+      <th>height</th>
+      <th>relief</th>
+      <th>yapc_score</th>
+      <th>landcover</th>
+      <th>distance</th>
+      <th>quality_ph</th>
+      <th>atl03_cnf</th>
+      <th>snowcover</th>
+      <th>pair</th>
+      <th>geometry</th>
+      <th>spot</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-08-09 04:05:01.663190528</th>
+      <td>737</td>
+      <td>-19.053331</td>
+      <td>6000.394172</td>
+      <td>1</td>
+      <td>215526</td>
+      <td>16</td>
+      <td>4.322238e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1964.221191</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>-4.752241</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>0</td>
+      <td>POINT (-108.18757 38.83761)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.663590656</th>
+      <td>737</td>
+      <td>-19.053331</td>
+      <td>6000.394172</td>
+      <td>1</td>
+      <td>215526</td>
+      <td>16</td>
+      <td>4.322238e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1964.407227</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>-1.916195</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>0</td>
+      <td>POINT (-108.18757 38.83764)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.663790592</th>
+      <td>737</td>
+      <td>-19.072472</td>
+      <td>2255.589879</td>
+      <td>2</td>
+      <td>215532</td>
+      <td>16</td>
+      <td>4.322358e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1992.014404</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>-6.999181</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>0</td>
+      <td>POINT (-108.15103 38.84145)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.663790592</th>
+      <td>737</td>
+      <td>-19.053331</td>
+      <td>6000.394172</td>
+      <td>1</td>
+      <td>215526</td>
+      <td>16</td>
+      <td>4.322238e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1964.859985</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>-0.499761</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>0</td>
+      <td>POINT (-108.18757 38.83765)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.663990528</th>
+      <td>737</td>
+      <td>-19.053331</td>
+      <td>6000.394172</td>
+      <td>1</td>
+      <td>215526</td>
+      <td>16</td>
+      <td>4.322238e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1965.168213</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>0.916676</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>0</td>
+      <td>POINT (-108.18757 38.83766)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777690624</th>
+      <td>737</td>
+      <td>-18.884623</td>
+      <td>6621.979834</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1796.026733</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>7.281042</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14964)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777790464</th>
+      <td>737</td>
+      <td>-18.884623</td>
+      <td>6621.979834</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1795.569092</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>7.994720</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14965)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777790464</th>
+      <td>737</td>
+      <td>-18.884623</td>
+      <td>6621.979834</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1795.770142</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>7.994993</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14965)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777890560</th>
+      <td>737</td>
+      <td>-18.884623</td>
+      <td>6621.979834</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1795.739380</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>8.709501</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14966)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777990656</th>
+      <td>737</td>
+      <td>-18.884623</td>
+      <td>6621.979834</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1796.026245</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>9.424560</td>
+      <td>0</td>
+      <td>4</td>
+      <td>255</td>
+      <td>1</td>
+      <td>POINT (-108.15068 39.14966)</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>1159 rows × 20 columns</p>
+</div></div></div>
+</div>
+<p><a id='atl06p'></a></p>
+</section>
+<section id="c-generate-custom-atl06-elevations">
+<h3>C. Generate custom ATL06 elevations<a class="headerlink" href="#c-generate-custom-atl06-elevations" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl06p"><code class="docutils literal notranslate"><span class="pre">icesat2.atl06p</span></code></a> function makes an on-demand processing request to SlideRule servers to generate customized ATL06 elevations and return them in a GeoDataFrame.  Documentation for this function can be found in the <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl06p">API reference</a>.</p>
+<p>In the example below, a set of resources are implicitly specified via the <code class="docutils literal notranslate"><span class="pre">poly</span></code> parameter.  By only supplying a polygon defining the region of interest, SlideRule will determine which granules intersect the region and then process all them.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Under-the-hood the SlideRule Python client is using the supplied shapefile to make a call to NASA’s CMR system to get a list of ATL03 granules that intersect the region of interest.  The list of granules is passed to the SlideRule servers along with geometry in the shapefile.  The SlideRule servers then distribute the processing of each granule across all the available servers and each is responsible for pulling out the photons insides the region of interest and calculating a set of elevations from them.</p>
+</div>
+<p>The other parameters in the request all control different aspects of the ATL03 subsetting and ATL06 algorithm running on the SlideRule servers. Note that the length of the ATL03 segment used to generate an ATL06 elevation has been customized to 20m instead of the 40m in the standard product, and the step size has been similarly customized to 10m instead of 20m.</p>
+<p>Lastly, the call to <code class="docutils literal notranslate"><span class="pre">icesat2.atl06p</span></code> makes the processing request by sending an HTTP request to SlideRule’s servers and then waiting and accumulating the response from the servers into a GeoDataFrame, with each row representing an elevation calculated from a custom ATL03 segment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL06 Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;ats&quot;</span><span class="p">:</span> <span class="mf">7.0</span><span class="p">,</span>
+    <span class="s2">&quot;cnt&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL06 Request</span>
+<span class="n">atl06</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl06p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl06</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>segment_id</th>
+      <th>w_surface_window_final</th>
+      <th>distance</th>
+      <th>dh_fit_dx</th>
+      <th>rgt</th>
+      <th>cycle</th>
+      <th>dh_fit_dy</th>
+      <th>h_mean</th>
+      <th>gt</th>
+      <th>h_sigma</th>
+      <th>n_fit_photons</th>
+      <th>rms_misfit</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-16 10:49:21.175923712</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784255</td>
+      <td>5.893400</td>
+      <td>1.570828e+07</td>
+      <td>0.111905</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1932.573780</td>
+      <td>10</td>
+      <td>0.238099</td>
+      <td>10</td>
+      <td>0.526231</td>
+      <td>POINT (-108.05597 39.17015)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.178226688</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784256</td>
+      <td>3.892215</td>
+      <td>1.570830e+07</td>
+      <td>-0.005205</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1933.155462</td>
+      <td>10</td>
+      <td>0.121129</td>
+      <td>21</td>
+      <td>0.545944</td>
+      <td>POINT (-108.05599 39.17002)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.179784960</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784257</td>
+      <td>3.499944</td>
+      <td>1.570831e+07</td>
+      <td>0.062558</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1933.855075</td>
+      <td>10</td>
+      <td>0.134729</td>
+      <td>31</td>
+      <td>0.688412</td>
+      <td>POINT (-108.05601 39.16992)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.181907456</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784257</td>
+      <td>3.382582</td>
+      <td>1.570832e+07</td>
+      <td>0.113617</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1935.019797</td>
+      <td>10</td>
+      <td>0.090643</td>
+      <td>31</td>
+      <td>0.491447</td>
+      <td>POINT (-108.05603 39.16980)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.183406592</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784258</td>
+      <td>3.383325</td>
+      <td>1.570833e+07</td>
+      <td>0.112181</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1936.090100</td>
+      <td>10</td>
+      <td>0.129987</td>
+      <td>28</td>
+      <td>0.603474</td>
+      <td>POINT (-108.05605 39.16971)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:36.382432256</th>
+      <td>0</td>
+      <td>5</td>
+      <td>217202</td>
+      <td>3.000000</td>
+      <td>4.355788e+06</td>
+      <td>-0.000915</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>3026.024050</td>
+      <td>50</td>
+      <td>0.015205</td>
+      <td>63</td>
+      <td>0.120393</td>
+      <td>POINT (-107.82683 39.14888)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:36.383838976</th>
+      <td>0</td>
+      <td>5</td>
+      <td>217203</td>
+      <td>3.000000</td>
+      <td>4.355798e+06</td>
+      <td>-0.002173</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>3026.028156</td>
+      <td>50</td>
+      <td>0.014089</td>
+      <td>59</td>
+      <td>0.108159</td>
+      <td>POINT (-107.82684 39.14897)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:36.385241600</th>
+      <td>0</td>
+      <td>5</td>
+      <td>217203</td>
+      <td>3.000000</td>
+      <td>4.355808e+06</td>
+      <td>0.005213</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>3026.055055</td>
+      <td>50</td>
+      <td>0.013608</td>
+      <td>66</td>
+      <td>0.110552</td>
+      <td>POINT (-107.82685 39.14906)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:36.386648832</th>
+      <td>0</td>
+      <td>5</td>
+      <td>217204</td>
+      <td>3.000000</td>
+      <td>4.355818e+06</td>
+      <td>0.006819</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>3026.109420</td>
+      <td>50</td>
+      <td>0.017187</td>
+      <td>64</td>
+      <td>0.131181</td>
+      <td>POINT (-107.82687 39.14915)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:36.388051712</th>
+      <td>0</td>
+      <td>5</td>
+      <td>217204</td>
+      <td>3.000000</td>
+      <td>4.355828e+06</td>
+      <td>0.000219</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>3026.121673</td>
+      <td>50</td>
+      <td>0.031761</td>
+      <td>38</td>
+      <td>0.155089</td>
+      <td>POINT (-107.82688 39.14924)</td>
+    </tr>
+  </tbody>
+</table>
+<p>585969 rows × 15 columns</p>
+</div></div></div>
+</div>
+<p><a id='atl08'></a></p>
+</section>
+<section id="d-generate-customized-atl06-elevations-using-atl08-classifications">
+<h3>D. Generate customized ATL06 elevations using ATL08 classifications<a class="headerlink" href="#d-generate-customized-atl06-elevations-using-atl08-classifications" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl03sp"><code class="docutils literal notranslate"><span class="pre">icesat2.atl03sp</span></code></a> and <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl06p"><code class="docutils literal notranslate"><span class="pre">icesat2.atl06p</span></code></a> on-demand processing requests can also include the use of ATL08 data to classify and filter the photons returned and used in the ATL06 elevation calculation.  See the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/ICESat-2.html#atl08-classification">icesat2 module user guide</a> for further documentation.</p>
+<p>In the example below, the request to generate custom ATL06 elevations has been modified to use the ATL08 classifier.  The first modification is to drop the minimum required ATL03 confidence level down to CNF_NOT_CONSIDERED which is the lowest confidence of a non-TEP photon.  (This effectively removes ATL03 confidence level filtering by including all non-TEP photons regardless of how the ATL03 processing labelled it).  The second modification is to include the <code class="docutils literal notranslate"><span class="pre">atl08_class</span></code> parameter and  specify <code class="docutils literal notranslate"><span class="pre">atl08_ground</span></code> in the list of labels that should be used.  This causes the ATL06 elevation to only be calculated from photons labelled as ground by the ATL08 classification system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL06 Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_NOT_CONSIDERED</span><span class="p">,</span> <span class="c1"># effectively remove atl03 filtering</span>
+    <span class="s2">&quot;ats&quot;</span><span class="p">:</span> <span class="mf">7.0</span><span class="p">,</span>
+    <span class="s2">&quot;cnt&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="s2">&quot;atl08_class&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;atl08_ground&quot;</span><span class="p">]</span> <span class="c1"># specify ground photons only</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL06 Request</span>
+<span class="n">atl06</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl06p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl06</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>segment_id</th>
+      <th>w_surface_window_final</th>
+      <th>distance</th>
+      <th>dh_fit_dx</th>
+      <th>rgt</th>
+      <th>cycle</th>
+      <th>dh_fit_dy</th>
+      <th>h_mean</th>
+      <th>gt</th>
+      <th>h_sigma</th>
+      <th>n_fit_photons</th>
+      <th>rms_misfit</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-16 10:49:21.178253056</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784256</td>
+      <td>3.934149</td>
+      <td>1.570830e+07</td>
+      <td>-0.008607</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1933.016317</td>
+      <td>10</td>
+      <td>0.102701</td>
+      <td>17</td>
+      <td>0.422847</td>
+      <td>POINT (-108.05599 39.17002)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.179791360</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784257</td>
+      <td>3.000000</td>
+      <td>1.570831e+07</td>
+      <td>0.042971</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1933.566470</td>
+      <td>10</td>
+      <td>0.127884</td>
+      <td>23</td>
+      <td>0.528953</td>
+      <td>POINT (-108.05601 39.16992)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.181908992</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784257</td>
+      <td>3.000000</td>
+      <td>1.570832e+07</td>
+      <td>0.110146</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1934.745216</td>
+      <td>10</td>
+      <td>0.066839</td>
+      <td>21</td>
+      <td>0.300498</td>
+      <td>POINT (-108.05603 39.16980)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.183407872</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784258</td>
+      <td>3.000000</td>
+      <td>1.570833e+07</td>
+      <td>0.104661</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1935.839538</td>
+      <td>10</td>
+      <td>0.101096</td>
+      <td>18</td>
+      <td>0.318448</td>
+      <td>POINT (-108.05605 39.16971)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.184901632</th>
+      <td>0</td>
+      <td>6</td>
+      <td>784258</td>
+      <td>3.155259</td>
+      <td>1.570834e+07</td>
+      <td>0.043212</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1936.487611</td>
+      <td>10</td>
+      <td>0.090417</td>
+      <td>13</td>
+      <td>0.324653</td>
+      <td>POINT (-108.05606 39.16962)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.376869376</th>
+      <td>0</td>
+      <td>2</td>
+      <td>217425</td>
+      <td>3.000000</td>
+      <td>4.360248e+06</td>
+      <td>-0.050124</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>2162.878838</td>
+      <td>20</td>
+      <td>0.052424</td>
+      <td>26</td>
+      <td>0.219636</td>
+      <td>POINT (-107.90326 39.18353)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.378268160</th>
+      <td>0</td>
+      <td>2</td>
+      <td>217425</td>
+      <td>3.062824</td>
+      <td>4.360258e+06</td>
+      <td>-0.117692</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>2161.919798</td>
+      <td>20</td>
+      <td>0.109060</td>
+      <td>11</td>
+      <td>0.302979</td>
+      <td>POINT (-107.90327 39.18362)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.389504000</th>
+      <td>0</td>
+      <td>2</td>
+      <td>217429</td>
+      <td>5.035891</td>
+      <td>4.360338e+06</td>
+      <td>-0.196024</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>2148.707594</td>
+      <td>20</td>
+      <td>0.173830</td>
+      <td>10</td>
+      <td>0.481328</td>
+      <td>POINT (-107.90335 39.18434)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.390915840</th>
+      <td>0</td>
+      <td>2</td>
+      <td>217430</td>
+      <td>3.304781</td>
+      <td>4.360348e+06</td>
+      <td>-0.108748</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>2147.447970</td>
+      <td>20</td>
+      <td>0.120104</td>
+      <td>15</td>
+      <td>0.454504</td>
+      <td>POINT (-107.90336 39.18443)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392322816</th>
+      <td>0</td>
+      <td>2</td>
+      <td>217430</td>
+      <td>3.003630</td>
+      <td>4.360358e+06</td>
+      <td>-0.013040</td>
+      <td>1179</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>2146.973921</td>
+      <td>20</td>
+      <td>0.109150</td>
+      <td>11</td>
+      <td>0.343818</td>
+      <td>POINT (-107.90337 39.18452)</td>
+    </tr>
+  </tbody>
+</table>
+<p>531464 rows × 15 columns</p>
+</div></div></div>
+</div>
+<p><a id='phoreal'></a></p>
+</section>
+<section id="e-generate-customized-atl08-vegetation-metrics">
+<h3>E. Generate customized ATL08 vegetation metrics<a class="headerlink" href="#e-generate-customized-atl08-vegetation-metrics" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl08p"><code class="docutils literal notranslate"><span class="pre">icesat2.atl08p</span></code></a> function makes an on-demand processing request to SlideRule servers to generate customized ATL08 vegetation metrics and return them in a GeoDataFrame.  Documentation for this function can be found in the <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/icesat2.html#atl08p">API reference</a>.</p>
+<p>In the example below, vegetation metrics are calculated for every 20m segment in the Grand Mesa region that pass the provided criteria (<code class="docutils literal notranslate"><span class="pre">ats</span></code> - along track spread, <code class="docutils literal notranslate"><span class="pre">cnt</span></code> - minimum number of photons in a segment).  The photons are classified using the ATL08 classification method, and in addition to ground photons, canopy and top of canopy photons are also included (which is necessary for the vegetation statistics).</p>
+<p>The set of parameters specific to the ATL08 processing are provided under the <code class="docutils literal notranslate"><span class="pre">phoreal</span></code> key.  The name comes from the University of Texas team that developed PhoREAL and collaborated with us to get their algorithms into SlideRule. Documentation on the different parameters related to the vegetation calculations in PhoREAL can be found in the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/ICESat-2.html#phoreal-parameters">user guide</a>.</p>
+<p>Lastly, the call to <code class="docutils literal notranslate"><span class="pre">icesat2.atl08p</span></code> makes the processing request by sending an HTTP request to SlideRule’s servers and then waiting and accumulating the response from the servers into a GeoDataFrame, with each row representing a set of vegetation metrics for a custom 20m ATL03 segment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL08 Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_NOT_CONSIDERED</span><span class="p">,</span>
+    <span class="s2">&quot;ats&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="s2">&quot;cnt&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="s2">&quot;atl08_class&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;atl08_ground&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;atl08_canopy&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;atl08_top_of_canopy&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;phoreal&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;binsize&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> 
+        <span class="s2">&quot;geoloc&quot;</span><span class="p">:</span> <span class="s2">&quot;center&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;use_abs_h&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> 
+        <span class="s2">&quot;send_waveform&quot;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL08 Processing Request</span>
+<span class="n">atl08</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl08p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl08</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>landcover</th>
+      <th>h_te_median</th>
+      <th>rgt</th>
+      <th>veg_ph_count</th>
+      <th>canopy_openness</th>
+      <th>spot</th>
+      <th>cycle</th>
+      <th>canopy_h_metrics</th>
+      <th>h_max_canopy</th>
+      <th>h_min_canopy</th>
+      <th>ph_count</th>
+      <th>snowcover</th>
+      <th>solar_elevation</th>
+      <th>gt</th>
+      <th>distance</th>
+      <th>h_canopy</th>
+      <th>h_mean_canopy</th>
+      <th>segment_id</th>
+      <th>gnd_ph_count</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-16 10:49:21.175428352</th>
+      <td>40</td>
+      <td>1931.684814</td>
+      <td>272</td>
+      <td>3</td>
+      <td>0.120013</td>
+      <td>6</td>
+      <td>1</td>
+      <td>(1.26806640625, 1.26806640625, 1.26806640625, ...</td>
+      <td>1.268066</td>
+      <td>1.003418</td>
+      <td>10</td>
+      <td>1</td>
+      <td>-30.342127</td>
+      <td>10</td>
+      <td>1.570827e+07</td>
+      <td>1.268066</td>
+      <td>1.098796</td>
+      <td>784255</td>
+      <td>7</td>
+      <td>POINT (-108.05597 39.17018)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.176328192</th>
+      <td>40</td>
+      <td>1932.688477</td>
+      <td>272</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>1</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>4</td>
+      <td>1</td>
+      <td>-30.342127</td>
+      <td>10</td>
+      <td>1.570828e+07</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>784256</td>
+      <td>4</td>
+      <td>POINT (-108.05597 39.17013)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.178228224</th>
+      <td>40</td>
+      <td>1932.964355</td>
+      <td>272</td>
+      <td>4</td>
+      <td>0.196118</td>
+      <td>6</td>
+      <td>1</td>
+      <td>(1.0474853515625, 1.0474853515625, 1.047485351...</td>
+      <td>1.047485</td>
+      <td>0.605713</td>
+      <td>21</td>
+      <td>1</td>
+      <td>-30.342186</td>
+      <td>10</td>
+      <td>1.570829e+07</td>
+      <td>1.047485</td>
+      <td>0.816437</td>
+      <td>784256</td>
+      <td>17</td>
+      <td>POINT (-108.05599 39.17002)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.179278080</th>
+      <td>40</td>
+      <td>1933.456299</td>
+      <td>272</td>
+      <td>8</td>
+      <td>0.214094</td>
+      <td>6</td>
+      <td>1</td>
+      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
+      <td>1.255371</td>
+      <td>0.605713</td>
+      <td>31</td>
+      <td>1</td>
+      <td>-30.342186</td>
+      <td>10</td>
+      <td>1.570830e+07</td>
+      <td>1.255371</td>
+      <td>0.887772</td>
+      <td>784257</td>
+      <td>23</td>
+      <td>POINT (-108.05600 39.16995)</td>
+    </tr>
+    <tr>
+      <th>2018-10-16 10:49:21.181978112</th>
+      <td>30</td>
+      <td>1935.172119</td>
+      <td>272</td>
+      <td>10</td>
+      <td>0.236772</td>
+      <td>6</td>
+      <td>1</td>
+      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
+      <td>1.255371</td>
+      <td>0.518311</td>
+      <td>31</td>
+      <td>1</td>
+      <td>-30.342239</td>
+      <td>10</td>
+      <td>1.570832e+07</td>
+      <td>1.255371</td>
+      <td>0.888391</td>
+      <td>784257</td>
+      <td>21</td>
+      <td>POINT (-108.05603 39.16979)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392222208</th>
+      <td>126</td>
+      <td>2146.932617</td>
+      <td>1179</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>18</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>11</td>
+      <td>2</td>
+      <td>41.786434</td>
+      <td>20</td>
+      <td>4.360358e+06</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>217430</td>
+      <td>11</td>
+      <td>POINT (-107.90337 39.18451)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392222208</th>
+      <td>126</td>
+      <td>2146.932617</td>
+      <td>1179</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>18</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>11</td>
+      <td>2</td>
+      <td>41.786434</td>
+      <td>20</td>
+      <td>4.360358e+06</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>217430</td>
+      <td>11</td>
+      <td>POINT (-107.90337 39.18451)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392222208</th>
+      <td>126</td>
+      <td>2146.932617</td>
+      <td>1179</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>18</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>11</td>
+      <td>2</td>
+      <td>41.786434</td>
+      <td>20</td>
+      <td>4.360358e+06</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>217430</td>
+      <td>11</td>
+      <td>POINT (-107.90337 39.18451)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392222208</th>
+      <td>126</td>
+      <td>2146.932617</td>
+      <td>1179</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>18</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>11</td>
+      <td>2</td>
+      <td>41.786434</td>
+      <td>20</td>
+      <td>4.360358e+06</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>217430</td>
+      <td>11</td>
+      <td>POINT (-107.90337 39.18451)</td>
+    </tr>
+    <tr>
+      <th>2023-03-07 18:00:37.392222208</th>
+      <td>126</td>
+      <td>2146.932617</td>
+      <td>1179</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>18</td>
+      <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>11</td>
+      <td>2</td>
+      <td>41.786434</td>
+      <td>20</td>
+      <td>4.360358e+06</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>217430</td>
+      <td>11</td>
+      <td>POINT (-107.90337 39.18451)</td>
+    </tr>
+  </tbody>
+</table>
+<p>997070 rows × 20 columns</p>
+</div></div></div>
+</div>
+<p><a id='raster'></a></p>
+</section>
+<section id="f-sample-rasters-at-points-of-interest">
+<h3>F. Sample rasters at points of interest<a class="headerlink" href="#f-sample-rasters-at-points-of-interest" title="Permalink to this headline">#</a></h3>
+<p>Many of the SlideRule processing APIs support sampling raster datasets at every point generated by the server-side processing.  For a detailed discussion of this capability see the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/GeoRaster.html">GeoRaster page</a> and the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/SlideRule.html#raster-sampling">sampling parameters</a> in the SlideRule documentation.</p>
+<p>In the example below, an on-demand ATL06 processing request is made along with parameters that specify that the Harmonized Landsat Sentinel-2 (HLS) raster dataset and the GEDI L4B raster dataset is to be sampled at the location of every calculated ATL06 elevation.  The results are returned in a GeoDataFrame where each row contains both an elevation and the value of the sampled HLS and GEDI L4B rasters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">earthdata</span><span class="o">.</span><span class="n">stac</span><span class="p">(</span><span class="n">short_name</span><span class="o">=</span><span class="s2">&quot;HLS&quot;</span><span class="p">,</span> <span class="n">polygon</span><span class="o">=</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span> <span class="n">time_start</span><span class="o">=</span><span class="s2">&quot;2022-01-01T00:00:00Z&quot;</span><span class="p">,</span> <span class="n">time_end</span><span class="o">=</span><span class="s2">&quot;2022-03-01T00:00:00Z&quot;</span><span class="p">,</span> <span class="n">as_str</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Build Sampling Request Parameters</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;landsat&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;asset&quot;</span><span class="p">:</span> <span class="s2">&quot;landsat-hls&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;catalog&quot;</span><span class="p">:</span> <span class="n">catalog</span><span class="p">,</span>
+        <span class="s2">&quot;closest_time&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-01-05T00:00:00Z&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;bands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NDVI&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gedi&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;asset&quot;</span><span class="p">:</span> <span class="s2">&quot;gedil4b&quot;</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
+
+<span class="c1"># Build ATL03 Subsetting Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;rgt&quot;</span><span class="p">:</span> <span class="mi">737</span><span class="p">,</span>
+    <span class="s2">&quot;cycle&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="n">samples</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL06 with Sampling Request</span>
+<span class="n">atl06</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl06p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl06</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>segment_id</th>
+      <th>w_surface_window_final</th>
+      <th>distance</th>
+      <th>dh_fit_dx</th>
+      <th>rgt</th>
+      <th>cycle</th>
+      <th>dh_fit_dy</th>
+      <th>h_mean</th>
+      <th>...</th>
+      <th>rms_misfit</th>
+      <th>geometry</th>
+      <th>gedi.value</th>
+      <th>gedi.file_id</th>
+      <th>gedi.time</th>
+      <th>gedi.flags</th>
+      <th>landsat.value</th>
+      <th>landsat.file_id</th>
+      <th>landsat.time</th>
+      <th>landsat.flags</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-08-09 04:05:02.004134656</th>
+      <td>0</td>
+      <td>5</td>
+      <td>215526</td>
+      <td>7.207511</td>
+      <td>4.322238e+06</td>
+      <td>0.272569</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>1950.969121</td>
+      <td>...</td>
+      <td>1.052384</td>
+      <td>POINT (-108.18666 38.83772)</td>
+      <td>3.732060</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.320962</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.007694848</th>
+      <td>0</td>
+      <td>3</td>
+      <td>215533</td>
+      <td>8.259963</td>
+      <td>4.322378e+06</td>
+      <td>0.246685</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>1979.649742</td>
+      <td>...</td>
+      <td>1.515434</td>
+      <td>POINT (-108.15011 38.84176)</td>
+      <td>3.381883</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.393827</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.028692992</th>
+      <td>0</td>
+      <td>4</td>
+      <td>215661</td>
+      <td>15.992866</td>
+      <td>4.324944e+06</td>
+      <td>0.008062</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2345.645139</td>
+      <td>...</td>
+      <td>2.194247</td>
+      <td>POINT (-108.15391 38.86470)</td>
+      <td>5.138969</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.326095</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.192992768</th>
+      <td>0</td>
+      <td>5</td>
+      <td>215593</td>
+      <td>5.802608</td>
+      <td>4.323581e+06</td>
+      <td>0.226286</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>1973.237144</td>
+      <td>...</td>
+      <td>0.953454</td>
+      <td>POINT (-108.18809 38.84977)</td>
+      <td>-0.464319</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.163336</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.468495104</th>
+      <td>0</td>
+      <td>1</td>
+      <td>215702</td>
+      <td>10.424640</td>
+      <td>4.325766e+06</td>
+      <td>0.122638</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2392.190077</td>
+      <td>...</td>
+      <td>1.382781</td>
+      <td>POINT (-108.11696 38.87492)</td>
+      <td>8.237352</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.201469</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:03.104293888</th>
+      <td>0</td>
+      <td>3</td>
+      <td>215922</td>
+      <td>3.000000</td>
+      <td>4.330176e+06</td>
+      <td>0.004983</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>3046.448365</td>
+      <td>...</td>
+      <td>0.331792</td>
+      <td>POINT (-108.15837 38.91171)</td>
+      <td>10.128394</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>-0.032250</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:03.199091456</th>
+      <td>0</td>
+      <td>4</td>
+      <td>216076</td>
+      <td>30.000000</td>
+      <td>4.333263e+06</td>
+      <td>-1.150922</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2757.357326</td>
+      <td>...</td>
+      <td>6.329727</td>
+      <td>POINT (-108.16288 38.93931)</td>
+      <td>112.406910</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.214478</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:03.968494336</th>
+      <td>0</td>
+      <td>1</td>
+      <td>216234</td>
+      <td>29.169269</td>
+      <td>4.336430e+06</td>
+      <td>0.090866</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2900.454914</td>
+      <td>...</td>
+      <td>3.977454</td>
+      <td>POINT (-108.12883 38.97054)</td>
+      <td>13.943795</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.277238</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:03.971295232</th>
+      <td>1</td>
+      <td>1</td>
+      <td>216235</td>
+      <td>19.537112</td>
+      <td>4.336450e+06</td>
+      <td>0.209095</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2902.901898</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>POINT (-108.12885 38.97072)</td>
+      <td>13.943800</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.277238</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:04.240030976</th>
+      <td>1</td>
+      <td>5</td>
+      <td>216319</td>
+      <td>5.776011</td>
+      <td>4.338134e+06</td>
+      <td>0.028822</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2229.299515</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>POINT (-108.20410 38.98028)</td>
+      <td>7.853535</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.027452</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:04.597890816</th>
+      <td>0</td>
+      <td>5</td>
+      <td>216446</td>
+      <td>30.000000</td>
+      <td>4.340680e+06</td>
+      <td>0.541584</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2866.563258</td>
+      <td>...</td>
+      <td>5.434554</td>
+      <td>POINT (-108.20669 39.00313)</td>
+      <td>223.411333</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.015144</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:04.603494656</th>
+      <td>0</td>
+      <td>5</td>
+      <td>216448</td>
+      <td>24.753527</td>
+      <td>4.340720e+06</td>
+      <td>0.687198</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2896.535498</td>
+      <td>...</td>
+      <td>4.175616</td>
+      <td>POINT (-108.20673 39.00349)</td>
+      <td>223.411342</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.105105</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:04.745237504</th>
+      <td>0</td>
+      <td>3</td>
+      <td>216504</td>
+      <td>3.000000</td>
+      <td>4.341842e+06</td>
+      <td>-0.014690</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>3062.905773</td>
+      <td>...</td>
+      <td>0.324315</td>
+      <td>POINT (-108.17125 39.01633)</td>
+      <td>38.525259</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>-0.044660</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:04.789554688</th>
+      <td>0</td>
+      <td>5</td>
+      <td>216514</td>
+      <td>4.325855</td>
+      <td>4.342043e+06</td>
+      <td>0.097105</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>3010.790639</td>
+      <td>...</td>
+      <td>0.656339</td>
+      <td>POINT (-108.20820 39.01535)</td>
+      <td>75.502564</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>-0.038077</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:05.076196608</th>
+      <td>0</td>
+      <td>1</td>
+      <td>216627</td>
+      <td>30.000000</td>
+      <td>4.344308e+06</td>
+      <td>0.316729</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>3125.048198</td>
+      <td>...</td>
+      <td>5.554866</td>
+      <td>POINT (-108.13740 39.04119)</td>
+      <td>64.502242</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.232865</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:05.327299072</th>
+      <td>0</td>
+      <td>1</td>
+      <td>216716</td>
+      <td>30.000000</td>
+      <td>4.346092e+06</td>
+      <td>-0.228058</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2950.092189</td>
+      <td>...</td>
+      <td>4.932216</td>
+      <td>POINT (-108.13944 39.05718)</td>
+      <td>59.539302</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.382338</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:05.764592384</th>
+      <td>0</td>
+      <td>1</td>
+      <td>216871</td>
+      <td>8.524411</td>
+      <td>4.349199e+06</td>
+      <td>-0.195892</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2269.554903</td>
+      <td>...</td>
+      <td>1.470233</td>
+      <td>POINT (-108.14283 39.08504)</td>
+      <td>5.228157</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.216810</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:05.975891968</th>
+      <td>0</td>
+      <td>1</td>
+      <td>216946</td>
+      <td>11.203486</td>
+      <td>4.350703e+06</td>
+      <td>-0.043185</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2134.899440</td>
+      <td>...</td>
+      <td>1.467558</td>
+      <td>POINT (-108.14439 39.09853)</td>
+      <td>0.583802</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.132631</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.235495424</th>
+      <td>0</td>
+      <td>1</td>
+      <td>217038</td>
+      <td>3.000000</td>
+      <td>4.352547e+06</td>
+      <td>-0.061309</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>2014.965446</td>
+      <td>...</td>
+      <td>0.486845</td>
+      <td>POINT (-108.14634 39.11507)</td>
+      <td>-0.097582</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>0.080759</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.776672768</th>
+      <td>0</td>
+      <td>1</td>
+      <td>217230</td>
+      <td>3.000000</td>
+      <td>4.356395e+06</td>
+      <td>-0.037142</td>
+      <td>737</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>1796.311214</td>
+      <td>...</td>
+      <td>0.301794</td>
+      <td>POINT (-108.15066 39.14958)</td>
+      <td>3.961418</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0</td>
+      <td>-0.047255</td>
+      <td>6</td>
+      <td>1.325355e+09</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>20 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p><a id='gedi'></a></p>
+</section>
+<section id="g-subset-gedi-l1b-l2a-l4a">
+<h3>G. Subset GEDI L1B, L2A, L4A<a class="headerlink" href="#g-subset-gedi-l1b-l2a-l4a" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/gedi.html"><code class="docutils literal notranslate"><span class="pre">gedi</span></code></a> module provides a handful of functions to make GEDI subsetting requests to SlideRule.  For documentation on those functions, see the <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/gedi.html">api reference</a>.  For documentation on the general GEDI capabilities in SlideRule, see the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/GEDI.html">user guide</a>.</p>
+<p>In the example below, a request to subset the GEDI L2A data for the Grand Mesa region is made.  The polygon representing the region is provided in the same way it is for the <em>icesat2</em> processing requests. The <code class="docutils literal notranslate"><span class="pre">*_flag</span></code> settings are filters specifying that data is only to be returned for footprints with those flags set that way. The <code class="docutils literal notranslate"><span class="pre">beam</span></code> parameter specifies a single beam number, a list of beam numbers, or all of the beams (<code class="docutils literal notranslate"><span class="pre">gedi.ALL_BEAMS</span></code>).</p>
+<p>The call to <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/gedi.html#gedi02ap"><code class="docutils literal notranslate"><span class="pre">gedi.gedi02ap()</span></code></a> sends the HTTP request to the SlideRule servers and waits for and accumulates the response into a GeoDataFrame where each row represents a returned footprint.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While GEDI L3 and L4 data is all hosted in the cloud, the GEDI L1 and L2 data has not been migrated to the cloud yet and therefore the areas of interest that SlideRule can support are very limited.  To work around this, we have data for a few areas of interest staged in our own S3 bucket.  If you want to use GEDI L1 and/or L2 data for a given area of interest, please get in touch with the SlideRule team and we can work with you to have the data staged in our own bucket until the official products are migrated to the cloud.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build GEDI L2A Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;degrade_flag&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;quality_flag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;beam&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+<span class="c1"># Make GEDI L2A Request</span>
+<span class="n">gedi02a</span> <span class="o">=</span> <span class="n">gedi</span><span class="o">.</span><span class="n">gedi02ap</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gedi02a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>solar_elevation</th>
+      <th>sensitivity</th>
+      <th>beam</th>
+      <th>elevation_hr</th>
+      <th>flags</th>
+      <th>elevation_lm</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-04-19 22:03:34.126039040</th>
+      <td>42.844566</td>
+      <td>0.844447</td>
+      <td>0</td>
+      <td>2838.221680</td>
+      <td>128</td>
+      <td>2833.764404</td>
+      <td>POINT (-107.79578 39.19455)</td>
+    </tr>
+    <tr>
+      <th>2019-04-19 22:03:34.134302976</th>
+      <td>42.844311</td>
+      <td>0.970264</td>
+      <td>0</td>
+      <td>2851.676514</td>
+      <td>130</td>
+      <td>2830.363770</td>
+      <td>POINT (-107.79527 39.19422)</td>
+    </tr>
+    <tr>
+      <th>2019-04-19 22:03:34.142567168</th>
+      <td>42.844055</td>
+      <td>0.933131</td>
+      <td>0</td>
+      <td>2845.024170</td>
+      <td>130</td>
+      <td>2831.502441</td>
+      <td>POINT (-107.79475 39.19390)</td>
+    </tr>
+    <tr>
+      <th>2019-04-19 22:03:34.150831104</th>
+      <td>42.843800</td>
+      <td>0.947584</td>
+      <td>0</td>
+      <td>2851.234131</td>
+      <td>130</td>
+      <td>2840.221924</td>
+      <td>POINT (-107.79424 39.19358)</td>
+    </tr>
+    <tr>
+      <th>2019-04-19 22:03:34.159095040</th>
+      <td>42.843544</td>
+      <td>0.863980</td>
+      <td>0</td>
+      <td>2862.396973</td>
+      <td>128</td>
+      <td>2841.870850</td>
+      <td>POINT (-107.79373 39.19325)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-11-30 20:35:01.648558336</th>
+      <td>25.222191</td>
+      <td>0.964243</td>
+      <td>0</td>
+      <td>2456.310547</td>
+      <td>130</td>
+      <td>2448.528076</td>
+      <td>POINT (-107.85977 39.18754)</td>
+    </tr>
+    <tr>
+      <th>2022-11-30 20:35:01.656822528</th>
+      <td>25.221722</td>
+      <td>0.959823</td>
+      <td>0</td>
+      <td>2455.208008</td>
+      <td>130</td>
+      <td>2448.547852</td>
+      <td>POINT (-107.85926 39.18786)</td>
+    </tr>
+    <tr>
+      <th>2022-11-30 20:35:01.665086208</th>
+      <td>25.221254</td>
+      <td>0.927946</td>
+      <td>0</td>
+      <td>2454.385742</td>
+      <td>130</td>
+      <td>2450.793701</td>
+      <td>POINT (-107.85874 39.18818)</td>
+    </tr>
+    <tr>
+      <th>2022-11-30 20:35:01.673350400</th>
+      <td>25.220789</td>
+      <td>0.934457</td>
+      <td>0</td>
+      <td>2442.255127</td>
+      <td>130</td>
+      <td>2437.091553</td>
+      <td>POINT (-107.85823 39.18851)</td>
+    </tr>
+    <tr>
+      <th>2022-11-30 20:35:01.681614336</th>
+      <td>25.220322</td>
+      <td>0.974840</td>
+      <td>0</td>
+      <td>2434.364746</td>
+      <td>130</td>
+      <td>2429.650391</td>
+      <td>POINT (-107.85772 39.18883)</td>
+    </tr>
+  </tbody>
+</table>
+<p>48265 rows × 7 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>
-<section id="advanced-functionality">
-<h2>Advanced Functionality<a class="headerlink" href="#advanced-functionality" title="Permalink to this headline">#</a></h2>
+<section id="iii-advanced-functionality">
+<h2>III. Advanced Functionality<a class="headerlink" href="#iii-advanced-functionality" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Private clusters</p></li>
 <li><p>GeoParquet output to S3</p></li>
