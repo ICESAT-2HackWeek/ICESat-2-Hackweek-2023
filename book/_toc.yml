@@ -39,6 +39,7 @@ parts:
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
         - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/bathymetry/bathymetry_tutorial
         - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
           sections:
             - file: tutorials/DataVisualization/use_examples
