@@ -45,6 +45,8 @@ execute:
     - "**/earthaccess.ipynb"
     - "**/icepyx.ipynb"
     - "**/sliderule.ipynb"
+    - "**/applications-tutorial-snow-depth.ipynb"
+
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
