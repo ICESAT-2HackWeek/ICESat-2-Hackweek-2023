@@ -44,10 +44,11 @@ We facilitate a project team formation session at the end of the first day of th
 * project work begins and teams have regular check-ins to chart progress
 * project outputs are recorded in a GitHub repository
 
-## **Presentations** 
+## **Deliverables** 
 
-* each team has 15 minutes to share what was learned, what challenges arose, what might be worth trying next
-* individual contributions to the group effort are recognized and celebrated
+* each team is requested to create a project readme using [this template]() and contribute it to the [2023-projects repository]() within the ICESat-2 GitHub Organization. Please check in with a helper if your team would like guidance through this process. The basic workflow will require creating a branch, copying the template file, filling in the template file and adding it to the list of projects, commiting your changes, opening a pull request (PR), and reviewing and merging your changes.
+* unlike past years, no formal group presentation will be given or recorded. Instead, we will spend some time on Friday reflecting - as a group and individually - on our accomplishments and the challenges encountered during our project time.
+
 
 ## **Communities of Practice**
 
