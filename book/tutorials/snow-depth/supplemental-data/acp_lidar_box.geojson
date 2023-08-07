@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "acp_lidar_box",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Coastal Plain", "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>Coastal Plain</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>5</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Id</td>\n\n<td>0</td>\n\n</tr>\n\n<tr>\n\n<td>Site_ID</td>\n\n<td>Coastal Plain</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "snippet": "" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -148.670358603589193, 70.109042743315499, 0.0 ], [ -148.841210653578202, 70.018382300735951, 0.0 ], [ -148.703811912207698, 69.988160360018298, 0.0 ], [ -148.532607095031892, 70.078689701273404, 0.0 ], [ -148.670358603589193, 70.109042743315499, 0.0 ] ] ] ] } }
+]
+}
