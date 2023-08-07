@@ -2,7 +2,10 @@
 
 ![teaser image](https://raw.githubusercontent.com/fliphilipp/images/main/nearshore-bathymetry.jpg)
 
-(by [@fliphilipp](https://github.com/fliphilipp))
+By Philipp Arndt \
+Scripps Institution of Oceanography, University of California San Diego \
+Github: [@fliphilipp](https://github.com/fliphilipp) \
+Contact: parndt@ucsd.edu
 
 ## Outline
 
