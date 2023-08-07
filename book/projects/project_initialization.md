@@ -16,7 +16,7 @@ Before getting started, you'll need a name for your project. A team exploring sn
 We have created a GitHub template that is pre-populated with directories and a README layout the we find works well with most teams.
 
 We encourage all teams to create a new GitHub repository within the {{hackweek}} Organization, even if it is just to point to an already-existing repository or package your team is contributing to for their project.
-1. Go to: {{ '[`{github_org_url}`]({github_org_url})'.format(hw=hackweek) }}
+1. Go to: {{ '[`{gh_org}`]({gh_org})'.format(gh_org=github_org_url) }}
 1. Click the green “New” button on right side of page
 1. Select the "{{hackweek}}/sample_project_repository" template
 1. Use short project name
@@ -25,7 +25,7 @@ We encourage all teams to create a new GitHub repository within the {{hackweek}}
 ## Create a new GitHub team within the {{hackweek}} Organization
 GitHub teams provide a convenient way for you to set permissions on your project repository for groups of people, rather than having to do this for each individual on your team. 
 
-1. Go to: {{ '[`{github_org_url}`]({github_org_url})'.format(hw=hackweek + "/teams") }} (or click the "Teams" tab near the top of the GitHub Organization page)
+1. Go to: {{ '[`{gh_org}`]({gh_org})'.format(gh_org=github_org_url + "/teams") }} (or click the "Teams" tab near the top of the GitHub Organization page)
 1. Click green “New team” button
 1. Use your short project name for "Team name"
 1. Set the team to visibility "Visible"
