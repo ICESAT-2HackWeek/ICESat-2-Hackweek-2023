@@ -35,19 +35,19 @@ We facilitate a project team formation session at the end of the first day of th
 
 ## **Teamwork**
 
-* kick-off meeting focuses on hearing from each team member:
+* Kick-off meeting focuses on hearing from each team member:
     * What are your unique learning goals? 
     * How do you work best? What level of group interaction works for you?
     * What skills and background are you most excited to share with the team?
     * When are you available to meet?
-* set up team computing infrastructure on Slack and GitHub ([Project Initiallization](project_initialization)) 
-* project work begins and teams have regular check-ins to chart progress
-* project outputs are recorded in a GitHub repository
+* Set up team computing infrastructure on Slack and GitHub ([Project Initiallization](project_initialization)) 
+* Project work begins and teams have regular check-ins to chart progress
+* Project outputs are recorded in a GitHub repository
 
 ## **Deliverables** 
 
-* each team is requested to create a project readme using [this template](project_readmes/project_readme_template) and contribute it to the this Jupyterbook. Please check in with a helper if your team would like guidance through this process. The basic workflow will require creating a branch, copying the template file, filling in the template file and adding it to the list of projects, committing your changes, opening a pull request (PR), and reviewing and merging your changes.
-* unlike past years, no formal group presentation will be given or recorded. Instead, we will spend some time on Friday reflecting - as a group and individually - on our accomplishments and the challenges encountered during our project time.
+* Each team is requested to create a project readme using [this template](project_readmes/project_readme_template) and contribute it to the this Jupyterbook. Please check in with a helper if your team would like guidance through this process. The basic workflow will require creating a branch, copying the template file, filling in the template file and adding it to the list of projects, committing your changes, opening a pull request (PR), and reviewing and merging your changes.
+* Unlike past years, no formal group presentation will be given or recorded. Instead, we will spend some time on Friday reflecting - as a group and individually - on our accomplishments and the challenges encountered during our project time.
 
 
 ## **Communities of Practice**
@@ -55,7 +55,7 @@ We facilitate a project team formation session at the end of the first day of th
 * We aspire to keep projects going after the hackweek! This is an optional (ideal) outcome of hackweek project work.
 * Project leads/helpers will transition to longer-term engagement via mentorship role (optional/with support).
 * Additional people join a growing Community of Practice (for example, centered on a community software library).
-* software, research results are packaged and shared/published. 
+* Software, research results are packaged and shared/published. 
 
 
 
