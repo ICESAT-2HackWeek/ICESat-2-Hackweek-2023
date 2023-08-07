@@ -772,6 +772,43 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#iii-advanced-functionality">
    III. Advanced Functionality
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-private-clusters">
+     A. Private Clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-geoparquet-output-to-s3">
+     B. GeoParquet Output to S3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-customized-yapc-classification">
+     C. Customized YAPC classification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-include-ancillary-data">
+     D. Include ancillary data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-query-cmr-cmr-stac-and-tnm">
+     E. Query CMR, CMR-STAC, and TNM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-directly-sample-supported-raster-datasets">
+     F. Directly sample supported raster datasets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g-subset-via-rasterized-area-of-interest">
+     G. Subset via rasterized area of interest
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -843,6 +880,43 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#iii-advanced-functionality">
    III. Advanced Functionality
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-private-clusters">
+     A. Private Clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-geoparquet-output-to-s3">
+     B. GeoParquet Output to S3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-customized-yapc-classification">
+     C. Customized YAPC classification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-include-ancillary-data">
+     D. Include ancillary data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-query-cmr-cmr-stac-and-tnm">
+     E. Query CMR, CMR-STAC, and TNM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-directly-sample-supported-raster-datasets">
+     F. Directly sample supported raster datasets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g-subset-via-rasterized-area-of-interest">
+     G. Subset via rasterized area of interest
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -958,33 +1032,33 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;/gt2l/land_ice_segments/longitude&#39;: array([-106.95560446, -106.9554911 , -106.95551045, -106.95552958,
-        -106.95554864, -106.95556768, -106.95558687, -106.95560602,
-        -106.95562507, -106.95564448]),
- &#39;/gt1r/land_ice_segments/longitude&#39;: array([-106.98659174, -106.98661194, -106.98663208, -106.98665219,
-        -106.98667225, -106.98669217, -106.98671199, -106.98673165,
-        -106.98675117, -106.9867706 ]),
- &#39;/gt2l/land_ice_segments/latitude&#39;: array([27.00235495, 27.00254677, 27.00272693, 27.00290711, 27.00308729,
-        27.00326748, 27.00344765, 27.00362783, 27.00380801, 27.00398817]),
- &#39;/gt3l/land_ice_segments/longitude&#39;: array([-106.92358939, -106.92360831, -106.92362694, -106.92364578,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;/gt3l/land_ice_segments/longitude&#39;: array([-106.92358939, -106.92360831, -106.92362694, -106.92364578,
         -106.92366553, -106.92368548, -106.92370511, -106.92372443,
         -106.92374335, -106.92376208]),
- &#39;/gt3r/land_ice_segments/latitude&#39;: array([27.00538841, 27.00557226, 27.00575378, 27.00593394, 27.00611417,
-        27.00629433, 27.00647438, 27.00665448, 27.00683461, 27.00701475]),
- &#39;/gt2r/land_ice_segments/latitude&#39;: array([27.00243391, 27.002614  , 27.0027941 , 27.00297424, 27.0031544 ,
-        27.00333457, 27.00351475, 27.00369492, 27.00387508, 27.00405523]),
- &#39;/gt1l/land_ice_segments/latitude&#39;: array([26.99974882, 26.99993919, 27.00011936, 27.0002995 , 27.00047959,
-        27.00065967, 27.00083975, 27.00101983, 27.00119991, 27.00138   ]),
- &#39;/gt1l/land_ice_segments/longitude&#39;: array([-106.9874942 , -106.9873954 , -106.98741472, -106.98743432,
-        -106.98745451, -106.9874748 , -106.98749517, -106.98751555,
-        -106.98753585, -106.98755609]),
- &#39;/gt1r/land_ice_segments/latitude&#39;: array([26.99982778, 27.00000787, 27.00018796, 27.00036806, 27.00054816,
-        27.00072828, 27.0009084 , 27.00108854, 27.00126869, 27.00144885]),
- &#39;/gt3l/land_ice_segments/latitude&#39;: array([27.00532861, 27.00550881, 27.00568902, 27.00586922, 27.00604934,
-        27.00622944, 27.00640957, 27.00658973, 27.00676992, 27.00695013]),
  &#39;/gt3r/land_ice_segments/longitude&#39;: array([-106.92284566, -106.92286519, -106.92288437, -106.92290365,
         -106.9229221 , -106.92294135, -106.92296191, -106.92298185,
         -106.92300157, -106.9230211 ]),
+ &#39;/gt3r/land_ice_segments/latitude&#39;: array([27.00538841, 27.00557226, 27.00575378, 27.00593394, 27.00611417,
+        27.00629433, 27.00647438, 27.00665448, 27.00683461, 27.00701475]),
+ &#39;/gt3l/land_ice_segments/latitude&#39;: array([27.00532861, 27.00550881, 27.00568902, 27.00586922, 27.00604934,
+        27.00622944, 27.00640957, 27.00658973, 27.00676992, 27.00695013]),
+ &#39;/gt1l/land_ice_segments/latitude&#39;: array([26.99974882, 26.99993919, 27.00011936, 27.0002995 , 27.00047959,
+        27.00065967, 27.00083975, 27.00101983, 27.00119991, 27.00138   ]),
+ &#39;/gt1r/land_ice_segments/latitude&#39;: array([26.99982778, 27.00000787, 27.00018796, 27.00036806, 27.00054816,
+        27.00072828, 27.0009084 , 27.00108854, 27.00126869, 27.00144885]),
+ &#39;/gt2l/land_ice_segments/longitude&#39;: array([-106.95560446, -106.9554911 , -106.95551045, -106.95552958,
+        -106.95554864, -106.95556768, -106.95558687, -106.95560602,
+        -106.95562507, -106.95564448]),
+ &#39;/gt1l/land_ice_segments/longitude&#39;: array([-106.9874942 , -106.9873954 , -106.98741472, -106.98743432,
+        -106.98745451, -106.9874748 , -106.98749517, -106.98751555,
+        -106.98753585, -106.98755609]),
+ &#39;/gt2l/land_ice_segments/latitude&#39;: array([27.00235495, 27.00254677, 27.00272693, 27.00290711, 27.00308729,
+        27.00326748, 27.00344765, 27.00362783, 27.00380801, 27.00398817]),
+ &#39;/gt1r/land_ice_segments/longitude&#39;: array([-106.98659174, -106.98661194, -106.98663208, -106.98665219,
+        -106.98667225, -106.98669217, -106.98671199, -106.98673165,
+        -106.98675117, -106.9867706 ]),
+ &#39;/gt2r/land_ice_segments/latitude&#39;: array([27.00243391, 27.002614  , 27.0027941 , 27.00297424, 27.0031544 ,
+        27.00333457, 27.00351475, 27.00369492, 27.00387508, 27.00405523]),
  &#39;/gt2r/land_ice_segments/longitude&#39;: array([-106.95470198, -106.95472213, -106.95474212, -106.95476169,
         -106.954781  , -106.95480023, -106.95481943, -106.95483867,
         -106.95485801, -106.95487744])}
@@ -1025,6 +1099,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 1 resources to process
+INFO:sliderule.sliderule:request &lt;AppServer.370&gt; processing initialized on ATL03_20220809040157_07371602_006_01.h5 ...
+INFO:sliderule.sliderule:request &lt;AppServer.370&gt; processing of ATL03_20220809040157_07371602_006_01.h5 complete (691371/5361/0)
+INFO:sliderule.sliderule:Successfully completed processing resource [1 out of 1]: ATL03_20220809040157_07371602_006_01.h5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,23 +1133,23 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>rgt</th>
-      <th>solar_elevation</th>
+      <th>sc_orient</th>
       <th>background_rate</th>
-      <th>track</th>
-      <th>segment_id</th>
+      <th>rgt</th>
       <th>cycle</th>
       <th>segment_dist</th>
-      <th>sc_orient</th>
-      <th>atl08_class</th>
-      <th>height</th>
+      <th>track</th>
+      <th>segment_id</th>
+      <th>solar_elevation</th>
+      <th>atl03_cnf</th>
       <th>relief</th>
       <th>yapc_score</th>
-      <th>landcover</th>
-      <th>distance</th>
       <th>quality_ph</th>
-      <th>atl03_cnf</th>
       <th>snowcover</th>
+      <th>atl08_class</th>
+      <th>distance</th>
+      <th>landcover</th>
+      <th>height</th>
       <th>pair</th>
       <th>geometry</th>
       <th>spot</th>
@@ -1099,115 +1181,115 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2022-08-09 04:05:01.663190528</th>
-      <td>737</td>
-      <td>-19.053331</td>
-      <td>6000.394172</td>
       <td>1</td>
-      <td>215526</td>
+      <td>6000.394172</td>
+      <td>737</td>
       <td>16</td>
       <td>4.322238e+06</td>
       <td>1</td>
+      <td>215526</td>
+      <td>-19.053331</td>
       <td>4</td>
-      <td>1964.221191</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>-4.752241</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>-4.752241</td>
+      <td>255</td>
+      <td>1964.221191</td>
       <td>0</td>
       <td>POINT (-108.18757 38.83761)</td>
       <td>6</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:01.663590656</th>
-      <td>737</td>
-      <td>-19.053331</td>
-      <td>6000.394172</td>
       <td>1</td>
-      <td>215526</td>
+      <td>6000.394172</td>
+      <td>737</td>
       <td>16</td>
       <td>4.322238e+06</td>
       <td>1</td>
+      <td>215526</td>
+      <td>-19.053331</td>
       <td>4</td>
-      <td>1964.407227</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>-1.916195</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>-1.916195</td>
+      <td>255</td>
+      <td>1964.407227</td>
       <td>0</td>
       <td>POINT (-108.18757 38.83764)</td>
       <td>6</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:01.663790592</th>
-      <td>737</td>
-      <td>-19.072472</td>
-      <td>2255.589879</td>
-      <td>2</td>
-      <td>215532</td>
-      <td>16</td>
-      <td>4.322358e+06</td>
       <td>1</td>
-      <td>4</td>
-      <td>1992.014404</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>255</td>
-      <td>-6.999181</td>
-      <td>0</td>
-      <td>4</td>
-      <td>255</td>
-      <td>0</td>
-      <td>POINT (-108.15103 38.84145)</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2022-08-09 04:05:01.663790592</th>
-      <td>737</td>
-      <td>-19.053331</td>
       <td>6000.394172</td>
-      <td>1</td>
-      <td>215526</td>
+      <td>737</td>
       <td>16</td>
       <td>4.322238e+06</td>
       <td>1</td>
+      <td>215526</td>
+      <td>-19.053331</td>
       <td>4</td>
-      <td>1964.859985</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>-0.499761</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>-0.499761</td>
+      <td>255</td>
+      <td>1964.859985</td>
       <td>0</td>
       <td>POINT (-108.18757 38.83765)</td>
       <td>6</td>
     </tr>
     <tr>
-      <th>2022-08-09 04:05:01.663990528</th>
-      <td>737</td>
-      <td>-19.053331</td>
-      <td>6000.394172</td>
+      <th>2022-08-09 04:05:01.663790592</th>
       <td>1</td>
-      <td>215526</td>
+      <td>2255.589879</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.322358e+06</td>
+      <td>2</td>
+      <td>215532</td>
+      <td>-19.072472</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>-6.999181</td>
+      <td>255</td>
+      <td>1992.014404</td>
+      <td>0</td>
+      <td>POINT (-108.15103 38.84145)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.663990528</th>
+      <td>1</td>
+      <td>6000.394172</td>
+      <td>737</td>
       <td>16</td>
       <td>4.322238e+06</td>
       <td>1</td>
+      <td>215526</td>
+      <td>-19.053331</td>
       <td>4</td>
-      <td>1965.168213</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>0.916676</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>0.917738</td>
+      <td>255</td>
+      <td>1964.865723</td>
       <td>0</td>
       <td>POINT (-108.18757 38.83766)</td>
       <td>6</td>
@@ -1237,115 +1319,115 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.777690624</th>
-      <td>737</td>
-      <td>-18.884623</td>
+      <td>1</td>
       <td>6621.979834</td>
-      <td>3</td>
-      <td>217230</td>
+      <td>737</td>
       <td>16</td>
       <td>4.356395e+06</td>
-      <td>1</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
       <td>4</td>
-      <td>1796.026733</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>7.281042</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>7.281042</td>
+      <td>255</td>
+      <td>1796.026733</td>
       <td>1</td>
       <td>POINT (-108.15067 39.14964)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.777790464</th>
-      <td>737</td>
-      <td>-18.884623</td>
+      <td>1</td>
       <td>6621.979834</td>
-      <td>3</td>
-      <td>217230</td>
+      <td>737</td>
       <td>16</td>
       <td>4.356395e+06</td>
-      <td>1</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
       <td>4</td>
-      <td>1795.569092</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>7.994720</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>7.994720</td>
+      <td>255</td>
+      <td>1795.569092</td>
       <td>1</td>
       <td>POINT (-108.15067 39.14965)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.777790464</th>
-      <td>737</td>
-      <td>-18.884623</td>
+      <td>1</td>
       <td>6621.979834</td>
-      <td>3</td>
-      <td>217230</td>
+      <td>737</td>
       <td>16</td>
       <td>4.356395e+06</td>
-      <td>1</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
       <td>4</td>
-      <td>1795.770142</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>7.994993</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>7.994993</td>
+      <td>255</td>
+      <td>1795.770142</td>
       <td>1</td>
       <td>POINT (-108.15067 39.14965)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.777890560</th>
-      <td>737</td>
-      <td>-18.884623</td>
+      <td>1</td>
       <td>6621.979834</td>
-      <td>3</td>
-      <td>217230</td>
+      <td>737</td>
       <td>16</td>
       <td>4.356395e+06</td>
-      <td>1</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
       <td>4</td>
-      <td>1795.739380</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>8.709501</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>8.709501</td>
+      <td>255</td>
+      <td>1795.739380</td>
       <td>1</td>
       <td>POINT (-108.15067 39.14966)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.777990656</th>
-      <td>737</td>
-      <td>-18.884623</td>
+      <td>1</td>
       <td>6621.979834</td>
-      <td>3</td>
-      <td>217230</td>
+      <td>737</td>
       <td>16</td>
       <td>4.356395e+06</td>
-      <td>1</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
       <td>4</td>
-      <td>1796.026245</td>
       <td>0.0</td>
       <td>0</td>
-      <td>255</td>
-      <td>9.424560</td>
       <td>0</td>
-      <td>4</td>
       <td>255</td>
+      <td>4</td>
+      <td>9.424560</td>
+      <td>255</td>
+      <td>1796.026245</td>
       <td>1</td>
       <td>POINT (-108.15068 39.14966)</td>
       <td>1</td>
@@ -1388,6 +1470,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 106 resources to process
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1414,20 +1501,20 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>pflags</th>
-      <th>spot</th>
-      <th>segment_id</th>
-      <th>w_surface_window_final</th>
-      <th>distance</th>
-      <th>dh_fit_dx</th>
-      <th>rgt</th>
+      <th>rms_misfit</th>
       <th>cycle</th>
       <th>dh_fit_dy</th>
+      <th>segment_id</th>
       <th>h_mean</th>
-      <th>gt</th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>dh_fit_dx</th>
       <th>h_sigma</th>
       <th>n_fit_photons</th>
-      <th>rms_misfit</th>
+      <th>distance</th>
+      <th>w_surface_window_final</th>
+      <th>gt</th>
+      <th>rgt</th>
       <th>geometry</th>
     </tr>
     <tr>
@@ -1452,92 +1539,92 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2018-10-16 10:49:21.175923712</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784255</td>
-      <td>5.893400</td>
-      <td>1.570828e+07</td>
-      <td>0.111905</td>
-      <td>272</td>
+      <td>0.526231</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784255</td>
       <td>1932.573780</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.111905</td>
       <td>0.238099</td>
       <td>10</td>
-      <td>0.526231</td>
+      <td>1.570828e+07</td>
+      <td>5.893400</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05597 39.17015)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.178226688</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784256</td>
-      <td>3.892215</td>
-      <td>1.570830e+07</td>
-      <td>-0.005205</td>
-      <td>272</td>
+      <td>0.545944</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784256</td>
       <td>1933.155462</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>-0.005205</td>
       <td>0.121129</td>
       <td>21</td>
-      <td>0.545944</td>
+      <td>1.570830e+07</td>
+      <td>3.892215</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05599 39.17002)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.179784960</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784257</td>
-      <td>3.499944</td>
-      <td>1.570831e+07</td>
-      <td>0.062558</td>
-      <td>272</td>
+      <td>0.688412</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784257</td>
       <td>1933.855075</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.062558</td>
       <td>0.134729</td>
       <td>31</td>
-      <td>0.688412</td>
+      <td>1.570831e+07</td>
+      <td>3.499944</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05601 39.16992)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.181907456</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784257</td>
-      <td>3.382582</td>
-      <td>1.570832e+07</td>
-      <td>0.113617</td>
-      <td>272</td>
+      <td>0.491447</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784257</td>
       <td>1935.019797</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.113617</td>
       <td>0.090643</td>
       <td>31</td>
-      <td>0.491447</td>
+      <td>1.570832e+07</td>
+      <td>3.382582</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05603 39.16980)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.183406592</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784258</td>
-      <td>3.383325</td>
-      <td>1.570833e+07</td>
-      <td>0.112181</td>
-      <td>272</td>
+      <td>0.603474</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784258</td>
       <td>1936.090100</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.112181</td>
       <td>0.129987</td>
       <td>28</td>
-      <td>0.603474</td>
+      <td>1.570833e+07</td>
+      <td>3.383325</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05605 39.16971)</td>
     </tr>
     <tr>
@@ -1560,92 +1647,92 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2023-03-07 18:00:36.382432256</th>
-      <td>0</td>
-      <td>5</td>
-      <td>217202</td>
-      <td>3.000000</td>
-      <td>4.355788e+06</td>
-      <td>-0.000915</td>
-      <td>1179</td>
+      <td>0.120393</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217202</td>
       <td>3026.024050</td>
-      <td>50</td>
+      <td>0</td>
+      <td>5</td>
+      <td>-0.000915</td>
       <td>0.015205</td>
       <td>63</td>
-      <td>0.120393</td>
+      <td>4.355788e+06</td>
+      <td>3.000000</td>
+      <td>50</td>
+      <td>1179</td>
       <td>POINT (-107.82683 39.14888)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:36.383838976</th>
-      <td>0</td>
-      <td>5</td>
-      <td>217203</td>
-      <td>3.000000</td>
-      <td>4.355798e+06</td>
-      <td>-0.002173</td>
-      <td>1179</td>
+      <td>0.108159</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217203</td>
       <td>3026.028156</td>
-      <td>50</td>
+      <td>0</td>
+      <td>5</td>
+      <td>-0.002173</td>
       <td>0.014089</td>
       <td>59</td>
-      <td>0.108159</td>
+      <td>4.355798e+06</td>
+      <td>3.000000</td>
+      <td>50</td>
+      <td>1179</td>
       <td>POINT (-107.82684 39.14897)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:36.385241600</th>
-      <td>0</td>
-      <td>5</td>
-      <td>217203</td>
-      <td>3.000000</td>
-      <td>4.355808e+06</td>
-      <td>0.005213</td>
-      <td>1179</td>
+      <td>0.110552</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217203</td>
       <td>3026.055055</td>
-      <td>50</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.005213</td>
       <td>0.013608</td>
       <td>66</td>
-      <td>0.110552</td>
+      <td>4.355808e+06</td>
+      <td>3.000000</td>
+      <td>50</td>
+      <td>1179</td>
       <td>POINT (-107.82685 39.14906)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:36.386648832</th>
-      <td>0</td>
-      <td>5</td>
-      <td>217204</td>
-      <td>3.000000</td>
-      <td>4.355818e+06</td>
-      <td>0.006819</td>
-      <td>1179</td>
+      <td>0.131181</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217204</td>
       <td>3026.109420</td>
-      <td>50</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.006819</td>
       <td>0.017187</td>
       <td>64</td>
-      <td>0.131181</td>
+      <td>4.355818e+06</td>
+      <td>3.000000</td>
+      <td>50</td>
+      <td>1179</td>
       <td>POINT (-107.82687 39.14915)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:36.388051712</th>
-      <td>0</td>
-      <td>5</td>
-      <td>217204</td>
-      <td>3.000000</td>
-      <td>4.355828e+06</td>
-      <td>0.000219</td>
-      <td>1179</td>
+      <td>0.155089</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217204</td>
       <td>3026.121673</td>
-      <td>50</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.000219</td>
       <td>0.031761</td>
       <td>38</td>
-      <td>0.155089</td>
+      <td>4.355828e+06</td>
+      <td>3.000000</td>
+      <td>50</td>
+      <td>1179</td>
       <td>POINT (-107.82688 39.14924)</td>
     </tr>
   </tbody>
@@ -1681,6 +1768,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 106 resources to process
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1707,20 +1799,20 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>pflags</th>
-      <th>spot</th>
-      <th>segment_id</th>
-      <th>w_surface_window_final</th>
-      <th>distance</th>
-      <th>dh_fit_dx</th>
-      <th>rgt</th>
+      <th>rms_misfit</th>
       <th>cycle</th>
       <th>dh_fit_dy</th>
+      <th>segment_id</th>
       <th>h_mean</th>
-      <th>gt</th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>dh_fit_dx</th>
       <th>h_sigma</th>
       <th>n_fit_photons</th>
-      <th>rms_misfit</th>
+      <th>distance</th>
+      <th>w_surface_window_final</th>
+      <th>gt</th>
+      <th>rgt</th>
       <th>geometry</th>
     </tr>
     <tr>
@@ -1745,92 +1837,92 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2018-10-16 10:49:21.178253056</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784256</td>
-      <td>3.934149</td>
-      <td>1.570830e+07</td>
-      <td>-0.008607</td>
-      <td>272</td>
+      <td>0.422847</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784256</td>
       <td>1933.016317</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>-0.008607</td>
       <td>0.102701</td>
       <td>17</td>
-      <td>0.422847</td>
+      <td>1.570830e+07</td>
+      <td>3.934149</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05599 39.17002)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.179791360</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784257</td>
-      <td>3.000000</td>
-      <td>1.570831e+07</td>
-      <td>0.042971</td>
-      <td>272</td>
+      <td>0.528953</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784257</td>
       <td>1933.566470</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.042971</td>
       <td>0.127884</td>
       <td>23</td>
-      <td>0.528953</td>
+      <td>1.570831e+07</td>
+      <td>3.000000</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05601 39.16992)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.181908992</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784257</td>
-      <td>3.000000</td>
-      <td>1.570832e+07</td>
-      <td>0.110146</td>
-      <td>272</td>
+      <td>0.300498</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784257</td>
       <td>1934.745216</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.110146</td>
       <td>0.066839</td>
       <td>21</td>
-      <td>0.300498</td>
+      <td>1.570832e+07</td>
+      <td>3.000000</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05603 39.16980)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.183407872</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784258</td>
-      <td>3.000000</td>
-      <td>1.570833e+07</td>
-      <td>0.104661</td>
-      <td>272</td>
+      <td>0.318448</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784258</td>
       <td>1935.839538</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.104661</td>
       <td>0.101096</td>
       <td>18</td>
-      <td>0.318448</td>
+      <td>1.570833e+07</td>
+      <td>3.000000</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05605 39.16971)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.184901632</th>
-      <td>0</td>
-      <td>6</td>
-      <td>784258</td>
-      <td>3.155259</td>
-      <td>1.570834e+07</td>
-      <td>0.043212</td>
-      <td>272</td>
+      <td>0.324653</td>
       <td>1</td>
       <td>0.0</td>
+      <td>784258</td>
       <td>1936.487611</td>
-      <td>10</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.043212</td>
       <td>0.090417</td>
       <td>13</td>
-      <td>0.324653</td>
+      <td>1.570834e+07</td>
+      <td>3.155259</td>
+      <td>10</td>
+      <td>272</td>
       <td>POINT (-108.05606 39.16962)</td>
     </tr>
     <tr>
@@ -1853,92 +1945,92 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.376869376</th>
-      <td>0</td>
-      <td>2</td>
-      <td>217425</td>
-      <td>3.000000</td>
-      <td>4.360248e+06</td>
-      <td>-0.050124</td>
-      <td>1179</td>
+      <td>0.219636</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217425</td>
       <td>2162.878838</td>
-      <td>20</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-0.050124</td>
       <td>0.052424</td>
       <td>26</td>
-      <td>0.219636</td>
+      <td>4.360248e+06</td>
+      <td>3.000000</td>
+      <td>20</td>
+      <td>1179</td>
       <td>POINT (-107.90326 39.18353)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.378268160</th>
-      <td>0</td>
-      <td>2</td>
-      <td>217425</td>
-      <td>3.062824</td>
-      <td>4.360258e+06</td>
-      <td>-0.117692</td>
-      <td>1179</td>
+      <td>0.302979</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217425</td>
       <td>2161.919798</td>
-      <td>20</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-0.117692</td>
       <td>0.109060</td>
       <td>11</td>
-      <td>0.302979</td>
+      <td>4.360258e+06</td>
+      <td>3.062824</td>
+      <td>20</td>
+      <td>1179</td>
       <td>POINT (-107.90327 39.18362)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.389504000</th>
-      <td>0</td>
-      <td>2</td>
-      <td>217429</td>
-      <td>5.035891</td>
-      <td>4.360338e+06</td>
-      <td>-0.196024</td>
-      <td>1179</td>
+      <td>0.481328</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217429</td>
       <td>2148.707594</td>
-      <td>20</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-0.196024</td>
       <td>0.173830</td>
       <td>10</td>
-      <td>0.481328</td>
+      <td>4.360338e+06</td>
+      <td>5.035891</td>
+      <td>20</td>
+      <td>1179</td>
       <td>POINT (-107.90335 39.18434)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.390915840</th>
-      <td>0</td>
-      <td>2</td>
-      <td>217430</td>
-      <td>3.304781</td>
-      <td>4.360348e+06</td>
-      <td>-0.108748</td>
-      <td>1179</td>
+      <td>0.454504</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217430</td>
       <td>2147.447970</td>
-      <td>20</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-0.108748</td>
       <td>0.120104</td>
       <td>15</td>
-      <td>0.454504</td>
+      <td>4.360348e+06</td>
+      <td>3.304781</td>
+      <td>20</td>
+      <td>1179</td>
       <td>POINT (-107.90336 39.18443)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392322816</th>
-      <td>0</td>
-      <td>2</td>
-      <td>217430</td>
-      <td>3.003630</td>
-      <td>4.360358e+06</td>
-      <td>-0.013040</td>
-      <td>1179</td>
+      <td>0.343818</td>
       <td>18</td>
       <td>0.0</td>
+      <td>217430</td>
       <td>2146.973921</td>
-      <td>20</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-0.013040</td>
       <td>0.109150</td>
       <td>11</td>
-      <td>0.343818</td>
+      <td>4.360358e+06</td>
+      <td>3.003630</td>
+      <td>20</td>
+      <td>1179</td>
       <td>POINT (-107.90337 39.18452)</td>
     </tr>
   </tbody>
@@ -1985,6 +2077,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 106 resources to process
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2011,25 +2108,25 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>landcover</th>
-      <th>h_te_median</th>
-      <th>rgt</th>
-      <th>veg_ph_count</th>
-      <th>canopy_openness</th>
       <th>spot</th>
-      <th>cycle</th>
-      <th>canopy_h_metrics</th>
-      <th>h_max_canopy</th>
-      <th>h_min_canopy</th>
-      <th>ph_count</th>
+      <th>h_canopy</th>
       <th>snowcover</th>
+      <th>rgt</th>
+      <th>cycle</th>
+      <th>h_max_canopy</th>
+      <th>canopy_h_metrics</th>
+      <th>landcover</th>
+      <th>h_min_canopy</th>
       <th>solar_elevation</th>
       <th>gt</th>
-      <th>distance</th>
-      <th>h_canopy</th>
-      <th>h_mean_canopy</th>
       <th>segment_id</th>
+      <th>h_te_median</th>
       <th>gnd_ph_count</th>
+      <th>veg_ph_count</th>
+      <th>h_mean_canopy</th>
+      <th>distance</th>
+      <th>canopy_openness</th>
+      <th>ph_count</th>
       <th>geometry</th>
     </tr>
     <tr>
@@ -2059,117 +2156,117 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2018-10-16 10:49:21.175428352</th>
-      <td>40</td>
-      <td>1931.684814</td>
-      <td>272</td>
-      <td>3</td>
-      <td>0.120013</td>
       <td>6</td>
-      <td>1</td>
-      <td>(1.26806640625, 1.26806640625, 1.26806640625, ...</td>
       <td>1.268066</td>
-      <td>1.003418</td>
-      <td>10</td>
       <td>1</td>
+      <td>272</td>
+      <td>1</td>
+      <td>1.268066</td>
+      <td>(1.26806640625, 1.26806640625, 1.26806640625, ...</td>
+      <td>40</td>
+      <td>1.003418</td>
       <td>-30.342127</td>
       <td>10</td>
-      <td>1.570827e+07</td>
-      <td>1.268066</td>
-      <td>1.098796</td>
       <td>784255</td>
+      <td>1931.684814</td>
       <td>7</td>
+      <td>3</td>
+      <td>1.098796</td>
+      <td>1.570827e+07</td>
+      <td>0.120013</td>
+      <td>10</td>
       <td>POINT (-108.05597 39.17018)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.176328192</th>
-      <td>40</td>
-      <td>1932.688477</td>
-      <td>272</td>
-      <td>0</td>
-      <td>NaN</td>
       <td>6</td>
+      <td>0.000000</td>
       <td>1</td>
+      <td>272</td>
+      <td>1</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>40</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>4</td>
-      <td>1</td>
       <td>-30.342127</td>
       <td>10</td>
-      <td>1.570828e+07</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>784256</td>
+      <td>1932.688477</td>
+      <td>4</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>1.570828e+07</td>
+      <td>NaN</td>
       <td>4</td>
       <td>POINT (-108.05597 39.17013)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.178228224</th>
-      <td>40</td>
-      <td>1932.964355</td>
-      <td>272</td>
-      <td>4</td>
-      <td>0.196118</td>
       <td>6</td>
-      <td>1</td>
-      <td>(1.0474853515625, 1.0474853515625, 1.047485351...</td>
       <td>1.047485</td>
-      <td>0.605713</td>
-      <td>21</td>
       <td>1</td>
+      <td>272</td>
+      <td>1</td>
+      <td>1.047485</td>
+      <td>(1.0474853515625, 1.0474853515625, 1.047485351...</td>
+      <td>40</td>
+      <td>0.605713</td>
       <td>-30.342186</td>
       <td>10</td>
-      <td>1.570829e+07</td>
-      <td>1.047485</td>
-      <td>0.816437</td>
       <td>784256</td>
+      <td>1932.964355</td>
       <td>17</td>
+      <td>4</td>
+      <td>0.816437</td>
+      <td>1.570829e+07</td>
+      <td>0.196118</td>
+      <td>21</td>
       <td>POINT (-108.05599 39.17002)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.179278080</th>
-      <td>40</td>
-      <td>1933.456299</td>
-      <td>272</td>
-      <td>8</td>
-      <td>0.214094</td>
       <td>6</td>
-      <td>1</td>
-      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
       <td>1.255371</td>
-      <td>0.605713</td>
-      <td>31</td>
       <td>1</td>
+      <td>272</td>
+      <td>1</td>
+      <td>1.255371</td>
+      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
+      <td>40</td>
+      <td>0.605713</td>
       <td>-30.342186</td>
       <td>10</td>
-      <td>1.570830e+07</td>
-      <td>1.255371</td>
-      <td>0.887772</td>
       <td>784257</td>
+      <td>1933.456299</td>
       <td>23</td>
+      <td>8</td>
+      <td>0.887772</td>
+      <td>1.570830e+07</td>
+      <td>0.214094</td>
+      <td>31</td>
       <td>POINT (-108.05600 39.16995)</td>
     </tr>
     <tr>
       <th>2018-10-16 10:49:21.181978112</th>
-      <td>30</td>
-      <td>1935.172119</td>
-      <td>272</td>
-      <td>10</td>
-      <td>0.236772</td>
       <td>6</td>
-      <td>1</td>
-      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
       <td>1.255371</td>
-      <td>0.518311</td>
-      <td>31</td>
       <td>1</td>
+      <td>272</td>
+      <td>1</td>
+      <td>1.255371</td>
+      <td>(1.25537109375, 1.25537109375, 1.25537109375, ...</td>
+      <td>30</td>
+      <td>0.518311</td>
       <td>-30.342239</td>
       <td>10</td>
-      <td>1.570832e+07</td>
-      <td>1.255371</td>
-      <td>0.888391</td>
       <td>784257</td>
+      <td>1935.172119</td>
       <td>21</td>
+      <td>10</td>
+      <td>0.888391</td>
+      <td>1.570832e+07</td>
+      <td>0.236772</td>
+      <td>31</td>
       <td>POINT (-108.05603 39.16979)</td>
     </tr>
     <tr>
@@ -2197,116 +2294,116 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392222208</th>
-      <td>126</td>
-      <td>2146.932617</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>2</td>
       <td>1179</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>2</td>
       <td>18</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>126</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>11</td>
-      <td>2</td>
       <td>41.786434</td>
       <td>20</td>
-      <td>4.360358e+06</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>217430</td>
+      <td>2146.932617</td>
+      <td>11</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4.360358e+06</td>
+      <td>NaN</td>
       <td>11</td>
       <td>POINT (-107.90337 39.18451)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392222208</th>
-      <td>126</td>
-      <td>2146.932617</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>2</td>
       <td>1179</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>2</td>
       <td>18</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>126</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>11</td>
-      <td>2</td>
       <td>41.786434</td>
       <td>20</td>
-      <td>4.360358e+06</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>217430</td>
+      <td>2146.932617</td>
+      <td>11</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4.360358e+06</td>
+      <td>NaN</td>
       <td>11</td>
       <td>POINT (-107.90337 39.18451)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392222208</th>
-      <td>126</td>
-      <td>2146.932617</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>2</td>
       <td>1179</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>2</td>
       <td>18</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>126</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>11</td>
-      <td>2</td>
       <td>41.786434</td>
       <td>20</td>
-      <td>4.360358e+06</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>217430</td>
+      <td>2146.932617</td>
+      <td>11</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4.360358e+06</td>
+      <td>NaN</td>
       <td>11</td>
       <td>POINT (-107.90337 39.18451)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392222208</th>
-      <td>126</td>
-      <td>2146.932617</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>2</td>
       <td>1179</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>2</td>
       <td>18</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>126</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>11</td>
-      <td>2</td>
       <td>41.786434</td>
       <td>20</td>
-      <td>4.360358e+06</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>217430</td>
+      <td>2146.932617</td>
+      <td>11</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4.360358e+06</td>
+      <td>NaN</td>
       <td>11</td>
       <td>POINT (-107.90337 39.18451)</td>
     </tr>
     <tr>
       <th>2023-03-07 18:00:37.392222208</th>
-      <td>126</td>
-      <td>2146.932617</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>2</td>
       <td>1179</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>2</td>
       <td>18</td>
+      <td>0.000000</td>
       <td>(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>126</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>11</td>
-      <td>2</td>
       <td>41.786434</td>
       <td>20</td>
-      <td>4.360358e+06</td>
-      <td>0.000000</td>
-      <td>NaN</td>
       <td>217430</td>
+      <td>2146.932617</td>
+      <td>11</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4.360358e+06</td>
+      <td>NaN</td>
       <td>11</td>
       <td>POINT (-107.90337 39.18451)</td>
     </tr>
@@ -2357,6 +2454,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 1 resources to process
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2383,27 +2485,27 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>pflags</th>
-      <th>spot</th>
-      <th>segment_id</th>
-      <th>w_surface_window_final</th>
-      <th>distance</th>
-      <th>dh_fit_dx</th>
-      <th>rgt</th>
+      <th>rms_misfit</th>
       <th>cycle</th>
       <th>dh_fit_dy</th>
+      <th>segment_id</th>
       <th>h_mean</th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>dh_fit_dx</th>
+      <th>h_sigma</th>
+      <th>n_fit_photons</th>
       <th>...</th>
-      <th>rms_misfit</th>
+      <th>rgt</th>
       <th>geometry</th>
-      <th>gedi.value</th>
-      <th>gedi.file_id</th>
-      <th>gedi.time</th>
-      <th>gedi.flags</th>
-      <th>landsat.value</th>
       <th>landsat.file_id</th>
       <th>landsat.time</th>
+      <th>landsat.value</th>
       <th>landsat.flags</th>
+      <th>gedi.file_id</th>
+      <th>gedi.time</th>
+      <th>gedi.value</th>
+      <th>gedi.flags</th>
     </tr>
     <tr>
       <th>time</th>
@@ -2433,482 +2535,482 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2022-08-09 04:05:02.004134656</th>
-      <td>0</td>
-      <td>5</td>
-      <td>215526</td>
-      <td>7.207511</td>
-      <td>4.322238e+06</td>
-      <td>0.272569</td>
-      <td>737</td>
+      <td>1.052384</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215526</td>
       <td>1950.969121</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.272569</td>
+      <td>0.137420</td>
+      <td>59</td>
       <td>...</td>
-      <td>1.052384</td>
+      <td>737</td>
       <td>POINT (-108.18666 38.83772)</td>
-      <td>3.732060</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.320962</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.320962</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>3.732060</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:02.007694848</th>
-      <td>0</td>
-      <td>3</td>
-      <td>215533</td>
-      <td>8.259963</td>
-      <td>4.322378e+06</td>
-      <td>0.246685</td>
-      <td>737</td>
+      <td>1.515434</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215533</td>
       <td>1979.649742</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0.246685</td>
+      <td>0.247176</td>
+      <td>41</td>
       <td>...</td>
-      <td>1.515434</td>
+      <td>737</td>
       <td>POINT (-108.15011 38.84176)</td>
-      <td>3.381883</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.393827</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.393827</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>3.381883</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:02.028692992</th>
-      <td>0</td>
-      <td>4</td>
-      <td>215661</td>
-      <td>15.992866</td>
-      <td>4.324944e+06</td>
-      <td>0.008062</td>
-      <td>737</td>
+      <td>2.194247</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215661</td>
       <td>2345.645139</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.008062</td>
+      <td>0.549325</td>
+      <td>16</td>
       <td>...</td>
-      <td>2.194247</td>
+      <td>737</td>
       <td>POINT (-108.15391 38.86470)</td>
-      <td>5.138969</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.326095</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.326095</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>5.138969</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:02.192992768</th>
-      <td>0</td>
-      <td>5</td>
-      <td>215593</td>
-      <td>5.802608</td>
-      <td>4.323581e+06</td>
-      <td>0.226286</td>
-      <td>737</td>
+      <td>0.953454</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215593</td>
       <td>1973.237144</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.226286</td>
+      <td>0.123090</td>
+      <td>60</td>
       <td>...</td>
-      <td>0.953454</td>
+      <td>737</td>
       <td>POINT (-108.18809 38.84977)</td>
-      <td>-0.464319</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.163336</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.163336</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>-0.464319</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:02.468495104</th>
-      <td>0</td>
-      <td>1</td>
-      <td>215702</td>
-      <td>10.424640</td>
-      <td>4.325766e+06</td>
-      <td>0.122638</td>
-      <td>737</td>
+      <td>1.382781</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215702</td>
       <td>2392.190077</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.122638</td>
+      <td>0.205746</td>
+      <td>47</td>
       <td>...</td>
-      <td>1.382781</td>
+      <td>737</td>
       <td>POINT (-108.11696 38.87492)</td>
-      <td>8.237352</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.201469</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.201469</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>8.237352</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:03.104293888</th>
-      <td>0</td>
-      <td>3</td>
-      <td>215922</td>
-      <td>3.000000</td>
-      <td>4.330176e+06</td>
-      <td>0.004983</td>
-      <td>737</td>
+      <td>0.331792</td>
       <td>16</td>
       <td>0.0</td>
+      <td>215922</td>
       <td>3046.448365</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0.004983</td>
+      <td>0.056091</td>
+      <td>35</td>
       <td>...</td>
-      <td>0.331792</td>
+      <td>737</td>
       <td>POINT (-108.15837 38.91171)</td>
-      <td>10.128394</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>-0.032250</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>-0.032250</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>10.128394</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:03.199091456</th>
-      <td>0</td>
-      <td>4</td>
-      <td>216076</td>
-      <td>30.000000</td>
-      <td>4.333263e+06</td>
-      <td>-1.150922</td>
-      <td>737</td>
+      <td>6.329727</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216076</td>
       <td>2757.357326</td>
+      <td>0</td>
+      <td>4</td>
+      <td>-1.150922</td>
+      <td>2.002029</td>
+      <td>10</td>
       <td>...</td>
-      <td>6.329727</td>
+      <td>737</td>
       <td>POINT (-108.16288 38.93931)</td>
-      <td>112.406910</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.214478</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.214478</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>112.406910</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:03.968494336</th>
-      <td>0</td>
-      <td>1</td>
-      <td>216234</td>
-      <td>29.169269</td>
-      <td>4.336430e+06</td>
-      <td>0.090866</td>
-      <td>737</td>
+      <td>3.977454</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216234</td>
       <td>2900.454914</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.090866</td>
+      <td>0.626034</td>
+      <td>42</td>
       <td>...</td>
-      <td>3.977454</td>
+      <td>737</td>
       <td>POINT (-108.12883 38.97054)</td>
-      <td>13.943795</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.277238</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.277238</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>13.943795</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:03.971295232</th>
-      <td>1</td>
-      <td>1</td>
-      <td>216235</td>
-      <td>19.537112</td>
-      <td>4.336450e+06</td>
-      <td>0.209095</td>
-      <td>737</td>
+      <td>0.000000</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216235</td>
       <td>2902.901898</td>
-      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.209095</td>
       <td>0.000000</td>
+      <td>49</td>
+      <td>...</td>
+      <td>737</td>
       <td>POINT (-108.12885 38.97072)</td>
-      <td>13.943800</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.277238</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.277238</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>13.943800</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:04.240030976</th>
-      <td>1</td>
-      <td>5</td>
-      <td>216319</td>
-      <td>5.776011</td>
-      <td>4.338134e+06</td>
-      <td>0.028822</td>
-      <td>737</td>
+      <td>0.000000</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216319</td>
       <td>2229.299515</td>
-      <td>...</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.028822</td>
       <td>0.000000</td>
+      <td>52</td>
+      <td>...</td>
+      <td>737</td>
       <td>POINT (-108.20410 38.98028)</td>
-      <td>7.853535</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.027452</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.027452</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>7.853535</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:04.597890816</th>
-      <td>0</td>
-      <td>5</td>
-      <td>216446</td>
-      <td>30.000000</td>
-      <td>4.340680e+06</td>
-      <td>0.541584</td>
-      <td>737</td>
+      <td>5.434554</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216446</td>
       <td>2866.563258</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.541584</td>
+      <td>0.784497</td>
+      <td>51</td>
       <td>...</td>
-      <td>5.434554</td>
+      <td>737</td>
       <td>POINT (-108.20669 39.00313)</td>
-      <td>223.411333</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.015144</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.015144</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>223.411333</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:04.603494656</th>
-      <td>0</td>
-      <td>5</td>
-      <td>216448</td>
-      <td>24.753527</td>
-      <td>4.340720e+06</td>
-      <td>0.687198</td>
-      <td>737</td>
+      <td>4.175616</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216448</td>
       <td>2896.535498</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.687198</td>
+      <td>0.602714</td>
+      <td>48</td>
       <td>...</td>
-      <td>4.175616</td>
+      <td>737</td>
       <td>POINT (-108.20673 39.00349)</td>
-      <td>223.411342</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.105105</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.105105</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>223.411342</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:04.745237504</th>
-      <td>0</td>
-      <td>3</td>
-      <td>216504</td>
-      <td>3.000000</td>
-      <td>4.341842e+06</td>
-      <td>-0.014690</td>
-      <td>737</td>
+      <td>0.324315</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216504</td>
       <td>3062.905773</td>
+      <td>0</td>
+      <td>3</td>
+      <td>-0.014690</td>
+      <td>0.055310</td>
+      <td>38</td>
       <td>...</td>
-      <td>0.324315</td>
+      <td>737</td>
       <td>POINT (-108.17125 39.01633)</td>
-      <td>38.525259</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>-0.044660</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>-0.044660</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>38.525259</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:04.789554688</th>
-      <td>0</td>
-      <td>5</td>
-      <td>216514</td>
-      <td>4.325855</td>
-      <td>4.342043e+06</td>
-      <td>0.097105</td>
-      <td>737</td>
+      <td>0.656339</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216514</td>
       <td>3010.790639</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.097105</td>
+      <td>0.093846</td>
+      <td>49</td>
       <td>...</td>
-      <td>0.656339</td>
+      <td>737</td>
       <td>POINT (-108.20820 39.01535)</td>
-      <td>75.502564</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>-0.038077</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>-0.038077</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>75.502564</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:05.076196608</th>
-      <td>0</td>
-      <td>1</td>
-      <td>216627</td>
-      <td>30.000000</td>
-      <td>4.344308e+06</td>
-      <td>0.316729</td>
-      <td>737</td>
+      <td>5.554866</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216627</td>
       <td>3125.048198</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.316729</td>
+      <td>0.867545</td>
+      <td>41</td>
       <td>...</td>
-      <td>5.554866</td>
+      <td>737</td>
       <td>POINT (-108.13740 39.04119)</td>
-      <td>64.502242</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.232865</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.232865</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>64.502242</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:05.327299072</th>
-      <td>0</td>
-      <td>1</td>
-      <td>216716</td>
-      <td>30.000000</td>
-      <td>4.346092e+06</td>
-      <td>-0.228058</td>
-      <td>737</td>
+      <td>4.932216</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216716</td>
       <td>2950.092189</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-0.228058</td>
+      <td>0.705565</td>
+      <td>49</td>
       <td>...</td>
-      <td>4.932216</td>
+      <td>737</td>
       <td>POINT (-108.13944 39.05718)</td>
-      <td>59.539302</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.382338</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.382338</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>59.539302</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:05.764592384</th>
-      <td>0</td>
-      <td>1</td>
-      <td>216871</td>
-      <td>8.524411</td>
-      <td>4.349199e+06</td>
-      <td>-0.195892</td>
-      <td>737</td>
+      <td>1.470233</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216871</td>
       <td>2269.554903</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-0.195892</td>
+      <td>0.220764</td>
+      <td>45</td>
       <td>...</td>
-      <td>1.470233</td>
+      <td>737</td>
       <td>POINT (-108.14283 39.08504)</td>
-      <td>5.228157</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.216810</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.216810</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>5.228157</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:05.975891968</th>
-      <td>0</td>
-      <td>1</td>
-      <td>216946</td>
-      <td>11.203486</td>
-      <td>4.350703e+06</td>
-      <td>-0.043185</td>
-      <td>737</td>
+      <td>1.467558</td>
       <td>16</td>
       <td>0.0</td>
+      <td>216946</td>
       <td>2134.899440</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-0.043185</td>
+      <td>0.206747</td>
+      <td>51</td>
       <td>...</td>
-      <td>1.467558</td>
+      <td>737</td>
       <td>POINT (-108.14439 39.09853)</td>
-      <td>0.583802</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.132631</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.132631</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>0.583802</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.235495424</th>
-      <td>0</td>
-      <td>1</td>
-      <td>217038</td>
-      <td>3.000000</td>
-      <td>4.352547e+06</td>
-      <td>-0.061309</td>
-      <td>737</td>
+      <td>0.486845</td>
       <td>16</td>
       <td>0.0</td>
+      <td>217038</td>
       <td>2014.965446</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-0.061309</td>
+      <td>0.065224</td>
+      <td>61</td>
       <td>...</td>
-      <td>0.486845</td>
+      <td>737</td>
       <td>POINT (-108.14634 39.11507)</td>
-      <td>-0.097582</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>0.080759</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>0.080759</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>-0.097582</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2022-08-09 04:05:06.776672768</th>
-      <td>0</td>
-      <td>1</td>
-      <td>217230</td>
-      <td>3.000000</td>
-      <td>4.356395e+06</td>
-      <td>-0.037142</td>
-      <td>737</td>
+      <td>0.301794</td>
       <td>16</td>
       <td>0.0</td>
+      <td>217230</td>
       <td>1796.311214</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-0.037142</td>
+      <td>0.045589</td>
+      <td>45</td>
       <td>...</td>
-      <td>0.301794</td>
+      <td>737</td>
       <td>POINT (-108.15066 39.14958)</td>
-      <td>3.961418</td>
-      <td>0</td>
-      <td>1.312070e+12</td>
-      <td>0</td>
-      <td>-0.047255</td>
       <td>6</td>
       <td>1.325355e+09</td>
+      <td>-0.047255</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.312070e+12</td>
+      <td>3.961418</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -2945,6 +3047,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 130 resources to process
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2971,12 +3078,12 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>solar_elevation</th>
       <th>sensitivity</th>
-      <th>beam</th>
       <th>elevation_hr</th>
       <th>flags</th>
+      <th>solar_elevation</th>
       <th>elevation_lm</th>
+      <th>beam</th>
       <th>geometry</th>
     </tr>
     <tr>
@@ -2993,52 +3100,52 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>2019-04-19 22:03:34.126039040</th>
-      <td>42.844566</td>
       <td>0.844447</td>
-      <td>0</td>
       <td>2838.221680</td>
       <td>128</td>
+      <td>42.844566</td>
       <td>2833.764404</td>
+      <td>0</td>
       <td>POINT (-107.79578 39.19455)</td>
     </tr>
     <tr>
       <th>2019-04-19 22:03:34.134302976</th>
-      <td>42.844311</td>
       <td>0.970264</td>
-      <td>0</td>
       <td>2851.676514</td>
       <td>130</td>
+      <td>42.844311</td>
       <td>2830.363770</td>
+      <td>0</td>
       <td>POINT (-107.79527 39.19422)</td>
     </tr>
     <tr>
       <th>2019-04-19 22:03:34.142567168</th>
-      <td>42.844055</td>
       <td>0.933131</td>
-      <td>0</td>
       <td>2845.024170</td>
       <td>130</td>
+      <td>42.844055</td>
       <td>2831.502441</td>
+      <td>0</td>
       <td>POINT (-107.79475 39.19390)</td>
     </tr>
     <tr>
       <th>2019-04-19 22:03:34.150831104</th>
-      <td>42.843800</td>
       <td>0.947584</td>
-      <td>0</td>
       <td>2851.234131</td>
       <td>130</td>
+      <td>42.843800</td>
       <td>2840.221924</td>
+      <td>0</td>
       <td>POINT (-107.79424 39.19358)</td>
     </tr>
     <tr>
       <th>2019-04-19 22:03:34.159095040</th>
-      <td>42.843544</td>
       <td>0.863980</td>
-      <td>0</td>
       <td>2862.396973</td>
       <td>128</td>
+      <td>42.843544</td>
       <td>2841.870850</td>
+      <td>0</td>
       <td>POINT (-107.79373 39.19325)</td>
     </tr>
     <tr>
@@ -3053,52 +3160,52 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2022-11-30 20:35:01.648558336</th>
-      <td>25.222191</td>
       <td>0.964243</td>
-      <td>0</td>
       <td>2456.310547</td>
       <td>130</td>
+      <td>25.222191</td>
       <td>2448.528076</td>
+      <td>0</td>
       <td>POINT (-107.85977 39.18754)</td>
     </tr>
     <tr>
       <th>2022-11-30 20:35:01.656822528</th>
-      <td>25.221722</td>
       <td>0.959823</td>
-      <td>0</td>
       <td>2455.208008</td>
       <td>130</td>
+      <td>25.221722</td>
       <td>2448.547852</td>
+      <td>0</td>
       <td>POINT (-107.85926 39.18786)</td>
     </tr>
     <tr>
       <th>2022-11-30 20:35:01.665086208</th>
-      <td>25.221254</td>
       <td>0.927946</td>
-      <td>0</td>
       <td>2454.385742</td>
       <td>130</td>
+      <td>25.221254</td>
       <td>2450.793701</td>
+      <td>0</td>
       <td>POINT (-107.85874 39.18818)</td>
     </tr>
     <tr>
       <th>2022-11-30 20:35:01.673350400</th>
-      <td>25.220789</td>
       <td>0.934457</td>
-      <td>0</td>
       <td>2442.255127</td>
       <td>130</td>
+      <td>25.220789</td>
       <td>2437.091553</td>
+      <td>0</td>
       <td>POINT (-107.85823 39.18851)</td>
     </tr>
     <tr>
       <th>2022-11-30 20:35:01.681614336</th>
-      <td>25.220322</td>
       <td>0.974840</td>
-      <td>0</td>
       <td>2434.364746</td>
       <td>130</td>
+      <td>25.220322</td>
       <td>2429.650391</td>
+      <td>0</td>
       <td>POINT (-107.85772 39.18883)</td>
     </tr>
   </tbody>
@@ -3111,15 +3218,1066 @@ title="Print to PDF"
 <section id="iii-advanced-functionality">
 <h2>III. Advanced Functionality<a class="headerlink" href="#iii-advanced-functionality" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Private clusters</p></li>
-<li><p>GeoParquet output to S3</p></li>
-<li><p>Customized YAPC classification</p></li>
-<li><p>Include ancillary data</p></li>
-<li><p>Query CMR, CMR-STAC, and TNM</p></li>
-<li><p>Directly sample supported raster datasets</p></li>
-<li><p>Subset via rasterized area of interest</p></li>
-<li><p>Kmeans clustering</p></li>
+<li><p>A. <a class="reference external" href="#private_cluster">Private clusters</a></p></li>
+<li><p>B. <a class="reference external" href="#geoparquet">GeoParquet output to S3</a></p></li>
+<li><p>C. <a class="reference external" href="#yapc">Customized YAPC classification</a></p></li>
+<li><p>D. <a class="reference external" href="#ancillary">Include ancillary data</a></p></li>
+<li><p>E. <a class="reference external" href="#cmr">Query CMR, CMR-STAC, and TNM</a></p></li>
+<li><p>F. <a class="reference external" href="#sample">Directly sample supported raster datasets</a></p></li>
+<li><p>G. <a class="reference external" href="#rasterize">Subset via rasterized area of interest</a></p></li>
 </ul>
+<p><a id='private_clusters'></a></p>
+<section id="a-private-clusters">
+<h3>A. Private Clusters<a class="headerlink" href="#a-private-clusters" title="Permalink to this headline">#</a></h3>
+<p>The SlideRule project supports the deployment of private clusters.  A private cluster is a separate deployment of the public SlideRule service with the only difference being it requires authenticated access.  These clusters are managed through the <a class="reference external" href="https://ps.slideruleearth.io"><strong>SlideRule Provisioning System</strong></a> and require both an account on that system along with an association with a funding organization.  For more information on private clusters, please see the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/Private-Clusters.html">users guide</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Behind the scenes, the public SlideRule service is provisioned the exact same way as a private cluster and is managed by the SlideRule Provisioning System.  Each cluster has its own subdomain and has a certain configuration managed by the Provisioning System.  For the public cluster, the configuration specifies that no authentication is needed, and the subdomain is “sliderule”, so access to the public cluster is at <a class="reference external" href="https://sliderule.slideruleearth.io">https://sliderule.slideruleearth.io</a>.  For the other clusters, access requires authentication and the subdomain is the set to the name of the organization funding the cluster.  For example, the University of Washington private cluster is at <a class="reference external" href="https://uw.slideruleearth.io">https://uw.slideruleearth.io</a>.</p>
+</div>
+<p>For the purposes of this hackweek, a private cluster has been created under the name “hackweek2023”.  To gain access to that cluster:</p>
+<ol class="simple">
+<li><p>Create an account on the SlideRule Provisioning System by going to <a class="reference external" href="https://ps.slideruleearth.io">https://ps.slideruleearth.io</a> and clicking on “Sign Up” -or-“Login with GitHub” if you want to use your GitHub account.</p></li>
+<li><p>Confirm your email address in the system by going to your profile in the upper right corner of the window.</p></li>
+<li><p>Navigate to the “hackweek2023” organization under the “Unaffiliated” dropdown, and click the “Request Membership”</p></li>
+<li><p>Your account will soon be added and you will be able to use the private cluster.</p></li>
+</ol>
+<p>Once you have an active account associated with the “hackweek2023” organization, you can provide your credentials in a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>machine<span class="w"> </span>ps.slideruleearth.io<span class="w"> </span>login<span class="w"> </span><span class="o">{</span>your_username<span class="o">}</span><span class="w"> </span>password<span class="w"> </span><span class="o">{</span>your_password<span class="o">}</span>
+</pre></div>
+</div>
+<p>Or you can provide your credentials directly to the client through the <code class="docutils literal notranslate"><span class="pre">sliderule.authenticate</span></code> function like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sliderule</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s2">&quot;hackweek2023&quot;</span><span class="p">,</span> <span class="n">your_username</span><span class="p">,</span> <span class="n">your_password</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Just remember to never hardcode your credentials into your script directly.  If using the <code class="docutils literal notranslate"><span class="pre">sliderule.authenticate</span></code> method, your script should obtain the credentials from some environment-based input.</p>
+<p>The example below assumes you’ve followed one of the authentication methods above and it initializes the client to use the “hackweek2023” private cluster with a desired number of nodes of at least 3 for the next 30 minutes.  This makes a request to the SlideRule Provisioning System to make sure the “hackweek2023” cluster is running at least 3 nodes for the next 30 minutes and if it isn’t it will deploy the needed number of nodes to get there.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There are two ways to request capacity in a private cluster.  When the <code class="docutils literal notranslate"><span class="pre">desired_nodes</span></code> parameter is set in the <code class="docutils literal notranslate"><span class="pre">sliderule.init</span></code> function call, the Python script waits for the cluster to reach the requested number of nodes before proceeding.  If you want to make the request and then keep running, then instead of setting the <code class="docutils literal notranslate"><span class="pre">desired_nodes</span></code> parameter, make a call to <code class="docutils literal notranslate"><span class="pre">sliderule.update_available_servers</span></code>.  This will make the request to the SlideRule Provisioning System to increase the number of nodes, and then it will let the script continue to run.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the SlideRule Client</span>
+<span class="n">sliderule</span><span class="o">.</span><span class="n">set_verbose</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sliderule</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s2">&quot;slideruleearth.io&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">organization</span><span class="o">=</span><span class="s2">&quot;hackweek2023&quot;</span><span class="p">,</span> <span class="n">desired_nodes</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">time_to_live</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 0 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 10 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 20 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 30 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 40 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 50 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 60 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 70 seconds
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 80 seconds
+INFO:sliderule.sliderule:Overriding DNS for hackweek2023.slideruleearth.io with 52.32.12.118
+INFO:sliderule.sliderule:Waiting while cluster scales to desired capacity (currently at 0 nodes, desired is 3 nodes)... 91 seconds
+INFO:sliderule.sliderule:getaddrinfo returned 52.32.12.118 for hackweek2023.slideruleearth.io
+INFO:sliderule.sliderule:Cluster has reached capacity of 3 nodes... 101 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make Request to Private Cluster - just as a demonstration</span>
+<span class="n">sliderule</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pgc&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;usgs3dep&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;icesat2&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;landsat&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;server&#39;: {&#39;launch&#39;: &#39;2023-08-07T13:59:52Z&#39;,
+  &#39;environment&#39;: &#39;v3.7.0-0-gc547d9ad-dirty&#39;,
+  &#39;packages&#39;: [&#39;core&#39;,
+   &#39;arrow&#39;,
+   &#39;aws&#39;,
+   &#39;geo&#39;,
+   &#39;h5&#39;,
+   &#39;netsvc&#39;,
+   &#39;usgs3dep&#39;,
+   &#39;swot&#39;,
+   &#39;gedi&#39;,
+   &#39;landsat&#39;,
+   &#39;icesat2&#39;,
+   &#39;pgc&#39;],
+  &#39;version&#39;: &#39;v3.7.0&#39;,
+  &#39;duration&#39;: 20870,
+  &#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;},
+ &#39;gedi&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;swot&#39;: {&#39;commit&#39;: &#39;v3.7.0-0-gc547d9ad&#39;, &#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;client&#39;: {&#39;version&#39;: &#39;v3.7.0&#39;},
+ &#39;organization&#39;: &#39;hackweek2023&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id='geoparquet'></a></p>
+</section>
+<section id="b-geoparquet-output-to-s3">
+<h3>B. GeoParquet Output to S3<a class="headerlink" href="#b-geoparquet-output-to-s3" title="Permalink to this headline">#</a></h3>
+<p>SlideRule provides the option of returning results from the server in the GeoParquet format.  Typically, the results are streamed back to the client where the GeoParquet file is reconstructed in the user’s local file system.  But for large processing requests, or for results that will be shared among multiple users, it is sometimes desirable to have the data returned to an S3 bucket instead.  The SlideRule project does not maintain any user-accessible S3 buckets, but users can supply write-access credentials to their own bucket in their request and SlideRule can use those credentials to write the results there.  For documentation on this capability, please see the <a class="reference external" href="https://slideruleearth.io/web/rtd/tutorials/user/geoparquet_output.html">tutorial on GeoParquet</a> along with the user guide <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/SlideRule.html#output-parameters">section on Output Parameters</a> and <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/GeoParquet.html">section on GeoParquet</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">configparser</span>
+
+<span class="c1"># Setup Config Parser for Credentials</span>
+<span class="n">home_directory</span>          <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
+<span class="n">aws_credential_file</span>     <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">home_directory</span><span class="p">,</span> <span class="s1">&#39;.aws&#39;</span><span class="p">,</span> <span class="s1">&#39;credentials&#39;</span><span class="p">)</span>
+<span class="n">config</span>                  <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">RawConfigParser</span><span class="p">()</span>
+
+<span class="c1"># Read AWS Credentials</span>
+<span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">aws_credential_file</span><span class="p">)</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;aws_access_key_id&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;aws_access_key_id&#39;</span><span class="p">),</span>
+    <span class="s2">&quot;aws_secret_access_key&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;aws_secret_access_key&#39;</span><span class="p">),</span>
+    <span class="s2">&quot;aws_session_token&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;aws_session_token&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL03 Subsetting Request Parameters with Output to S3 Option</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;rgt&quot;</span><span class="p">:</span> <span class="mi">737</span><span class="p">,</span>
+    <span class="s2">&quot;cycle&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;s3://BUCKET/PATH/FILENAME.parquet&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;parquet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;open_on_complete&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;us-west-2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;credentials&quot;</span><span class="p">:</span> <span class="n">credentials</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL03 Subsetting Request</span>
+<span class="n">atl03</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl03sp</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 1 resources to process
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id='yapc'></a></p>
+</section>
+<section id="c-customized-yapc-classification">
+<h3>C. Customized YAPC classification<a class="headerlink" href="#c-customized-yapc-classification" title="Permalink to this headline">#</a></h3>
+<p>SlideRule supports generating customized YAPC classifications using the same algorithm as the ATL03 version 006 standard data product.  The different parameters users can customize are provided in the <a class="reference external" href="https://slideruleearth.io/web/rtd/user_guide/ICESat-2.html#yapc-classification">user guide</a>.</p>
+<p>The example below returns a GeoDataFrame of photons each classified by YAPC using the parameters specified under the <code class="docutils literal notranslate"><span class="pre">yapc</span></code> key.  Observe the <code class="docutils literal notranslate"><span class="pre">yapc_score</span></code> column in the display of the GeoDataFrame and note that all of them have a score of 192 or greater.  This is because the SlideRule servers in addition to classifying each photon can also filter each photon based on its YAPC score for use in downstream calculations like the generated ATL06 elevations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL03 Subsetting Request Parameters with Output to S3 Option</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;rgt&quot;</span><span class="p">:</span> <span class="mi">737</span><span class="p">,</span>
+    <span class="s2">&quot;cycle&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;yapc&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mi">192</span><span class="p">,</span>
+        <span class="s2">&quot;knn&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;min_ph&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;win_h&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;win_x&quot;</span><span class="p">:</span> <span class="mi">15</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL03 Subsetting Request</span>
+<span class="n">atl03</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl03sp</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 1 resources to process
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl03</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sc_orient</th>
+      <th>background_rate</th>
+      <th>rgt</th>
+      <th>cycle</th>
+      <th>segment_dist</th>
+      <th>track</th>
+      <th>segment_id</th>
+      <th>solar_elevation</th>
+      <th>atl03_cnf</th>
+      <th>relief</th>
+      <th>yapc_score</th>
+      <th>quality_ph</th>
+      <th>snowcover</th>
+      <th>atl08_class</th>
+      <th>distance</th>
+      <th>landcover</th>
+      <th>height</th>
+      <th>pair</th>
+      <th>geometry</th>
+      <th>spot</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-08-09 04:05:01.852390400</th>
+      <td>1</td>
+      <td>4567.646060</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.323581e+06</td>
+      <td>1</td>
+      <td>215593</td>
+      <td>-19.045057</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>205</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>-2.862320</td>
+      <td>255</td>
+      <td>1958.596313</td>
+      <td>0</td>
+      <td>POINT (-108.18912 38.84967)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.852490752</th>
+      <td>1</td>
+      <td>4567.646060</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.323581e+06</td>
+      <td>1</td>
+      <td>215593</td>
+      <td>-19.045057</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>205</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>-2.151606</td>
+      <td>255</td>
+      <td>1958.595215</td>
+      <td>0</td>
+      <td>POINT (-108.18912 38.84967)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.852590592</th>
+      <td>1</td>
+      <td>4567.646060</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.323581e+06</td>
+      <td>1</td>
+      <td>215593</td>
+      <td>-19.045057</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>206</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>-1.441953</td>
+      <td>255</td>
+      <td>1958.861450</td>
+      <td>0</td>
+      <td>POINT (-108.18912 38.84968)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.853190656</th>
+      <td>1</td>
+      <td>4567.646060</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.323581e+06</td>
+      <td>1</td>
+      <td>215593</td>
+      <td>-19.045057</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>206</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>2.819185</td>
+      <td>255</td>
+      <td>1958.630493</td>
+      <td>0</td>
+      <td>POINT (-108.18913 38.84972)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:01.853590528</th>
+      <td>1</td>
+      <td>4567.646060</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.323581e+06</td>
+      <td>1</td>
+      <td>215593</td>
+      <td>-19.045057</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>201</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>5.655692</td>
+      <td>255</td>
+      <td>1959.739868</td>
+      <td>0</td>
+      <td>POINT (-108.18913 38.84974)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777690624</th>
+      <td>1</td>
+      <td>6621.979834</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>203</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>7.281042</td>
+      <td>255</td>
+      <td>1796.026733</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14964)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777790464</th>
+      <td>1</td>
+      <td>6621.979834</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>205</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>7.994720</td>
+      <td>255</td>
+      <td>1795.569092</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14965)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777790464</th>
+      <td>1</td>
+      <td>6621.979834</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>204</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>7.994993</td>
+      <td>255</td>
+      <td>1795.770142</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14965)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777890560</th>
+      <td>1</td>
+      <td>6621.979834</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>205</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>8.709501</td>
+      <td>255</td>
+      <td>1795.739380</td>
+      <td>1</td>
+      <td>POINT (-108.15067 39.14966)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:06.777990656</th>
+      <td>1</td>
+      <td>6621.979834</td>
+      <td>737</td>
+      <td>16</td>
+      <td>4.356395e+06</td>
+      <td>3</td>
+      <td>217230</td>
+      <td>-18.884623</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>204</td>
+      <td>0</td>
+      <td>255</td>
+      <td>4</td>
+      <td>9.424560</td>
+      <td>255</td>
+      <td>1796.026245</td>
+      <td>1</td>
+      <td>POINT (-108.15068 39.14966)</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>410 rows × 20 columns</p>
+</div></div></div>
+</div>
+<p><a id='ancillary'></a></p>
+</section>
+<section id="d-include-ancillary-data">
+<h3>D. Include ancillary data<a class="headerlink" href="#d-include-ancillary-data" title="Permalink to this headline">#</a></h3>
+<p>Sometimes it is desirable to include additional columns in the GeoDataFrames returned by SlideRule, other than the default ones provided by each API.  For instance, maybe you would like to include the reference elevation provided in the ATL03 data for each segment, in the generated ATL06 GeoDataFrame.  To do this you can specify a list of ancillary fields in your request to be included in your response.  See the <a class="reference external" href="https://slideruleearth.io/web/rtd/tutorials/user/ancillary_fields.html">tutorial on ancillary data</a> for more details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build ATL06 Request Parameters with Ancillary Data Specified</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;rgt&quot;</span><span class="p">:</span> <span class="mi">737</span><span class="p">,</span>
+    <span class="s2">&quot;cycle&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;atl03_geo_fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ref_elev&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL06 Request</span>
+<span class="n">atl06</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl06p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 1 resources to process
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl06</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rms_misfit</th>
+      <th>cycle</th>
+      <th>dh_fit_dy</th>
+      <th>segment_id</th>
+      <th>h_mean</th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>dh_fit_dx</th>
+      <th>h_sigma</th>
+      <th>n_fit_photons</th>
+      <th>distance</th>
+      <th>w_surface_window_final</th>
+      <th>gt</th>
+      <th>rgt</th>
+      <th>geometry</th>
+      <th>ref_elev</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-08-09 04:05:02.004134656</th>
+      <td>1.052384</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>215526</td>
+      <td>1950.969121</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.272569</td>
+      <td>0.137420</td>
+      <td>59</td>
+      <td>4.322238e+06</td>
+      <td>7.207511</td>
+      <td>20</td>
+      <td>737</td>
+      <td>POINT (-108.18666 38.83772)</td>
+      <td>1.551486</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.007694848</th>
+      <td>1.515434</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>215533</td>
+      <td>1979.649742</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0.246685</td>
+      <td>0.247176</td>
+      <td>41</td>
+      <td>4.322378e+06</td>
+      <td>8.259963</td>
+      <td>40</td>
+      <td>737</td>
+      <td>POINT (-108.15011 38.84176)</td>
+      <td>1.558407</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.028692992</th>
+      <td>2.194247</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>215661</td>
+      <td>2345.645139</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.008062</td>
+      <td>0.549325</td>
+      <td>16</td>
+      <td>4.324944e+06</td>
+      <td>15.992866</td>
+      <td>30</td>
+      <td>737</td>
+      <td>POINT (-108.15391 38.86470)</td>
+      <td>1.558398</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.192992768</th>
+      <td>0.953454</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>215593</td>
+      <td>1973.237144</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.226286</td>
+      <td>0.123090</td>
+      <td>60</td>
+      <td>4.323581e+06</td>
+      <td>5.802608</td>
+      <td>20</td>
+      <td>737</td>
+      <td>POINT (-108.18809 38.84977)</td>
+      <td>1.551476</td>
+    </tr>
+    <tr>
+      <th>2022-08-09 04:05:02.468495104</th>
+      <td>1.382781</td>
+      <td>16</td>
+      <td>0.0</td>
+      <td>215702</td>
+      <td>2392.190077</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.122638</td>
+      <td>0.205746</td>
+      <td>47</td>
+      <td>4.325766e+06</td>
+      <td>10.424640</td>
+      <td>60</td>
+      <td>737</td>
+      <td>POINT (-108.11696 38.87492)</td>
+      <td>1.564840</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><a id='cmr'></a></p>
+</section>
+<section id="e-query-cmr-cmr-stac-and-tnm">
+<h3>E. Query CMR, CMR-STAC, and TNM<a class="headerlink" href="#e-query-cmr-cmr-stac-and-tnm" title="Permalink to this headline">#</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">earthdata</span></code> module provided by the SlideRule client, there are a handful of functions that can be used to query different metadata repositories for hosted datasets.  For a powerful example of what can be done using this module and other helper functions provided by the <code class="docutils literal notranslate"><span class="pre">ipysliderule</span></code> module, please see the example nodebook <a class="reference external" href="https://github.com/ICESat2-SlideRule/sliderule-python/blob/main/examples/cmr_debug_regions.ipynb">cmr_debug_regions.ipynb</a> provided in our <a class="reference external" href="https://github.com/ICESat2-SlideRule/sliderule-python">sliderule_python</a> GitHub repository.  You can also access this notebook from our <a class="reference external" href="https://slideruleearth.io/web/rtd/getting_started/Examples.html">examples</a> page in our documentation. For documentation on the different functions in the <code class="docutils literal notranslate"><span class="pre">earthdata</span></code> module, see our <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/earthdata.html">api reference</a>.</p>
+<p>In the example below, the ATL03 granules intersecting the Grand Mesa region of interest is queried and then the first 10 are displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;grandmesa.geojson&#39;</span><span class="p">)</span>
+
+<span class="c1"># Query CMR for list of resources</span>
+<span class="n">resources</span> <span class="o">=</span> <span class="n">earthdata</span><span class="o">.</span><span class="n">cmr</span><span class="p">(</span><span class="n">short_name</span><span class="o">=</span><span class="s1">&#39;ATL03&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;006&#39;</span><span class="p">,</span> <span class="n">polygon</span><span class="o">=</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:sliderule.earthdata:Identified 106 resources to process
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resources</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ATL03_20181016104402_02720106_006_02.h5&#39;,
+ &#39;ATL03_20181017222812_02950102_006_02.h5&#39;,
+ &#39;ATL03_20181114092019_07140106_006_02.h5&#39;,
+ &#39;ATL03_20181115210428_07370102_006_02.h5&#39;,
+ &#39;ATL03_20181213075606_11560106_006_02.h5&#39;,
+ &#39;ATL03_20181214194017_11790102_006_02.h5&#39;,
+ &#39;ATL03_20190111063212_02110206_006_02.h5&#39;,
+ &#39;ATL03_20190116180755_02950202_006_02.h5&#39;,
+ &#39;ATL03_20190213050003_07140206_006_02.h5&#39;,
+ &#39;ATL03_20190214164413_07370202_006_02.h5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id='sample'></a></p>
+</section>
+<section id="f-directly-sample-supported-raster-datasets">
+<h3>F. Directly sample supported raster datasets<a class="headerlink" href="#f-directly-sample-supported-raster-datasets" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">raster</span></code> module in the SlideRule client provides functions that directly sample supported raster datasets.  The <a class="reference external" href="https://slideruleearth.io/web/rtd/api_reference/raster.html">api reference</a> provides documentation on the functions available.</p>
+<p>In the example below, the MERIT DEM is sampled at the listed coordinates and a GeoDataFrame of sample values is returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s2">&quot;merit-dem&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">108</span><span class="p">,</span> <span class="mf">38.7</span><span class="p">],</span> <span class="p">[</span><span class="mi">108</span><span class="p">,</span> <span class="mf">38.71</span><span class="p">],</span> <span class="p">[</span><span class="mi">108</span><span class="p">,</span> <span class="mf">38.72</span><span class="p">],</span> <span class="p">[</span><span class="mi">108</span><span class="p">,</span> <span class="mf">38.73</span><span class="p">],</span> <span class="p">[</span><span class="mi">108</span><span class="p">,</span> <span class="mf">38.74</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>file</th>
+      <th>value</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-06-17 00:00:18</th>
+      <td></td>
+      <td>8243468.0</td>
+      <td>POINT (108.00000 38.70000)</td>
+    </tr>
+    <tr>
+      <th>2020-06-17 00:00:18</th>
+      <td></td>
+      <td>8238143.0</td>
+      <td>POINT (108.00000 38.71000)</td>
+    </tr>
+    <tr>
+      <th>2020-06-17 00:00:18</th>
+      <td></td>
+      <td>8238238.0</td>
+      <td>POINT (108.00000 38.72000)</td>
+    </tr>
+    <tr>
+      <th>2020-06-17 00:00:18</th>
+      <td></td>
+      <td>8305358.0</td>
+      <td>POINT (108.00000 38.73000)</td>
+    </tr>
+    <tr>
+      <th>2020-06-17 00:00:18</th>
+      <td></td>
+      <td>8395225.0</td>
+      <td>POINT (108.00000 38.74000)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><a id='rasterize'></a></p>
+</section>
+<section id="g-subset-via-rasterized-area-of-interest">
+<h3>G. Subset via rasterized area of interest<a class="headerlink" href="#g-subset-via-rasterized-area-of-interest" title="Permalink to this headline">#</a></h3>
+<p>For areas of interest that consist of multiple polygons, it is not always efficient to process the convex hull of the entire set; at the same time it is also not efficient to send each polygon in a separate request because often times a single granule will intersect multiple polygons.  For times like this SlideRule offers the ability to rasterize the multipolygon with a user-specified cell size, and use the raster to determine point-inclusion for the input datasets like ATL03.</p>
+<p>In the example below a multipolygon is used to define an area of interest around some of the islands near Seattle, WA.  The multipolygon is rasterized by the SlideRule servers and used for subsetting when the <code class="docutils literal notranslate"><span class="pre">raster</span></code> field is set in the request parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build Region of Interest</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">sliderule</span><span class="o">.</span><span class="n">toregion</span><span class="p">(</span><span class="s1">&#39;seattle_islands.geojson&#39;</span><span class="p">)</span>
+<span class="n">region</span><span class="p">[</span><span class="s2">&quot;gdf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../_images/sliderule_62_1.png" src="../../_images/sliderule_62_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build ATL06 Request Parameters</span>
+<span class="n">parms</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;poly&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;raster&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;raster&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;srt&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">SRT_LAND</span><span class="p">,</span>
+    <span class="s2">&quot;cnf&quot;</span><span class="p">:</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">CNF_SURFACE_HIGH</span><span class="p">,</span>
+    <span class="s2">&quot;ats&quot;</span><span class="p">:</span> <span class="mf">7.0</span><span class="p">,</span>
+    <span class="s2">&quot;cnt&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+    <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Make ATL06 Request</span>
+<span class="n">atl06</span> <span class="o">=</span> <span class="n">icesat2</span><span class="o">.</span><span class="n">atl06p</span><span class="p">(</span><span class="n">parms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atl06</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>w_surface_window_final</th>
+      <th>pflags</th>
+      <th>spot</th>
+      <th>segment_id</th>
+      <th>dh_fit_dy</th>
+      <th>rms_misfit</th>
+      <th>gt</th>
+      <th>cycle</th>
+      <th>h_sigma</th>
+      <th>dh_fit_dx</th>
+      <th>h_mean</th>
+      <th>rgt</th>
+      <th>n_fit_photons</th>
+      <th>distance</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-12-02 09:32:49.250595584</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>736883</td>
+      <td>0.0</td>
+      <td>0.145955</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0.067158</td>
+      <td>-0.009010</td>
+      <td>-21.727716</td>
+      <td>989</td>
+      <td>10</td>
+      <td>1.475870e+07</td>
+      <td>POINT (-122.53502 47.71981)</td>
+    </tr>
+    <tr>
+      <th>2018-12-02 09:32:49.252002816</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>736883</td>
+      <td>0.0</td>
+      <td>0.112897</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0.023056</td>
+      <td>0.008101</td>
+      <td>-21.735464</td>
+      <td>989</td>
+      <td>27</td>
+      <td>1.475871e+07</td>
+      <td>POINT (-122.53503 47.71972)</td>
+    </tr>
+    <tr>
+      <th>2018-12-02 09:32:49.253414912</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>736884</td>
+      <td>0.0</td>
+      <td>0.078823</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0.016528</td>
+      <td>0.004892</td>
+      <td>-21.670659</td>
+      <td>989</td>
+      <td>25</td>
+      <td>1.475872e+07</td>
+      <td>POINT (-122.53504 47.71963)</td>
+    </tr>
+    <tr>
+      <th>2018-12-02 09:32:49.254822656</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>736884</td>
+      <td>0.0</td>
+      <td>0.105347</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0.025377</td>
+      <td>-0.006442</td>
+      <td>-21.659128</td>
+      <td>989</td>
+      <td>31</td>
+      <td>1.475873e+07</td>
+      <td>POINT (-122.53505 47.71954)</td>
+    </tr>
+    <tr>
+      <th>2018-12-02 09:32:49.256233984</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>736885</td>
+      <td>0.0</td>
+      <td>0.103912</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0.015399</td>
+      <td>-0.003931</td>
+      <td>-21.713293</td>
+      <td>989</td>
+      <td>46</td>
+      <td>1.475874e+07</td>
+      <td>POINT (-122.53507 47.71945)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the region polygon</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">atl06</span><span class="p">[</span><span class="s1">&#39;h_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">((</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">))</span>
+<span class="n">plot_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cmap&#39;</span><span class="p">:</span><span class="s1">&#39;inferno&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;vmin&#39;</span><span class="p">:</span><span class="n">vmin</span><span class="p">,</span> <span class="s1">&#39;vmax&#39;</span><span class="p">:</span><span class="n">vmax</span><span class="p">}</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">atl06</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;h_mean&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kw</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sliderule_65_0.png" src="../../_images/sliderule_65_0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
