@@ -722,13 +722,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-data-from-tutorial-melt-lake-in-greenland">
-   Example data from tutorial: melt lake in Greenland
+  <a class="reference internal nav-link" href="#example-data-from-this-tutorial-melt-lake-in-greenland">
+   Example data from this tutorial: melt lake in Greenland
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nearshore-bathymetry">
-   Nearshore Bathymetry
+  <a class="reference internal nav-link" href="#snow-depth-tutorial-data">
+   Snow Depth Tutorial Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bathymetry-tutorial-data">
+   Bathymetry Tutorial Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearshore-bathymetry-data-from-this-tutorial">
+   Nearshore bathymetry data from this tutorial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -766,8 +776,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-the-date-only">
-     Change the date only
+    <a class="reference internal nav-link" href="#change-the-date-only-now">
+     Change the date only now
     </a>
    </li>
   </ul>
@@ -792,13 +802,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-data-from-tutorial-melt-lake-in-greenland">
-   Example data from tutorial: melt lake in Greenland
+  <a class="reference internal nav-link" href="#example-data-from-this-tutorial-melt-lake-in-greenland">
+   Example data from this tutorial: melt lake in Greenland
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nearshore-bathymetry">
-   Nearshore Bathymetry
+  <a class="reference internal nav-link" href="#snow-depth-tutorial-data">
+   Snow Depth Tutorial Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bathymetry-tutorial-data">
+   Bathymetry Tutorial Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearshore-bathymetry-data-from-this-tutorial">
+   Nearshore bathymetry data from this tutorial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -836,8 +856,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-the-date-only">
-     Change the date only
+    <a class="reference internal nav-link" href="#change-the-date-only-now">
+     Change the date only now
     </a>
    </li>
   </ul>
@@ -870,8 +890,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="example-data-from-tutorial-melt-lake-in-greenland">
-<h2>Example data from tutorial: melt lake in Greenland<a class="headerlink" href="#example-data-from-tutorial-melt-lake-in-greenland" title="Permalink to this headline">#</a></h2>
+<section id="example-data-from-this-tutorial-melt-lake-in-greenland">
+<h2>Example data from this tutorial: melt lake in Greenland<a class="headerlink" href="#example-data-from-this-tutorial-melt-lake-in-greenland" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl03?date=2021-08-22&amp;minx=-23.989069717620517&amp;miny=77.53261687779506&amp;maxx=-23.950348700496775&amp;maxy=77.57222464044443&amp;trackId=909&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
@@ -903,8 +923,84 @@ Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --
 </div>
 </div>
 </section>
-<section id="nearshore-bathymetry">
-<h2>Nearshore Bathymetry<a class="headerlink" href="#nearshore-bathymetry" title="Permalink to this headline">#</a></h2>
+<section id="snow-depth-tutorial-data">
+<h2>Snow Depth Tutorial Data<a class="headerlink" href="#snow-depth-tutorial-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="mi">1097</span>
+<span class="n">gtx</span> <span class="o">=</span> <span class="s1">&#39;gt2l&#39;</span>
+<span class="n">latlims</span> <span class="o">=</span> <span class="p">[</span><span class="mf">69.985</span><span class="p">,</span> <span class="mf">70.111</span><span class="p">]</span>
+<span class="n">lonlims</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">148.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">148.527</span><span class="p">]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2022-03-04&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Snow Depth Tutorial Data&#39;</span><span class="p">,</span> <span class="n">plot_filename</span><span class="o">=</span><span class="s1">&#39;snowdepth-tutorial-viz.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 45519 data points.
+---&gt; requesting ATL06 data... 708 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 141 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... 483 data points.
+The ground track is 14.1 km long.
+Looking for Sentinel-2 images from 2022-02-22T12:00:00 to 2022-03-14T12:00:00 --&gt; there are 6 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20220304T215529_N0400_R029_T06WVC_20220304T230501
+    - time difference: Same day as ICESat-2
+    - mean along-track cloud probability: 1.8
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+could not display ATL08 canopy data
+--&gt; Saved plot as snowdepth-tutorial-viz.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_7_1.png" src="../../_images/use_examples_7_1.png" />
+</div>
+</div>
+</section>
+<section id="bathymetry-tutorial-data">
+<h2>Bathymetry Tutorial Data<a class="headerlink" href="#bathymetry-tutorial-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="mi">214</span><span class="p">,</span>
+          <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-07-05&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;beam&#39;</span><span class="p">:</span> <span class="s1">&#39;gt2r&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;lonlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">172.66</span><span class="p">,</span> <span class="mf">173.14</span><span class="p">],</span>
+          <span class="s1">&#39;latlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">40.63</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.47</span><span class="p">]</span>
+         <span class="p">}</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Bathymetry Tutorial Data&#39;</span><span class="p">,</span> <span class="n">plot_filename</span><span class="o">=</span><span class="s1">&#39;bathymetry-tutorial-viz.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 50644 data points.
+---&gt; requesting ATL06 data... No data.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 145 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... 228 data points.
+The ground track is 16.2 km long.
+Looking for Sentinel-2 images from 2022-06-25T12:00:00 to 2022-07-15T12:00:00 --&gt; there is 1 cloud-free image.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20220702T222549_N0400_R029_T59GPR_20220702T234500
+    - time difference: 3 days before ICESat-2
+    - mean along-track cloud probability: 3.0
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as bathymetry-tutorial-viz.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_9_1.png" src="../../_images/use_examples_9_1.png" />
+</div>
+</div>
+</section>
+<section id="nearshore-bathymetry-data-from-this-tutorial">
+<h2>Nearshore bathymetry data from this tutorial<a class="headerlink" href="#nearshore-bathymetry-data-from-this-tutorial" title="Permalink to this headline">#</a></h2>
 <section id="input-data">
 <h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
@@ -934,7 +1030,7 @@ Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_7_1.png" src="../../_images/use_examples_7_1.png" />
+<img alt="../../_images/use_examples_11_1.png" src="../../_images/use_examples_11_1.png" />
 </div>
 </div>
 </section>
@@ -968,7 +1064,7 @@ Looking for Sentinel-2 images from 2020-12-31T12:00:00 to 2021-01-20T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_9_1.png" src="../../_images/use_examples_9_1.png" />
+<img alt="../../_images/use_examples_13_1.png" src="../../_images/use_examples_13_1.png" />
 </div>
 </div>
 </section>
@@ -1001,7 +1097,7 @@ Looking for Sentinel-2 images from 2022-08-05T12:00:00 to 2022-08-25T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_11_1.png" src="../../_images/use_examples_11_1.png" />
+<img alt="../../_images/use_examples_15_1.png" src="../../_images/use_examples_15_1.png" />
 </div>
 </div>
 </section>
@@ -1036,7 +1132,7 @@ Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_13_1.png" src="../../_images/use_examples_13_1.png" />
+<img alt="../../_images/use_examples_17_1.png" src="../../_images/use_examples_17_1.png" />
 </div>
 </div>
 </section>
@@ -1045,11 +1141,13 @@ Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --
 <h2>Ice-Covered Lake on Ice Shelf<a class="headerlink" href="#ice-covered-lake-on-ice-shelf" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="mi">721</span>
-<span class="n">gtx</span> <span class="o">=</span> <span class="s1">&#39;gt3r&#39;</span>
-<span class="n">latlims</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">71.35</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.26</span><span class="p">]</span>
-<span class="n">lonlims</span> <span class="o">=</span> <span class="p">[</span><span class="mf">71.41</span><span class="p">,</span> <span class="mf">71.59</span><span class="p">]</span>
-<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s1">&#39;2019-05-15&#39;</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="mi">721</span><span class="p">,</span>
+          <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-05-15&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;beam&#39;</span><span class="p">:</span> <span class="s1">&#39;gt3r&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;latlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">71.35</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.26</span><span class="p">],</span>
+          <span class="s1">&#39;lonlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">71.41</span><span class="p">,</span> <span class="mf">71.59</span><span class="p">]</span>
+         <span class="p">}</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ice-Covered Lake on Ice Shelf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1079,14 +1177,15 @@ Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_15_1.png" src="../../_images/use_examples_15_1.png" />
+<img alt="../../_images/use_examples_19_1.png" src="../../_images/use_examples_19_1.png" />
 </div>
 </div>
-<section id="change-the-date-only">
-<h3>Change the date only<a class="headerlink" href="#change-the-date-only" title="Permalink to this headline">#</a></h3>
+<section id="change-the-date-only-now">
+<h3>Change the date only now<a class="headerlink" href="#change-the-date-only-now" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s1">&#39;2021-05-11&#39;</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2021-05-11&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Where did the lake go?&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1114,7 +1213,7 @@ Looking for Sentinel-2 images from 2021-03-22T12:00:00 to 2021-06-30T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_17_1.png" src="../../_images/use_examples_17_1.png" />
+<img alt="../../_images/use_examples_21_1.png" src="../../_images/use_examples_21_1.png" />
 </div>
 </div>
 </section>
