@@ -19,12 +19,18 @@ tabs:
     leads:
     - Tasha Snow
     - Wilson Sauthoff
+    resources:
+    - title: Recording
+      url: https://youtu.be/ub86G53V12s
   - title: ICESat-2 Mission Overview and Data
     description: Summary of ICESat-2 datasets, algorithms and science applications.
     time: 11:30 - 12:00
     leads:
     - Tyler Sutterley 
     - Nathan Kurtz
+    resources:
+    - title: Recording
+      url: https://youtu.be/ub86G53V12s
   - title: LUNCH
     description: null
     time: 12:00 - 13:00
