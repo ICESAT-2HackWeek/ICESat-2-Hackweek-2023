@@ -31,7 +31,7 @@ jobs:
       uses: codespell-project/actions-codespell@v2
       with:
         check_filenames: true
-        check_hidden: true
+        check_hidden: false
         skip: '*.js,qaqc.yml,acp_lidar_box.geojson'
         ignore_words_file: .codespellignore
 
