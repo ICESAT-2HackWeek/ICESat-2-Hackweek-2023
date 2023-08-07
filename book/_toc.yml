@@ -38,7 +38,12 @@ parts:
             - file: tutorials/data-access-and-format/earthaccess
             - file: tutorials/data-access-and-format/icepyx
             - file: tutorials/data-access-and-format/sliderule
+        - file: tutorials/mission_overview/index
+          sections:
+            - file: tutorials/mission_overview/icesat-2-land-ice-products
+            - file: tutorials/mission_overview/sliderule-feature-find
         - file: tutorials/sliderule/parquet-s3
+        - file: tutorials/bathymetry/bathymetry_tutorial
         - file: tutorials/DataVisualization/OpenAltimetry_Earth_Engine
           sections:
             - file: tutorials/DataVisualization/use_examples
@@ -50,14 +55,17 @@ parts:
           sections:
             - file: tutorials/OOP/OOP_tutorial_complete
             - file: tutorials/OOP/alien
+        - file: tutorials/snow-depth/applications-tutorial-snow-depth
 - caption: Projects
   chapters:
-    - file: projects/list_of_projects
     - file: projects/index
       sections:
         - file: projects/project_roles
         - file: projects/project_roadmap
         - file: projects/project_initialization
+    - file: projects/list_of_projects
+      sections:
+        - file: projects/project_readmes/project_readme_template
 - caption: Reference
   chapters:
     - file: reference/glossary
