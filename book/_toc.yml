@@ -58,12 +58,14 @@ parts:
         - file: tutorials/snow-depth/applications-tutorial-snow-depth
 - caption: Projects
   chapters:
-    - file: projects/list_of_projects
     - file: projects/index
       sections:
         - file: projects/project_roles
         - file: projects/project_roadmap
         - file: projects/project_initialization
+    - file: projects/list_of_projects
+      sections:
+        - file: projects/project_readmes/project_readme_template
 - caption: Reference
   chapters:
     - file: reference/glossary
