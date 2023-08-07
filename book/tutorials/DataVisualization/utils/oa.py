@@ -167,8 +167,11 @@ class dataCollector:
             atl07, = ax.plot(self.atl07.lat, self.atl07.h, c='C1', linestyle='--', label='ATL07')
         if len(self.atl08)>0:   
             atl08, = ax.plot(self.atl08.lat, self.atl08.h, c='C2', linestyle=':', label='ATL08')
-        if np.sum(~np.isnan(self.atl08.canopy))>0:
-            atl08canopy = ax.scatter(self.atl08.lat, self.atl08.h+self.atl08.canopy, s=2, c='C2', label='ATL08 canopy')
+        try:
+            if np.sum(~np.isnan(self.atl08.canopy))>0:
+                atl08canopy = ax.scatter(self.atl08.lat, self.atl08.h+self.atl08.canopy, s=2, c='C2', label='ATL08 canopy')
+        except: 
+            print('could not display ATL08 canopy data')
         if len(self.atl10)>0:   
             atl08, = ax.plot(self.atl10.lat, self.atl10.h, c='C3', linestyle='-', label='ATL10')
         if len(self.atl12)>0:   
