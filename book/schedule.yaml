@@ -24,6 +24,7 @@ tabs:
     - title: Recording
       url: https://youtu.be/ub86G53V12s
   - title: ICESat-2 Mission Overview and Data
+    link: "https://icesat-2-2023.hackweek.io/tutorials/mission_overview/index.html"
     description: Summary of ICESat-2 datasets, algorithms and science applications.
     time: 11:30 - 12:00
     leads:
@@ -82,12 +83,14 @@ tabs:
   date: Wednesday 09 August
   contents:
   - title: 'Applications: snow depth'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/snow-depth/applications-tutorial-snow-depth.html"
     description: Applications of ICESat-2 data to snow studies.
     time: 8:30 - 9:15
     leads:
     - Karina Zikan
     - Zachary Fair
   - title: 'Applications: bathymetry'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/bathymetry/bathymetry_tutorial.html"
     description: Applications of ICESat-2 data to bathymetric sciences.
     time: 9:15 - 10:00
     leads:
