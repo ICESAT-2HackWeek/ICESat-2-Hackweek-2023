@@ -48,6 +48,7 @@ execute:
     - "**/icesat-2-land-ice-products.ipynb"
     - "**/sliderule-feature-find.ipynb"
     - "**/applications-tutorial-snow-depth.ipynb"
+    - "**/Hackweek.ipynb"
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
