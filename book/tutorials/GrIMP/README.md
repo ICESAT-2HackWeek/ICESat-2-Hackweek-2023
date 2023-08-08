@@ -14,9 +14,9 @@ These notebooks can run locally on a users own machine or cloud resource, but us
 
 There are some limitations to *binder*:
 - The *binder* instances are often limited to 2GB of memory, which can easily be exceeded if too large a region is or too many products are selected.
-- The *binder* instance will time out after an ten minutes of inactivity, and all work will be lost. Keeping the notebook in the foreground while it runs should avoid a timeout. 
+- The *binder* instance will time out after ten minutes of inactivity, and all work will be lost. Keeping the notebook in the foreground while it runs should avoid a timeout. 
 
-To run the notebooks, click on the launchbinder button at the top of this file.
+To run the notebooks, click on the launch binder button at the top of this file.
 
 ## Installation on Local Machine
 
