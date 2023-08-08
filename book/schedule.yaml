@@ -45,6 +45,9 @@ tabs:
     time: 8:30 - 9:30
     leads:
     - Romina Piunno
+    resources:
+    - title: Recording
+      url: https://youtu.be/ztAAWL_dQGo
   - title: BREAK
     description: null
     time: 9:30 - 10:00
@@ -55,11 +58,17 @@ tabs:
     leads:
     - Andy Barrett
     - Luis Lopez
+    resources:
+    - title: Recording
+      url: https://youtu.be/xVfojeQ4bLw
   - title: Best Practices for Collaborative Development
     description: Learn techniques for collaborating in small teams.
     time: 11:30 - 12:00
     leads:
     - Naomi Alterman
+    resources:
+    - title: Recording
+      url: https://www.youtube.com/watch?v=CzHq8RT0RVg
   - title: LUNCH
     description: null
     time: 12:00 - 13:00
