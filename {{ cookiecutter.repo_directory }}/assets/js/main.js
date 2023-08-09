@@ -119,7 +119,7 @@ function today(){
   const today = new Date();
   const weekday = new Intl.DateTimeFormat('en', { weekday: 'long' }).format(today);
   const month = new Intl.DateTimeFormat('en', { month: 'long' }).format(today);
-  const day = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(today);
+  const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(today);
 
   return [weekday, day, month].join(' ')
 }
