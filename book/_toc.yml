@@ -29,7 +29,6 @@ parts:
   chapters:
     - file: tutorials/index
       sections:
-        - file: tutorials/example/tutorial-notebook
         - file: tutorials/cryocloud_demo/CryoCloud_demo
         - file: tutorials/data-access-and-format/index
           sections:
@@ -56,6 +55,7 @@ parts:
             - file: tutorials/OOP/OOP_tutorial_complete
             - file: tutorials/OOP/alien
         - file: tutorials/snow-depth/applications-tutorial-snow-depth
+        - file: tutorials/Hydrology/Hackweek
         - file: tutorials/GrIMP/GrIMP_tutorial
 - caption: Projects
   chapters:
