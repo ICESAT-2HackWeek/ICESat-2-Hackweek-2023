@@ -878,16 +878,16 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read ATL10 track</span>
 <span class="n">tutorial_data</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/shared-public/ICESat-2-Hackweek/sea_ice&quot;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_data</span><span class="si">}</span><span class="s2">/processed_ATL10-02_20191113181045_07310501_005_02.h5&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_data</span><span class="si">}</span><span class="s2">/processed_ATL10-02_20191113181045_07310501_006_01.h5&quot;</span>
 
 <span class="c1"># Create dataframe from the ATL10 file</span>
 <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">beam</span> <span class="o">=</span> <span class="s1">&#39;gt2r&#39;</span>
-    <span class="n">track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:],</span>
-                               <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:],</span>
-                               <span class="s1">&#39;seg_x&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;seg_dist_x&#39;</span><span class="p">][:],</span>
-                               <span class="s1">&#39;freeboard&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;beam_freeboard&#39;</span><span class="p">][</span><span class="s1">&#39;beam_fb_height&#39;</span><span class="p">][:],</span>
-                               <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_beam_segment&#39;</span><span class="p">][</span><span class="s1">&#39;height_segments&#39;</span><span class="p">][</span><span class="s1">&#39;height_segment_type&#39;</span><span class="p">][:]</span>
+    <span class="n">track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_segment/latitude&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_segment/longitude&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;seg_x&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_segment/seg_dist_x&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;freeboard&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_segment/beam_fb_height&#39;</span><span class="p">][:],</span>
+                               <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[</span><span class="n">beam</span><span class="p">][</span><span class="s1">&#39;freeboard_segment/heights/height_segment_type&#39;</span><span class="p">][:]</span>
                               <span class="p">})</span>
 
 <span class="c1"># Create Earth Engine feature collection with the ATL10 track</span>
@@ -999,7 +999,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e184faca37e34222ba7595e2a2390698", "version_major": 2, "version_minor": 0}
+{"model_id": "985f54cda1634da78cde1e1c9724df9b", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1052,11 +1052,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd2a26ac820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe5c5972da0&gt;
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "f8a0563b334a43bea95051ee8c2f371c", "version_major": 2, "version_minor": 0}
+{"model_id": "9d0053eecbe34e42b9ec65e253d5d2a7", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Let’s take a look at the ATL10 track data. We read the ATL10 h5 file as <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe. In order to assign the geographic coordinate information, we will convert this dataframe into <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> geodataframe.</p>
@@ -1095,43 +1095,43 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>-73.975637</td>
-      <td>-165.844054</td>
-      <td>2.832693e+07</td>
-      <td>0.080256</td>
-      <td>6</td>
+      <td>-74.000104</td>
+      <td>-165.856928</td>
+      <td>2.832969e+07</td>
+      <td>0.117155</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-73.975891</td>
-      <td>-165.844189</td>
-      <td>2.832696e+07</td>
-      <td>0.086212</td>
-      <td>6</td>
+      <td>-74.000290</td>
+      <td>-165.857027</td>
+      <td>2.832971e+07</td>
+      <td>0.052732</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-73.976071</td>
-      <td>-165.844283</td>
-      <td>2.832698e+07</td>
-      <td>0.092388</td>
-      <td>6</td>
+      <td>-74.000306</td>
+      <td>-165.857035</td>
+      <td>2.832972e+07</td>
+      <td>0.047613</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-73.976211</td>
-      <td>-165.844356</td>
-      <td>2.832700e+07</td>
-      <td>0.096061</td>
-      <td>1</td>
+      <td>-74.000324</td>
+      <td>-165.857044</td>
+      <td>2.832972e+07</td>
+      <td>0.022756</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-73.976379</td>
-      <td>-165.844443</td>
-      <td>2.832702e+07</td>
-      <td>0.096196</td>
-      <td>1</td>
+      <td>-74.000351</td>
+      <td>-165.857059</td>
+      <td>2.832972e+07</td>
+      <td>0.000000</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1142,48 +1142,48 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
-      <th>51063</th>
-      <td>-78.034301</td>
-      <td>-168.605746</td>
-      <td>2.878597e+07</td>
-      <td>0.152796</td>
+      <th>50624</th>
+      <td>-77.999665</td>
+      <td>-168.575384</td>
+      <td>2.878204e+07</td>
+      <td>0.158924</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>51064</th>
-      <td>-78.034363</td>
-      <td>-168.605802</td>
-      <td>2.878597e+07</td>
-      <td>0.154176</td>
+      <th>50625</th>
+      <td>-77.999727</td>
+      <td>-168.575438</td>
+      <td>2.878204e+07</td>
+      <td>0.154560</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>51065</th>
-      <td>-78.034440</td>
-      <td>-168.605870</td>
-      <td>2.878598e+07</td>
-      <td>0.151869</td>
+      <th>50626</th>
+      <td>-77.999795</td>
+      <td>-168.575496</td>
+      <td>2.878205e+07</td>
+      <td>0.152328</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>51066</th>
-      <td>-78.034497</td>
-      <td>-168.605921</td>
-      <td>2.878599e+07</td>
-      <td>0.154419</td>
+      <th>50627</th>
+      <td>-77.999877</td>
+      <td>-168.575567</td>
+      <td>2.878206e+07</td>
+      <td>0.144256</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>51067</th>
-      <td>-78.034561</td>
-      <td>-168.605979</td>
-      <td>2.878600e+07</td>
-      <td>0.129654</td>
+      <th>50628</th>
+      <td>-77.999941</td>
+      <td>-168.575622</td>
+      <td>2.878207e+07</td>
+      <td>0.152755</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>51068 rows × 5 columns</p>
+<p>50629 rows × 5 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1236,48 +1236,48 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>-73.975637</td>
-      <td>-165.844054</td>
-      <td>2.832693e+07</td>
-      <td>0.080256</td>
-      <td>6</td>
-      <td>POINT (473993.423 1790495.816)</td>
+      <td>-74.000104</td>
+      <td>-165.856928</td>
+      <td>2.832969e+07</td>
+      <td>0.117155</td>
+      <td>8</td>
+      <td>POINT (473636.020 1787760.734)</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-73.975891</td>
-      <td>-165.844189</td>
-      <td>2.832696e+07</td>
-      <td>0.086212</td>
-      <td>6</td>
-      <td>POINT (473989.677 1790467.430)</td>
+      <td>-74.000290</td>
+      <td>-165.857027</td>
+      <td>2.832971e+07</td>
+      <td>0.052732</td>
+      <td>1</td>
+      <td>POINT (473633.297 1787739.941)</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-73.976071</td>
-      <td>-165.844283</td>
-      <td>2.832698e+07</td>
-      <td>0.092388</td>
-      <td>6</td>
-      <td>POINT (473987.050 1790447.305)</td>
+      <td>-74.000306</td>
+      <td>-165.857035</td>
+      <td>2.832972e+07</td>
+      <td>0.047613</td>
+      <td>1</td>
+      <td>POINT (473633.065 1787738.167)</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-73.976211</td>
-      <td>-165.844356</td>
-      <td>2.832700e+07</td>
-      <td>0.096061</td>
-      <td>1</td>
-      <td>POINT (473985.027 1790431.654)</td>
+      <td>-74.000324</td>
+      <td>-165.857044</td>
+      <td>2.832972e+07</td>
+      <td>0.022756</td>
+      <td>2</td>
+      <td>POINT (473632.809 1787736.199)</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-73.976379</td>
-      <td>-165.844443</td>
-      <td>2.832702e+07</td>
-      <td>0.096196</td>
-      <td>1</td>
-      <td>POINT (473982.612 1790412.817)</td>
+      <td>-74.000351</td>
+      <td>-165.857059</td>
+      <td>2.832972e+07</td>
+      <td>0.000000</td>
+      <td>4</td>
+      <td>POINT (473632.410 1787733.144)</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1289,53 +1289,53 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
-      <th>51063</th>
-      <td>-78.034301</td>
-      <td>-168.605746</td>
-      <td>2.878597e+07</td>
-      <td>0.152796</td>
+      <th>50624</th>
+      <td>-77.999665</td>
+      <td>-168.575384</td>
+      <td>2.878204e+07</td>
+      <td>0.158924</td>
       <td>1</td>
-      <td>POINT (416597.305 1335234.132)</td>
+      <td>POINT (417062.908 1339135.748)</td>
     </tr>
     <tr>
-      <th>51064</th>
-      <td>-78.034363</td>
-      <td>-168.605802</td>
-      <td>2.878597e+07</td>
-      <td>0.154176</td>
+      <th>50625</th>
+      <td>-77.999727</td>
+      <td>-168.575438</td>
+      <td>2.878204e+07</td>
+      <td>0.154560</td>
       <td>1</td>
-      <td>POINT (416596.446 1335227.123)</td>
+      <td>POINT (417062.096 1339128.752)</td>
     </tr>
     <tr>
-      <th>51065</th>
-      <td>-78.034440</td>
-      <td>-168.605870</td>
-      <td>2.878598e+07</td>
-      <td>0.151869</td>
+      <th>50626</th>
+      <td>-77.999795</td>
+      <td>-168.575496</td>
+      <td>2.878205e+07</td>
+      <td>0.152328</td>
       <td>1</td>
-      <td>POINT (416595.394 1335218.517)</td>
+      <td>POINT (417061.201 1339121.077)</td>
     </tr>
     <tr>
-      <th>51066</th>
-      <td>-78.034497</td>
-      <td>-168.605921</td>
-      <td>2.878599e+07</td>
-      <td>0.154419</td>
+      <th>50627</th>
+      <td>-77.999877</td>
+      <td>-168.575567</td>
+      <td>2.878206e+07</td>
+      <td>0.144256</td>
       <td>1</td>
-      <td>POINT (416594.610 1335212.104)</td>
+      <td>POINT (417060.120 1339111.843)</td>
     </tr>
     <tr>
-      <th>51067</th>
-      <td>-78.034561</td>
-      <td>-168.605979</td>
-      <td>2.878600e+07</td>
-      <td>0.129654</td>
+      <th>50628</th>
+      <td>-77.999941</td>
+      <td>-168.575622</td>
+      <td>2.878207e+07</td>
+      <td>0.152755</td>
       <td>1</td>
-      <td>POINT (416593.719 1335204.801)</td>
+      <td>POINT (417059.272 1339104.632)</td>
     </tr>
   </tbody>
 </table>
-<p>51068 rows × 6 columns</p>
+<p>50629 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1400,66 +1400,66 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>-76.561351</td>
-      <td>-167.431297</td>
+      <td>-76.561369</td>
+      <td>-167.431310</td>
       <td>2.861903e+07</td>
-      <td>0.780125</td>
+      <td>0.745570</td>
       <td>1</td>
-      <td>POINT (436941.681 1500874.271)</td>
-      <td>436941.680883</td>
-      <td>1.500874e+06</td>
+      <td>POINT (436941.428 1500872.263)</td>
+      <td>436941.427651</td>
+      <td>1.500872e+06</td>
       <td>740</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-76.561408</td>
-      <td>-167.431338</td>
+      <td>-76.561430</td>
+      <td>-167.431354</td>
       <td>2.861903e+07</td>
-      <td>0.710218</td>
+      <td>0.657554</td>
       <td>1</td>
-      <td>POINT (436940.872 1500867.897)</td>
-      <td>436940.872143</td>
-      <td>1.500868e+06</td>
+      <td>POINT (436940.555 1500865.391)</td>
+      <td>436940.555274</td>
+      <td>1.500865e+06</td>
       <td>740</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-76.561462</td>
-      <td>-167.431378</td>
+      <td>-76.561478</td>
+      <td>-167.431389</td>
       <td>2.861904e+07</td>
-      <td>0.592511</td>
+      <td>0.594501</td>
       <td>1</td>
-      <td>POINT (436940.099 1500861.810)</td>
-      <td>436940.098985</td>
-      <td>1.500862e+06</td>
+      <td>POINT (436939.876 1500860.042)</td>
+      <td>436939.875610</td>
+      <td>1.500860e+06</td>
       <td>740</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-76.561514</td>
-      <td>-167.431415</td>
-      <td>2.861904e+07</td>
-      <td>0.561554</td>
+      <td>-76.561538</td>
+      <td>-167.431433</td>
+      <td>2.861905e+07</td>
+      <td>0.564235</td>
       <td>1</td>
-      <td>POINT (436939.368 1500856.062)</td>
-      <td>436939.368193</td>
-      <td>1.500856e+06</td>
+      <td>POINT (436939.025 1500853.352)</td>
+      <td>436939.024725</td>
+      <td>1.500853e+06</td>
       <td>740</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-76.561581</td>
-      <td>-167.431464</td>
+      <td>-76.561600</td>
+      <td>-167.431478</td>
       <td>2.861905e+07</td>
-      <td>0.579661</td>
+      <td>0.575839</td>
       <td>1</td>
-      <td>POINT (436938.401 1500848.459)</td>
-      <td>436938.400538</td>
-      <td>1.500848e+06</td>
+      <td>POINT (436938.128 1500846.308)</td>
+      <td>436938.127990</td>
+      <td>1.500846e+06</td>
       <td>740</td>
       <td>1</td>
     </tr>
@@ -1477,73 +1477,73 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
-      <th>14608</th>
-      <td>-77.545559</td>
-      <td>-168.188758</td>
+      <th>14625</th>
+      <td>-77.545536</td>
+      <td>-168.188739</td>
       <td>2.873052e+07</td>
-      <td>0.300712</td>
+      <td>0.182069</td>
       <td>1</td>
-      <td>POINT (423266.985 1390259.877)</td>
-      <td>423266.984926</td>
-      <td>1.390260e+06</td>
+      <td>POINT (423267.294 1390262.450)</td>
+      <td>423267.294167</td>
+      <td>1.390262e+06</td>
       <td>467</td>
       <td>2212</td>
     </tr>
     <tr>
-      <th>14609</th>
-      <td>-77.545639</td>
-      <td>-168.188823</td>
+      <th>14626</th>
+      <td>-77.545623</td>
+      <td>-168.188810</td>
       <td>2.873053e+07</td>
-      <td>0.513088</td>
+      <td>0.507950</td>
       <td>1</td>
-      <td>POINT (423265.900 1390250.831)</td>
-      <td>423265.900493</td>
-      <td>1.390251e+06</td>
+      <td>POINT (423266.121 1390252.646)</td>
+      <td>423266.120538</td>
+      <td>1.390253e+06</td>
       <td>467</td>
       <td>2212</td>
     </tr>
     <tr>
-      <th>14610</th>
-      <td>-77.545691</td>
-      <td>-168.188866</td>
-      <td>2.873054e+07</td>
-      <td>0.486816</td>
+      <th>14627</th>
+      <td>-77.545683</td>
+      <td>-168.188859</td>
+      <td>2.873053e+07</td>
+      <td>0.494939</td>
       <td>1</td>
-      <td>POINT (423265.192 1390244.950)</td>
-      <td>423265.191837</td>
-      <td>1.390245e+06</td>
+      <td>POINT (423265.301 1390245.835)</td>
+      <td>423265.300710</td>
+      <td>1.390246e+06</td>
       <td>467</td>
       <td>2213</td>
     </tr>
     <tr>
-      <th>14611</th>
-      <td>-77.545753</td>
-      <td>-168.188917</td>
+      <th>14628</th>
+      <td>-77.545741</td>
+      <td>-168.188907</td>
       <td>2.873054e+07</td>
-      <td>0.527656</td>
+      <td>0.526345</td>
       <td>1</td>
-      <td>POINT (423264.346 1390237.969)</td>
-      <td>423264.346224</td>
-      <td>1.390238e+06</td>
+      <td>POINT (423264.511 1390239.308)</td>
+      <td>423264.510794</td>
+      <td>1.390239e+06</td>
       <td>467</td>
       <td>2213</td>
     </tr>
     <tr>
-      <th>14612</th>
-      <td>-77.545815</td>
-      <td>-168.188968</td>
+      <th>14629</th>
+      <td>-77.545798</td>
+      <td>-168.188954</td>
       <td>2.873055e+07</td>
-      <td>0.694826</td>
+      <td>0.636491</td>
       <td>1</td>
-      <td>POINT (423263.499 1390231.014)</td>
-      <td>423263.499131</td>
-      <td>1.390231e+06</td>
+      <td>POINT (423263.733 1390232.911)</td>
+      <td>423263.732709</td>
+      <td>1.390233e+06</td>
       <td>467</td>
       <td>2213</td>
     </tr>
   </tbody>
 </table>
-<p>14613 rows × 10 columns</p>
+<p>14630 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>Draw overlapped optical image and ATL10 surface types (leads or not).</p>
@@ -1557,11 +1557,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd28e53fc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe5b15cd8a0&gt;
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "65abfc262ad847639b79f685ca323fae", "version_major": 2, "version_minor": 0}
+{"model_id": "2af847ebb2fb4de49aa7c7b724355890", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Draw optical image and ATL10 freeboard.</p>
@@ -1575,11 +1575,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd28e37df30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe5b159a080&gt;
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "dcbe44f9910e4c22bf49b3e9f044a055", "version_major": 2, "version_minor": 0}
+{"model_id": "1c88e71f8202405190592fda143388e6", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </section>
@@ -1598,7 +1598,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9ae43019548249eaa1111d508b6276c2", "version_major": 2, "version_minor": 0}
+{"model_id": "0bb8dd7cd4144353844bc5c1bffd04da", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Based on this histogram, which value is appropriate to separate sea ice floes and leads?</p>
@@ -1627,7 +1627,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "add7092f51f14899b1f7f621c893ffa3", "version_major": 2, "version_minor": 0}
+{"model_id": "e0391e62345a4adcb7602ba988120e7f", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1747,7 +1747,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "3b3cd9aed6e748efad64c578eeb11de0", "version_major": 2, "version_minor": 0}
+{"model_id": "71645bd4f64e469cae75f5527d95b545", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1773,7 +1773,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9e1f739003e74d03b865ef409431671a", "version_major": 2, "version_minor": 0}
+{"model_id": "9c65e299282f40aa9f142fdcb50b6d80", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p><strong>Credited by Younghyun Koo (<a class="reference external" href="mailto:kooala317&#37;&#52;&#48;gmail&#46;com">kooala317<span>&#64;</span>gmail<span>&#46;</span>com</a>)</strong></p>
