@@ -3,25 +3,15 @@
 ## Bryony Freer 
 
 The following people contributed to our project throughout the week:
-* Project lead: Bryony Freer(url to their webpage)
-* Project lead (if more than one): [name of person](url to their webpage)
-* Helper: [name of person](url to their webpage)
-* Helper (if more than one): [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
-* Team member: [name of person](url to their webpage)
+* Project lead: Bryony Freer
+* Team member: Anna Puggard
+* Team member: Maria Lozano 
+* Team member: Danielle Grau
 
 
 ## Project Goals
 
-What were the goals of your project?
-Remember, small, clear, actionable goals are a great way to foster hacking success!
-List or state them here.
-For example: Our team was interested in further exploring the tutorial material and learning how to collaborate on object oriented code.
-Our goal for the week was to design a simple Python class called "Pho" (the ICESat-2 mascot) and have each person contribute a function to describe Pho or let it perform an action based on 
+Our team is interested in estimating the length scales of grounding zone depressions and their statistical distribution across the Antarctic continent. 
 
 
 ## Project Outcomes
