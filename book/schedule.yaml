@@ -118,6 +118,7 @@ tabs:
   date: Thursday 10 August
   contents:
   - title: 'Applications: inland hydrology'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/Hydrology/Hackweek.html"
     description: Applications of ICESat-2 data to inland hydrology.
     time: 8:30 - 9:15
     leads:
@@ -132,6 +133,7 @@ tabs:
     description: null
     time: 10:00 - 10:30
   - title: 'Applications: ICESat-2 integration with GrIMP data'
+    link: "https://icesat-2-2023.hackweek.io/tutorials/GrIMP/GrIMP_tutorial.html"
     description: null
     time: 10:30 - 11:15
     leads:
