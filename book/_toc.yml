@@ -56,6 +56,7 @@ parts:
             - file: tutorials/OOP/OOP_tutorial_complete
             - file: tutorials/OOP/alien
         - file: tutorials/snow-depth/applications-tutorial-snow-depth
+        - file: tutorials/GrIMP/GrIMP_tutorial
 - caption: Projects
   chapters:
     - file: projects/index
