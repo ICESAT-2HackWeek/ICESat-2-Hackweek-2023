@@ -27,7 +27,7 @@ What were the goals of your project?
 ## Project Outcomes
 
 * Jupyter notebook that elucidates the project
-* Version controlling the project throught Git
+* Version controlling the project thought Git
 * Visualize the optical properties and the corresponding changes around seamounts and with seasonality
 
 <!--## Future Efforts
