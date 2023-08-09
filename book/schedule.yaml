@@ -89,12 +89,18 @@ tabs:
     leads:
     - Karina Zikan
     - Zachary Fair
+    resources:
+    - title: Recording
+      url: "https://youtu.be/jWoyc2NHMOo"
   - title: 'Applications: bathymetry'
     link: "https://icesat-2-2023.hackweek.io/tutorials/bathymetry/bathymetry_tutorial.html"
     description: Applications of ICESat-2 data to bathymetric sciences.
     time: 9:15 - 10:00
     leads:
     - Jonathan Markel
+    resources:
+    - title: Recording
+      url: "https://youtu.be/EJHoJcmO274"
   - title: BREAK
     description: null
     time: 10:00 - 10:30
@@ -105,6 +111,9 @@ tabs:
     time: 10:30 - 11:15
     leads:
     - Philipp Arndt
+    resources:
+    - title: Recording
+      url: "https://youtu.be/HKIQqiHAwsA"
   - title: Group STAND-UP & OPEN PROJECT WORK
     description: null
     time: 11:15 - 12:00
