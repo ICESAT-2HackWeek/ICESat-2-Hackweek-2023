@@ -8,6 +8,14 @@ through these tutorials interactively. On JupyterHub, your home directory persis
 so any changes you make to the tutorials will be saved and be there for you next
 time you log in.
 
-| Tutorial | Topics | Datasets |  Recording Link |
-| -  | - | - |  - |
-| [Example Notebook](./example/tutorial-notebook.ipynb) | Jupyter Book formatting, ipyleaflet | n/a |  Not recorded |
+| Tutorial                                                                  | Recording Link                            |
+|---------------------------------------------------------------------------|-------------------------------------------|
+| [CryoCloud](./cryocloud_demo/CryoCloud_demo.ipynb)                        | [Recording](https://youtu.be/ub86G53V12s) |
+| [ICESat-2 Mission Overview and Data](./mission_overview/index.md)         | [Recording](https://youtu.be/2-Uo-iZfa4U) |
+| [Open source development / Object Oriented Programming](./OOP/index.md)   | [Recording](https://youtu.be/ztAAWL_dQGo) |
+| [Cloud data access and data formats](./data-access-and-format%2Findex.md) | [Recording](https://youtu.be/xVfojeQ4bLw) |
+| Best Practices for Collaborative Development                              | [Recording](https://www.youtube.com/watch?v=CzHq8RT0RVg) |
+
+## Overview
+```{tableofcontents}
+```
