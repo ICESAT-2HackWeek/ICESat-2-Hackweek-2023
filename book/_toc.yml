@@ -29,7 +29,6 @@ parts:
   chapters:
     - file: tutorials/index
       sections:
-        - file: tutorials/example/tutorial-notebook
         - file: tutorials/cryocloud_demo/CryoCloud_demo
         - file: tutorials/data-access-and-format/index
           sections:
