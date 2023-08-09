@@ -49,6 +49,7 @@ execute:
     - "**/sliderule-feature-find.ipynb"
     - "**/applications-tutorial-snow-depth.ipynb"
     - "**/GrIMP_tutorial.ipynb"
+    - "**/Hackweek.ipynb"
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
