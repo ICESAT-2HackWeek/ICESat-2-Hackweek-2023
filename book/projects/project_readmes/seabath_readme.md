@@ -1,5 +1,5 @@
 # Seabath Project
-
+ 
 ## Team Members
 
 Add your team members in this section.
@@ -7,8 +7,9 @@ Feel free to include links to GitHub profiles or personal websites.
 
 The following people contributed to our project throughout the week:
 * Project lead: [Matthew Brandin]
-* Helper: [name of person](url to their webpage)
+<!--* Helper: [name of person](url to their webpage)
 * Helper (if more than one): [name of person](url to their webpage)
+-->
 * Team member: [Mariya Velikova]
 * Team member: [Siddharth Shankar]
 * Team member: [Alexander Bailess]
