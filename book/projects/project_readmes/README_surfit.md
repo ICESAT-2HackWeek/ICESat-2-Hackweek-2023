@@ -35,7 +35,7 @@ Some examples might be:
 * Kate opened a [discussion on icepyx](https://github.com/icesat2py/icepyx/discussions).
 * Sam and Harvey put in a [SlideRule feature request](https://github.com/orgs/ICESat2-SlideRule/discussions).
 * six team members wrote [functions for Pho](link to project team repository).
-* Nathan wrote code that takes photon clouds adn attempts to retrieve the associated surface height distribution (link 
+* Nathan wrote code that takes photon clouds and attempts to retrieve the associated surface height distribution. This code assumes the surface height distribution follows a Gaussian or log-normal distribution, convolves this with the ICESat-2 transmit pulse, and attempts to find the distribution parameters (mean height and width or roughness). (link to team repository)
 * [Example Workflow Jupyter Notebook](your notebook url here).
 * We drafted a conference abstract for submission to [conference](https://www.agu.org/).
 
