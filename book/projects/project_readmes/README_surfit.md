@@ -45,7 +45,6 @@ Some examples might be:
 
 
 ## Future Efforts
-David's UCAR submission work?
 
 Have you built any great new collaborations you anticipate continuing after the Hackweek?
 Is your team planning to keep meeting to continue hacking or draft a conference abstract or proposal?
