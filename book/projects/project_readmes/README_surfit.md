@@ -1,4 +1,4 @@
-# Project Team Name
+# Surfit 🏄‍♂️
 
 ## Team Members
 
