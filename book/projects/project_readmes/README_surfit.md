@@ -36,7 +36,7 @@ We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska, our two
 * 3 team members worked on accessing ATL06 photon data using SlideRule and created a [Jupyter Notebook] (link to notebook). 
 * YoungHyun obtained a geodataframe of the ATL03 data for the region of interest & analyzed how surface roughness varies with different yapc values. 
 * Nathan wrote code that takes photon clouds and attempts to retrieve the associated surface height distribution. This code assumes the surface height distribution follows a Gaussian or log-normal distribution, convolves this with the ICESat-2 transmit pulse, and attempts to find the distribution parameters (mean height and width or roughness). This version of the code runs over a granule near Utqiagvik.
-* David created a dataframe...
+* David created [include his updates here].
 * Jessica provided support in project vision and bringing pieces together, identified a test track for the Black Rock ROI, and provided Git support for several group members.
 * Team members worked on increasing their familiarity with accessing ICESat-2 data from the cloud. 
   
