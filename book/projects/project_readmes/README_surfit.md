@@ -43,9 +43,8 @@ We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska, our two
   
 
 ## Future Efforts
-*Our team is considering expanding the regions of interest to include more diverse terrains to further validate the findings.
-*This work can potentially support future work in proposals for David's NCAR work in the near future.  
+* Our team is considering expanding the regions of interest to include more diverse terrains to further validate the findings.
+* This work can potentially support future work in proposals for David's NCAR work in the near future.  
 
 
 
-## Helpful Links 
