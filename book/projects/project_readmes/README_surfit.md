@@ -3,8 +3,8 @@
 ## Team Members
 
 The following people contributed to our project throughout the week:
-* Project lead: [Ben Purinton](url to their webpage)
-* Project lead: [David Clemens-Sewall](url to their webpage)
+* Project lead: Ben Purinton
+* Project lead: David Clemens-Sewall
 * Project lead: [Jessica Badgeley] (url to their webpage)
 * Helper: Nathan Kurtz
 * Helper: YoungHyun Koo
@@ -15,7 +15,7 @@ The following people contributed to our project throughout the week:
   
 
 ## Project Goals
-Our main goal(s) for this project was to see if we could assess surface roughness along track-length scales using ICESat-2 data, comparing across two sites. 
+Our main goal(s) for this project was to see if we could assess surface roughness along track-length scales using ICESat-2 data, comparing across two regions of interest. 
 
 Our motivating question(s) were: 
 * Are surface roughness signals hiding in ATL03 at shorter along-track length scales compared with ATL06?
