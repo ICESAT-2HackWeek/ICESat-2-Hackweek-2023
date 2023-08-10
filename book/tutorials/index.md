@@ -15,10 +15,9 @@ time you log in.
 | [Open source development / Object Oriented Programming](./OOP/index.md)                            | [Recording](https://youtu.be/ztAAWL_dQGo)                |
 | [Cloud data access and data formats](./data-access-and-format%2Findex.md)                          | [Recording](https://youtu.be/xVfojeQ4bLw)                |
 | Best Practices for Collaborative Development                                                       | [Recording](https://www.youtube.com/watch?v=CzHq8RT0RVg) |
-| [Application: snow depth](./snow-depth/applications-tutorial-snow-depth.ipynb))                    | [Recording](https://youtu.be/jWoyc2NHMOo)                                            |
-| [Application: bathymetry](./bathymetry/bathymetry_tutorial.ipynb)                                  | [Recording](https://youtu.be/EJHoJcmO274)                                            |
-| [Application: Visualization and Integration](./DataVisualization/OpenAltimetry_Earth_Engine.ipynb) | [Recording](https://youtu.be/HKIQqiHAwsA)                                            |
-
-## Overview
-```{tableofcontents}
-```
+| [Application: snow depth](./snow-depth/applications-tutorial-snow-depth.ipynb))                    | [Recording](https://youtu.be/jWoyc2NHMOo)                |
+| [Application: bathymetry](./bathymetry/bathymetry_tutorial.ipynb)                                  | [Recording](https://youtu.be/EJHoJcmO274)                |
+| [Application: Visualization and Integration](./DataVisualization/OpenAltimetry_Earth_Engine.ipynb) | [Recording](https://youtu.be/HKIQqiHAwsA)                |
+| [Applications: inland hydrology](./Hydrology/Hackweek.ipynb))                                      | [Recording](https://youtu.be/4SkmrQM7ch4)                                            |
+| [Applications: sea ice](./sea_ice/1_sea_ice_tutorial.ipynb))                                       | [Recording](https://youtu.be/e0M7CyfbJYc)                                            |
+| [Applications: ICESat-2 integration with GrIMP data](./GrIMP/GrIMP_tutorial.ipynb)                 | [Recording](https://youtu.be/nL841OYNkPM)                                            |
