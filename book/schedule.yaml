@@ -170,18 +170,18 @@ tabs:
     description: After the Hackweek.
     time: 9:00 - 9:30
     leads:
-    - Joachim Meyer
-  - title: BREAK
-    description: null
-    time: 9:30 - 10:00
-  - title: Sharing Project Outcomes - Part I
-    description: Sharing what you and your teams accomplished during our time together.
-    time: 10:00 - 11:30
-    leads:
-    - Anthony Arendt
+    - Tasha Snow
   - title: SURVEY FEEDBACK
     description: Complete our online survey so that we can improve our program.
-    time: 11:30 - 12:00
+    time: 9:30 - 10:00
+    leads:
+    - Anthony Arendt
+  - title: BREAK
+    description: null
+    time: 10:00 - 10:30
+  - title: Sharing Project Outcomes - Part I
+    description: Sharing what you and your teams accomplished during our time together.
+    time: 10:30 - 12:00
     leads:
     - Anthony Arendt
   - title: LUNCH
@@ -193,8 +193,8 @@ tabs:
     leads:
     - Anthony Arendt
   - title: CLOSING
-    description: Final wrap up.
-    time: 14:00 - 14:15
+    description: Final wrap up and looking towards the future.
+    time: 14:00 - 14:30
     leads:
     - Anthony Arendt
 
