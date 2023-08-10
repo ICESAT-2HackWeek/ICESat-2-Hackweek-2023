@@ -15,7 +15,7 @@ The following people contributed to our project throughout the week:
   
 
 ## Project Goals
-Our main goal(s) for this project was to see if we could assess surface roughness along track-length scales using ICESat-2 data, comparing across two regions of interest. 
+Our main goal for this project was to see if we could assess surface roughness along track-length scales comparing ATL03 and ATL06 ICESat-2 data, across two regions of interest. 
 
 Our motivating question(s) were: 
 * Are surface roughness signals hiding in ATL03 at shorter along-track length scales compared with ATL06?
