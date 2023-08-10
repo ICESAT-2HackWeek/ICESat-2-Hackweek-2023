@@ -18,11 +18,11 @@ The following people contributed to our project throughout the week:
 Our main goal(s) for this project was to see if we could investigate roughness 
 
 Some individual goals for this project were to
-*Get familiar to accessing ICESat-2 data via cloud (e.g., sliderule, earthaccess, etc.). 
+* Get familiar to accessing ICESat-2 data via cloud (e.g., sliderule, earthaccess, etc.). 
 
 
 ### Study Sites 
-We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska. These tracks were chosen as regions of interest because of the relative flatness of both locations the availability of track data. 
+We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska...
 
 
 ## Project Outcomes
