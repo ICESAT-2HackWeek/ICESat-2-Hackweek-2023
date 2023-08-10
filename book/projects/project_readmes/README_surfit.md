@@ -40,11 +40,12 @@ We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska, our two
 * David created a dataframe...
 * Jessica provided support in project vision and bringing pieces together, identified a test track for the Black Rock ROI, and provided Git support for several group members.
 * Team members worked on increasing their familiarity with accessing ICESat-2 data from the cloud. 
-* 
+  
 
 ## Future Efforts
-This work can potentially support future work in proposals for David's NCAR work in the near future.  
-We hope that this project supports efforts in the 
+*Our team is considering expanding the regions of interest to include more diverse terrains to further validate the findings.
+*This work can potentially support future work in proposals for David's NCAR work in the near future.  
+
 
 
 ## Helpful Links 
