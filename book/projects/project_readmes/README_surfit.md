@@ -12,7 +12,7 @@ The following people contributed to our project throughout the week:
 * Team member: Chancelor Roberts
 * Team member: Emma Robertson
 * Team member: Karina Zikan
-  
+
 
 ## Project Goals
 Our main goal for this project was to see if we could assess surface roughness along track-length scales comparing ATL03 and ATL06 ICESat-2 data, across two regions of interest. 
