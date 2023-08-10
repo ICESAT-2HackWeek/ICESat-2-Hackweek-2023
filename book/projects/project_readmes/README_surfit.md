@@ -5,12 +5,12 @@
 The following people contributed to our project throughout the week:
 * Project lead: [Ben Purinton](url to their webpage)
 * Project lead: [David Clemens-Sewall](url to their webpage)
+* Project lead: [Jessica Badgeley] (url to their webpage)
 * Helper: [Nathan Kurtz](url to their webpage)
 * Helper: [YoungHyun Koo](url to their webpage)
 * Team member: ['Ana Fonongava'inga Stringer](url to their webpage)
 * Team member: [Chancelor Roberts](url to their webpage)
 * Team member: [Emma Robertson](url to their webpage)
-* Team member: [Jessica Badgeley](url to their webpage)
 * Team member: [Karina Zikan](url to their webpage)
   
 
