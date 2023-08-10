@@ -24,7 +24,6 @@ Some personal goals that were shared coming into this project were:
 * To familiarize ourselves with accessing ICESat-2 data via cloud (e.g., sliderule, earthaccess, etc.).
 * Learn more about the tools we've been introduced to in the tutorials. 
 * Learn how to access and subset ICESat-2 data. 
-* Gain skills to create a simple cloud platform to process ICESat-2 data to use later.
 * Become more comfortable learning and sharing work in a collaborative environment - team science! 
 
 ### Regions of Interest 
