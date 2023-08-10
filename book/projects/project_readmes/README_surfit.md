@@ -18,8 +18,12 @@ The following people contributed to our project throughout the week:
 
 What were the goals of your project?
 Remember, small, clear, actionable goals are a great way to foster hacking success!
-List or state them here.
-For example: Our team was interested in further exploring the tutorial material and learning how to collaborate on object oriented code.
+
+Our team was interested: 
+Our main goals for the week were: 
+=
+
+Our team was interested in further exploring the tutorial material and learning how to collaborate on object oriented code.
 Our goal for the week was to design a simple Python class called "Pho" (the ICESat-2 mascot) and have each person contribute a function to describe Pho or let it perform an action based on 
 
 
@@ -46,3 +50,4 @@ Have you built any great new collaborations you anticipate continuing after the 
 Is your team planning to keep meeting to continue hacking or draft a conference abstract or proposal?
 Did you start doing some work that relates to your research and enables you to contribute to shared tools for working with ICESat-2 data products?
 Please share your hopes and plans for the future here!
+
