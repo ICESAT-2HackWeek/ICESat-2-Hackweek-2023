@@ -5,7 +5,7 @@
 The following people contributed to our project throughout the week:
 * Project lead: Ben Purinton
 * Project lead: David Clemens-Sewall
-* Project lead: [Jessica Badgeley] (url to their webpage)
+* Project lead: Jessica Badgeley
 * Helper: Nathan Kurtz
 * Helper: YoungHyun Koo
 * Team member: 'Ana Fonongava'inga Stringer
