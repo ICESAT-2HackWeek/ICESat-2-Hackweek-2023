@@ -15,13 +15,9 @@ The following people contributed to our project throughout the week:
   
 
 ## Project Goals
-
-What were the goals of your project?
-Remember, small, clear, actionable goals are a great way to foster hacking success!
-
 Our team was interested: 
-Our main goals for the week were: 
-=
+Our main goal(s) for 
+Other, individual 
 
 Our team was interested in further exploring the tutorial material and learning how to collaborate on object oriented code.
 Our goal for the week was to design a simple Python class called "Pho" (the ICESat-2 mascot) and have each person contribute a function to describe Pho or let it perform an action based on 
@@ -39,7 +35,7 @@ Some examples might be:
 * Kate opened a [discussion on icepyx](https://github.com/icesat2py/icepyx/discussions).
 * Sam and Harvey put in a [SlideRule feature request](https://github.com/orgs/ICESat2-SlideRule/discussions).
 * six team members wrote [functions for Pho](link to project team repository).
-* We wrote a code block that finds the highest and lowest photon in a granule.
+* Nathan wrote code that takes photon clouds adn attempts to retrieve the associated surface height distribution (link 
 * [Example Workflow Jupyter Notebook](your notebook url here).
 * We drafted a conference abstract for submission to [conference](https://www.agu.org/).
 
