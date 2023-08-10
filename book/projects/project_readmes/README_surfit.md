@@ -32,7 +32,7 @@ We compared tracks from Black Rock Desert, Nevada and Utqiagvik, Alaska, our two
 
 ## Project Outcomes
 
-* Ben created visualizations to assess ICESat-2 its limits over short along-track length scales. 
+* Ben created visualizations to assess ICESat-2 its limitations over short along-track length scale, supporting understanding of data noise and limitations. 
 * Karina provided a SlideRule tutorial that was adapted for the use of this project. 
 * 3 team members worked on accessing ATL06 photon data using SlideRule and created a [Jupyter Notebook] (link to notebook). 
 * YoungHyun obtained a geodataframe of the ATL03 data for the region of interest & analyzed how surface roughness varies with different yapc values. 
