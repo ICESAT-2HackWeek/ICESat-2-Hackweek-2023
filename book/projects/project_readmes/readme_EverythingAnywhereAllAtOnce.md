@@ -8,10 +8,11 @@ The following people contributed to our project throughout the week:
 * Team member: [Romina Piunno](https://github.com/RomiP)
 * Team member: [Michael Studinger](https://science.gsfc.nasa.gov/sed/bio/michael.studinger)
 * Team member: [Zach Fair](https://github.com/zachghiaccio)
-* Team member: [Phillip Arndt](https://github.com/fliphilipp)
+* Team member: [Philipp Arndt](https://github.com/fliphilipp)
 * Team member: [David Shean](https://github.com/dshean)
 * Team member: [Zheng Liu](https://github.com/liuzheng-arctic)
 
+![example teaser image](https://raw.githubusercontent.com/fliphilipp/images/main/example_plot%20(1).jpg)
 
 ## Project Goals
 
@@ -26,7 +27,7 @@ Zheng Liu pitched this idea to the ICESat-2 Hackweek group on August 7, 2023.
 
 The group completed tasks for this project as follows:
 * Michael created a user interface that accepted a single latitude/longitude AOI point and created a circle polygon (radius: 25km)
-* Phillip downloaded ICESat-2 time-specific orbit (cycle) KML's from the 'Technical Specs' page (https://icesat-2.gsfc.nasa.gov/science/specs) and converted them to a Geodataframe
+* Philipp downloaded ICESat-2 time-specific orbit (cycle) KML's from the 'Technical Specs' page (https://icesat-2.gsfc.nasa.gov/science/specs) and converted them to a Geodataframe
 * Adrian clipped the orbit Geodataframe using the AOI circle polygon
 * Zachary drew the beam pairs for the clipped ground tracks
 * Shanshan created the interactive map output to display the beam pairs, AOI, and time stamps for the user-input latitude/longitude
