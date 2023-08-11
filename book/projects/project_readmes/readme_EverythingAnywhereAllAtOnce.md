@@ -12,7 +12,7 @@ The following people contributed to our project throughout the week:
 * Team member: [David Shean](https://github.com/dshean)
 * Team member: [Zheng Liu](https://github.com/liuzheng-arctic)
 
-![example teaser image](https://raw.githubusercontent.com/fliphilipp/images/main/example_plot%20(1).jpg)
+![example teaser image](https://raw.githubusercontent.com/fliphilipp/images/main/example_plot_buffered%20(3).jpg)
 
 ## Project Goals
 
