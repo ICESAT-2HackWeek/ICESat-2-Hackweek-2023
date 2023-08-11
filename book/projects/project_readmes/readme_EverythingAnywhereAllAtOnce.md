@@ -3,7 +3,7 @@
 ## Team Members
 
 The following people contributed to our project throughout the week:
-* Project lead: [Shanshan Li](https://github.com/sophie8910)
+* Project lead: [Shanshan Li](https://www.linkedin.com/in/shanshan-li-368a7186/)
 * Project lead: [Adrian Marziliano](https://github.com/AdrianMarzil)
 * Team member: [Romina Piunno](https://github.com/RomiP)
 * Team member: [Michael Studinger](https://science.gsfc.nasa.gov/sed/bio/michael.studinger)
@@ -16,7 +16,7 @@ The following people contributed to our project throughout the week:
 
 ## Project Goals
 
-Our team was motivated to resolve a common frustration among the ICESat-2 science community regarding the uncertainty of the satellite's flight paths and timing.
+Our team was motivated to resolve a common need among the ICESat-2 science community regarding the uncertainty of the satellite's flight paths and timing.
 Our goal for the week was to design a simple Python script to help researchers better plan their field site visits to align with ICESat-2 flyovers.
 
 
@@ -26,7 +26,7 @@ We were successful in creating a Python class which receives a user-input Area o
 Zheng Liu pitched this idea to the ICESat-2 Hackweek group on August 7, 2023.
 
 The group completed tasks for this project as follows:
-* Michael created a user interface that accepted a single latitude/longitude AOI point and created a circle polygon (radius: 25km)
+* Michael created a user interface that accepted a single latitude/longitude AOI point and created a search polygon around it with a given radius in km. Output is a search area as a GeoDataFrame and a GeoJSON file.
 * Philipp downloaded ICESat-2 time-specific orbit (cycle) KML's from the 'Technical Specs' page (https://icesat-2.gsfc.nasa.gov/science/specs) and converted them to a Geodataframe
 * Adrian clipped the orbit Geodataframe using the AOI circle polygon
 * Zachary drew the beam pairs for the clipped ground tracks
