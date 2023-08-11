@@ -132,12 +132,18 @@ tabs:
     time: 8:30 - 9:15
     leads:
     - Shamsudeen Yekeen
+    resources:
+    - title: Recording
+      url: "https://youtu.be/4SkmrQM7ch4"
   - title: 'Applications: sea ice'
     link: "https://icesat-2-2023.hackweek.io/tutorials/sea_ice/1_sea_ice_tutorial.html"
     description: Applications of ICESat-2 data to sea ice.
     time: 9:15 - 10:00
     leads:
     - Younghyun Koo
+    resources:
+    - title: Recording
+      url: "https://youtu.be/e0M7CyfbJYc"
   - title: BREAK
     description: null
     time: 10:00 - 10:30
@@ -148,6 +154,9 @@ tabs:
     leads:
     - Michalea King
     - Ian Joughin
+    resources:
+    - title: Recording
+      url: "https://youtu.be/nL841OYNkPM"
   - title: Group STAND-UP & OPEN PROJECT WORK
     description: null
     time: 11:15 - 12:00
