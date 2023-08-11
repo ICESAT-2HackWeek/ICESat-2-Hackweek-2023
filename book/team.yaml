@@ -556,3 +556,22 @@ people:
         link: https://github.com/weiji14
     user_groups:
       - Hackweek Helper
+  # =============
+  - title: JP Swinski
+    avatar: https://avatars.githubusercontent.com/jpswinski
+    role: Software Developer
+    organizations:
+      - name: NASA/GSFC
+    bio: >
+      JP is a software developer at NASA Goddard Space Flight Center outside of Washington DC. 
+      He led the flight software effort for ICESat-2/ATLAS, and is now the software development lead for SlideRule.
+    expertise:
+      - C/C++, Python, Lua, Node.js
+      - Cloud-based data processing
+      - Embedded software development
+    social:
+      - icon: github
+        icon_pack: fab
+        link: https://github.com/ICESat2-SlideRule
+    user_groups:
+      - Tutorial Developer
