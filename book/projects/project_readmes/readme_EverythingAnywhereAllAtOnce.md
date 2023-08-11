@@ -55,3 +55,5 @@ Here is where we've stored individual contributions from each of our team member
 
 There are multiple ideas to improve this work to increase the effectiveness of ICESat-2 flight prediction.
 There are currently no plans for this team to continue work on this project after the 2023 Hackweek, but we are open to suggestions and future collaboration.
+
+![whiteboard notes](https://raw.githubusercontent.com/fliphilipp/images/main/PXL_20230809_234808751.MP.jpg)
