@@ -916,6 +916,8 @@ title="Print to PDF"
 ---&gt; requesting ATL13 data... No data.
 The ground track is 4.4 km long.
 Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2021-08-02T12:00:00 to 2021-09-11T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2021-07-23T12:00:00 to 2021-09-21T12:00:00 --&gt; there are 24 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20210820T144749_N0301_R082_T26XNM_20210820T173503
     - time difference: 2 days before ICESat-2
@@ -930,6 +932,42 @@ Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --
 </section>
 <section id="snow-depth-tutorial-data">
 <h2>Snow Depth Tutorial Data<a class="headerlink" href="#snow-depth-tutorial-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="mi">1097</span>
+<span class="n">gtx</span> <span class="o">=</span> <span class="s1">&#39;gt3l&#39;</span>
+<span class="n">latlims</span> <span class="o">=</span> <span class="p">[</span><span class="mf">69.985</span><span class="p">,</span> <span class="mf">70.111</span><span class="p">]</span>
+<span class="n">lonlims</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">148.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">148.527</span><span class="p">]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2022-03-04&#39;</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">latlims</span><span class="o">=</span><span class="n">latlims</span><span class="p">,</span> <span class="n">lonlims</span><span class="o">=</span><span class="n">lonlims</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Snow Depth Tutorial Data&#39;</span><span class="p">,</span> <span class="n">plot_filename</span><span class="o">=</span><span class="s1">&#39;snowdepth-tutorial-viz.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 55806 data points.
+---&gt; requesting ATL06 data... 708 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 141 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... 159 data points.
+The ground track is 14.1 km long.
+Looking for Sentinel-2 images from 2022-02-22T12:00:00 to 2022-03-14T12:00:00 --&gt; there are 6 cloud-free images.
+Looking for Sentinel-2 images from 2022-02-12T12:00:00 to 2022-03-24T12:00:00 --&gt; there are 10 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20220304T215529_N0400_R029_T06WVC_20220304T230501
+    - time difference: Same day as ICESat-2
+    - mean along-track cloud probability: 1.4
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+could not display ATL08 canopy data
+--&gt; Saved plot as snowdepth-tutorial-viz.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_7_1.png" src="../../_images/use_examples_7_1.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="mi">1097</span>
@@ -953,6 +991,8 @@ Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --
 ---&gt; requesting ATL13 data... 483 data points.
 The ground track is 14.1 km long.
 Looking for Sentinel-2 images from 2022-02-22T12:00:00 to 2022-03-14T12:00:00 --&gt; there are 6 cloud-free images.
+Looking for Sentinel-2 images from 2022-02-12T12:00:00 to 2022-03-24T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2022-02-02T12:00:00 to 2022-04-03T12:00:00 --&gt; there are 14 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20220304T215529_N0400_R029_T06WVC_20220304T230501
     - time difference: Same day as ICESat-2
@@ -962,7 +1002,7 @@ could not display ATL08 canopy data
 --&gt; Saved plot as snowdepth-tutorial-viz.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_7_1.png" src="../../_images/use_examples_7_1.png" />
+<img alt="../../_images/use_examples_8_1.png" src="../../_images/use_examples_8_1.png" />
 </div>
 </div>
 </section>
@@ -970,7 +1010,8 @@ could not display ATL08 canopy data
 <h2>Bathymetry Tutorial Data<a class="headerlink" href="#bathymetry-tutorial-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="mi">214</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils.oa</span> <span class="kn">import</span> <span class="n">dataCollector</span>
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="mi">214</span><span class="p">,</span>
           <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-07-05&#39;</span><span class="p">,</span>
           <span class="s1">&#39;beam&#39;</span><span class="p">:</span> <span class="s1">&#39;gt2r&#39;</span><span class="p">,</span>
           <span class="s1">&#39;lonlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">172.66</span><span class="p">,</span> <span class="mf">173.14</span><span class="p">],</span>
@@ -992,6 +1033,16 @@ could not display ATL08 canopy data
 ---&gt; requesting ATL13 data... 228 data points.
 The ground track is 16.2 km long.
 Looking for Sentinel-2 images from 2022-06-25T12:00:00 to 2022-07-15T12:00:00 --&gt; there is 1 cloud-free image.
+Looking for Sentinel-2 images from 2022-06-15T12:00:00 to 2022-07-25T12:00:00 --&gt; there is 1 cloud-free image.
+Looking for Sentinel-2 images from 2022-06-05T12:00:00 to 2022-08-04T12:00:00 --&gt; there is 1 cloud-free image.
+Looking for Sentinel-2 images from 2022-05-26T12:00:00 to 2022-08-14T12:00:00 --&gt; there are 3 cloud-free images.
+Looking for Sentinel-2 images from 2022-05-16T12:00:00 to 2022-08-24T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2022-05-06T12:00:00 to 2022-09-03T12:00:00 --&gt; there are 6 cloud-free images.
+Looking for Sentinel-2 images from 2022-04-26T12:00:00 to 2022-09-13T12:00:00 --&gt; there are 7 cloud-free images.
+Looking for Sentinel-2 images from 2022-04-16T12:00:00 to 2022-09-23T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2022-04-06T12:00:00 to 2022-10-03T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2022-03-27T12:00:00 to 2022-10-13T12:00:00 --&gt; there are 9 cloud-free images.
+Looking for Sentinel-2 images from 2022-03-17T12:00:00 to 2022-10-23T12:00:00 --&gt; there are 10 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20220702T222549_N0400_R029_T59GPR_20220702T234500
     - time difference: 3 days before ICESat-2
@@ -1000,7 +1051,45 @@ Looking for Sentinel-2 images from 2022-06-25T12:00:00 to 2022-07-15T12:00:00 --
 --&gt; Saved plot as bathymetry-tutorial-viz.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_9_1.png" src="../../_images/use_examples_9_1.png" />
+<img alt="../../_images/use_examples_10_1.png" src="../../_images/use_examples_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils.oa</span> <span class="kn">import</span> <span class="n">dataCollector</span>
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="mi">582</span><span class="p">,</span>
+          <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-10-30&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;beam&#39;</span><span class="p">:</span> <span class="s1">&#39;gt2r&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;lonlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">127.67</span><span class="p">,</span> <span class="mf">128.24</span><span class="p">],</span>
+          <span class="s1">&#39;latlims&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">26.16</span><span class="p">,</span> <span class="mf">26.77</span><span class="p">]</span>
+         <span class="p">}</span>
+<span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Bathymetry Tutorial Data&#39;</span><span class="p">,</span> <span class="n">plot_filename</span><span class="o">=</span><span class="s1">&#39;bathymetry-tutorial-viz-1.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 56813 data points.
+---&gt; requesting ATL06 data... No data.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 364 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... 1 data points.
+---&gt; requesting ATL13 data... 367 data points.
+The ground track is 68.1 km long.
+Looking for Sentinel-2 images from 2021-10-20T12:00:00 to 2021-11-09T12:00:00 --&gt; there are 10 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20211031T020819_N0301_R103_T52RDQ_20211031T043126
+    - time difference: 1 day after ICESat-2
+    - mean along-track cloud probability: 2.3
+-&gt; download unsuccessful, increasing scale to 20.0...
+-&gt; download unsuccessful, increasing scale to 40.0...
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as bathymetry-tutorial-viz-1.jpg.
+</pre></div>
+</div>
+<img alt="../../_images/use_examples_11_1.png" src="../../_images/use_examples_11_1.png" />
 </div>
 </div>
 </section>
@@ -1027,6 +1116,7 @@ Looking for Sentinel-2 images from 2022-06-25T12:00:00 to 2022-07-15T12:00:00 --
 ---&gt; requesting ATL13 data... 317 data points.
 The ground track is 11.6 km long.
 Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2020-11-25T12:00:00 to 2021-01-04T12:00:00 --&gt; there are 10 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2A_MSIL2A_20201213T155521_N0214_R011_T17RRJ_20201213T195958
     - time difference: 2 days before ICESat-2
@@ -1035,7 +1125,7 @@ Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_11_1.png" src="../../_images/use_examples_11_1.png" />
+<img alt="../../_images/use_examples_13_1.png" src="../../_images/use_examples_13_1.png" />
 </div>
 </div>
 </section>
@@ -1061,6 +1151,7 @@ Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --
 ---&gt; requesting ATL13 data... No data.
 The ground track is 5.0 km long.
 Looking for Sentinel-2 images from 2020-12-31T12:00:00 to 2021-01-20T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2020-12-21T12:00:00 to 2021-01-30T12:00:00 --&gt; there are 14 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20210111T184739_N0214_R070_T11SKB_20210111T210436
     - time difference: 1 day after ICESat-2
@@ -1069,7 +1160,7 @@ Looking for Sentinel-2 images from 2020-12-31T12:00:00 to 2021-01-20T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_13_1.png" src="../../_images/use_examples_13_1.png" />
+<img alt="../../_images/use_examples_15_1.png" src="../../_images/use_examples_15_1.png" />
 </div>
 </div>
 </section>
@@ -1102,7 +1193,7 @@ Looking for Sentinel-2 images from 2022-08-05T12:00:00 to 2022-08-25T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_15_1.png" src="../../_images/use_examples_15_1.png" />
+<img alt="../../_images/use_examples_17_1.png" src="../../_images/use_examples_17_1.png" />
 </div>
 </div>
 </section>
@@ -1129,6 +1220,12 @@ Looking for Sentinel-2 images from 2022-08-05T12:00:00 to 2022-08-25T12:00:00 --
 ---&gt; requesting ATL13 data... No data.
 The ground track is 17.1 km long.
 Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --&gt; there is 1 cloud-free image.
+Looking for Sentinel-2 images from 2020-01-06T12:00:00 to 2020-02-15T12:00:00 --&gt; there are 2 cloud-free images.
+Looking for Sentinel-2 images from 2019-12-27T12:00:00 to 2020-02-25T12:00:00 --&gt; there are 3 cloud-free images.
+Looking for Sentinel-2 images from 2019-12-17T12:00:00 to 2020-03-06T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2019-12-07T12:00:00 to 2020-03-16T12:00:00 --&gt; there are 7 cloud-free images.
+Looking for Sentinel-2 images from 2019-11-27T12:00:00 to 2020-03-26T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2019-11-17T12:00:00 to 2020-04-05T12:00:00 --&gt; there are 10 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20200131T021549_N0213_R117_T47DNG_20200131T052854
     - time difference: 5 days after ICESat-2
@@ -1137,7 +1234,7 @@ Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_17_1.png" src="../../_images/use_examples_17_1.png" />
+<img alt="../../_images/use_examples_19_1.png" src="../../_images/use_examples_19_1.png" />
 </div>
 </div>
 </section>
@@ -1167,13 +1264,18 @@ Looking for Sentinel-2 images from 2020-01-16T12:00:00 to 2020-02-05T12:00:00 --
 ---&gt; requesting ATL12 data... No data.
 ---&gt; requesting ATL13 data... No data.
 The ground track is 10.1 km long.
-Looking for Sentinel-2 images from 2019-05-05T12:00:00 to 2019-05-25T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2019-04-25T12:00:00 to 2019-06-04T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2019-04-15T12:00:00 to 2019-06-14T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2019-04-05T12:00:00 to 2019-06-24T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2019-03-26T12:00:00 to 2019-07-04T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2019-03-16T12:00:00 to 2019-07-14T12:00:00 --&gt; there are no cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-05-05T12:00:00 to 2019-05-25T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-25T12:00:00 to 2019-06-04T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-15T12:00:00 to 2019-06-14T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-04-05T12:00:00 to 2019-06-24T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-03-26T12:00:00 to 2019-07-04T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
+Looking for Sentinel-2 images from 2019-03-16T12:00:00 to 2019-07-14T12:00:00 --&gt; there are not enough cloud-free images: widening date range...
 Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --&gt; there are 2 cloud-free images.
+Looking for Sentinel-2 images from 2019-02-24T12:00:00 to 2019-08-03T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2019-02-14T12:00:00 to 2019-08-13T12:00:00 --&gt; there are 6 cloud-free images.
+Looking for Sentinel-2 images from 2019-02-04T12:00:00 to 2019-08-23T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2019-01-25T12:00:00 to 2019-09-02T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2019-01-15T12:00:00 to 2019-09-12T12:00:00 --&gt; there are 10 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
     - product_id: S2B_MSIL2A_20190314T034629_N0211_R075_T42DWF_20190314T084528
     - time difference: 62 days before ICESat-2
@@ -1182,14 +1284,14 @@ Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_19_1.png" src="../../_images/use_examples_19_1.png" />
+<img alt="../../_images/use_examples_21_1.png" src="../../_images/use_examples_21_1.png" />
 </div>
 </div>
 <section id="change-the-date-only-now">
 <h3>Change the date only now<a class="headerlink" href="#change-the-date-only-now" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2021-05-11&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2019-11-13&#39;</span>
 <span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">is2data</span><span class="o">.</span><span class="n">visualize_sentinel2</span><span class="p">(</span><span class="n">max_cloud_prob</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Where did the lake go?&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1197,7 +1299,7 @@ Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
----&gt; requesting ATL03 data... 44747 data points.
+---&gt; requesting ATL03 data... 50884 data points.
 ---&gt; requesting ATL06 data... 509 data points.
 ---&gt; requesting ATL07 data... No data.
 ---&gt; requesting ATL08 data... 102 data points.
@@ -1205,20 +1307,20 @@ Looking for Sentinel-2 images from 2019-03-06T12:00:00 to 2019-07-24T12:00:00 --
 ---&gt; requesting ATL12 data... No data.
 ---&gt; requesting ATL13 data... No data.
 The ground track is 10.1 km long.
-Looking for Sentinel-2 images from 2021-05-01T12:00:00 to 2021-05-21T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2021-04-21T12:00:00 to 2021-05-31T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2021-04-11T12:00:00 to 2021-06-10T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2021-04-01T12:00:00 to 2021-06-20T12:00:00 --&gt; there are no cloud-free images: widening date range...
-Looking for Sentinel-2 images from 2021-03-22T12:00:00 to 2021-06-30T12:00:00 --&gt; there are 2 cloud-free images.
+Looking for Sentinel-2 images from 2019-11-03T12:00:00 to 2019-11-23T12:00:00 --&gt; there are 2 cloud-free images.
+Looking for Sentinel-2 images from 2019-10-24T12:00:00 to 2019-12-03T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2019-10-14T12:00:00 to 2019-12-13T12:00:00 --&gt; there are 6 cloud-free images.
+Looking for Sentinel-2 images from 2019-10-04T12:00:00 to 2019-12-23T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2019-09-24T12:00:00 to 2020-01-02T12:00:00 --&gt; there are 10 cloud-free images.
 --&gt; Closest cloud-free Sentinel-2 image to ICESat:
-    - product_id: S2B_MSIL2A_20210323T034629_N0214_R075_T42DWF_20210323T071809
-    - time difference: 49 days before ICESat-2
-    - mean along-track cloud probability: 1.3
+    - product_id: S2B_MSIL2A_20191119T034629_N0213_R075_T42DWG_20191119T070644
+    - time difference: 6 days after ICESat-2
+    - mean along-track cloud probability: 0.7
 --&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
 --&gt; Saved plot as my-plot.jpg.
 </pre></div>
 </div>
-<img alt="../../_images/use_examples_21_1.png" src="../../_images/use_examples_21_1.png" />
+<img alt="../../_images/use_examples_23_1.png" src="../../_images/use_examples_23_1.png" />
 </div>
 </div>
 </section>

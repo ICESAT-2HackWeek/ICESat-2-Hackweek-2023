@@ -1134,6 +1134,13 @@ If you are interested in how this works, you can find the code in <code class="d
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ee.Authenticate()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="downloading-data-from-the-openaltimetry-api">
 <h2>Downloading data from the OpenAltimetry API<a class="headerlink" href="#downloading-data-from-the-openaltimetry-api" title="Permalink to this headline">#</a></h2>
@@ -1153,7 +1160,7 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># paste the API URL from OpenAltimetry below, and specify the beam you are interested in</span>
-<span class="n">oa_api_url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl03?date=2021-08-22&amp;minx=-24.038224840962798&amp;miny=77.53415860797186&amp;maxx=-23.87242664092394&amp;maxy=77.5733919287777&amp;trackId=909&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
+<span class="n">oa_api_url</span> <span class="o">=</span> <span class="s1">&#39;http://openaltimetry.org/data/api/icesat2/atl03?date=2021-08-22&amp;minx=-24.03772653601395&amp;miny=77.53753839308544&amp;maxx=-23.86438315078483&amp;maxy=77.57604313591165&amp;trackId=909&amp;beamName=gt1r&amp;beamName=gt1l&amp;outputFormat=json&#39;</span>
 <span class="n">gtx</span> <span class="o">=</span> <span class="s1">&#39;gt1r&#39;</span>
 </pre></div>
 </div>
@@ -1164,6 +1171,16 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is2data</span> <span class="o">=</span> <span class="n">dataCollector</span><span class="p">(</span><span class="n">oaurl</span><span class="o">=</span><span class="n">oa_api_url</span><span class="p">,</span><span class="n">beam</span><span class="o">=</span><span class="n">gtx</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenAltimetry API URL: http://openaltimetry.org/data/api/icesat2/atlXX?date=2021-08-22&amp;minx=-24.03772653601395&amp;miny=77.53753839308544&amp;maxx=-23.86438315078483&amp;maxy=77.57604313591165&amp;trackId=909&amp;outputFormat=json&amp;beamName=gt1r&amp;client=jupyter
+Date: 2021-08-22
+Track: 909
+Beam: gt1r
+Latitude limits: [77.53753839308544, 77.57604313591165]
+Longitude limits: [-24.03772653601395, -23.86438315078483]
 </pre></div>
 </div>
 </div>
@@ -1180,6 +1197,16 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenAltimetry API URL: https://openaltimetry.org/data/api/icesat2/atlXX?date=2021-08-22&amp;minx=-23.9891&amp;miny=77.5326&amp;maxx=-23.9503&amp;maxy=77.5722&amp;trackId=909&amp;beamName=gt1r&amp;outputFormat=json&amp;client=jupyter
+Date: 2021-08-22
+Track: 909
+Beam: gt1r
+Latitude limits: [77.5326, 77.5722]
+Longitude limits: [-23.9891, -23.9503]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that this also constructs the API url for us.</p>
 </section>
@@ -1192,11 +1219,99 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---&gt; requesting ATL03 data... 6314 data points.
+---&gt; requesting ATL06 data... 198 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 26 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+</pre></div>
+</div>
+</div>
 </div>
 <p>The data are now stored as data frames in our <code class="docutils literal notranslate"><span class="pre">dataCollector</span></code> object. To verify this, we can run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span><span class="p">(</span><span class="n">is2data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;url&#39;: &#39;https://openaltimetry.org/data/api/icesat2/atlXX?date=2021-08-22&amp;minx=-23.9891&amp;miny=77.5326&amp;maxx=-23.9503&amp;maxy=77.5722&amp;trackId=909&amp;beamName=gt1r&amp;outputFormat=json&amp;client=jupyter&#39;,
+ &#39;date&#39;: &#39;2021-08-22&#39;,
+ &#39;track&#39;: 909,
+ &#39;beam&#39;: &#39;gt1r&#39;,
+ &#39;latlims&#39;: [77.5326, 77.5722],
+ &#39;lonlims&#39;: [-23.9891, -23.9503],
+ &#39;atl03&#39;:             lat        lon          h   conf
+ 0     77.572273 -23.953863  748.45350  Noise
+ 1     77.572246 -23.953913  847.64276  Noise
+ 2     77.572247 -23.953895  785.39874  Noise
+ 3     77.572232 -23.953940  906.48040  Noise
+ 4     77.572223 -23.953903  739.40704  Noise
+ ...         ...        ...        ...    ...
+ 6309  77.532606 -23.986983  788.30840   High
+ 6310  77.532600 -23.986988  787.72420   High
+ 6311  77.532594 -23.986993  788.89220   High
+ 6312  77.532594 -23.986993  786.84937   High
+ 6313  77.532594 -23.986993  787.69586   High
+ 
+ [6314 rows x 4 columns],
+ &#39;atl06&#39;:            lat        lon          h
+ 0    77.572104 -23.954022  810.27400
+ 1    77.571928 -23.954170  809.49520
+ 2    77.571751 -23.954318  808.62430
+ 3    77.571575 -23.954465  808.51855
+ 4    77.571398 -23.954612  808.20930
+ ..         ...        ...        ...
+ 193  77.533473 -23.986256  785.09015
+ 194  77.533297 -23.986406  785.85700
+ 195  77.533120 -23.986554  786.59470
+ 196  77.532944 -23.986702  787.29694
+ 197  77.532768 -23.986849  787.82263
+ 
+ [198 rows x 3 columns],
+ &#39;atl07&#39;: Empty DataFrame
+ Columns: [lat, lon, h]
+ Index: [],
+ &#39;atl08&#39;:           lat        lon          h     canopy
+ 0   77.571838 -23.954245  809.23700   3.455017
+ 1   77.570961 -23.954979  807.26886        NaN
+ 2   77.570076 -23.955711  804.86220        NaN
+ 3   77.569191 -23.956451  801.61490        NaN
+ 4   77.568314 -23.957195  797.30896        NaN
+ 5   77.567429 -23.957932  792.91420   2.570374
+ 6   77.566544 -23.958658  788.39480   1.922424
+ 7   77.565666 -23.959396  784.11694   2.658264
+ 8   77.564781 -23.960142  779.79500   3.664246
+ 9   77.563904 -23.960869  776.76560   4.249573
+ 10  77.563019 -23.961609  767.44324   6.668396
+ 11  77.562141 -23.962358  762.40380  10.477356
+ 12  77.544502 -23.977083  763.87840   8.553955
+ 13  77.543617 -23.977800  764.07556   7.998474
+ 14  77.542732 -23.978540  765.19090   6.761414
+ 15  77.541855 -23.979282  768.75446   4.206970
+ 16  77.540970 -23.980009  771.93854        NaN
+ 17  77.540085 -23.980747  773.26587        NaN
+ 18  77.539207 -23.981489  774.43463        NaN
+ 19  77.538322 -23.982227  776.89930        NaN
+ 20  77.537445 -23.982954  777.96080        NaN
+ 21  77.536560 -23.983694  779.56340        NaN
+ 22  77.535675 -23.984425  769.83990  11.356079
+ 23  77.534798 -23.985142  770.10900  11.810181
+ 24  77.533913 -23.985880  772.83750  11.275330
+ 25  77.533035 -23.986628  775.42786  12.219727,
+ &#39;atl10&#39;: Empty DataFrame
+ Columns: [lat, lon, h]
+ Index: [],
+ &#39;atl12&#39;: Empty DataFrame
+ Columns: [lat, lon, h]
+ Index: [],
+ &#39;atl13&#39;: Empty DataFrame
+ Columns: [lat, lon, h]
+ Index: []}
 </pre></div>
 </div>
 </div>
@@ -1242,6 +1357,10 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8799914969494532a28c5018ad1ee773", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 <p>Let’s add the ATL03 photons to better understand what might be going on here.</p>
 <div class="cell docutils container">
@@ -1270,6 +1389,11 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/OpenAltimetry_Earth_Engine_27_0.png" src="../../_images/OpenAltimetry_Earth_Engine_27_0.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "022bd80060bd4620a74d17fb84200a78", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </section>
 </section>
@@ -1297,6 +1421,11 @@ We also need to specify which beam we would like to look at. The <strong>GT1R</s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The ground track is about 4.4 kilometers long.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="google-earth-engine">
@@ -1316,6 +1445,10 @@ But since we all seem to be using python, it would be nice to have these capabil
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d85b4ac6c1ba4dfcb6361035ccdc2689", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 <p>Now we need to add our ICESat-2 gound track to that map. Let’s use the lon/lat coordinates of the ATL08 data product for this.<br />
 We also need to specify which <strong>Coordinate Reference System (CRS)</strong> our data is in. The longitude/latitude system that we are all quite familiar with is referenced by <a class="reference external" href="https://epsg.io/4326"><code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code></a>. To add the ground track to the map we need to turn it into an <a class="reference external" href="https://developers.google.com/earth-engine/guides/feature_collections">Earth Engine “Feature Collection”</a>.</p>
@@ -1330,6 +1463,109 @@ We also need to specify which <strong>Coordinate Reference System (CRS)</strong>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>:root {
+  --font-color-primary: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --font-color-secondary: var(--jp-content-font-color2, rgba(0, 0, 0, 0.6));
+  --font-color-accent: rgba(123, 31, 162, 1);
+  --border-color: var(--jp-border-color2, #e0e0e0);
+  --background-color: var(--jp-layout-color0, white);
+  --background-color-row-even: var(--jp-layout-color1, white);
+  --background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --font-color-primary: rgba(255, 255, 255, 1);
+  --font-color-secondary: rgba(255, 255, 255, 0.6);
+  --font-color-accent: rgb(173, 132, 190);
+  --border-color: #2e2e2e;
+  --background-color: #111111;
+  --background-color-row-even: #111111;
+  --background-color-row-odd: #313131;
+}
+
+.ee {
+  padding: 1em;
+  line-height: 1.5em;
+  min-width: 300px;
+  max-width: 1200px;
+  overflow-y: scroll;
+  max-height: 600px;
+  border: 1px solid var(--border-color);
+  font-family: monospace;
+}
+
+.ee li {
+  list-style-type: none;
+}
+
+.ee ul {
+  padding-left: 1.5em !important;
+  margin: 0;
+}
+
+.ee > ul {
+  padding-left: 0 !important;
+}
+
+.ee-open,
+.ee-shut {
+  color: var(--font-color-secondary);
+  cursor: pointer;
+  margin: 0;
+}
+
+.ee-open:hover,
+.ee-shut:hover {
+  color: var(--font-color-primary);
+}
+
+.ee-k {
+  color: var(--font-color-accent);
+  margin-right: 6px;
+}
+
+.ee-v {
+  color: var(--font-color-primary);
+}
+
+.ee-toggle {
+  display: none;
+}
+
+.ee-shut + ul {
+  display: none;
+}
+
+.ee-open + ul {
+  display: block;
+}
+
+.ee-shut::before {
+  display: inline-block;
+  content: "▼";
+  margin-right: 6px;
+  transform: rotate(-90deg);
+  transition: transform 0.2s;
+}
+
+.ee-open::before {
+  transform: rotate(0deg);
+  display: inline-block;
+  content: "▼";
+  margin-right: 6px;
+  transition: transform 0.2s;
+}
+</style><div class='ee'><ul><li><label class='ee-shut'>FeatureCollection (1 element, 1 column)<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>type:</span><span class='ee-v'>FeatureCollection</span></li><li><label class='ee-shut'>columns: Object (1 property)<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>system:index:</span><span class='ee-v'>String</span></li></ul></li><li><label class='ee-shut'>features: List (1 element)<input type='checkbox' class='ee-toggle'></label><ul><li><label class='ee-shut'>0: Feature (LineString, 0 properties)<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>type:</span><span class='ee-v'>Feature</span></li><li><span class='ee-k'>id:</span><span class='ee-v'>0</span></li><li><label class='ee-shut'>geometry: LineString (26 vertices)<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>type:</span><span class='ee-v'>LineString</span></li><li><label class='ee-shut'>coordinates: List (26 elements)<input type='checkbox' class='ee-toggle'></label><ul><li><label class='ee-shut'>0: [-23.95424461364746, 77.57183837890625]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.95424461364746</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.57183837890625</span></li></ul></li><li><label class='ee-shut'>1: [-23.954978942871094, 77.57096099853516]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.954978942871094</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.57096099853516</span></li></ul></li><li><label class='ee-shut'>2: [-23.955711364746094, 77.57007598876953]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.955711364746094</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.57007598876953</span></li></ul></li><li><label class='ee-shut'>3: [-23.956451416015625, 77.5691909790039]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.956451416015625</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.5691909790039</span></li></ul></li><li><label class='ee-shut'>4: [-23.957195281982422, 77.56831359863281]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.957195281982422</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56831359863281</span></li></ul></li><li><label class='ee-shut'>5: [-23.957931518554688, 77.56742858886719]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.957931518554688</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56742858886719</span></li></ul></li><li><label class='ee-shut'>6: [-23.95865821838379, 77.56654357910156]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.95865821838379</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56654357910156</span></li></ul></li><li><label class='ee-shut'>7: [-23.959396362304688, 77.56566619873047]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.959396362304688</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56566619873047</span></li></ul></li><li><label class='ee-shut'>8: [-23.960142135620117, 77.56478118896484]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.960142135620117</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56478118896484</span></li></ul></li><li><label class='ee-shut'>9: [-23.96086883544922, 77.56390380859375]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.96086883544922</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56390380859375</span></li></ul></li><li><label class='ee-shut'>10: [-23.96160888671875, 77.56301879882812]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.96160888671875</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56301879882812</span></li></ul></li><li><label class='ee-shut'>11: [-23.962358474731445, 77.56214141845703]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.962358474731445</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.56214141845703</span></li></ul></li><li><label class='ee-shut'>12: [-23.977083206176758, 77.54450225830078]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.977083206176758</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54450225830078</span></li></ul></li><li><label class='ee-shut'>13: [-23.977800369262695, 77.54361724853516]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.977800369262695</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54361724853516</span></li></ul></li><li><label class='ee-shut'>14: [-23.978540420532227, 77.54273223876953]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.978540420532227</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54273223876953</span></li></ul></li><li><label class='ee-shut'>15: [-23.97928237915039, 77.54185485839844]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.97928237915039</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54185485839844</span></li></ul></li><li><label class='ee-shut'>16: [-23.980009078979492, 77.54096984863281]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.980009078979492</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54096984863281</span></li></ul></li><li><label class='ee-shut'>17: [-23.98074722290039, 77.54008483886719]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.98074722290039</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.54008483886719</span></li></ul></li><li><label class='ee-shut'>18: [-23.981489181518555, 77.5392074584961]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.981489181518555</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.5392074584961</span></li></ul></li><li><label class='ee-shut'>19: [-23.982227325439453, 77.53832244873047]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.982227325439453</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53832244873047</span></li></ul></li><li><label class='ee-shut'>20: [-23.982954025268555, 77.53744506835938]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.982954025268555</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53744506835938</span></li></ul></li><li><label class='ee-shut'>21: [-23.983694076538086, 77.53656005859375]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.983694076538086</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53656005859375</span></li></ul></li><li><label class='ee-shut'>22: [-23.984424591064453, 77.53567504882812]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.984424591064453</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53567504882812</span></li></ul></li><li><label class='ee-shut'>23: [-23.98514175415039, 77.53479766845703]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.98514175415039</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53479766845703</span></li></ul></li><li><label class='ee-shut'>24: [-23.98587989807129, 77.5339126586914]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.98587989807129</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.5339126586914</span></li></ul></li><li><label class='ee-shut'>25: [-23.98662757873535, 77.53303527832031]<input type='checkbox' class='ee-toggle'></label><ul><li><span class='ee-k'>0:</span><span class='ee-v'>-23.98662757873535</span></li><li><span class='ee-k'>1:</span><span class='ee-v'>77.53303527832031</span></li></ul></li></ul></li></ul></li><li><label class='ee-shut'>properties: Object (0 properties)<input type='checkbox' class='ee-toggle'></label><ul></ul></li></ul></li></ul></li></ul></li></ul></div><script>function toggleHeader() {
+    const parent = this.parentElement;
+    parent.className = parent.className === "ee-open" ? "ee-shut" : "ee-open";
+}
+
+for (let c of document.getElementsByClassName("ee-toggle")) {
+    c.onclick = toggleHeader;
+}</script></div></div></div>
 </div>
 <p>Now that we have it in the right format, we can add it as a <strong>layer</strong> to the map.</p>
 <div class="cell docutils container">
@@ -1389,12 +1625,35 @@ You can find all collections here: <a class="reference external" href="https://d
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre>&lt;ee.imagecollection.ImageCollection object at 0x7f8c097db9d0&gt;</pre></div></div>
 </div>
 <p>Can we find out how many images there are in total?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_scenes</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number_of_scenes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ee.Number({
+  &quot;functionInvocationValue&quot;: {
+    &quot;functionName&quot;: &quot;Collection.size&quot;,
+    &quot;arguments&quot;: {
+      &quot;collection&quot;: {
+        &quot;functionInvocationValue&quot;: {
+          &quot;functionName&quot;: &quot;ImageCollection.load&quot;,
+          &quot;arguments&quot;: {
+            &quot;id&quot;: {
+              &quot;constantValue&quot;: &quot;COPERNICUS/S2_SR_HARMONIZED&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+})
 </pre></div>
 </div>
 </div>
@@ -1408,6 +1667,11 @@ You can find all collections here: <a class="reference external" href="https://d
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number_of_scenes = collection.size().getInfo()</span>
 <span class="n">number_of_scenes</span> <span class="o">=</span> <span class="mi">19323842</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">%i</span><span class="s1"> number of scenes in the image collection&#39;</span> <span class="o">%</span> <span class="n">number_of_scenes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 19323842 number of scenes in the image collection
 </pre></div>
 </div>
 </div>
@@ -1438,6 +1702,11 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 2782 images in the spatially filtered collection.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Much better! Now let’s only look at images that were taken soon before or after ICESat-2 passed over this spot.</p>
 <div class="cell docutils container">
@@ -1457,11 +1726,21 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search for imagery from 2021-08-16 to 2021-08-28.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">filterDate</span><span class="p">(</span><span class="n">search_start</span><span class="p">,</span> <span class="n">search_end</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">{number:d}</span><span class="s1"> images in the spatially filtered collection.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="n">collection</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 34 images in the spatially filtered collection.
 </pre></div>
 </div>
 </div>
@@ -1485,6 +1764,11 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s see what’s inside!</p>
 <div class="cell docutils container">
@@ -1493,11 +1777,21 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;type&#39;, &#39;bands&#39;, &#39;id&#39;, &#39;version&#39;, &#39;properties&#39;, &#39;features&#39;])
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">'features'</span></code> sounds like it could hold information about the images we are trying to find…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
 </pre></div>
 </div>
 </div>
@@ -1510,10 +1804,20 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;type&#39;, &#39;bands&#39;, &#39;version&#39;, &#39;id&#39;, &#39;properties&#39;])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">][</span><span class="n">feature_number</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;COPERNICUS/S2_SR_HARMONIZED/20210816T150759_20210816T150915_T27XVG&#39;
 </pre></div>
 </div>
 </div>
@@ -1526,11 +1830,21 @@ Let’s start with only images that overlap with the center of our ground track.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B1, B2, B3, B4, B5, B6, B7, B8, B8A, B9, B11, B12, AOT, WVP, SCL, TCI_R, TCI_G, TCI_B, MSK_CLDPRB, MSK_SNWPRB, QA10, QA20, QA60, 
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">'properties'</span></code> could be useful too!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;properties&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;DATATAKE_IDENTIFIER&#39;, &#39;AOT_RETRIEVAL_ACCURACY&#39;, &#39;SPACECRAFT_NAME&#39;, &#39;SATURATED_DEFECTIVE_PIXEL_PERCENTAGE&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B8A&#39;, &#39;CLOUD_SHADOW_PERCENTAGE&#39;, &#39;MEAN_SOLAR_AZIMUTH_ANGLE&#39;, &#39;system:footprint&#39;, &#39;VEGETATION_PERCENTAGE&#39;, &#39;SOLAR_IRRADIANCE_B12&#39;, &#39;SOLAR_IRRADIANCE_B10&#39;, &#39;SENSOR_QUALITY&#39;, &#39;SOLAR_IRRADIANCE_B11&#39;, &#39;GENERATION_TIME&#39;, &#39;SOLAR_IRRADIANCE_B8A&#39;, &#39;FORMAT_CORRECTNESS&#39;, &#39;CLOUD_COVERAGE_ASSESSMENT&#39;, &#39;THIN_CIRRUS_PERCENTAGE&#39;, &#39;system:time_end&#39;, &#39;WATER_VAPOUR_RETRIEVAL_ACCURACY&#39;, &#39;system:time_start&#39;, &#39;DATASTRIP_ID&#39;, &#39;PROCESSING_BASELINE&#39;, &#39;SENSING_ORBIT_NUMBER&#39;, &#39;NODATA_PIXEL_PERCENTAGE&#39;, &#39;SENSING_ORBIT_DIRECTION&#39;, &#39;GENERAL_QUALITY&#39;, &#39;GRANULE_ID&#39;, &#39;REFLECTANCE_CONVERSION_CORRECTION&#39;, &#39;MEDIUM_PROBA_CLOUDS_PERCENTAGE&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B8&#39;, &#39;DATATAKE_TYPE&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B9&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B6&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B7&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B4&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B1&#39;, &#39;NOT_VEGETATED_PERCENTAGE&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B5&#39;, &#39;RADIOMETRIC_QUALITY&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B2&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B3&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B5&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B1&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B4&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B3&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B2&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B9&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B8&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B7&#39;, &#39;DARK_FEATURES_PERCENTAGE&#39;, &#39;HIGH_PROBA_CLOUDS_PERCENTAGE&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B6&#39;, &#39;UNCLASSIFIED_PERCENTAGE&#39;, &#39;MEAN_SOLAR_ZENITH_ANGLE&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B8A&#39;, &#39;RADIATIVE_TRANSFER_ACCURACY&#39;, &#39;MGRS_TILE&#39;, &#39;CLOUDY_PIXEL_PERCENTAGE&#39;, &#39;PRODUCT_ID&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B10&#39;, &#39;SOLAR_IRRADIANCE_B9&#39;, &#39;SNOW_ICE_PERCENTAGE&#39;, &#39;DEGRADED_MSI_DATA_PERCENTAGE&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B11&#39;, &#39;MEAN_INCIDENCE_ZENITH_ANGLE_B12&#39;, &#39;SOLAR_IRRADIANCE_B6&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B10&#39;, &#39;SOLAR_IRRADIANCE_B5&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B11&#39;, &#39;SOLAR_IRRADIANCE_B8&#39;, &#39;MEAN_INCIDENCE_AZIMUTH_ANGLE_B12&#39;, &#39;SOLAR_IRRADIANCE_B7&#39;, &#39;SOLAR_IRRADIANCE_B2&#39;, &#39;SOLAR_IRRADIANCE_B1&#39;, &#39;SOLAR_IRRADIANCE_B4&#39;, &#39;GEOMETRIC_QUALITY&#39;, &#39;SOLAR_IRRADIANCE_B3&#39;, &#39;system:asset_size&#39;, &#39;WATER_PERCENTAGE&#39;, &#39;system:index&#39;])
 </pre></div>
 </div>
 </div>
@@ -1540,6 +1854,44 @@ Let’s start with only images that overlap with the center of our ground track.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;GRANULE_ID&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L2A_T27XVG_A023217_20210816T150915
+L2A_T26XNM_A023217_20210816T150915
+L2A_T27XVG_A023231_20210817T143747
+L2A_T26XNM_A023231_20210817T143747
+L2A_T27XVG_A032140_20210817T152909
+L2A_T26XNM_A032140_20210817T152909
+L2A_T27XVG_A032154_20210818T145938
+L2A_T26XNM_A032154_20210818T145938
+L2A_T27XVG_A032168_20210819T142935
+L2A_T26XNM_A032168_20210819T142935
+L2A_T27XVG_A023260_20210819T151803
+L2A_T26XNM_A023260_20210819T151803
+L2A_T27XVG_A023274_20210820T144750
+L2A_T26XNM_A023274_20210820T144750
+L2A_T27XVG_A032197_20210821T150913
+L2A_T26XNM_A032197_20210821T150913
+L2A_T27XVG_A032211_20210822T143925
+L2A_T26XNM_A032211_20210822T143925
+L2A_T27XVG_A023303_20210822T152807
+L2A_T26XNM_A023303_20210822T152807
+L2A_T27XVG_A023317_20210823T145754
+L2A_T26XNM_A023317_20210823T145754
+L2A_T27XVG_A023331_20210824T142741
+L2A_T26XNM_A023331_20210824T142741
+L2A_T27XVG_A032240_20210824T151911
+L2A_T26XNM_A032240_20210824T151911
+L2A_T27XVG_A032254_20210825T144920
+L2A_T26XNM_A032254_20210825T144920
+L2A_T27XVG_A023360_20210826T150906
+L2A_T26XNM_A023360_20210826T150906
+L2A_T27XVG_A023374_20210827T143745
+L2A_T26XNM_A023374_20210827T143745
+L2A_T27XVG_A032283_20210827T152908
+L2A_T26XNM_A032283_20210827T152908
 </pre></div>
 </div>
 </div>
@@ -1561,6 +1913,10 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d85b4ac6c1ba4dfcb6361035ccdc2689", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 <p>This seems to have worked. But there’s clouds everywhere.</p>
 </section>
@@ -1625,6 +1981,45 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search for imagery from 2021-08-16T00:00:00 to 2021-08-28T00:00:00.
+L2A_T26XNM_A023217_20210816T150915 --&gt; along-track cloud probability:  89.7 %
+L2A_T27XVG_A023217_20210816T150915 --&gt; along-track cloud probability:  89.7 %
+L2A_T26XNM_A023231_20210817T143747 --&gt; along-track cloud probability:   4.5 %
+L2A_T27XVG_A023231_20210817T143747 --&gt; along-track cloud probability:   4.6 %
+L2A_T26XNM_A032140_20210817T152909 --&gt; along-track cloud probability:  12.1 %
+L2A_T27XVG_A032140_20210817T152909 --&gt; along-track cloud probability:  12.1 %
+L2A_T26XNM_A032154_20210818T145938 --&gt; along-track cloud probability:  10.3 %
+L2A_T27XVG_A032154_20210818T145938 --&gt; along-track cloud probability:  10.1 %
+L2A_T26XNM_A032168_20210819T142935 --&gt; along-track cloud probability:  12.9 %
+L2A_T27XVG_A032168_20210819T142935 --&gt; along-track cloud probability:  12.8 %
+L2A_T26XNM_A023260_20210819T151803 --&gt; along-track cloud probability:   9.8 %
+L2A_T27XVG_A023260_20210819T151803 --&gt; along-track cloud probability:   9.9 %
+L2A_T26XNM_A023274_20210820T144750 --&gt; along-track cloud probability:   1.3 %
+L2A_T27XVG_A023274_20210820T144750 --&gt; along-track cloud probability:   1.3 %
+L2A_T26XNM_A032197_20210821T150913 --&gt; along-track cloud probability:  20.2 %
+L2A_T27XVG_A032197_20210821T150913 --&gt; along-track cloud probability:  20.3 %
+L2A_T26XNM_A032211_20210822T143925 --&gt; along-track cloud probability:  14.8 %
+L2A_T27XVG_A032211_20210822T143925 --&gt; along-track cloud probability:  14.8 %
+L2A_T26XNM_A023303_20210822T152807 --&gt; along-track cloud probability:  15.7 %
+L2A_T27XVG_A023303_20210822T152807 --&gt; along-track cloud probability:  15.8 %
+L2A_T26XNM_A023317_20210823T145754 --&gt; along-track cloud probability:   5.6 %
+L2A_T27XVG_A023317_20210823T145754 --&gt; along-track cloud probability:   5.5 %
+L2A_T26XNM_A023331_20210824T142741 --&gt; along-track cloud probability:   8.0 %
+L2A_T27XVG_A023331_20210824T142741 --&gt; along-track cloud probability:   7.9 %
+L2A_T26XNM_A032240_20210824T151911 --&gt; along-track cloud probability:   7.5 %
+L2A_T27XVG_A032240_20210824T151911 --&gt; along-track cloud probability:   7.5 %
+L2A_T26XNM_A032254_20210825T144920 --&gt; along-track cloud probability:   7.7 %
+L2A_T27XVG_A032254_20210825T144920 --&gt; along-track cloud probability:   7.8 %
+L2A_T26XNM_A023360_20210826T150906 --&gt; along-track cloud probability:  15.8 %
+L2A_T27XVG_A023360_20210826T150906 --&gt; along-track cloud probability:  15.8 %
+L2A_T26XNM_A023374_20210827T143745 --&gt; along-track cloud probability:  10.3 %
+L2A_T27XVG_A023374_20210827T143745 --&gt; along-track cloud probability:  10.1 %
+L2A_T26XNM_A032283_20210827T152908 --&gt; along-track cloud probability:   9.8 %
+L2A_T27XVG_A032283_20210827T152908 --&gt; along-track cloud probability:   9.8 %
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="filter-cloudy-images">
@@ -1636,6 +2031,11 @@ So to show a “true color” RGB composite image on the map, we need to select 
 <span class="n">MAX_CLOUD_PROB_ALONG_TRACK</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">cloudfree_collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="s1">&#39;ground_track_cloud_prob&#39;</span><span class="p">,</span> <span class="n">MAX_CLOUD_PROB_ALONG_TRACK</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">%i</span><span class="s1"> cloud-free scenes.&#39;</span> <span class="o">%</span> <span class="n">cloudfree_collection</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">getInfo</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 4 cloud-free scenes.
 </pre></div>
 </div>
 </div>
@@ -1671,6 +2071,14 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L2A_T26XNM_A023274_20210820T144750 --&gt; along-track cloud probability:   1.3 %, 1 day, 21:09:34  before ICESat-2
+L2A_T27XVG_A023274_20210820T144750 --&gt; along-track cloud probability:   1.3 %, 1 day, 21:09:38  before ICESat-2
+L2A_T26XNM_A023231_20210817T143747 --&gt; along-track cloud probability:   4.5 %, 4 days, 21:19:32  before ICESat-2
+L2A_T27XVG_A023231_20210817T143747 --&gt; along-track cloud probability:   4.6 %, 4 days, 21:19:36  before ICESat-2
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="show-the-final-image-and-ground-track-on-the-map">
@@ -1687,6 +2095,10 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "1838f20afb15490e842bfdde1480a0a2", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </section>
 <section id="download-images-from-earth-engine">
@@ -1715,6 +2127,11 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/5748d80a6b75e56a6f4cbc6329613330-e48a892424305a54a523e0af626197f4:getPixels&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can save the content of the download URL with the <a class="reference external" href="https://docs.python-requests.org/en/latest/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library.</p>
 <div class="cell docutils container">
@@ -1724,6 +2141,11 @@ So to show a “true color” RGB composite image on the map, we need to select 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloaded </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded my-satellite-image.tif
 </pre></div>
 </div>
 </div>
@@ -1739,6 +2161,11 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;open DatasetReader name=&#39;my-satellite-image.tif&#39; mode=&#39;r&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="plot-a-geotiff-in-matplotlib">
@@ -1751,6 +2178,10 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "75cce613827c43f2b4e52035e6c7b215", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </section>
 <section id="transform-the-ground-track-into-the-image-crs">
@@ -1761,6 +2192,11 @@ So to show a “true color” RGB composite image on the map, we need to select 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gtx_x</span><span class="p">,</span> <span class="n">gtx_y</span> <span class="o">=</span> <span class="n">warp</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src_crs</span><span class="o">=</span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span> <span class="n">dst_crs</span><span class="o">=</span><span class="n">myImage</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">xs</span><span class="o">=</span><span class="n">is2data</span><span class="o">.</span><span class="n">atl08</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">ys</span><span class="o">=</span><span class="n">is2data</span><span class="o">.</span><span class="n">atl08</span><span class="o">.</span><span class="n">lat</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gtx_x</span><span class="p">,</span> <span class="n">gtx_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(570580.0, 575140.0, 8608010.0, 8612600.0)
 </pre></div>
 </div>
 </div>
@@ -1791,6 +2227,30 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 6314 data points.
+---&gt; requesting ATL06 data... 198 data points.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 26 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... No data.
+---&gt; requesting ATL13 data... No data.
+The ground track is 4.4 km long.
+Looking for Sentinel-2 images from 2021-08-12T12:00:00 to 2021-09-01T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2021-08-02T12:00:00 to 2021-09-11T12:00:00 --&gt; there are 8 cloud-free images.
+Looking for Sentinel-2 images from 2021-07-23T12:00:00 to 2021-09-21T12:00:00 --&gt; there are 24 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2B_MSIL2A_20210820T144749_N0301_R082_T26XNM_20210820T173503
+    - time difference: 2 days before ICESat-2
+    - mean along-track cloud probability: 1.3
+--&gt; Downloaded the 8-bit RGB image as my-satellite-image.tif.
+--&gt; Saved plot as my-plot.jpg.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "461f2bb9d74f4a698ec1753653640aa6", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 <p><strong>And now we can also easily run this on some totally different data!</strong></p>
 <div class="cell docutils container">
@@ -1804,6 +2264,29 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Getting data from OpenAltimetry.
+---&gt; requesting ATL03 data... 34237 data points.
+---&gt; requesting ATL06 data... No data.
+---&gt; requesting ATL07 data... No data.
+---&gt; requesting ATL08 data... 114 data points.
+---&gt; requesting ATL10 data... No data.
+---&gt; requesting ATL12 data... 2 data points.
+---&gt; requesting ATL13 data... 317 data points.
+The ground track is 11.6 km long.
+Looking for Sentinel-2 images from 2020-12-05T12:00:00 to 2020-12-25T12:00:00 --&gt; there are 4 cloud-free images.
+Looking for Sentinel-2 images from 2020-11-25T12:00:00 to 2021-01-04T12:00:00 --&gt; there are 10 cloud-free images.
+--&gt; Closest cloud-free Sentinel-2 image to ICESat:
+    - product_id: S2A_MSIL2A_20201213T155521_N0214_R011_T17RRJ_20201213T195958
+    - time difference: 2 days before ICESat-2
+    - mean along-track cloud probability: 5.7
+--&gt; Downloaded the 8-bit RGB image as my-other-satellite-image.tif.
+--&gt; Saved plot as nearshore-bathymetry.jpg.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "6e84c087afe94046b8ba5f36ac62f043", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </section>
 <section id="exercise">
@@ -1922,6 +2405,281 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>xatc</th>
+      <th>B1</th>
+      <th>B11</th>
+      <th>B12</th>
+      <th>B2</th>
+      <th>B3</th>
+      <th>B4</th>
+      <th>B5</th>
+      <th>B6</th>
+      <th>B7</th>
+      <th>B8</th>
+      <th>B8A</th>
+      <th>B9</th>
+      <th>probability</th>
+      <th>ndwi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>499</td>
+      <td>77.572104</td>
+      <td>-23.954022</td>
+      <td>0.000000</td>
+      <td>7542.079621</td>
+      <td>164.685412</td>
+      <td>112.618040</td>
+      <td>7679.957684</td>
+      <td>7304.628062</td>
+      <td>6419.345212</td>
+      <td>6360.185412</td>
+      <td>5687.488864</td>
+      <td>4959.208797</td>
+      <td>4554.002227</td>
+      <td>4227.100223</td>
+      <td>4271.315702</td>
+      <td>0.000000</td>
+      <td>0.089410</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>498</td>
+      <td>77.572025</td>
+      <td>-23.954088</td>
+      <td>8.906222</td>
+      <td>7519.000000</td>
+      <td>164.866406</td>
+      <td>112.482392</td>
+      <td>7673.486864</td>
+      <td>7283.530464</td>
+      <td>6385.437675</td>
+      <td>6358.749581</td>
+      <td>5691.365567</td>
+      <td>4957.435998</td>
+      <td>4589.643376</td>
+      <td>4232.547233</td>
+      <td>4267.000000</td>
+      <td>0.000000</td>
+      <td>0.091618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>497</td>
+      <td>77.571946</td>
+      <td>-23.954154</td>
+      <td>17.812443</td>
+      <td>7519.000000</td>
+      <td>164.214807</td>
+      <td>110.955132</td>
+      <td>7667.717330</td>
+      <td>7348.897364</td>
+      <td>6504.787437</td>
+      <td>6403.295008</td>
+      <td>5750.389792</td>
+      <td>4981.712283</td>
+      <td>4688.150308</td>
+      <td>4231.484016</td>
+      <td>4267.000000</td>
+      <td>0.000000</td>
+      <td>0.082055</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>496</td>
+      <td>77.571867</td>
+      <td>-23.954220</td>
+      <td>26.718665</td>
+      <td>7519.000000</td>
+      <td>163.100390</td>
+      <td>110.193530</td>
+      <td>7614.340212</td>
+      <td>7219.821528</td>
+      <td>6464.990519</td>
+      <td>6421.064696</td>
+      <td>5779.469604</td>
+      <td>4995.268823</td>
+      <td>4696.385945</td>
+      <td>4231.175683</td>
+      <td>4267.000000</td>
+      <td>0.000000</td>
+      <td>0.081634</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>495</td>
+      <td>77.571789</td>
+      <td>-23.954286</td>
+      <td>35.624887</td>
+      <td>7519.000000</td>
+      <td>163.584213</td>
+      <td>104.806559</td>
+      <td>7571.846581</td>
+      <td>7152.758199</td>
+      <td>6384.584769</td>
+      <td>6316.176209</td>
+      <td>5657.226237</td>
+      <td>4909.948860</td>
+      <td>4619.942190</td>
+      <td>4142.191217</td>
+      <td>4267.000000</td>
+      <td>0.000000</td>
+      <td>0.085069</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>4</td>
+      <td>77.533083</td>
+      <td>-23.986586</td>
+      <td>4408.579718</td>
+      <td>8041.000000</td>
+      <td>201.959686</td>
+      <td>124.979843</td>
+      <td>8068.022396</td>
+      <td>7621.547592</td>
+      <td>6661.511758</td>
+      <td>6541.088466</td>
+      <td>5891.798432</td>
+      <td>5152.294513</td>
+      <td>4894.360582</td>
+      <td>4448.604703</td>
+      <td>4480.000000</td>
+      <td>0.386338</td>
+      <td>0.095489</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>3</td>
+      <td>77.533004</td>
+      <td>-23.986653</td>
+      <td>4417.485940</td>
+      <td>8041.000000</td>
+      <td>200.616331</td>
+      <td>124.308166</td>
+      <td>8119.082774</td>
+      <td>7650.724832</td>
+      <td>6645.447427</td>
+      <td>6577.359060</td>
+      <td>5885.081655</td>
+      <td>5128.785794</td>
+      <td>4903.615213</td>
+      <td>4468.755034</td>
+      <td>4480.000000</td>
+      <td>0.084452</td>
+      <td>0.099809</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>2</td>
+      <td>77.532925</td>
+      <td>-23.986717</td>
+      <td>4426.392162</td>
+      <td>8040.609131</td>
+      <td>199.819599</td>
+      <td>123.969933</td>
+      <td>8081.496659</td>
+      <td>7619.690423</td>
+      <td>6637.523385</td>
+      <td>6592.406459</td>
+      <td>5883.623608</td>
+      <td>5117.819599</td>
+      <td>4823.741648</td>
+      <td>4475.865256</td>
+      <td>4477.143653</td>
+      <td>0.152004</td>
+      <td>0.098103</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>1</td>
+      <td>77.532846</td>
+      <td>-23.986783</td>
+      <td>4435.298383</td>
+      <td>8039.849750</td>
+      <td>189.611018</td>
+      <td>127.637173</td>
+      <td>8041.181970</td>
+      <td>7589.139677</td>
+      <td>6624.518642</td>
+      <td>6584.066778</td>
+      <td>5910.378408</td>
+      <td>5111.065109</td>
+      <td>4767.759599</td>
+      <td>4448.170840</td>
+      <td>4471.594324</td>
+      <td>0.152476</td>
+      <td>0.096597</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>0</td>
+      <td>77.532768</td>
+      <td>-23.986849</td>
+      <td>4444.204605</td>
+      <td>8038.890128</td>
+      <td>180.460680</td>
+      <td>131.649191</td>
+      <td>8112.696040</td>
+      <td>7589.586168</td>
+      <td>6630.025655</td>
+      <td>6579.622978</td>
+      <td>5937.141104</td>
+      <td>5107.816509</td>
+      <td>4779.498048</td>
+      <td>4421.994980</td>
+      <td>4464.581707</td>
+      <td>0.485778</td>
+      <td>0.100570</td>
+    </tr>
+  </tbody>
+</table>
+<p>500 rows × 18 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1946,6 +2704,13 @@ So to show a “true color” RGB composite image on the map, we need to select 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;latitude&#39;)
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "567aeba21b7546a199b354c573aa91a3", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </section>
 <div class="toctree-wrapper compound">
