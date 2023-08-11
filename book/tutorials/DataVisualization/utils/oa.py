@@ -12,6 +12,7 @@ from datetime import timedelta
 import rasterio as rio
 from rasterio import plot as rioplot
 from rasterio import warp
+import traceback
 
 try:
     ee.Initialize()
@@ -287,7 +288,7 @@ class dataCollector:
     
         ######################
         # define a function for getting Sentinel-2 collection with s2cloudless probabilities and adding along-track mean cloud probability
-        def get_sentinel2_cloud_collection(mydata, days_buffer=days_buffer, gt_buffer=100):
+        def get_sentinel2_cloud_collection(mydata, days_buffer=days_buffer, gt_buffer=100, CLD_PRB_THRESH=40, BUFFER=100):
             # create the area of interest for cloud likelihood assessment
             ground_track_coordinates = list(zip(mydata.gt.lon, mydata.gt.lat))
             ground_track_projection = 'EPSG:4326' # our data is lon/lat in degrees [https://epsg.io/4326]
@@ -322,6 +323,31 @@ class dataCollector:
             }))
 
             cloud_collection = cloud_collection.map(lambda img: img.addBands(ee.Image(img.get('s2cloudless')).select('probability')))
+            
+# THE CODE COMMENTED OUT HERE WOULD ACTUALLY CREATE A CLOUD MASK AND APPLY IT, BUT THIS SEEMS TO RUN FOR REALLY LONG...
+#             def add_cloud_bands(img):
+#                 # Get s2cloudless image, subset the probability band.
+#                 cld_prb = ee.Image(img.get('s2cloudless')).select('probability')
+
+#                 # Condition s2cloudless by the probability threshold value.
+#                 is_cloud = cld_prb.gt(CLD_PRB_THRESH).rename('clouds')
+
+#                 # Add the cloud probability layer and cloud mask as image bands.
+#                 return img.addBands(ee.Image([cld_prb, is_cloud]))
+            
+#             def add_cloud_mask(img): 
+#                 # Combine cloud and shadow mask, set cloud and shadow as value 1, else 0.
+#                 is_cld_shdw = img.select('clouds').gt(0)
+
+#                 # Remove small cloud-shadow patches and dilate remaining pixels by BUFFER input.
+#                 # 20 m scale is for speed, and assumes clouds don't require 10 m precision.
+#                 is_cld_shdw = (is_cld_shdw.focalMin(2).focalMax(BUFFER*2/20)
+#                     .reproject(**{'crs': img.select([0]).projection(), 'scale': 20})
+#                     .rename('cloudmask'))
+            
+#                 return img.addBands(is_cld_shdw)
+            
+#             cloud_collection = cloud_collection.map(add_cloud_bands).map(add_cloud_mask)
 
             def set_is2_cloudiness(img, aoi=area_of_interest):
                 cloudprob = img.select(['probability']).reduceRegion(reducer=ee.Reducer.mean(), 
@@ -330,7 +356,18 @@ class dataCollector:
                                                                      maxPixels=1e6)
                 return img.set('ground_track_cloud_prob', cloudprob.get('probability'))
 
-            return cloud_collection.map(set_is2_cloudiness)
+            cloud_collection = cloud_collection.map(set_is2_cloudiness)
+            
+#             def apply_cld_shdw_mask(img):
+#                 # Subset the cloudmask band and invert it so clouds/shadow are 0, else 1.
+#                 not_cld_shdw = img.select('cloudmask').Not()
+
+#                 # Subset reflectance bands and update their masks, return the result.
+#                 return img.select('B.*').updateMask(not_cld_shdw)
+            
+#             cloud_collection = cloud_collection.map(apply_cld_shdw_mask)
+            
+            return cloud_collection
         
         ######################
         # get the Sentinel-2 collection with s2cloudless and along-track mean cloud probability
@@ -339,7 +376,7 @@ class dataCollector:
         if days_buffer > 200:
             days_buffer = 200
         increment_days = days_buffer
-        while (collection_size<1) & (days_buffer <= 200):
+        while (collection_size<10) & (days_buffer <= 200):
 
             collection = get_sentinel2_cloud_collection(self, days_buffer=days_buffer)
 
@@ -352,7 +389,7 @@ class dataCollector:
             elif collection_size > 1: 
                 print('--> there are %i cloud-free images.' % collection_size)
             else:
-                print('--> there are no cloud-free images: widening date range...')
+                print('--> there are not enough cloud-free images: widening date range...')
             days_buffer += increment_days
 
         # get the time difference between ICESat-2 and Sentinel-2 and sort by it 
@@ -370,10 +407,12 @@ class dataCollector:
         ######################
         # select the first image, and turn it into an 8-bit RGB for download
         selectedImage = cloudfree_collection.first()
-        rgb = selectedImage.select('B4', 'B3', 'B2')
-        rgbmax = rgb.reduce(ee.Reducer.max()).reduceRegion(reducer=ee.Reducer.max(), geometry=region_of_interest, bestEffort=True, maxPixels=1e6)
-        rgbmin = rgb.reduce(ee.Reducer.min()).reduceRegion(reducer=ee.Reducer.min(), geometry=region_of_interest, bestEffort=True, maxPixels=1e6)
-        rgb = rgb.unitScale(ee.Number(rgbmin.get('min')), ee.Number(rgbmax.get('max'))).clamp(0.0, 1.0)
+        mosaic = cloudfree_collection.sort('timediff', False).mosaic()
+        rgb = mosaic.select('B4', 'B3', 'B2')
+        # rgbmax = rgb.reduce(ee.Reducer.max()).reduceRegion(reducer=ee.Reducer.max(), geometry=region_of_interest, bestEffort=True, maxPixels=1e6)
+        # rgbmin = rgb.reduce(ee.Reducer.min()).reduceRegion(reducer=ee.Reducer.min(), geometry=region_of_interest, bestEffort=True, maxPixels=1e6)
+        # rgb = rgb.unitScale(ee.Number(rgbmin.get('min')), ee.Number(rgbmax.get('max'))).clamp(0.0, 1.0)
+        rgb = rgb.unitScale(0, 10000).clamp(0.0, 1.0)
         rgb_gamma = rgb.pow(1/gamma_value)
         rgb8bit= rgb_gamma.multiply(255).uint8()
 
@@ -399,19 +438,32 @@ class dataCollector:
         
         ######################
         # get the download URL and download the selected image
-        downloadURL = rgb8bit.getDownloadUrl({'name': 'mySatelliteImage',
-                                                  'crs': rgb8bit.projection().crs(),
-                                                  'scale': 10,
-                                                  'region': region_of_interest,
-                                                  'filePerBand': False,
-                                                  'format': 'GEO_TIFF'})
+        success = False
+        scale = 10
+        tries = 0
+        while (success == False) & (tries <= 5):
+            try:
+                downloadURL = rgb8bit.getDownloadUrl({'name': 'mySatelliteImage',
+                                                          'crs': selectedImage.select('B3').projection().crs(),
+                                                          'scale': scale,
+                                                          'region': region_of_interest,
+                                                          'filePerBand': False,
+                                                          'format': 'GEO_TIFF'})
 
-        response = requests.get(downloadURL)
-        with open(imagery_filename, 'wb') as f:
-            f.write(response.content)
+                response = requests.get(downloadURL)
+                with open(imagery_filename, 'wb') as f:
+                    f.write(response.content)
 
-        print('--> Downloaded the 8-bit RGB image as %s.' % imagery_filename)
-
+                print('--> Downloaded the 8-bit RGB image as %s.' % imagery_filename)
+                success = True
+                tries += 1
+            except:
+                # traceback.print_exc()
+                scale *= 2
+                print('-> download unsuccessful, increasing scale to %.1f...' % scale)
+                success = False
+                tries += 1
+            
         myImage = rio.open(imagery_filename)
         
         ######################
