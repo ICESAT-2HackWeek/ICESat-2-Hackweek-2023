@@ -175,6 +175,9 @@ tabs:
     time: 8:30 - 9:00
     leads:
     - Julie Lowndes
+    resources:
+    - title: Recording
+      url: "https://youtu.be/wMaLOuQPTdo"
   - title: CryoCloud - Part II
     description: After the Hackweek.
     time: 9:00 - 9:30
