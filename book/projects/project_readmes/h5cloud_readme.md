@@ -11,7 +11,7 @@
 * Andy Barrett
 
 ## Background
-ICESat-2 photon-data is stored as HDF5 files, which provide many advantages for scientific applications including being self-describing and able to store heterogenous data.
+ICESat-2 photon-data is stored as HDF5 files, which provide many advantages for scientific applications including being self-describing and able to store heterogeneous data.
 However, ICESat-2 granules are frequently over a larger spatial extent than is needed for scientific workflows, meaning users must read in the full ATL03 HDF5 file to geolocate the data, then subset to a given area of interest. Applications like EarthData and NSIDC data portals have simplified this process allowing users to subset files using a bounding box. 
 
 Subsetting tools are not available when working in the cloud and directly access data stored in S3 buckets.  The reason for this is that HDF5 files are serialized.  HDF5 files stored in S3 buckets must be read fully into memory before they can be subsetted.  These file access patterns are often slower than working with files downloaded to local file systems. 
