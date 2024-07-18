@@ -7,7 +7,7 @@ The following people contributed to our project throughout the week:
 * Helper: [Christian Kienholz]
 * Team member: [Siddhi Garg]
 * Team member: [Vengus Panhwar]
-* Team memeber: [Jonathan Burton]
+* Team member: [Jonathan Burton]
 
 
 ## Project Goals
